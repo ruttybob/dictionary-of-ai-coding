@@ -1,15 +1,15 @@
 ---
-description: The date past which a model has no parametric knowledge. Post-cutoff libraries and APIs are fabrication traps unless docs are loaded.
+description: Дата, после которой у модели нет параметрических знаний. Библиотеки и API после неё — ловушки для выдумок без загруженной документации.
 ---
 
-The date past which a [model](./Model.md) has no [parametric knowledge](./Parametric%20knowledge.md). Libraries, APIs, and events from after the cutoff are fabrication traps unless their docs are loaded as [contextual knowledge](./Contextual%20knowledge.md). Each model release ships with its own cutoff.
+Дата, после которой у [модели](./Model.md) нет [параметрических знаний](./Parametric%20knowledge.md). Библиотеки, API и события после отсечки — ловушки для выдумок, если только их документация не загружена как [контекстуальные знания](./Contextual%20knowledge.md). У каждого релиза модели своя отсечка.
 
-The cutoff exists because of how models are made: [training](./Training.md) bakes a snapshot of text into the model's [parameters](./Parameters.md), and after that the parameters are frozen. The model doesn't know its knowledge has an edge — asked about something past the cutoff, it doesn't refuse, it extrapolates from the nearest thing it does know. That's what makes the trap quiet: code written against an old version of a library looks plausible, often compiles, and fails on the parts that changed.
+Отсечка существует из-за того, как делают модели: [обучение](./Training.md) запекает снимок текста в [параметры](./Parameters.md) модели, и после этого параметры заморожены. Модель не знает, что у её знаний есть край — спросите о чём-то за отсечкой, и она не откажется, а экстраполирует от ближайшего, что знает. Именно поэтому ловушка тихая: код, написанный под старую версию библиотеки, выглядит правдоподобно, часто компилируется и падает только на изменившихся частях.
 
-The fix is always the same: get current information into [context](./Context.md). Load the changelog, point at the installed version's type definitions, or have the agent read the docs from the web. Anything in context outranks nothing-in-parameters.
+Исправление всегда одно: поместить актуальную информацию в [контекст](./Context.md). Загрузите changelog, укажите на определения типов установленной версии или пусть агент прочитает документацию из сети. Что-либо в контексте перевешивает пустоту в параметрах.
 
-_Usage:_
+_Пример:_
 
-"It keeps writing the v3 SDK syntax — we're on v5."
+«Он всё пишет синтаксис SDK v3 — а мы на v5.»
 
-"v5 shipped after the knowledge cutoff. Load the v5 changelog as contextual knowledge, otherwise it'll keep fabricating from the older parametric version."
+«v5 вышел после отсечки знаний. Загрузите changelog v5 как контекстуальные знания, иначе он продолжит выдумывать на основе старой параметрической версии.»

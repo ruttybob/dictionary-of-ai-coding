@@ -1,21 +1,21 @@
 ---
-description: Facts the agent can read directly from the context right now. Counterpart to parametric knowledge.
+description: Факты, которые агент может прямо прочитать из контекста прямо сейчас. Составляет пару параметрическим знаниям.
 ---
 
-Facts the [agent](./Agent.md) can read directly from the [context](./Context.md) right now — the user's task, files the agent has read in, [tool results](./Tool%20result.md), [AGENTS.md](./AGENTS.md.md) content loaded at [session](./Session.md) start. Counterpart to [parametric knowledge](./Parametric%20knowledge.md): parametric is _recalled_ from the parameters; contextual is _read_ from the [window](./Context%20window.md). [Hallucinations](./Hallucination.md) are much less common when the agent works from contextual knowledge — the answer is right in front of it, not dredged up from a blurred memory.
+Факты, которые [агент](./Agent.md) может прямо прочитать из [контекста](./Context.md) прямо сейчас — задача пользователя, файлы, которые агент прочитал, [результаты инструментов](./Tool%20result.md), содержимое [AGENTS.md](./AGENTS.md.md), загруженное в начале [сессии](./Session.md). Составляет пару [параметрическим знаниям](./Parametric%20knowledge.md): параметрические _вспоминаются_ из параметров, контекстуальные _читаются_ из [окна](./Context%20window.md). [Галлюцинации](./Hallucination.md) возникают гораздо реже, когда агент исходит из контекстуальных знаний — ответ прямо перед ним, а не извлекается из размытой памяти.
 
-Of the two kinds of knowledge, only contextual knowledge is in your control. The parameters are frozen, so the only way to give the [model](./Model.md) knowledge it lacks — an internal SDK, a library released after the [knowledge cutoff](./Knowledge%20cutoff.md), a decision made yesterday — is to put it in the context. A lot of practical [AI](./AI.md) coding work reduces to this: getting the right facts in front of the model at the moment it needs them.
+Из двух видов знаний только контекстуальные под вашим контролем. Параметры заморожены, поэтому единственный способ дать [модели](./Model.md) знания, которых у неё нет — внутренний SDK, библиотеку, вышедшую после [отсечки знаний](./Knowledge%20cutoff.md), решение, принятое вчера, — поместить их в контекст. Значительная часть практической работы по [ИИ](./AI.md)-кодированию сводится именно к этому: подать модели нужные факты в тот момент, когда они ей нужны.
 
-When contextual and parametric knowledge conflict, the contextual usually wins. Paste the current API docs and the model follows them rather than its stale memory of the old API — though the old version can still bleed through, especially deep into a long session. If the agent keeps reverting to an outdated pattern despite the docs being loaded, that's parametric knowledge leaking past the contextual; restating the correction or moving it closer to the work helps.
+Когда контекстуальные и параметрические знания конфликтуют, контекстуальные обычно побеждают. Вставьте актуальную документацию API — и модель следует ей, а не своему устаревшему воспоминанию о старом API, хотя старая версия всё ещё может просачиваться, особенно в глубине долгой сессии. Если агент раз за разом возвращается к устаревшему шаблону, хотя документация загружена, это параметрические знания протекают мимо контекстуальных; помогает переформулировать исправление или поставить его ближе к работе.
 
-Unlike parametric knowledge, contextual knowledge costs something to use. Everything loaded into the window spends [tokens](./Token.md) and competes for the model's [attention budget](./Attention%20budget.md), so loading more is not automatically better — the aim is the relevant facts in the window, not all the facts.
+В отличие от параметрических, контекстуальные знания имеют свою цену. Всё, что загружено в окно, тратит [токены](./Token.md) и соревнуется за [бюджет внимания](./Attention%20budget.md) модели, поэтому загружать больше — не значит автоматически лучше: цель — релевантные факты в окне, а не все факты.
 
-_Reach for this term_ only when contrasting with parametric knowledge; otherwise just say **context**.
+_Используйте этот термин_ только при противопоставлении параметрическим знаниям; в остальных случаях говорите просто **контекст**.
 
-_Avoid:_ "working memory" — contextual knowledge is what's in the window _now_; a [memory system](./Memory%20system.md) is what gets cross-session content into it. Different scales, don't conflate.
+_Избегать:_ «рабочая память» — контекстуальные знания это то, что в окне _сейчас_; [система памяти](./Memory%20system.md) — то, что доставляет в него межсессионный контент. Разные масштабы, не смешивайте.
 
-_Usage:_
+_Пример:_
 
-"Why does it nail the API when I paste the docs and fabricate it when I don't?"
+«Почему он попадает в API, когда я вставляю документацию, и выдумывает, когда нет?»
 
-"With the docs in, it's contextual knowledge — reading off the page. Without, it's parametric and the rare endpoints blur."
+«С документацией внутри это контекстуальные знания — считывание со страницы. Без неё — параметрические, и редкие эндпоинты размываются.»

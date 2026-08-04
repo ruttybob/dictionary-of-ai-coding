@@ -1,17 +1,17 @@
 ---
-description: The instructions the harness prepends to every model provider request — the agent's standing brief. Usually stable across a session.
+description: Инструкции, которые обвязка ставит в начало каждого запроса к провайдеру моделей — постоянное задание агента. Обычно стабильны всю сессию.
 ---
 
-The instructions the [harness](./Harness.md) prepends to every [model provider request](./Model%20provider%20request.md) — the [agent](./Agent.md)'s standing brief: who it is, how to behave, which [tools](./Tool.md) it can call, what conventions to follow. Usually stable across a [session](./Session.md).
+Инструкции, которые [обвязка](./Harness.md) ставит в начало каждого [запроса к провайдеру моделей](./Model%20provider%20request.md) — постоянное задание [агента](./Agent.md): кто он, как себя вести, какие [инструменты](./Tool.md) может вызывать, какие соглашения соблюдать. Обычно неизменны в течение [сессии](./Session.md).
 
-The system prompt is written by the harness vendor, not by you, and in coding harnesses it's big — often tens of thousands of [tokens](./Token.md) of behavioural rules, tool descriptions, and edge-case handling, all paid as [input tokens](./Input%20tokens.md) on every [turn](./Turn.md). Your own standing instructions ride along with it: files like [AGENTS.md](./AGENTS.md.md) are loaded next to the system prompt at the start of the session, so the [model](./Model.md) reads the vendor's brief and yours together before it ever sees your message.
+Системный промпт пишется разработчиком обвязки, а не вами, и в обвязках для кодирования он большой — часто десятки тысяч [токенов](./Token.md) правил поведения, описаний инструментов и обработки граничных случаев, и всё это оплачивается как [входные токены](./Input%20tokens.md) на каждом [ходу](./Turn.md). Ваши собственные постоянные инструкции идут вместе с ним: файлы вроде [AGENTS.md](./AGENTS.md.md) загружаются рядом с системным промптом в начале сессии, поэтому [модель](./Model.md) читает задание разработчика и ваше одновременно, прежде чем увидит ваше сообщение.
 
-Because it's identical on every request, it forms the start of the [prefix cache](./Prefix%20cache.md) — which is part of why harnesses keep it fixed for a whole session rather than editing it as they go.
+Поскольку он одинаков в каждом запросе, он формирует начало [префиксного кэша](./Prefix%20cache.md) — и отчасти поэтому обвязки держат его фиксированным всю сессию, а не редактируют на ходу.
 
-Models are trained to prioritise the system prompt over user messages. So when an agent insists on a convention you never asked for, or formats output in a way you can't shake, it's usually obeying its system prompt — and your message is losing the argument. Some harnesses are customisable: they give you full access to the system prompt, so you can read what the agent is actually being told and change it.
+Модели обучены приоритизировать системный промпт над сообщениями пользователя. Поэтому когда агент навязывает соглашение, о котором вы не просили, или форматирует вывод так, что от этого не избавиться, обычно он подчиняется своему системному промпту — и ваше сообщение проигрывает спор. Некоторые обвязки настраиваемые: они дают полный доступ к системному промпту, так что можно прочитать, что агенту на самом деле говорят, и поменять это.
 
-_Usage:_
+_Пример:_
 
-"Two harnesses, same model, totally different behavior on the same prompt."
+«Две обвязки, одна модель, совершенно разное поведение на один и тот же промпт.»
 
-"Different system prompts. One's tuned for terse code edits, the other for explaining — that's where the divergence lives, before your message even arrives."
+«Разные системные промпты. Один настроен на лаконичные правки кода, другой — на объяснения; в этом и кроется расхождение, ещё до того, как ваше сообщение поступит.»

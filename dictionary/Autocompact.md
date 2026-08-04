@@ -1,17 +1,17 @@
 ---
-description: Compaction triggered automatically by the harness when the context window approaches full.
+description: Компакция, запускаемая автоматически обвязкой, когда контекстное окно приближается к заполнению.
 ---
 
-[Compaction](./Compaction.md) triggered automatically by the [harness](./Harness.md) when the [context window](./Context%20window.md) approaches full.
+[Компакция](./Compaction.md), запускаемая автоматически [обвязкой](./Harness.md), когда [контекстное окно](./Context%20window.md) приближается к заполнению.
 
-The harness watches how full the context window is. When it crosses a threshold — often around 80% — it pauses, asks the [model](./Model.md) to summarise the [session](./Session.md) so far, and seeds a fresh session with the summary. Work then continues as if nothing happened.
+Обвязка следит за тем, насколько заполнено контекстное окно. Когда заполнение пересекает порог — обычно около 80% — она делает паузу, просит [модель](./Model.md) суммировать [сессию](./Session.md) на текущий момент и запускает свежую сессию с этой выжимкой. Работа продолжается, как будто ничего не произошло.
 
-Except something did happen. Compaction is lossy, and autocompact is lossy at a moment you didn't choose. A manual compact happens at a phase boundary, when you can tell the model what to preserve. Autocompact fires mid-task, whenever the threshold is hit — possibly halfway through a refactor, with the summary deciding for itself which of your decisions were worth keeping. The classic symptom: the [agent](./Agent.md) carries on confidently but has quietly forgotten a constraint you established an hour ago, and you only notice when its work starts contradicting it.
+Только кое-что произошло. Компакция идёт с потерями, а автокомпакция срабатывает с потерями в момент, который вы не выбирали. Ручная компакция делается на границе фазы, когда вы можете сказать модели, что сохранить. Автокомпакция стреляет в середине задачи, как только порог достигнут — возможно, на полпути рефакторинга, и выжимка сама решает, какие из ваших решений стоило сохранить. Классический симптом: [агент](./Agent.md) уверенно продолжает работу, но тихо забыл ограничение, которое вы установили час назад, и вы замечаете это лишь тогда, когда его работа начинает ему противоречить.
 
-The defence is to not let it fire. Watch the context indicator and compact manually at a natural boundary, or write decisions into a plan doc or [handoff artifact](./Handoff%20artifact.md) on disk, where no summary can lose them. Most harnesses also let you customise the buffer — moving the threshold earlier or later, or turning autocompact off entirely — so you can tune how much headroom you keep before it fires.
+Защита — не дать ей сработать. Следите за индикатором контекста и делайте компакцию вручную на естественной границе либо записывайте решения в план-документ или [артефакт передачи](./Handoff%20artifact.md) на диске, где их не потеряет никакая выжимка. Большинство обвязок также позволяет настроить буфер — сдвинуть порог раньше или позже или вовсе отключить автокомпакцию, чтобы вы могли сами выбирать, сколько запаса оставляете до того, как она сработает.
 
-_Usage:_
+_Пример:_
 
-"It doesn't seem to remember what we decided about the schema earlier."
+— Кажется, он не помнит, что мы решили по схеме раньше.
 
-"Autocompact fired between [turns](./Turn.md) — the early decisions got summarised and we must have lost something. Reload the plan doc, or compact manually next time so you control what gets kept."
+— Автокомпакция сработала между [ходами](./Turn.md) — ранние решения попали в выжимку, и мы, должно быть, что-то потеряли. Перечитай план-документ либо в следующий раз сделай компакцию вручную, чтобы контролировать, что сохраняется.

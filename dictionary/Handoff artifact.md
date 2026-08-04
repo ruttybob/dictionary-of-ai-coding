@@ -1,19 +1,19 @@
 ---
-description: A document used as the carry mechanism for a handoff — written by one session to be read by another.
+description: Документ, служащий механизмом переноса при передаче — одна сессия пишет его, чтобы другая прочитала.
 ---
 
-A document used as the carry mechanism for a [handoff](./Handoff.md) — written to the [environment](./Environment.md) by one [session](./Session.md) to be read by another. [Specs](./Spec.md), [tickets](./Ticket.md), and plan docs are all handoff artifacts.
+Документ, служащий механизмом переноса при [передаче](./Handoff.md) контекста между сессиями — он записывается в [окружение](./Environment.md) одной [сессией](./Session.md), чтобы другая его прочитала. [Спецификации](./Spec.md), [тикеты](./Ticket.md) и план-документы — всё это артефакты передачи.
 
-The reason to write one: the [model](./Model.md) is [stateless](./Stateless.md), so nothing in a session survives [clearing](./Clearing.md) it. Decisions, constraints, half-finished plans — all gone with the [context](./Context.md) that held them. The environment persists. Writing the important state into a file moves it somewhere the next session can read it back from.
+Причина писать такой документ: [модель](./Model.md) [без сохранения состояния](./Stateless.md), поэтому после [очистки](./Clearing.md) в сессии ничего не выживает. Решения, ограничения, недоделанные планы — всё исчезает вместе с [контекстом](./Context.md), который их удерживал. Окружение сохраняется. Записав важное состояние в файл, вы переносите его туда, откуда следующая сессия сможет его прочитать.
 
-The artifact is a [secondary source](./Secondary%20source.md) — an account of the session's work, not the work itself. That's what makes it small enough to brief a fresh session, and also why it can mislead one: it records what the writing session believed, and anything it left out or got wrong is invisible to the reader. Where a claim matters, the next session should verify it against the [primary source](./Primary%20source.md) — the code, the tests — rather than inherit it.
+Артефакт — это [вторичный источник](./Secondary%20source.md): рассказ о работе сессии, а не сама работа. Именно поэтому он достаточно мал, чтобы ввести в курс дела свежую сессию, и по той же причине способен её ввести в заблуждение: он фиксирует то, во что верила пишущая сессия, а всё, что она упустила или поняла неверно, читателю не видно. Там, где утверждение существенно, следующая сессия должна сверить его с [первоисточником](./Primary%20source.md) — кодом, тестами — а не перенимать на веру.
 
-A good artifact is written to be read into a session that has zero context. Concrete file paths rather than "the file we discussed". What was decided and why, so the next session doesn't relitigate it. What's done and what's left. It helps to tell the writing session where the artifact is headed: "write a handoff doc for a fresh session that knows nothing about this work".
+Хороший артефакт пишется так, чтобы его прочитала сессия без всякого контекста. Конкретные пути к файлам, а не «файл, который мы обсуждали». Что решено и почему — чтобы следующая сессия не начала пересматривать это заново. Что сделано и что осталось. Полезно сказать пишущей сессии, куда направлен артефакт: «напиши документ передачи для свежей сессии, которая ничего не знает об этой работе».
 
-The alternative carry mechanism is [compaction](./Compaction.md), which summarises in-memory. The artifact has two advantages: it lives on disk where you can read and correct it before anything depends on it, and it can be reused — the same spec can brief five parallel sessions.
+Альтернативный механизм переноса — [компакция](./Compaction.md), которая суммирует происходящее в памяти. У артефакта два преимущества: он лежит на диске, где его можно прочитать и поправить до того, как что-то начнёт от него зависеть, и его можно переиспользовать — одна и та же спецификация может ввести в курс дела пять параллельных сессий.
 
-_Usage:_
+_Пример:_
 
-"How do I split this between the planning [agent](./Agent.md) and the implementing one?"
+— Как мне поделить эту работу между [агентом](./Agent.md)-планировщиком и реализующим агентом?
 
-"Have the planner write a handoff artifact — file paths, decisions, constraints. The implementer's session opens with a pointer to the artifact and works from it as its brief."
+— Пусть планировщик напишет артефакт передачи — пути к файлам, решения, ограничения. Сессия исполнителя стартует с указателя на артефакт и работает, опираясь на него как на бриф.

@@ -1,24 +1,24 @@
 ---
-description: Input tokens the provider has cached from a previous request via its prefix cache, billed at a much lower rate.
+description: Входные токены, которые провайдер закэшировал из предыдущего запроса через префиксный кэш и тарифицирует по гораздо более низкому тарифу.
 ---
 
-[Input tokens](./Input%20tokens.md) the [provider](./Model%20provider.md) has cached from a previous [model provider request](./Model%20provider%20request.md) so it doesn't have to re-process them. When consecutive requests share a prefix, the provider reuses the work via its [prefix cache](./Prefix%20cache.md) and bills the cached portion at a much lower rate. The lever that makes long [sessions](./Session.md) affordable — without it, every [turn](./Turn.md) re-pays for the whole history.
+[Входные токены](./Input%20tokens.md), которые [провайдер моделей](./Model%20provider.md) кэшировал из предыдущего [запроса к провайдеру моделей](./Model%20provider%20request.md), чтобы не обрабатывать их повторно. Когда последовательные запросы имеют общий префикс, провайдер повторно использует работу через свой [префиксный кэш](./Prefix%20cache.md) и тарифицирует кэшированную часть по гораздо более низкому тарифу. Это рычаг, который делает длинные [сессии](./Session.md) недорогими — без него каждый [ход](./Turn.md) заново оплачивает всю историю.
 
-The reason this matters is how sessions are billed. The [model](./Model.md) is [stateless](./Stateless.md), so every request resends the entire conversation — [system prompt](./System%20prompt.md), every message, every [tool result](./Tool%20result.md) — as input tokens. By turn fifty, each request carries fifty turns of history, and you'd pay full rate on all of it, every time. The cache changes the maths: tokens the provider has already processed in an identical prefix are billed as cache tokens, often at a tenth of the input rate or less. On a long session, most of what you send is cache tokens, and the bill stays sane.
+Причина, по которой это важно, — то, как тарифицируются сессии. [Модель](./Model.md) [без сохранения состояния](./Stateless.md), поэтому каждый запрос заново отправляет всю беседу — [системный промпт](./System%20prompt.md), каждое сообщение, каждый [результат инструмента](./Tool%20result.md) — как входные токены. К пятидесятому ходу каждый запрос несёт пятьдесят ходов истории, и вы платили бы полный тариф за всё это каждый раз. Кэш меняет арифметику: токены, которые провайдер уже обработал в идентичном префиксе, тарифицируются как кэшированные токены, часто по десятой доле входного тарифа или меньше. В длинной сессии большая часть отправленного — это кэшированные токены, и счёт остаётся в пределах разумного.
 
-An example shows when tokens are cached and when they're not. Each letter stands for a block of conversation content; each request sends the conversation so far:
+Пример показывает, когда токены кэшируются, а когда нет. Каждая буква обозначает блок содержимого беседы; каждый запрос отправляет беседу до текущего момента:
 
-| Request sends | Cached  | Billed at full rate | Why                                               |
-| ------------- | ------- | ------------------- | ------------------------------------------------- |
-| `AB`          | nothing | `AB`                | First request — nothing to match against          |
-| `ABC`         | `AB`    | `C`                 | `AB` is an exact prefix of the previous request   |
-| `ABCD`        | `ABC`   | `D`                 | Prefix still intact                               |
-| `AXCD`        | `A`     | `XCD`               | An edit changed `B` to `X`; the match fails there |
+| Запрос отправляет | Кэшировано | По полному тарифу | Почему                                                   |
+| ----------------- | ---------- | ----------------- | -------------------------------------------------------- |
+| `AB`              | ничего     | `AB`              | Первый запрос — не с чем сопоставить                     |
+| `ABC`             | `AB`       | `C`               | `AB` — точный префикс предыдущего запроса                |
+| `ABCD`            | `ABC`      | `D`               | Префикс всё ещё цел                                      |
+| `AXCD`            | `A`        | `XCD`             | Правка изменила `B` на `X`; совпадение здесь прерывается |
 
-The cache is fragile in a specific way: it matches exact prefixes. If anything changes earlier in the conversation — the [harness](./Harness.md) reorders content, a timestamp updates, a file's representation shifts — the cache misses from that point onward and everything after it is billed at full input rate. Caches also expire after a few minutes of inactivity, so a session resumed after a long pause re-pays its history once. When a session's cost jumps without an obvious cause, compare cache tokens to input tokens in the usage report — a broken cache shows up there first.
+Кэш хрупок определённым образом: он сопоставляет точные префиксы. Если что-то меняется раньше в беседе — [обвязка](./Harness.md) переупорядочивает содержимое, обновляется отметка времени, меняется представление файла — кэш промахивается с этой точки и далее, и всё после него тарифицируется по полному входному тарифу. Кэши также устаревают после нескольких минут бездействия, поэтому сессия, возобновлённая после долгой паузы, один раз заново оплачивает свою историю. Когда стоимость сессии резко вырастает без видимой причины, сравните кэшированные токены с входными токенами в отчёте об использовании — сломанный кэш проявляется там в первую очередь.
 
-_Usage:_
+_Пример:_
 
-"Cost on long sessions is brutal — eight bucks for a refactor."
+«Стоимость на длинных сессиях кусается — восемь баксов за рефакторинг.»
 
-"Check the cache tokens. If the harness is reordering the system prompt or files between turns, the prefix breaks and you re-pay full input rate every request."
+«Проверьте кэшированные токены. Если обвязка переупорядочивает системный промпт или файлы между ходами, префикс ломается, и вы заново платите полный входной тариф каждый запрос.»

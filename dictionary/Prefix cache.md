@@ -1,15 +1,15 @@
 ---
-description: The provider-side store that lets consecutive requests skip re-processing a shared prefix, billing those tokens at a lower rate.
+description: Хранилище на стороне провайдера: позволяет последовательным запросам не обрабатывать общий префикс повторно и тарифицировать его дешевле.
 ---
 
-The [provider](./Model%20provider.md)-side store that lets consecutive [model provider requests](./Model%20provider%20request.md) skip re-processing a shared prefix. When the start of a request matches the start of a recent one — same [system prompt](./System%20prompt.md), same history up to some point — the provider reuses its prior work and bills those [tokens](./Token.md) as [cache tokens](./Cache%20tokens.md) at a much lower rate.
+Хранилище на стороне [провайдера моделей](./Model%20provider.md), которое позволяет последовательным [запросам к провайдеру моделей](./Model%20provider%20request.md) пропускать повторную обработку общего префикса. Когда начало запроса совпадает с началом недавнего запроса — тот же [системный промпт](./System%20prompt.md), та же история до определённого момента — провайдер повторно использует свою предыдущую работу и тарифицирует эти [токены](./Token.md) как [кэшированные токены](./Cache%20tokens.md) по гораздо более низкому тарифу.
 
-The cache pays off because sessions grow append-only. Every request re-sends the whole history as [input tokens](./Input%20tokens.md) (see that entry for why), and in a normal [session](./Session.md) the history only changes at the end — each request is the previous one plus a few new messages. The provider processes the long shared beginning once, stores the result, and picks up from where the prefix ends. Without the cache, a 50-[turn](./Turn.md) session would pay to re-process turn one fifty times.
+Кэш окупается, потому что сессии растут только добавлением (append-only). Каждый запрос заново отправляет всю историю как [входные токены](./Input%20tokens.md) (см. эту запись, чтобы понять, почему), и в обычной [сессии](./Session.md) история меняется только в конце — каждый запрос является предыдущим плюс несколькими новыми сообщениями. Провайдер обрабатывает длинное общее начало один раз, сохраняет результат и продолжает с того места, где заканчивается префикс. Без кэша сессия из 50 [ходов](./Turn.md) оплачивала бы повторную обработку первого хода пятьдесят раз.
 
-Caches also expire. How long an entry stays warm varies per model provider — typically minutes, not hours. Leave a session idle past the window and the next request rebuilds the prefix at full price once before caching resumes. This is mostly a [harness](./Harness.md) builder's concern; as a user, the visible effect is that requests after a long pause cost more than the ones before it.
+Кэши также устаревают. Как долго запись остаётся тёплой, зависит от провайдера моделей — обычно это минуты, а не часы. Если оставить сессию бездействующей дольше этого окна, следующий запрос один раз перестроит префикс по полной цене, прежде чем кэширование возобновится. Это в основном забота разработчика [обвязки](./Harness.md); как пользователь, вы видите эффект в том, что запросы после долгой паузы стоят дороже, чем те, что были до неё.
 
-_Usage:_
+_Пример:_
 
-"Why did the bill spike halfway through the session?"
+«Почему счёт резко подскочил на середине сессии?»
 
-"Harness started injecting the current time into the system prompt every turn. Prefix cache breaks at the first changed token, so every request after that billed at full rate."
+«Обвязка начала вставлять текущее время в системный промпт каждый ход. Префиксный кэш ломается на первом изменённом токене, поэтому каждый запрос после этого тарифицировался по полному тарифу.»

@@ -1,15 +1,15 @@
 ---
-description: Tokens the harness sends on each model provider request. Billed at a lower rate than output tokens.
+description: Токены, которые обвязка отправляет в каждом запросе к провайдеру моделей. Тарифицируются по более низкому тарифу, чем выходные токены.
 ---
 
-[Tokens](./Token.md) the [harness](./Harness.md) sends on each [model provider request](./Model%20provider%20request.md) — the [system prompt](./System%20prompt.md), the conversation history, [tool results](./Tool%20result.md), everything the [model](./Model.md) reads before it writes. Billed at a lower rate than [output tokens](./Output%20tokens.md), because they are less expensive to process than output tokens.
+[Токены](./Token.md), которые [обвязка](./Harness.md) отправляет в каждом [запросе к провайдеру моделей](./Model%20provider%20request.md) — [системный промпт](./System%20prompt.md), историю беседы, [результаты инструментов](./Tool%20result.md), всё, что [модель](./Model.md) читает, прежде чем начать писать. Тарифицируются по более низкому тарифу, чем [выходные токены](./Output%20tokens.md), потому что их обработка обходится дешевле, чем обработка выходных токенов.
 
-When doing [AI](./AI.md) coding, input tokens make up most of your bill. The model is [stateless](./Stateless.md), so each [turn](./Turn.md) re-sends the entire [session](./Session.md) as input: your first message, every response, every tool result since. The input for turn fifty contains the previous forty-nine turns. A single model provider request might produce a few hundred output tokens but re-send a hundred thousand input tokens of accumulated history.
+При кодировании с помощью [ИИ](./AI.md) входные токены составляют большую часть вашего счёта. Модель [без сохранения состояния](./Stateless.md), поэтому каждый [ход](./Turn.md) заново отправляет всю [сессию](./Session.md) как входные данные: ваше первое сообщение, каждый ответ, каждый результат инструмента с тех пор. Входные данные для пятидесятого хода содержат предыдущие сорок девять ходов. Один запрос к провайдеру моделей может сгенерировать несколько сотен выходных токенов, но заново отправить сто тысяч входных токенов накопленной истории.
 
-The [prefix cache](./Prefix%20cache.md) reduces the cost: history that exactly matches a previous request is billed as cheap [cache tokens](./Cache%20tokens.md) rather than full-price input. When input costs still hurt, the fix is to shrink what gets re-sent — [clearing](./Clearing.md) or [compacting](./Compaction.md) between tasks.
+[Префиксный кэш](./Prefix%20cache.md) снижает стоимость: история, которая точно совпадает с предыдущим запросом, тарифицируется как дешёвые [кэшированные токены](./Cache%20tokens.md), а не как входные токены по полному тарифу. Когда стоимость входных токенов всё ещё ощущается, исправление — уменьшить то, что отправляется повторно: [очистка](./Clearing.md) или [компакция](./Compaction.md) между задачами.
 
-_Usage:_
+_Пример:_
 
-"Bill's high but the [agent](./Agent.md)'s barely writing anything."
+«Счёт большой, а [агент](./Agent.md) почти ничего не пишет.»
 
-"It's the input tokens — every turn re-sends the whole session. Without the prefix cache you re-pay for the history each request."
+«Это входные токены — каждый ход заново отправляет всю сессию. Без префиксного кэша вы заново платите за историю в каждом запросе.»

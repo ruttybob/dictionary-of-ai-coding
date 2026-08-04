@@ -1,25 +1,25 @@
 ---
-description: What the harness shows the user before executing a tool call that isn't pre-approved. The mechanism for putting a human in the loop.
+description: Что обвязка показывает перед выполнением вызова инструмента без предварительного одобрения. Механизм включения человека в цикл.
 ---
 
-What the [harness](./Harness.md) shows the user before executing a [tool call](./Tool%20call.md) that isn't pre-approved. The [model](./Model.md) produces a tool call; instead of running it immediately, the harness pauses and asks. Approve and it runs; deny and the harness reports the denial back to the model as a [tool result](./Tool%20result.md). The mechanism by which a harness puts a human in the [loop](./Human-in-the-loop.md) for risky or sensitive actions.
+То, что [обвязка](./Harness.md) показывает пользователю перед выполнением [вызова инструмента](./Tool%20call.md), не одобренного заранее. [Модель](./Model.md) формирует вызов инструмента; вместо того чтобы сразу его выполнить, обвязка приостанавливает выполнение и спрашивает. Одобрите — вызов выполняется; отклоните — обвязка сообщает об отказе обратно в модель как [результат инструмента](./Tool%20result.md). Это механизм, которым обвязка помещает [человека в цикл](./Human-in-the-loop.md) для рискованных или чувствительных действий.
 
-The lifecycle of a permission request:
+Жизненный цикл запроса разрешения:
 
-| Step | Who     | What happens                                                                            |
-| ---- | ------- | --------------------------------------------------------------------------------------- |
-| 1    | Model   | Produces a tool call                                                                    |
-| 2    | Harness | Checks it against the [permission mode](./Permission%20mode.md) and any saved approvals |
-| 3    | Harness | Pre-approved: executes immediately. Otherwise: pauses and shows the request             |
-| 4    | User    | Approves once, approves for the rest of the [session](./Session.md), or denies          |
-| 5    | Harness | Executes the call, or sends the denial back as a tool result                            |
+| Шаг | Кто          | Что происходит                                                                        |
+| --- | ------------ | ------------------------------------------------------------------------------------- |
+| 1   | Модель       | Формирует вызов инструмента                                                           |
+| 2   | Обвязка      | Проверяет его по [режиму разрешений](./Permission%20mode.md) и сохранённым одобрениям |
+| 3   | Обвязка      | Предодобренный: выполняет сразу. Иначе: ставит на паузу и показывает запрос           |
+| 4   | Пользователь | Одобряет однократно, одобряет до конца [сессии](./Session.md) или отклоняет           |
+| 5   | Обвязка      | Выполняет вызов или возвращает отказ как результат инструмента                        |
 
-Denying a request steers the agent. The model reads the denial like any other tool result and reacts to it — it tries a different approach, or asks what you'd prefer. Most harnesses let you attach a message to the denial, which turns the request into a steering point: "not like that, use the migration script instead" lands exactly when the model is deciding what to do next.
+Отклонение запроса — это способ направлять агента. Модель читает отказ как любой другой результат инструмента и реагирует на него — пробует другой подход или спрашивает, чего бы вы хотели. Большинство обвязок позволяет добавить к отказу сообщение, и тогда запрос превращается в точку управления: «не так, используй вместо этого миграционный скрипт» приходит ровно в тот момент, когда модель решает, что делать дальше.
 
-The cost is that every request is a synchronous wait on you. The [agent](./Agent.md) sits blocked until you answer, which is fine while you're watching and a problem when you're not — an agent that triggers requests constantly can't be left to work [AFK](./AFK.md). The permission mode is the dial: which calls run freely, which ask first, ideally with a [sandbox](./Sandbox.md) making it safe to widen the free set.
+Цена в том, что каждый запрос — синхронное ожидание вас. [Агент](./Agent.md) стоит заблокированным, пока вы не ответите, что нормально, когда вы следите за процессом, и становится проблемой, когда нет, — агент, который постоянно запрашивает разрешения, нельзя оставлять работать в режиме [AFK](./AFK.md). Режим разрешений и есть тот регулятор: какие вызовы идут свободно, какие спрашивают сначала, в идеале с [песочницей](./Sandbox.md), расширяющей безопасный набор.
 
-_Usage:_
+_Пример:_
 
-"It's been blocked on a permission request for ten minutes — I was in a meeting."
+«Он уже десять минут ждёт разрешения — я был на созвоне.»
 
-"That's the cost of human-in-the-loop. Pre-approve the safe [tools](./Tool.md) so the request only fires on the actually-risky calls."
+«Это плата за человека в цикле. Предодобрьте безопасные [инструменты](./Tool.md), чтобы запрос срабатывал только на действительно рискованных вызовах.»

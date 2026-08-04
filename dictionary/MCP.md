@@ -1,17 +1,17 @@
 ---
-description: A protocol for plugging external tool servers into a harness — how an agent gets tools beyond what the harness ships with.
+description: Протокол для подключения внешних серверов инструментов к обвязке — как агент получает инструменты помимо тех, что идут в комплекте.
 ---
 
-**Model Context Protocol.** A protocol for plugging external tool servers into a [harness](./Harness.md) — how an [agent](./Agent.md) gets [tools](./Tool.md) beyond what the harness ships with. The agent never "calls MCP"; it calls a tool, and the harness happens to have gotten that tool from an MCP server. Also exposes resources (read-only data) and prompts (reusable templates), but tool provision is the primary use.
+**Model Context Protocol — протокол контекста модели.** Протокол для подключения внешних серверов инструментов к [обвязке](./Harness.md) — то, как [агент](./Agent.md) получает [инструменты](./Tool.md) помимо тех, что идут в комплекте обвязки. Агент никогда «не вызывает MCP»; он вызывает инструмент, а обвязка просто получила этот инструмент с сервера MCP. Также протокол открывает ресурсы (данные только для чтения) и промпты (переиспользуемые шаблоны), но основное применение — предоставление инструментов.
 
-The protocol solves an integration problem. Without a standard, every harness would need its own Linear integration, its own Slack integration, its own database integration — written and maintained separately for each. With MCP, the integration is written once as a server, and any MCP-compatible harness can use it. The harness connects to the server, the server advertises what tools it offers, and those tools become available to the agent alongside the built-in ones.
+Протокол решает задачу интеграции. Без стандарта каждой обвязке понадобилась бы собственная интеграция с Linear, своя с Slack, своя с базой данных — написанная и поддерживаемая отдельно для каждой. С MCP интеграцию пишут один раз как сервер, и любая совместимая с MCP обвязка может её использовать. Обвязка подключается к серверу, сервер сообщает, какие инструменты он предлагает, и эти инструменты становятся доступны агенту наравне со встроенными.
 
-The cost is paid in [context](./Context.md). Every tool a server advertises arrives as a definition — name, description, parameter schema — and the [model](./Model.md) can only call tools it knows about. The naive approach loads every definition into the [context window](./Context%20window.md) up front: install a few generous servers and a [session](./Session.md) starts with thousands of [tokens](./Token.md) of tool schemas before you've typed anything, spending [attention budget](./Attention%20budget.md) on tools the task will never use.
+Плата идёт [контекстом](./Context.md). Каждый инструмент, который заявляет сервер, приходит как определение — имя, описание, схема параметров — а [модель](./Model.md) может вызывать только те инструменты, о которых знает. Наивный подход грузит все определения в [контекстное окно](./Context%20window.md) сразу: поставьте пару щедрых серверов, и [сессия](./Session.md) начинается с тысяч [токенов](./Token.md) схем инструментов ещё до того, как вы что-то ввели, расходуя [бюджет внимания](./Attention%20budget.md) на инструменты, которые задача никогда не использует.
 
-Many harnesses now mitigate this with tool search: instead of the full definitions, the context holds a [context pointer](./Context%20pointer.md) to the available tools — the agent searches for a tool by name or purpose and loads its definition only when it needs it. If your harness doesn't do this, the up-front cost still applies, and it's worth enabling only the servers a project actually needs.
+Многие обвязки теперь смягчают это поиском инструментов: вместо полных определений в контексте лежит [указатель контекста](./Context%20pointer.md) на доступные инструменты — агент ищет инструмент по имени или назначению и подгружает определение только тогда, когда он нужен. Если ваша обвязка так не умеет, цена платится авансом, и стоит включать только те серверы, которые проекту действительно нужны.
 
-_Usage:_
+_Пример:_
 
-"The agent needs to read tickets from Linear."
+«Агенту нужно читать тикеты из Linear.»
 
-"Configure the harness to use the Linear MCP server — it exposes the Linear API as tools the agent can call. Saves you writing custom tool wrappers."
+«Настройте обвязку на сервер Linear MCP — он открывает API Linear как инструменты, которые агент может вызывать. Не придётся писать собственные обёртки инструментов.»

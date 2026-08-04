@@ -1,5 +1,5 @@
 ---
-description: A preset bundling a permission mode with behavioral instructions injected into the system prompt. Can flip mid-session.
+description: Пресет, объединяющий режим разрешений с поведенческими инструкциями в системном промпте. Может переключаться посреди сессии.
 aliases:
   - plan mode
   - accept-edits
@@ -7,20 +7,20 @@ aliases:
   - YOLO mode
 ---
 
-A preset that shapes how the [agent](./Agent.md) operates at runtime — bundles a [permission mode](./Permission%20mode.md) with behavioral instructions injected into the [system prompt](./System%20prompt.md). Examples: a default that prompts on risky calls, a **plan mode** that blocks edits and steers the agent toward research, an **accept-edits** mode that auto-approves edits, a **bypass permissions** mode (colloquially **YOLO mode**) that auto-approves everything. Can flip [mid-session](./Session.md).
+Пресет, который формирует то, как [агент](./Agent.md) работает во время выполнения, — объединяет [режим разрешений](./Permission%20mode.md) с поведенческими инструкциями, внедряемыми в [системный промпт](./System%20prompt.md). Примеры: режим по умолчанию, запрашивающий рискованные вызовы; **plan mode**, блокирующий правки и направляющий агента к исследованию; режим **accept-edits**, автоодобряющий правки; режим **bypass permissions** (разговорно **YOLO mode**), автоодобряющий всё. Может переключаться посреди [сессии](./Session.md).
 
-The bundling is what distinguishes a mode from a bare permission setting. A permission mode is only a gate: it decides which [tool calls](./Tool%20call.md) go through. A gate alone produces an agent that wants to edit but can't — it proposes the write, gets blocked, and tries another way. The injected instructions remove the want: plan mode doesn't just block edits, it tells the agent it's in a planning phase, so it reads, asks, and proposes instead of straining against the gate. Gate and steer point the same direction.
+Именно объединение отличает режим от голой настройки разрешений. Режим разрешений — это только ворота: он решает, какие [вызовы инструментов](./Tool%20call.md) проходят. Одни ворота дают агента, который хочет редактировать, но не может, — он предлагает запись, получает блок и ищет другой путь. Внедрённые инструкции убирают само желание: plan mode не просто блокирует правки, он сообщает агенту, что тот находится в фазе планирования, поэтому агент читает, спрашивает и предлагает варианты, а не упирается в ворота. Ворота и направление указывают в одну сторону.
 
-In practice, you change mode as your trust changes over the course of a task. The same task can pass through several modes: plan mode while the approach is still being shaped, the prompting default for the first delicate edits, accept-edits once the agent has shown it understands the change, bypass for an [AFK](./AFK.md) run inside a [sandbox](./Sandbox.md). Changing mode costs you nothing: the conversation continues exactly where it was, with new permissions and new instructions. If you find yourself approving every prompt without reading it, the mode is set tighter than your actual trust; if you keep rejecting edits, it's set looser.
+На практике режим меняют по мере того, как меняется доверие в ходе задачи. Одна задача может пройти через несколько режимов: plan mode, пока подход ещё формируется; режим с запросами по умолчанию для первых деликатных правок; accept-edits, когда агент показал, что понимает изменение; bypass permissions для [AFK](./AFK.md)-запуска внутри [песочницы](./Sandbox.md). Смена режима ничего не стоит: разговор продолжается ровно с того же места, с новыми разрешениями и новыми инструкциями. Если вы ловите себя на том, что одобряете каждый запрос, не читая его, режим установлен теснее, чем ваше фактическое доверие; если вы постоянно отклоняете правки — он свободнее.
 
-_Vendor terms:_ Claude Code calls these "permission modes," Codex calls them "approval modes" — both predate behavioral bundling.
+_Названия у разработчиков:_ Claude Code называет их «permission modes», Codex — «approval modes»; оба названия появились до поведенческого объединения.
 
-_Usage:_
+_Пример:_
 
-"It keeps editing files when I just want a plan."
+«Оно правит файлы, когда мне нужен только план.»
 
-"Switch to plan mode — it'll block writes and stay in research."
+«Переключись на plan mode — он заблокирует записи и останется в исследовании.»
 
-"What about for the AFK run later?"
+«А для AFK-запуска позже?»
 
-"Bypass mode, but only inside the sandbox."
+«Bypass mode, но только внутри песочницы.»

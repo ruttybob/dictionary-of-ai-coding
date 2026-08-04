@@ -1,24 +1,24 @@
 ---
-description: The permission-gating slice of an agent mode — which tool calls trigger a permission request and which run automatically.
+description: Слой режима агента, отвечающий за разрешения: какие вызовы инструментов запрашивают разрешение, а какие идут автоматически.
 ---
 
-The permission-gating slice of an [agent mode](./Agent%20mode.md) — which [tool calls](./Tool%20call.md) trigger a [permission request](./Permission%20request.md) and which run automatically. The original purpose of mode systems before [harnesses](./Harness.md) started bundling behavioral instructions on top.
+Слой [режима агента](./Agent%20mode.md), отвечающий за разрешения: какие [вызовы инструментов](./Tool%20call.md) запускают [запрос разрешения](./Permission%20request.md), а какие выполняются автоматически. Исходное назначение систем режимов до того, как [обвязки](./Harness.md) начали добавлять поверх них поведенческие инструкции.
 
-Harnesses ship a ladder of these modes:
+Обвязки поставляют лестницу таких режимов:
 
-| Mode               | Reads | Writes & shell         | Typical use                                     |
-| ------------------ | ----- | ---------------------- | ----------------------------------------------- |
-| Read-only / plan   | Auto  | Blocked                | Research, planning, reviewing                   |
-| Default            | Auto  | Ask                    | Day-to-day supervised work                      |
-| Auto-edit          | Auto  | Edits auto, shell asks | Trusted repos, mechanical changes               |
-| "Yolo" / full-auto | Auto  | Auto                   | [Sandboxes](./Sandbox.md), [AFK](./AFK.md) runs |
+| Режим                | Чтение | Запись и оболочка                 | Типичное применение                                |
+| -------------------- | ------ | --------------------------------- | -------------------------------------------------- |
+| Только чтение / план | Авто   | Заблокировано                     | Исследование, планирование, ревью                  |
+| По умолчанию         | Авто   | Запрос                            | Повседневная работа под присмотром                 |
+| Авто-правки          | Авто   | Правки авто, оболочка запрашивает | Доверенные репозитории, механические правки        |
+| «Yolo» / полный авто | Авто   | Авто                              | [Песочницы](./Sandbox.md), [AFK](./AFK.md)-запуски |
 
-Choosing a rung is a trade between safety and interruption, and both failure modes are felt. Too tight, and you become the bottleneck: the [agent](./Agent.md) stops every few seconds for harmless reads, you click approve on autopilot, and the approvals stop meaning anything — rubber-stamping is the worst of both worlds, all the interruption with none of the protection. Too loose, and the agent edits files and runs commands you'd have wanted to see first.
+Выбор ступени — компромисс между безопасностью и прерываниями, и оба неудачных режима ощущаются. Слишком тесно — и вы становитесь узким местом: [агент](./Agent.md) останавливается каждые несколько секунд на безобидных чтениях, вы нажимаете одобрение на автопилоте, и одобрения перестают что-либо значить — штампование одобрений — это худшее из двух миров, все прерывания и никакой защиты. Слишком свободно — и агент редактирует файлы и запускает команды, которые вы бы хотели сначала увидеть.
 
-The loose end is most defensible inside a sandbox, where the blast radius of a bad [tool](./Tool.md) call is contained. Outside one, most people settle on auto-approving reads and keeping a [human in the loop](./Human-in-the-loop.md) for anything irreversible.
+Самый свободный режим наиболее оправдан внутри песочницы, где ограничен масштаб последствий плохого вызова [инструмента](./Tool.md). Вне её большинство останавливается на автоодобрении чтения и удержании [человека в цикле](./Human-in-the-loop.md) для всего необратимого.
 
-_Usage:_
+_Пример:_
 
-"It paused on every grep — totally killed the AFK run."
+«Он делал паузу на каждом grep — совсем убил AFK-запуск.»
 
-"Loosen the permission mode for read-only tools, keep prompting on writes and shell. Most permission requests on a research [session](./Session.md) are noise."
+«Ослабьте режим разрешений для инструментов только для чтения, оставьте запросы на запись и команды оболочки. Большинство запросов разрешения на исследовательской [сессии](./Session.md) — шум.»

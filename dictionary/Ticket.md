@@ -1,17 +1,17 @@
 ---
-description: A handoff artifact scoping one session of work. Stands alone or hangs off a spec. Can block or be blocked by sibling tickets.
+description: Артефакт передачи на одну сессию. Сам по себе или висит на спецификации. Может блокировать или быть заблокирован родственными тикетами.
 ---
 
-A [handoff artifact](./Handoff%20artifact.md) scoping one [session](./Session.md) of work. Stands alone, or hangs off a [spec](./Spec.md) as one of its children. Tickets can block or be blocked by sibling tickets, so the order of work falls out of their dependency graph rather than a linear plan.
+[Артефакт передачи](./Handoff%20artifact.md), очерчивающий одну [сессию](./Session.md) работы. Стоит сам по себе либо висит на [спецификации](./Spec.md) как один из её потомков. Тикеты могут блокировать или быть заблокированы родственными тикетами, поэтому порядок работы вытекает из их графа зависимостей, а не из линейного плана.
 
-The defining constraint is the size: one session. A ticket should be completable before the session drifts out of the [smart zone](./Smart%20zone.md) — and that constraint is testable. If sessions on your tickets routinely degrade before the work is done, the tickets are too big; split them. If each session spends most of its [context](./Context.md) on setup before doing five minutes of work, they're too small; merge them.
+Определяющее ограничение — размер: одна сессия. Тикет должен быть завершаем до того, как сессия выскользнет из [«умной зоны»](./Smart%20zone.md), и это ограничение можно проверить на практике. Если сессии над вашими тикетами регулярно деградируют прежде, чем работа бывает закончена, значит, тикеты слишком велики — дробите их. Если же каждая сессия тратит большую часть [контекста](./Context.md) на подготовку, прежде чем сделать пять минут собственно работы, они слишком малы — объединяйте их.
 
-A good ticket is written for a reader with no other context. The goal, the acceptance criteria, and [context pointers](./Context%20pointer.md) to the relevant files and decisions — enough that the session can start working without re-deriving what the last one knew.
+Хороший тикет пишется для читателя без какого-либо другого контекста. Цель, критерии приёмки и [указатели контекста](./Context%20pointer.md) на релевантные файлы и решения — этого достаточно, чтобы сессия начала работу, не выводя заново то, что знала предыдущая.
 
-The dependency graph is also what unlocks parallelism. Independent tickets — the leaves of the graph — can each run in their own session at the same time. This is an effective way of running multiple agents at once.
+Граф зависимостей — это и то, что разблокирует параллелизм. Независимые тикеты — листья графа — могут каждый выполняться в собственной сессии одновременно. Это эффективный способ запустить сразу несколько агентов параллельно.
 
-_Usage:_
+_Пример:_
 
-"Where do I start on the migration spec?"
+— С чего мне начать в спецификации миграции?
 
-"Look at the ticket graph — the schema change blocks the backfill, the backfill blocks the API switch. Pick a leaf and run a session on it."
+— Посмотри на граф тикетов — изменение схемы блокирует бэкфилл, бэкфилл блокирует переключение API. Выбери лист и запусти по нему сессию.

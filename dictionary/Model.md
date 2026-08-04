@@ -1,17 +1,17 @@
 ---
-description: The parameters. Stateless — does next-token prediction and nothing else. Cannot do anything agentic on its own.
+description: Параметры. Без сохранения состояния — выполняет только предсказание следующего токена. Сама не способна на агентские действия.
 ---
 
-The [parameters](./Parameters.md). [Stateless](./Stateless.md) — does [next-token prediction](./Next-token%20prediction.md) and nothing else. "Claude Opus 4.x" and "GPT-5.x" are models. On its own a model can't do anything agentic; it has to be [harnessed](./Harness.md).
+[Параметры](./Parameters.md). [Без сохранения состояния](./Stateless.md) — выполняет [предсказание следующего токена](./Next-token%20prediction.md) и ничего больше. «Claude Opus 4.x» и «GPT-5.x» — это модели. Сами по себе они ни на что агентское не способны; их нужно обернуть в [обвязку](./Harness.md).
 
-Models can't read files, run commands, browse the web, or remember yesterday — it takes [tokens](./Token.md) in and predicts tokens out, once per [model provider request](./Model%20provider%20request.md). Everything that feels like an [agent](./Agent.md) working — choosing [tools](./Tool.md), reading results, looping until the task is done — is the harness orchestrating many of those predictions in a row.
+Модели не умеют читать файлы, выполнять команды, ходить по вебу или помнить вчерашний день — они принимают [токены](./Token.md) на вход и предсказывают токены на выходе, по одному разу за [запрос к провайдеру моделей](./Model%20provider%20request.md). Всё, что ощущается как работа [агента](./Agent.md) — выбор [инструментов](./Tool.md), чтение результатов, зацикливание до завершения задачи — это обвязка, оркестрирующая множество таких предсказаний подряд.
 
-[Model providers](./Model%20provider.md) ship models in tiers: a large one that's smartest but slow and expensive, and smaller ones that are faster and cheaper but less capable. Picking a tier is a real decision — heavyweight for planning and hard debugging, lightweight for mechanical changes — and harnesses let you switch mid-[session](./Session.md).
+[Провайдеры моделей](./Model%20provider.md) выпускают модели ярусами: крупная, самая умная, но медленная и дорогая, и более мелкие, быстрее и дешевле, но менее способные. Выбор яруса — реальное решение: тяжеловес для планирования и сложной отладки, легковес для механических правок — а обвязки позволяют переключаться посреди [сессии](./Session.md).
 
-Being strict about the word also sharpens diagnosis. "The model is bad at this" is a specific claim — the same model in a different harness, or with a different [context](./Context.md), often behaves completely differently. Before blaming the model, check what it was given: most disappointing output traces back to context or harness, not parameters.
+Строгость в обращении со словом обостряет и диагностику. «Модель плохо с этим справляется» — конкретное утверждение: та же модель в другой обвязке или с другим [контекстом](./Context.md) часто ведёт себя совершенно иначе. Прежде чем винить модель, проверьте, что ей дали: большинство разочаровывающих выводов ведёт к контексту или обвязке, а не к параметрам.
 
-_Usage:_
+_Пример:_
 
-"Should we switch the model from Sonnet to Opus for the planning step?"
+«Стоит ли перевести модель с Sonnet на Opus для этапа планирования?»
 
-"Try it — but the harness is doing most of the lifting on this task. The model swap won't help if the [system prompt](./System%20prompt.md) and tools are wrong."
+«Попробуйте — но на этой задаче большую часть работы делает обвязка. Смена модели не поможет, если [системный промпт](./System%20prompt.md) и инструменты подобраны неверно.»

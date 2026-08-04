@@ -1,23 +1,23 @@
 ---
-description: A teachable capability bundled as a unit — kept out of the context window until a context pointer pulls it in for the task at hand.
+description: Обучаемая возможность, упакованная как единое целое — вне контекстного окна, пока указатель контекста не подтянет её для текущей задачи.
 ---
 
-A teachable capability bundled as a unit — instructions and resources for doing one task well, kept in the [environment](./Environment.md) until a [context pointer](./Context%20pointer.md) pulls it into the [context window](./Context%20window.md) for the task at hand. The unit of [progressive disclosure](./Progressive%20disclosure.md) in a [harness](./Harness.md).
+Обучаемая возможность, упакованная как единое целое — инструкции и ресурсы для выполнения одной задачи хорошо, лежащие в [окружении](./Environment.md), пока [указатель контекста](./Context%20pointer.md) не подтянет их в [контекстное окно](./Context%20window.md) для текущей задачи. Единица [прогрессивного раскрытия](./Progressive%20disclosure.md) в [обвязке](./Harness.md).
 
-Skills are an open standard, defined at [agentskills.io](https://agentskills.io) — originally developed by Anthropic and since adopted by most major harnesses, so a skill written once works across them. The format is a folder containing:
+Навыки (скиллы) — это открытый стандарт, определённый на [agentskills.io](https://agentskills.io), — изначально разработанный Anthropic и с тех пор принятый большинством крупных обвязок, поэтому навык, написанный однажды, работает во всех них. Формат — это каталог, содержащий:
 
-- A `SKILL.md` file — metadata (a name and description, at minimum) plus the instructions themselves
-- Optionally, scripts the [agent](./Agent.md) can run
-- Optionally, templates and reference material the instructions point to
+- Файл `SKILL.md` — метаданные (как минимум имя и описание) плюс сами инструкции
+- При необходимости — скрипты, которые может запускать [агент](./Agent.md)
+- При необходимости — шаблоны и справочные материалы, на которые указывают инструкции
 
-Only the name and description sit in [context](./Context.md) by default. When the agent's task matches, it loads the rest. Until then, the skill takes up almost no room — a sentence or two of [tokens](./Token.md), however large its full instructions are.
+По умолчанию в [контексте](./Context.md) лежат только имя и описание. Когда задача агента совпадает, он загружает остальное. До этого навык почти не занимает места — предложение-два [токенов](./Token.md), какими бы большими ни были его полные инструкции.
 
-This distinguishes skills from [AGENTS.md](./AGENTS.md.md), which is loaded into every [session](./Session.md) regardless of the task. A skill is read when a particular kind of work comes up — releasing, scaffolding a new service, writing a migration — and ignored the rest of the time.
+Это отличает навыки от [AGENTS.md](./AGENTS.md.md), который загружается в каждую [сессию](./Session.md) независимо от задачи. Навык читается, когда возникает определённый вид работы — релиз, скаффолдинг нового сервиса, написание миграции — и игнорируется в остальное время.
 
-_Avoid:_ "[tool](./Tool.md)" — a tool is what the agent _calls_; a skill is instructions it _reads_.
+_Избегать:_ «[инструмент](./Tool.md)» — это то, что агент _вызывает_; навык — это инструкции, которые он _читает_.
 
-_Usage:_
+_Пример:_
 
-"Where should I put the deploy runbook?"
+«Куда мне положить процедуру развёртывания?»
 
-"As a skill — the agent loads it only when the task involves deploys. In AGENTS.md it'd burn tokens on every [turn](./Turn.md) for something we use weekly."
+«Как навык — агент загрузит её только тогда, когда задача связана с развёртываниями. В AGENTS.md она жгла бы токены каждый [ход](./Turn.md) ради того, что мы используем раз в неделю».

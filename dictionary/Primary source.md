@@ -1,17 +1,17 @@
 ---
-description: The thing itself — code, transcripts, raw data. Complete and authoritative, but expensive to load into context.
+description: Сама суть — код, стенограммы, сырые данные. Исчерпывающе и авторитетно, но дорого грузить в контекст.
 ---
 
-A source of truth in its original form — the code, the conversation transcript, the raw log, the actual API response. Not an account of the thing; the thing. Counterpart to [secondary source](./Secondary%20source.md).
+Источник истины в исходной форме — код, стенограмма разговора, сырой лог, фактический ответ API. Не описание вещи, а сама вещь. Парный термин — [вторичный источник](./Secondary%20source.md).
 
-If you want to know what your codebase does, the code is the primary source. The docs, the architecture diagram, and the README are all descriptions of it — accurate when written, on their own schedule ever since. When an [agent](./Agent.md) confidently asserts something wrong about your project, the question to ask is which source it was working from: an agent that read a doc inherits the doc's staleness; an agent that read the code is reading the current truth.
+Если вы хотите знать, что делает ваша кодовая база, первоисточник — это код. Документация, диаграмма архитектуры и README — всё это описания кода: точные в момент написания, а дальше живущие по своему расписанию. Когда [агент](./Agent.md) уверенно утверждает что-то неверное о вашем проекте, нужно спросить, из какого источника он исходил: агент, читавший документ, наследует устарелость документа; агент, читавший код, читает текущую правду.
 
-The cost is what keeps primary sources from being the default. Loading one into the [context window](./Context%20window.md) is expensive — the full file, the full transcript, every [token](./Token.md) billed as [input](./Input%20tokens.md) and competing for [attention budget](./Attention%20budget.md). What you get for the cost is completeness: nothing has been pre-filtered by someone else's judgement about what mattered. A summary written last month can't contain the detail that turned out to matter today; the primary source still does.
+Именно стоимость мешает первоисточникам быть вариантом по умолчанию. Загрузка одного в [контекстное окно](./Context%20window.md) дорога — весь файл, вся стенограмма, каждый [токен](./Token.md), тарифицируемый как [входные токены](./Input%20tokens.md) и конкурирующий за [бюджет внимания](./Attention%20budget.md). Что вы получаете за эту цену — полноту: ничего не было отфильтровано чужим суждением о том, что важно. Резюме, написанное в прошлом месяце, не может содержать деталь, оказавшуюся важной сегодня; первоисточник — по-прежнему может.
 
-Reach for the primary source when precision matters — the exact signature, the actual error, the line that throws. Much of managing [context](./Context.md) is deciding when to pay for the primary source and when a secondary source is good enough.
+Обращайтесь к первоисточнику, когда важна точность — точная сигнатура, фактическая ошибка, строка, выбрасывающая исключение. Управление контекстом во многом состоит в решении, когда платить за первоисточник, а когда достаточно вторичного источника.
 
-_Usage:_
+_Пример:_
 
-"The agent says the retry logic backs off exponentially, but I'm watching it hammer the endpoint."
+«Агент говорит, что логика повторов делает экспоненциальную задержку, но я вижу, как он долбит эндпоинт».
 
-"It read that out of the design doc. Point it at the actual retry module — work from the primary source when the behaviour matters."
+«Он вычитал это в дизайн-документе. Укажите ему на реальный модуль повторов — работайте от первоисточника, когда поведение важно».

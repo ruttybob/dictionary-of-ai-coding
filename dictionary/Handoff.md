@@ -1,20 +1,20 @@
 ---
-description: Transferring agent context from one session to another, with no return path. Carry mechanism varies — artifact, compaction, others.
+description: Передача контекста агента из одной сессии в другую, без обратного пути. Механизм переноса различается — артефакт, компакция, прочее.
 ---
 
-Transferring [agent](./Agent.md) [context](./Context.md) from one [session](./Session.md) to another. The carry mechanism varies — a written [handoff artifact](./Handoff%20artifact.md), an in-memory summary ([compaction](./Compaction.md)), and others. Distinct from [clearing](./Clearing.md) (no transfer at all). Reasons vary: switching roles (planner → implementer), kicking off an [AFK](./AFK.md) run, fanning out to parallel sessions, or freeing up [context window](./Context%20window.md) room.
+Передача — перемещение [контекста](./Context.md) [агента](./Agent.md) из одной [сессии](./Session.md) в другую (передача контекста между сессиями). Механизм переноса различается — написанный [артефакт передачи](./Handoff%20artifact.md), резюме в памяти ([компакция](./Compaction.md)) и другие. Отличается от [очистки](./Clearing.md) (перенос отсутствует). Причины различаются: смена ролей (планировщик → исполнитель), запуск [AFK](./AFK.md)-задачи, разветвление на параллельные сессии или освобождение места в [контекстном окне](./Context%20window.md).
 
-The receiving session starts with zero context — the [model](./Model.md) is [stateless](./Stateless.md), and nothing from the old session is visible to the new one. Whatever the next session needs has to be carried explicitly; everything else is gone. "No return path" is the constraint that shapes the carry: the new session can't ask the old one what it meant, so the carried material has to stand on its own.
+Принимающая сессия стартует с нулевым контекстом — [модель](./Model.md) [без сохранения состояния](./Stateless.md), и ничего из старой сессии не видно новой. Всё, что нужно следующей сессии, должно переноситься явно; остальное исчезает. «Нет обратного пути» — ограничение, формирующее перенос: новая сессия не может спросить старую, что та имела в виду, поэтому переносимый материал должен быть самодостаточным.
 
-| Mechanism        | Form                                        | Properties                                                                               |
-| ---------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| Handoff artifact | File in the [environment](./Environment.md) | You can read and correct it before anything depends on it; reusable across many sessions |
-| Compaction       | Summary in the context window               | Automatic and cheap; harder to inspect; feeds one successor                              |
+| Механизм          | Форма                                | Свойства                                                                                                      |
+| ----------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| Артефакт передачи | Файл в [окружении](./Environment.md) | Можно прочитать и исправить до того, как что-то начнёт от него зависеть; переиспользуется во множестве сессий |
+| Компакция         | Резюме в контекстном окне            | Автоматически и дёшево; труднее проверить; достаётся только одному преемнику                                  |
 
-The visible failure of a bad handoff is relitigation: the new session re-opens decisions the old one had settled, because the carry recorded what was decided but not why. Judge a handoff by what a session with zero context could do with it.
+Видимый провал плохой передачи — пересмотр принятых решений: новая сессия вновь открывает вопросы, которые старая уже решила, потому что перенос зафиксировал, что решено, но не почему. Оценивайте передачу по тому, что сможет сделать с ней сессия с нулевым контекстом.
 
-_Usage:_
+_Пример:_
 
-"Planning session is getting heavy — should I just keep going?"
+«Сессия планирования тяжелеет — просто продолжать?»
 
-"Do a handoff. Write the decisions to a doc, clear, start the implementation in a fresh session reading from it."
+«Сделай передачу. Запиши решения в документ, очисти, начни реализацию в свежей сессии, которая будет читать из него».

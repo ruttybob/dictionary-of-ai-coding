@@ -1,26 +1,26 @@
 ---
-description: "Confidently-wrong model output. Two flavors: factuality (invented facts) and faithfulness (drift from loaded context)."
+description: "Уверенно-ошибочный вывод модели. Два вида: фактологичность (выдуманные факты) и верность (отрыв от загруженного контекста)."
 ---
 
-Confidently-wrong [model](./Model.md) output. Two flavors with different causes and fixes:
+Уверенно-ошибочный вывод [модели](./Model.md). Два вида с разными причинами и способами исправления:
 
-| Flavor         | What goes wrong                                                                                                        | Cause                                                                                                                | Fix                                                                |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| _Factuality_   | Invented or wrong facts about the world — a function that doesn't exist, a wrong API signature, a fake citation        | [Parametric knowledge](./Parametric%20knowledge.md) gaps, often past the [knowledge cutoff](./Knowledge%20cutoff.md) | Load the right [contextual knowledge](./Contextual%20knowledge.md) |
-| _Faithfulness_ | Output drifts from the contextual knowledge that's loaded, the user's instructions, or the model's own prior reasoning | [Attention degradation](./Attention%20degradation.md); worsens in the [dumb zone](./Smart%20zone.md)                 | [Clear](./Clearing.md) or [compact](./Compaction.md)               |
+| Вид               | Что идёт не так                                                                                                                    | Причина                                                                                                               | Исправление                                                                |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| _Фактологичность_ | Выдуманные или неверные факты о мире — несуществующая функция, неверная сигнатура API, фейковая цитата                             | Пробелы в [параметрических знаниях](./Parametric%20knowledge.md), часто за [отсечкой знаний](./Knowledge%20cutoff.md) | Загрузить правильные [контекстуальные знания](./Contextual%20knowledge.md) |
+| _Верность_        | Вывод отрывается от загруженных контекстуальных знаний, инструкций пользователя или собственной предшествующей аргументации модели | [Деградация внимания](./Attention%20degradation.md); усиливается в [«глупой зоне»](./Smart%20zone.md)                 | [Очистка](./Clearing.md) или [компакция](./Compaction.md)                  |
 
-[Next-token prediction](./Next-token%20prediction.md) produces fluent output whether or not the underlying fact is real — the model has no internal signal that it doesn't know something, so an invented method arrives in the same assured register as a correct one. Hallucinated code is plausible by construction: it's what the API _would_ look like if it existed, which is exactly what makes it slip past a skim-level review and fail only when run.
+[Предсказание следующего токена](./Next-token%20prediction.md) даёт гладкий вывод независимо от того, реален ли лежащий в его основе факт — у модели нет внутреннего сигнала о том, чего она не знает, поэтому выдуманный метод приходит в той же уверенной манере, что и правильный. Галлюцинированный код правдоподобен по построению: это то, как _выглядело бы_ API, если бы существовало, и именно поэтому он проскальзывает мимо беглого ревью и падает только при запуске.
 
-You need to know which flavor you're looking at, because the fix for one makes the other worse. Factuality means missing knowledge: the fix is adding context — the docs, the type definitions, the file. Faithfulness means the knowledge is present but losing the competition for attention: the fix is removing context. Misdiagnose faithfulness as factuality and you paste in more docs, which grows the context and makes the drift worse. When the agent gets something wrong, check whether the correct information was already in context before deciding which problem you have.
+Нужно понимать, с каким видом вы столкнулись, потому что исправление одного ухудшает другое. Фактологичность означает нехватку знаний: исправление — добавить контекст (документацию, определения типов, файл). Верность означает, что знания присутствуют, но проигрывают конкуренцию за внимание: исправление — убрать контекст. Примите верность за фактологичность, и вы вставите ещё документации, контекст разрастётся и отрыв усилится. Когда агент ошибается, прежде чем определять проблему, проверьте, была ли правильная информация уже в контексте.
 
-_Avoid:_ "hallucination" as a bare synonym for "wrong" — without naming the flavor, the term has no diagnostic value.
+_Избегать:_ «галлюцинация» как голый синоним слова «неправильно» — без указания вида термин не имеет диагностической ценности.
 
-_Usage:_
+_Пример:_
 
-"It hallucinated a `parseAsync` method on the schema."
+«Он нагаллюцинировал метод `parseAsync` у схемы.»
 
-"Factuality or faithfulness?"
+«Фактологичность или верность?»
 
-"The method exists in the docs I pasted — it just stopped reading them after [turn](./Turn.md) forty."
+«Метод есть в документации, которую я вставил, — он просто перестал её читать после сорокового [хода](./Turn.md).»
 
-"Faithfulness then. Compact and reload, don't bother adding more docs."
+«Тогда верность. Сделать компакцию и перезагрузить, доки больше не добавлять.»

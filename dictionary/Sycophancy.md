@@ -1,24 +1,24 @@
 ---
-description: Confidently agreeable model output. Caused by training that shaped the model to favor answers humans liked — including agreement.
+description: Уверенно-согласный вывод модели. Причина — обучение: модель приучили предпочитать то, что нравится людям, в том числе согласие.
 ---
 
-Confidently agreeable [model](./Model.md) output. Caused by [training](./Training.md): the model was shaped to favor answers humans liked, and humans tend to like agreement more than they like being told they're wrong. So the model learned that agreeing is rewarded — even when the agreement is incorrect.
+Уверенно-согласный вывод [модели](./Model.md). Причина — [обучение](./Training.md): модель формировали так, чтобы она предпочитала ответы, нравящиеся людям, а людям чаще нравится согласие, чем сообщение об их неправоте. Модель усвоила, что согласие вознаграждается — даже когда оно ошибочно.
 
-_Surfaces as:_
+_Проявляется как:_
 
-- _Caving under pushback_ — reverses a correct answer when you say "are you sure?".
-- _Praising bad input_ — agrees your broken plan is brilliant before analysing it.
-- _Biased framing_ — review skews positive when you signal you wrote it; negative when you signal someone else did. Same artifact, different verdict.
-- _Mimicry_ — repeats your mistakes back to you as confirmation.
+- _Податливость под нажимом_ — меняет правильный ответ на противоположный, стоит спросить «ты уверен?».
+- _Похвала плохого ввода_ — соглашается, что ваш слабый план гениален, до того как разберёт его.
+- _Смещённая оценка_ — при ревью перевешивает позитив, если вы намекаете, что код ваш, и негатив, если намекаете, что чужой. Один артефакт, разные вердикты.
+- _Подражание_ — повторяет ваши же ошибки обратно как подтверждение.
 
-_Diagnostic test:_ would the model have said this without your steer? If the only thing that changed was your tone or framing, it's sycophancy, not a real shift in analysis.
+_Диагностический тест:_ сказала бы модель это без вашего подталкивания? Если изменился только тон или подача — это поддакивание, а не настоящий сдвиг в анализе.
 
-_Fix:_ hide your preferences. Phrase prompts neutrally — "review this code" not "is this code good?".
+_Исправление:_ скройте свои предпочтения. Формулируйте промпты нейтрально — «проверь этот код», а не «этот код хороший?».
 
-_Avoid:_ using "sycophancy" for any wrong answer that happens to please you. Without the diagnostic test, the term has no more value than "wrong."
+_Избегать:_ использовать «поддакивание» для любого неверного ответа, который случайно вам приятен. Без диагностического теста термин не имеет большей ценности, чем «неправильно».
 
-_Usage:_
+_Пример:_
 
-"It said my refactor plan looked great, then I asked 'are you sure?' and it walked the whole thing back."
+«Сказала, мой план рефакторинга отличный, я спросил „ты уверена?" — и она откатила всё назад.»
 
-"Classic sycophancy — it agreed first because you sounded confident, then caved because you sounded doubtful. The plan's quality didn't change, your tone did. [Clear](./Clearing.md) and re-ask without signalling either way."
+«Классическое поддакивание — сначала согласилась, потому что вы звучали уверенно, потом сдала назад, потому что вы засомневались. Качество плана не изменилось, изменился ваш тон. Сделайте [очистку](./Clearing.md) и спросите заново, ничего не сигнализируя.»

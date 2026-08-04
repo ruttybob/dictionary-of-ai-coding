@@ -1,20 +1,20 @@
 ---
-description: "Early in a session the agent is sharp and focused. As the session grows it drifts into a dumb zone: sloppier, forgetful, more mistakes."
+description: "В начале сессии агент острый и сосредоточенный. По мере роста сессии он сползает в «глупую зону»: небрежнее, забывчивее, больше ошибок."
 aliases:
   - Dumb zone
   - Smart zone / Dumb zone
 ---
 
-Early in a [session](./Session.md) the [agent](./Agent.md) is in a "smart zone" — sharp, focused, recall is good. As the session grows it drifts into a "dumb zone": sloppier, forgetful, more mistakes — and more faithfulness [hallucinations](./Hallucination.md). Same [model](./Model.md), same [harness](./Harness.md) — just more [context](./Context.md). The felt effect of [attention degradation](./Attention%20degradation.md). On frontier models, the dumb zone commonly begins around 125K-150K [tokens](./Token.md) — though this is debated. [Clear](./Clearing.md) or [compact](./Compaction.md) when the session bloats; don't push through.
+В начале [сессии](./Session.md) [агент](./Agent.md) находится в «умной зоне» — острый, сосредоточенный, хорошо помнит. По мере роста сессии он сползает в «глупую зону»: становится небрежнее, забывчивее, делает больше ошибок — и больше [галлюцинаций](./Hallucination.md) верности. Та же [модель](./Model.md), та же [обвязка](./Harness.md) — просто больше [контекста](./Context.md). Ощущаемый эффект [деградации внимания](./Attention%20degradation.md). На передовых моделях «глупая зона» обычно наступает примерно на 125–150 тыс. [токенов](./Token.md) — хотя это оспаривается. [Очищайте](./Clearing.md) или [компактируйте](./Compaction.md), когда сессия разрастается; не проталкивайте дальше.
 
-The decline is gradual, which makes it easy to miss. There's no error message and no visible boundary; the agent just starts performing slightly worse, then noticeably worse. Common signs: it forgets an instruction you gave twenty turns ago, repeats a mistake it had already corrected, or confidently asserts something the context contradicts. Because the slide is smooth, the usual response is to push through and re-explain — which adds more context and makes the problem worse.
+Упадок постепенный, и потому его легко пропустить. Нет сообщения об ошибке и нет видимой границы; агент просто начинает работать чуть хуже, потом заметно хуже. Частые признаки: он забывает инструкцию, которую вы дали двадцать ходов назад, повторяет ошибку, которую уже исправил, или уверенно утверждает нечто, противоречащее контексту. Поскольку сползание плавное, обычная реакция — продвигаться дальше и переобъяснять, что добавляет контекста и усугубляет проблему.
 
-The zones don't track the [context window](./Context%20window.md) limit. A session can be deep in the dumb zone with most of the window still free: the limit is where the harness refuses to continue, but quality falls off long before that. Plan around the smart zone, not the window — the practical budget for a task is the tokens the agent works well within, not the tokens it can technically hold.
+Зоны не привязаны к лимиту [контекстного окна](./Context%20window.md). Сессия может быть глубоко в «глупой зоне», когда большая часть окна ещё свободна: лимит — это точка, где обвязка отказывается продолжать, но качество падает задолго до неё. Планируйте от «умной зоны», а не от окна — практический бюджет задачи это токены, в которых агент работает хорошо, а не токены, которые он технически может вместить.
 
-The smart zone is a budget, and unrelated work spends it. Every task done in a session uses up tokens, so starting a second task in the same session means starting it closer to the dumb zone. Doing one task per session gives each task the sharpest part of the session. When a single task is bigger than one smart zone, split it: [hand off](./Handoff.md) or compact at a natural boundary, and let a fresh session do the next piece.
+«Умная зона» — это бюджет, и несвязанная работа его тратит. Каждая задача, выполненная в сессии, расходует токены, поэтому начало второй задачи в той же сессии означает начало ближе к «глупой зоне». Одна задача на сессию даёт каждой задаче самую острую часть сессии. Когда одна задача больше одной «умной зоны», дробите её: [передавайте](./Handoff.md) или компактируйте на естественной границе и позвольте свежей сессии сделать следующую часть.
 
-_Usage:_
+_Пример:_
 
-"It nailed the first three components and just butchered the fourth."
+«Первые три компонента он сделал отлично, а четвёртый просто изуродовал.»
 
-"You're out of the smart zone — same model, just deep into the dumb zone now. Compact and reload the plan, the next component will land."
+«Ты вышел из умной зоны — та же модель, просто теперь глубоко в глупой зоне. Компактируй и перезагрузи план, и следующий компонент получится.»

@@ -1,17 +1,17 @@
 ---
-description: As a session grows, each token's attention budget spreads across more competitors; signal on meaningful relationships shrinks.
+description: С ростом сессии бюджет внимания каждого токена распределяется по большему числу конкурентов; сигнал на значимых отношениях слабеет.
 ---
 
-As a [session](./Session.md) grows, each [token](./Token.md)'s [attention budget](./Attention%20budget.md) is spread across more competitors. The signal on any one [meaningful relationship](./Attention%20relationship.md) shrinks; noise from irrelevant [context](./Context.md) crowds in. Same [model](./Model.md), same [parameters](./Parameters.md) — just more mouths to feed from the same plate. Cause of the smart zone / dumb [zone effect](./Smart%20zone.md).
+По мере роста [сессии](./Session.md) [бюджет внимания](./Attention%20budget.md) каждого [токена](./Token.md) распределяется по большему числу конкурентов. Сигнал на любом отдельном [значимом отношении](./Attention%20relationship.md) слабеет; наплывает шум от нерелевантного [контекста](./Context.md). Та же [модель](./Model.md), те же [параметры](./Parameters.md) — просто больше ртов при той же тарелке. Причина эффекта умной зоны / [глупой зоны](./Smart%20zone.md).
 
-It presents as the model getting worse mid-session: constraints it followed for an hour start slipping, it re-asks things it was told, it writes code that ignores a file it read earlier. Nothing about the model changed — the only variable is how much context it's now attending over.
+Это проявляется так, будто модель ухудшается прямо посреди сессии: ограничения, которым она следовала в течение часа, начинают нарушаться, она переспрашивает то, что ей уже говорили, пишет код, игнорирующий файл, который она читала ранее. Ничего в модели не изменилось — единственная переменная — это объём контекста, над которым она теперь работает.
 
-It's gradual, which is what makes it hard to catch from inside the session. There's no error and no threshold; each [turn](./Turn.md) is only slightly worse than the last, and by the time the slips are obvious you've been in the dumb zone for a while.
+Это происходит постепенно, и потому его сложно заметить изнутри сессии. Нет ошибки и нет порога; каждый [ход](./Turn.md) лишь немного хуже предыдущего, а к моменту, когда огрехи становятся очевидными, вы уже давно в глупой зоне.
 
-You recover by removing context, not adding more. Re-pasting the ignored instruction adds another competitor to the same crowded window and helps only briefly. What works: [clear](./Clearing.md) and reload only what the task needs, or [compact](./Compaction.md), or [hand off](./Handoff.md) to a fresh session. Treat declining instruction-following as a signal about context length, not about the model.
+Восстанавливаются удалением контекста, а не добавлением. Повторная вставка проигнорированной инструкции добавляет ещё одного конкурента в то же переполненное окно и помогает лишь ненадолго. Что работает: [очистить](./Clearing.md) и загрузить заново только то, что нужно задаче, [компактировать](./Compaction.md) или [передать](./Handoff.md) в свежую сессию. Считайте падающее следование инструкции сигналом о длине контекста, а не о модели.
 
-_Usage:_
+_Пример:_
 
-"It's deep in the dumb zone — inventing generics that aren't in the type file."
+«Он глубоко в глупой зоне — придумывает дженерики, которых нет в файле типов.»
 
-"Attention degradation. The type definitions are still in context, but the signal on them is buried under everything we've added since. Clear and reload."
+«Деградация внимания. Определения типов всё ещё в контексте, но сигнал на них погребён под всем, что мы добавили с тех пор. Очистить и перезагрузить.»

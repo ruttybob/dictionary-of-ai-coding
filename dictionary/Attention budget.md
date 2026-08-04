@@ -1,17 +1,17 @@
 ---
-description: Each token has a finite amount of influence to distribute across the rest of the context. Per-token, doesn't grow when context does.
+description: У каждого токена есть конечный запас влияния на остальной контекст. Бюджет — на один токен; он не растёт вместе с контекстом.
 ---
 
-Each [token](./Token.md) has a finite amount of influence to distribute across the rest of the [context](./Context.md). Heavy influence on [one relationship](./Attention%20relationship.md) leaves less for others. The budget is per-token and doesn't grow when the context does, which is why long [sessions](./Session.md) dilute.
+У каждого [токена](./Token.md) есть конечный запас влияния, который он распределяет по остальному [контексту](./Context.md). Сильное влияние на [одно отношение](./Attention%20relationship.md) оставляет меньше для остальных. Бюджет задаётся на один токен и не увеличивается, когда растёт контекст, — именно поэтому длинные [сессии](./Session.md) его разбавляют.
 
-Think of it as signal and noise. Your instruction is a signal at fixed volume; every other token in the [context window](./Context%20window.md) is competing sound. The instruction never gets quieter — it's still there, character for character — but as the context grows, the room gets louder around it, and the signal-to-noise ratio drops. An instruction that was the loudest thing at 10k tokens of context is background hum at 150k. This is the mechanism behind [attention degradation](./Attention%20degradation.md): the model doesn't forget; the signal gets lost in the noise.
+Представьте это как сигнал и шум. Ваша инструкция — сигнал фиксированной громкости; каждый другой токен в [контекстном окне](./Context%20window.md) — конкурирующий звук. Инструкция никогда не становится тише — она всё ещё там, символ за символом, — но по мере роста контекста комната вокруг неё становится громче, и отношение сигнал/шум падает. Инструкция, которая была самым громким звуком при 10 тыс. токенов контекста, при 150 тыс. превращается в фоновый гул. Это механизм, стоящий за [деградацией внимания](./Attention%20degradation.md): модель не забывает — сигнал теряется в шуме.
 
-The symptom reads as disobedience — the agent agreed to a constraint early on and then drifts from it, and re-pasting the constraint helps only briefly. The cause isn't the instruction; it's everything else in the window competing with it.
+Симптом читается как непослушание: агент согласился с ограничением в начале, а потом отходит от него, и повторная вставка ограничения помогает лишь ненадолго. Причина не в инструкции; причина во всём остальном в окне, что с ней конкурирует.
 
-What you can control is what goes into the context. Content that doesn't serve the task isn't neutral — it's noise over everything that does. Keep the window small, [clear](./Clearing.md) when the accumulated context stops paying for itself, and restate the constraints that matter instead of trusting their early mention to hold.
+Контролировать вы можете то, что попадает в контекст. Содержимое, не работающее на задачу, не нейтрально — это шум поверх всего того, что работает. Держите окно небольшим, [очищайте](./Clearing.md) его, когда накопленный контекст перестаёт окупать себя, и повторяйте важные ограничения вместо того, чтобы полагаться на то, что их раннее упоминание удержится.
 
-_Usage:_
+_Пример:_
 
-"Why does it keep ignoring the schema I pasted at the top?"
+«Почему он постоянно игнорирует схему, которую я вставил в самом начале?»
 
-"We're well into the [dumb zone](./Smart%20zone.md) — every token's attention budget is fixed, but the context kept growing. The signal on the schema is now competing with thousands of newer tokens."
+«Мы уже глубоко в [глупой зоне](./Smart%20zone.md) — бюджет внимания у каждого токена фиксирован, а контекст всё рос. Теперь сигнал на схеме конкурирует с тысячами более новых токенов.»

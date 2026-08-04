@@ -1,15 +1,15 @@
 ---
-description: Carries no information forward. The model is stateless across requests; an agent is stateless across sessions by default.
+description: Не переносит информацию вперёд. Модель не сохраняет состояние между запросами; агент по умолчанию не сохраняет состояние между сессиями.
 ---
 
-Carries no information forward. The [model](./Model.md) is stateless across [model provider requests](./Model%20provider%20request.md) — each request resends the full [context window](./Context%20window.md), because the model has no way to see anything else. An [agent](./Agent.md) is stateless across [sessions](./Session.md) by default: a new session starts empty, with no trace of prior ones. Counterpart to [stateful](./Stateful.md).
+Не переносит информацию вперёд. [Модель](./Model.md) не сохраняет состояние между [запросами к провайдеру моделей](./Model%20provider%20request.md) — каждый запрос повторно отправляет полное [контекстное окно](./Context%20window.md), потому что у модели нет иного способа что-либо увидеть. [Агент](./Agent.md) по умолчанию не сохраняет состояние между [сессиями](./Session.md): новая сессия начинается пустой, без следов предыдущих. Антоним — [с сохранением состояния](./Stateful.md).
 
-The model itself is permanently stateless: its [parameters](./Parameters.md) are frozen after [training](./Training.md), and nothing you do at [inference](./Inference.md) changes them. The model doesn't learn from your corrections, doesn't remember being told the same thing yesterday, and isn't getting to know you — however much the conversation feels otherwise. The feeling of continuity within a session is manufactured by the [harness](./Harness.md), which keeps the transcript and re-sends it with every request. The model isn't remembering the conversation; it's re-reading it.
+Сама модель неизменно не имеет состояния: её [параметры](./Parameters.md) заморожены после [обучения](./Training.md), и ничто из того, что вы делаете на [инференсе](./Inference.md), их не меняет. Модель не учится на ваших поправках, не помнит, что ей говорили то же самое вчера, и не узнаёт вас лучше, каким бы ни было впечатление от разговора. Чувство непрерывности внутри сессии создаётся [обвязкой](./Harness.md), которая хранит транскрипт и повторно отправляет его с каждым запросом. Модель не запоминает разговор — она его перечитывает.
 
-The practical consequence: if you want something remembered across sessions, you have to write it down somewhere the agent will read it back. That's what [AGENTS.md](./AGENTS.md.md) files, [memory systems](./Memory%20system.md), and [handoff artifacts](./Handoff%20artifact.md) are — files that get loaded into the [context](./Context.md) of future sessions, standing in for the memory the model doesn't have. When the agent keeps making a mistake you've corrected before, the question isn't why it didn't learn — it can't — but where that correction should be written down so every future session reads it.
+Практическое следствие: если вы хотите, чтобы что-то сохранялось между сессиями, это нужно записать туда, откуда агент это перечитает. Именно для этого нужны [AGENTS.md](./AGENTS.md.md)-файлы, [системы памяти](./Memory%20system.md) и [артефакты передачи](./Handoff%20artifact.md) — файлы, которые загружаются в [контекст](./Context.md) будущих сессий, заменяя собой память, которой у модели нет. Когда агент раз за разом повторяет ошибку, которую вы уже исправляли, вопрос не в том, почему он не научился — он не может — а в том, куда записать это исправление, чтобы каждая будущая сессия его прочитала.
 
-_Usage:_
+_Пример:_
 
-"Why does it forget the convention every time I [clear](./Clearing.md)?"
+«Почему она забывает соглашение после каждой [очистки](./Clearing.md)?»
 
-"The model's stateless — the new session starts empty. If you want it carried, write it to AGENTS.md or a memory file the harness loads at session start."
+«Модель не сохраняет состояние — новая сессия начинается пустой. Если хотите, чтобы это переносилось, запишите в AGENTS.md или в файл памяти, который обвязка загружает при старте сессии.»

@@ -1,24 +1,24 @@
 ---
-description: Carries information forward. Sessions are stateful across turns; agents can be made stateful across sessions via a memory system.
+description: Переносит информацию вперёд. Сессия сохраняет состояние между ходами; агент может сохранять состояние между сессиями через систему памяти.
 ---
 
-Carries information forward. A [session](./Session.md) is stateful across [turns](./Turn.md) — [context](./Context.md) accumulates as the session runs, which is why long sessions drift into the [dumb zone](./Smart%20zone.md). An [agent](./Agent.md) can be made stateful across **sessions** by adding a [memory system](./Memory%20system.md) that persists information into the [environment](./Environment.md) and reloads it at the start of future sessions. The [model](./Model.md) is never stateful; any apparent continuity is the [harness](./Harness.md) re-feeding context. Counterpart to [stateless](./Stateless.md).
+Переносит информацию вперёд. [Сессия](./Session.md) сохраняет состояние между [ходами](./Turn.md) — [контекст](./Context.md) накапливается по мере работы сессии, поэтому длинные сессии сползают в [«глупую зону»](./Smart%20zone.md). [Агента](./Agent.md) можно сделать сохраняющим состояние между **сессиями**, добавив [систему памяти](./Memory%20system.md), которая сохраняет информацию в [окружение](./Environment.md) и перезагружает её в начале будущих сессий. [Модель](./Model.md) никогда не сохраняет состояние; любая видимая непрерывность — это [обвязка](./Harness.md), повторно подающая контекст. Антоним — [без сохранения состояния](./Stateless.md).
 
-Where state lives at each layer:
+Где хранится состояние на каждом слое:
 
-| Layer       | Stateful?       | How                                                                                                                    |
-| ----------- | --------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Model       | Never           | [Parameters](./Parameters.md) are frozen; it sees only what's in each request                                          |
-| Session     | Across turns    | The harness appends every message and [tool result](./Tool%20result.md) to the context                                 |
-| Harness     | Across sessions | Memory files, [AGENTS.md](./AGENTS.md.md), [handoff artifacts](./Handoff%20artifact.md) — written down, reloaded later |
-| Environment | Always          | Files persist whether or not any session is running                                                                    |
+| Слой      | С сохранением состояния? | Как                                                                                                                            |
+| --------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| Модель    | Никогда                  | [Параметры](./Parameters.md) заморожены; модель видит только то, что есть в каждом запросе                                     |
+| Сессия    | Между ходами             | Обвязка дописывает каждое сообщение и [результат инструмента](./Tool%20result.md) в контекст                                   |
+| Обвязка   | Между сессиями           | Файлы памяти, [AGENTS.md](./AGENTS.md.md), [артефакты передачи](./Handoff%20artifact.md) — записываются, перезагружаются позже |
+| Окружение | Всегда                   | Файлы существуют независимо от того, запущена ли какая-либо сессия                                                             |
 
-Each layer's statefulness is built by re-reading something stored a layer below: the session feels continuous because the harness re-sends the message history to the stateless model, and the agent remembers across sessions because the harness re-loads files from the environment. No state is ever stored in the model itself.
+Сохранение состояния на каждом слое строится на перечитывании того, что хранится слоем ниже: сессия ощущается непрерывной, потому что обвязка повторно отправляет историю сообщений модели без состояния, а агент помнит между сессиями, потому что обвязка перезагружает файлы из окружения. В самой модели состояние никогда не хранится.
 
-State isn't always wanted. Everything carried forward influences what comes next, so a wrong assumption made early in a session is carried forward too. [Clearing](./Clearing.md) is the deliberate act of throwing session state away and starting from what's written down.
+Состояние нужно не всегда. Всё, что переносится вперёд, влияет на то, что будет дальше, поэтому и неверное допущение, сделанное в начале сессии, тоже переносится. [Очистка](./Clearing.md) — это намеренный сброс состояния сессии и возврат к тому, что записано.
 
-_Usage:_
+_Пример:_
 
-"It remembered my preferences from yesterday — does that mean the model learned them?"
+«Она запомнила мои предпочтения со вчерашнего дня — значит ли это, что модель их выучила?»
 
-"No, the agent's stateful because the harness wrote them to a memory file and reloaded them at session start. The model itself saw nothing of yesterday."
+«Нет, агент сохраняет состояние, потому что обвязка записала их в файл памяти и перезагрузила при старте сессии. Сама модель ничего не видела со вчерашнего дня.»

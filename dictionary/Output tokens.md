@@ -1,15 +1,15 @@
 ---
-description: Tokens the model generates back. Billed at a higher rate than input tokens, since they cost more compute to produce.
+description: Токены, которые модель генерирует в ответ. Тарифицируются дороже входных токенов — их производство требует больше вычислений.
 ---
 
-[Tokens](./Token.md) the [model](./Model.md) generates back. Billed at a higher rate than [input tokens](./Input%20tokens.md) — commonly around five times the rate — since they cost more compute to produce.
+[Токены](./Token.md), которые [модель](./Model.md) генерирует в ответ. Тарифицируются по более высокому тарифу, чем [входные токены](./Input%20tokens.md) — обычно примерно в пять раз дороже — поскольку их производство требует больше вычислений.
 
-Everything the model writes counts: the prose you read, the code it emits, [tool calls](./Tool%20call.md), and any extended thinking the model does before answering. That last one surprises people — reasoning tokens are billed as output even when the [harness](./Harness.md) often doesn't show them to you, and turning up [effort](./Effort.md) spends more of them.
+Считается всё, что пишет модель: проза, которую вы читаете, код, который она выдаёт, [вызовы инструментов](./Tool%20call.md) и любое расширенное размышление, которое модель выполняет перед ответом. Последнее удивляет людей — токены рассуждений тарифицируются как выходные, даже когда [обвязка](./Harness.md) часто не показывает их вам, а повышение [усилия](./Effort.md) расходует больше таких токенов.
 
-Output tokens also set the pace of a [session](./Session.md). The model reads input quickly but generates output one token at a time, so when a [turn](./Turn.md) feels slow, it's almost always the output being written, not the input being read. A long wait usually means a long answer is coming.
+Выходные токены также задают темп [сессии](./Session.md). Модель читает входные данные быстро, но генерирует выходные по одному токену за раз, поэтому когда [ход](./Turn.md) ощущается медленным, почти всегда это означает, что пишется вывод, а не считывается ввод. Долгое ожидание обычно означает, что готовится длинный ответ.
 
-_Usage:_
+_Пример:_
 
-"The refactor session is burning through credit even though the inputs are small."
+«Сессия рефакторинга сжигает кредит, хотя входные данные небольшие.»
 
-"Agent's rewriting whole files instead of patching. Output tokens cost roughly five times the input rate — get it emitting edits and the bill drops."
+«Агент переписывает файлы целиком вместо правок. Выходные токены стоят примерно в пять раз дороже входного тарифа — добейтесь, чтобы он выдавал правки, и счёт снизится.»

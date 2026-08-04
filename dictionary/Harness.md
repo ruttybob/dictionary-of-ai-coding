@@ -1,17 +1,17 @@
 ---
-description: "Everything around the model that turns it into an agent: tools, system prompt, context-window management, permissions, hooks."
+description: "Всё, что окружает модель и превращает её в агента: инструменты, системный промпт, управление контекстным окном, разрешения, хуки."
 ---
 
-Everything around the [model](./Model.md) that turns it into an [agent](./Agent.md): [tools](./Tool.md), [system prompt](./System%20prompt.md), [context-window management](./Context%20window.md), permissions, hooks. **Claude.ai** and **Claude Code** run on the same model but behave differently because their harnesses differ.
+Всё, что окружает [модель](./Model.md) и превращает её в [агента](./Agent.md): [инструменты](./Tool.md), [системный промпт](./System%20prompt.md), [управление контекстным окном](./Context%20window.md), разрешения, хуки. **Claude.ai** и **Claude Code** работают на одной и той же модели, но ведут себя по-разному, потому что у них разные обвязки.
 
-The model itself only does one thing: take text in, produce text out. It can't read a file, run a command, or remember the last [turn](./Turn.md). The harness supplies all of that. It assembles the [context](./Context.md) for each [model provider request](./Model%20provider%20request.md), executes the [tool calls](./Tool%20call.md) the model asks for, feeds the [tool results](./Tool%20result.md) back in, stores the [session](./Session.md) history, asks you for permission before risky actions, and decides when to [compact](./Compaction.md). The agent loop — model proposes, harness executes, repeat — is run by the harness.
+Сама модель делает только одно: принимает текст на вход и выдаёт текст на выход. Она не может прочитать файл, выполнить команду или запомнить предыдущий [ход](./Turn.md). Обвязка обеспечивает всё это. Она собирает [контекст](./Context.md) для каждого [запроса к провайдеру моделей](./Model%20provider%20request.md), выполняет [вызовы инструментов](./Tool%20call.md), которые запрашивает модель, передаёт обратно [результаты инструментов](./Tool%20result.md), хранит историю [сессии](./Session.md), запрашивает у вас разрешение перед рискованными действиями и решает, когда делать [компакцию](./Compaction.md). Цикл агента — модель предлагает, обвязка выполняет, повтор — выполняется обвязкой.
 
-This matters for diagnosis. When behaviour differs between two products, or between yesterday and today, the model is often not the variable — the harness is. A different system prompt, a different set of tools, a changed permission default, or a new context-management strategy all change behaviour without any change to the model. It also means the harness is where most of your configuration lives: [AGENTS.md](./AGENTS.md.md) files, permission settings, and hooks are all instructions to the harness, not the model.
+Это важно для диагностики. Когда поведение различается между двумя продуктами или между вчерашним и сегодняшним запуском, модель часто не является переменным фактором — им является обвязка. Другой системный промпт, другой набор инструментов, изменённое разрешение по умолчанию или новая стратегия управления контекстом — всё это меняет поведение без каких-либо изменений в модели. Это также означает, что именно в обвязке живёт большая часть вашей конфигурации: файлы [AGENTS.md](./AGENTS.md.md), настройки разрешений и хуки — всё это инструкции для обвязки, а не для модели.
 
-Examples: Claude Code, Cursor, Codex CLI — and Claude.ai, which is a chat harness rather than a coding one.
+Примеры: Claude Code, Cursor, Codex CLI — а также Claude.ai, который является чат-обвязкой, а не обвязкой для программирования.
 
-_Usage:_
+_Пример:_
 
-"Same model, why is Claude Code editing files and Claude.ai just answering questions?"
+«Одна и та же модель — почему Claude Code редактирует файлы, а Claude.ai просто отвечает на вопросы?»
 
-"Different harnesses — Claude Code has [filesystem](./Filesystem.md) tools, a different system prompt, and a permission layer. The model isn't the variable here."
+«Разные обвязки — у Claude Code есть инструменты [файловой системы](./Filesystem.md), другой системный промпт и слой разрешений. В данном случае переменным фактором не является модель.»

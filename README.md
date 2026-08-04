@@ -5,11 +5,11 @@
 -->
 
 <p>
-  <a href="https://aicodingdictionary.com">
+  <a href="https://www.aihero.dev/ai-coding-dictionary">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://res.cloudinary.com/total-typescript/image/upload/v1782821584/dictionary-dark.png">
-      <source media="(prefers-color-scheme: light)" srcset="https://res.cloudinary.com/total-typescript/image/upload/v1782821584/dictionary-light.png">
-      <img alt="AI Coding Dictionary" src="https://res.cloudinary.com/total-typescript/image/upload/v1782821584/dictionary-light.png" width="369">
+      <source media="(prefers-color-scheme: dark)" srcset="https://res.cloudinary.com/total-typescript/image/upload/v1777878285/dictionary-dark_2x.png">
+      <source media="(prefers-color-scheme: light)" srcset="https://res.cloudinary.com/total-typescript/image/upload/v1777878285/dictionary-light_2x.png">
+      <img alt="AI Coding Dictionary" src="https://res.cloudinary.com/total-typescript/image/upload/v1777878285/dictionary-light_2x.png" width="369">
     </picture>
   </a>
 </p>
@@ -149,1261 +149,1261 @@ That's what this dictionary is for. **The vocabulary of AI coding, translated in
 
 ### AI
 
-A moving label, not a technology. "AI" doesn't name a fixed thing the way [model](#model) or [token](#token) does — it points at whatever computers can newly, impressively do. Right now it points at large language models. It has pointed at very different things before:
+Подвижный ярлык, а не технология. «ИИ» не называет фиксированного объекта так, как [модель](#model) или [токен](#token), — он указывает на то новое и впечатляющее, что могут компьютеры. Сейчас он указывает на большие языковые модели. Раньше он указывал на совершенно иные вещи:
 
-| Era       | What "AI" meant                                                                                       |
-| --------- | ----------------------------------------------------------------------------------------------------- |
-| 1950s     | Symbolic reasoning — theorem provers, checkers programs.                                              |
-| 1960s–70s | Rule-based symbolic programs — ELIZA, SHRDLU.                                                         |
-| 1980s     | Expert systems — thousands of hand-written if-then rules encoding human expertise.                    |
-| 1990s     | Game-tree search — Deep Blue beating Kasparov (1997). Researchers avoided the word "AI" entirely      |
-| 2000s     | Statistical machine learning — spam filters, recommenders. Still sold as "machine learning", not "AI" |
-| 2010s     | Deep learning — image recognition (AlexNet, 2012), AlphaGo (2016).                                    |
-| 2020s     | Large language models — ChatGPT (2022) made "AI" mean chatbots                                        |
+| Эпоха     | Что означал «ИИ»                                                                                                                  |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 1950-е    | Символические рассуждения — программы для доказательства теорем, шашки.                                                           |
+| 1960–70-е | Символические программы на правилах — ELIZA, SHRDLU.                                                                              |
+| 1980-е    | Экспертные системы — тысячи вручную написанных правил «если-то», кодирующих человеческий опыт.                                    |
+| 1990-е    | Поиск по дереву игры — Deep Blue обыгрывает Каспарова (1997). Исследователи вообще избегали слова «ИИ»                            |
+| 2000-е    | Статистическое машинное обучение — спам-фильтры, рекомендательные системы. Всё ещё продавалось как «машинное обучение», а не «ИИ» |
+| 2010-е    | Глубокое обучение — распознавание изображений (AlexNet, 2012), AlphaGo (2016).                                                    |
+| 2020-е    | Большие языковые модели — ChatGPT (2022) сделал так, что «ИИ» стал означать чат-боты                                              |
 
-The pointer moves by a known mechanism, sometimes called the AI effect: once a technique works reliably, it gets renamed — it's "just" search, "just" statistics — and "AI" slides forward to the next unsolved thing. The observation is old. Bertram Raphael put it this way in 1971: "AI is a collective name for problems which we do not yet know how to solve properly by computer." Larry Tesler's version, from around 1979: "Intelligence is whatever machines haven't done yet."
+Этот указатель сдвигается по известному механизму, который иногда называют «эффектом ИИ»: как только приём начинает работать надёжно, его переименовывают — это «всего лишь» поиск, «всего лишь» статистика — и «ИИ» съезжает на следующую нерешённую задачу. Наблюдение это старое. Бертрам Рафаэл сформулировал его так в 1971 году: «ИИ — собирательное название для задач, которые мы пока не умеем должным образом решать на компьютере». Версия Ларри Теслера, примерно 1979 год: «Интеллект — это то, чего машины ещё не делают».
 
-This is why conversations about AI so often talk past each other. A claim like "AI can't reason" or "AI is overhyped" carries a hidden timestamp — it may be about expert systems, about 2010s image classifiers, or about last month's LLM, and each reference supports a different conclusion. When a discussion about AI stalls, the fix is usually to swap the word for whichever precise term is actually meant: the model, the [harness](#harness), the [agent](#agent), the [context](#context) it was given.
+Поэтому разговоры об ИИ так часто идут параллельно. Утверждение вроде «ИИ не умеет рассуждать» или «ИИ переоценён» несёт скрытую временную метку — оно может быть об экспертных системах, о классификаторах изображений 2010-х или о LLM прошлого месяца, и каждая отсылка ведёт к разному выводу. Когда дискуссия об ИИ заходит в тупик, решение обычно состоит в том, чтобы заменить слово на точный термин, который на самом деле имеется в виду: модель, [обвязку](#harness), [агента](#agent), [контекст](#context), который ей дали.
 
-_Avoid:_ "AI" in any technical claim — name the part you mean instead. "AI coding" as a label for the practice is fine; "the AI is hallucinating" is not.
+_Избегать:_ «ИИ» в любом техническом утверждении — назовите конкретную часть, которую имеете в виду. «ИИ-кодинг» как ярлык для практики допустим; «ИИ галлюцинирует» — нет.
 
-_Usage:_
+_Пример:_
 
-"The CTO wants to know whether AI could handle the triage queue."
+«CTO хочет узнать, может ли ИИ взять на себя очередь триажа.»
 
-"Translate that before scoping it — she means an LLM in a harness with access to the ticket system. 'AI' on its own isn't a spec."
+«Сначала переведите это, прежде чем оценивать масштаб — она имеет в виду LLM в обвязке с доступом к системе тикетов. Сам по себе „ИИ“ — это не спецификация.»
 
 ### Model
 
-The [parameters](#parameters). [Stateless](#stateless) — does [next-token prediction](#next-token-prediction) and nothing else. "Claude Opus 4.x" and "GPT-5.x" are models. On its own a model can't do anything agentic; it has to be [harnessed](#harness).
+[Параметры](#parameters). [Без сохранения состояния](#stateless) — выполняет [предсказание следующего токена](#next-token-prediction) и ничего больше. «Claude Opus 4.x» и «GPT-5.x» — это модели. Сами по себе они ни на что агентское не способны; их нужно обернуть в [обвязку](#harness).
 
-Models can't read files, run commands, browse the web, or remember yesterday — it takes [tokens](#token) in and predicts tokens out, once per [model provider request](#model-provider-request). Everything that feels like an [agent](#agent) working — choosing [tools](#tool), reading results, looping until the task is done — is the harness orchestrating many of those predictions in a row.
+Модели не умеют читать файлы, выполнять команды, ходить по вебу или помнить вчерашний день — они принимают [токены](#token) на вход и предсказывают токены на выходе, по одному разу за [запрос к провайдеру моделей](#model-provider-request). Всё, что ощущается как работа [агента](#agent) — выбор [инструментов](#tool), чтение результатов, зацикливание до завершения задачи — это обвязка, оркестрирующая множество таких предсказаний подряд.
 
-[Model providers](#model-provider) ship models in tiers: a large one that's smartest but slow and expensive, and smaller ones that are faster and cheaper but less capable. Picking a tier is a real decision — heavyweight for planning and hard debugging, lightweight for mechanical changes — and harnesses let you switch mid-[session](#session).
+[Провайдеры моделей](#model-provider) выпускают модели ярусами: крупная, самая умная, но медленная и дорогая, и более мелкие, быстрее и дешевле, но менее способные. Выбор яруса — реальное решение: тяжеловес для планирования и сложной отладки, легковес для механических правок — а обвязки позволяют переключаться посреди [сессии](#session).
 
-Being strict about the word also sharpens diagnosis. "The model is bad at this" is a specific claim — the same model in a different harness, or with a different [context](#context), often behaves completely differently. Before blaming the model, check what it was given: most disappointing output traces back to context or harness, not parameters.
+Строгость в обращении со словом обостряет и диагностику. «Модель плохо с этим справляется» — конкретное утверждение: та же модель в другой обвязке или с другим [контекстом](#context) часто ведёт себя совершенно иначе. Прежде чем винить модель, проверьте, что ей дали: большинство разочаровывающих выводов ведёт к контексту или обвязке, а не к параметрам.
 
-_Usage:_
+_Пример:_
 
-"Should we switch the model from Sonnet to Opus for the planning step?"
+«Стоит ли перевести модель с Sonnet на Opus для этапа планирования?»
 
-"Try it — but the harness is doing most of the lifting on this task. The model swap won't help if the [system prompt](#system-prompt) and tools are wrong."
+«Попробуйте — но на этой задаче большую часть работы делает обвязка. Смена модели не поможет, если [системный промпт](#system-prompt) и инструменты подобраны неверно.»
 
 ### Parameters
 
-The numbers inside a [model](#model) — often billions of them — tuned during [training](#training). Everything the model "knows" lives in them. Training sets them; [inference](#inference) uses them unchanged. Also called _weights_.
+Числа внутри [модели](#model) — часто миллиарды — настроенные в ходе [обучения](#training). Всё, что модель «знает», живёт в них. Обучение их задаёт; [инференс](#inference) использует их неизменными. Также называются _весами_.
 
-Mechanically, the parameters are what turn input into output. [Next-token prediction](#next-token-prediction) is a giant calculation: the [tokens](#token) in the [context window](#context-window) go in, get multiplied through the parameters, and a prediction for the next token comes out. There is no database of facts inside the model, no code lookup table — just these numbers, arranged so that the calculation tends to produce useful output. Facts the model can recite from training, like a standard library API, are [parametric knowledge](#parametric-knowledge): stored in the parameters, not retrieved from anywhere.
+Механически параметры — это то, что превращает вход в выход. [Предсказание следующего токена](#next-token-prediction) — это гигантское вычисление: [токены](#token) в [контекстном окне](#context-window) поступают на вход, перемножаются через параметры, и на выходе получается предсказание следующего токена. Внутри модели нет базы фактов и таблицы поиска кода — только эти числа, устроенные так, что вычисление склонно давать полезный результат. Факты, которые модель может воспроизвести из обучения, — например API стандартной библиотеки, — это [параметрические знания](#parametric-knowledge): они хранятся в параметрах, а не извлекаются откуда-то ещё.
 
-The detail worth internalising is that parameters are frozen after training. Nothing you do in a [session](#session) changes them — no correction you make, no codebase you show it, no mistake it learns from. Every session runs on the same numbers. This is why the model is [stateless](#stateless), why its built-in knowledge stops at the [knowledge cutoff](#knowledge-cutoff), and why anything project-specific has to arrive via [context](#context) instead. The only way parameters change is more training — which produces, in effect, a different model.
+Деталь, которую стоит усвоить: параметры замораживаются после обучения. Ничто из того, что вы делаете в [сессии](#session), их не меняет — ни исправление, ни показанная кодовая база, ни ошибка, из которой можно было бы учиться. Каждая сессия работает на одних и тех же числах. Именно поэтому модель [без сохранения состояния](#stateless), почему её встроенные знания обрываются на [отсечке знаний](#knowledge-cutoff), и почему всё специфичное для проекта должно попадать в неё через [контекст](#context). Единственный способ изменить параметры — дообучение, которое, по сути, создаёт другую модель.
 
-_Usage:_
+_Пример:_
 
-"Can we fine-tune it on our codebase?"
+«Можно ли дообучить её на нашей кодовой базе?»
 
-"That'd update the parameters — different model afterwards. For one project it's almost always cheaper to load the codebase as context than to retrain."
+«Это обновит параметры — получится другая модель. Для одного проекта почти всегда дешевле загрузить кодовую базу как контекст, чем переобучать.»
 
 ### Training
 
-The process that sets a [model](#model)'s [parameters](#parameters), by exposing it to vast amounts of text and adjusting parameters to improve [next-token prediction](#next-token-prediction). A one-time, expensive process done by the [model provider](#model-provider). Encompasses both pre-training (the bulk run) and post-training (later refinements like instruction-following and safety); the distinction doesn't matter at this glossary's level.
+Процесс, который задаёт [параметры](#parameters) [модели](#model), показывая ей огромные объёмы текста и подстраивая параметры для улучшения [предсказания следующего токена](#next-token-prediction). Разовый, дорогой процесс, выполняемый [провайдером моделей](#model-provider). Охватывает и предобучение (основной прогон), и постобучение (более поздние шлифовки — следование инструкциям, безопасность); на уровне этого глоссария различие несущественно.
 
-The mechanism is repetition at scale: show the model a stretch of text, have it predict the next [token](#token), nudge the parameters toward whatever the actual next token was, and repeat across trillions of tokens. Nothing is stored as facts or rules — everything the model "knows" is a side effect of getting better at prediction, compressed into the parameters as [parametric knowledge](#parametric-knowledge).
+Механизм — это повторение в масштабе: покажите модели отрывок текста, пусть она предскажет следующий [токен](#token), чуть сдвиньте параметры в сторону того, каким следующий токен был на самом деле, и повторяйте на триллионах токенов. Ничего не сохраняется как факты или правила — всё, что модель «знает», — побочный эффект того, что она становилась лучше в предсказании, сжатый в параметры как [параметрические знания](#parametric-knowledge).
 
-Two consequences matter day to day. Training ends at a point in time, so the model has a [knowledge cutoff](#knowledge-cutoff) — it hasn't seen the library version you upgraded to last month. And training is not something you can do: when the model doesn't know your codebase, your conventions, or your internal APIs, the fix is never "teach the model" — it's putting that material into [context](#context), the one input you control.
+Два последствия важны в повседневной работе. Обучение заканчивается в определённый момент времени, поэтому у модели есть [отсечка знаний](#knowledge-cutoff) — она не видела ту версию библиотеки, на которую вы обновились в прошлом месяце. И обучение — это не то, что можете сделать вы: когда модель не знает вашу кодовую базу, ваши конвенции или ваши внутренние API, решение — никогда не «научить модель», а положить этот материал в [контекст](#context), единственный вход, который вы контролируете.
 
-_Usage:_
+_Пример:_
 
-"Can we get it to know our internal API?"
+«Можно ли сделать так, чтобы она знала наш внутренний API?»
 
-"Not via training — that's a months-long process by the model provider. Load the API docs into context instead, that's the lever you actually have."
+«Через обучение — нет, это процесс длиной в месяцы у провайдера моделей. Загрузите документацию по API в контекст — это тот рычаг, который у вас реально есть.»
 
 ### Inference
 
-Running a trained [model](#model) to generate output — what happens on every [model provider request](#model-provider-request). [Parameters](#parameters) stay fixed; the model just does [next-token prediction](#next-token-prediction) over the [context](#context) it's given. Cheap relative to [training](#training), but billed per [token](#token) and the dominant cost of using a model.
+Запуск обученной [модели](#model) для генерации вывода — то, что происходит при каждом [запросе к провайдеру моделей](#model-provider-request). [Параметры](#parameters) остаются неизменными; модель просто выполняет [предсказание следующего токена](#next-token-prediction) по тому [контексту](#context), который ей дали. Дёшево относительно [обучения](#training), но тарифицируется за [токен](#token) и составляет основную статью расходов при работе с моделью.
 
-A model's life splits into two phases:
+Жизнь модели делится на две фазы:
 
-| Phase     | When it happens                  | What it does                                                    | Parameters    |
-| --------- | -------------------------------- | --------------------------------------------------------------- | ------------- |
-| Training  | Once, before release             | Produces the parameters from a training corpus                  | Being written |
-| Inference | Every time anyone uses the model | Runs the frozen parameters over your context to generate tokens | Read-only     |
+| Этап     | Когда происходит                | Что делает                                                             | Параметры     |
+| -------- | ------------------------------- | ---------------------------------------------------------------------- | ------------- |
+| Обучение | Однократно, до релиза           | Создаёт параметры из обучающего корпуса                                | Записываются  |
+| Инференс | При каждом использовании модели | Прогоняет замороженные параметры по вашему контексту, генерируя токены | Только чтение |
 
-Nothing you do at inference time writes back to the parameters — that's the reason a correction you make today doesn't stick tomorrow. The model that makes the same mistake next [session](#session), after you carefully explained the fix, hasn't ignored you; it's incapable of learning from the exchange. The model is [stateless](#stateless) — continuity has to come from outside it — from the [context window](#context-window) or a [memory system](#memory-system).
+Ничто из того, что вы делаете во время инференса, не записывается обратно в параметры — именно поэтому исправление, которое вы внесли сегодня, не сохраняется назавтра. Модель, которая повторяет ту же ошибку в следующей [сессии](#session), после того как вы тщательно объяснили решение, вас не проигнорировала — она не способна учиться из этого обмена. Модель [без сохранения состояния](#stateless) — непрерывность должна приходить извне, из [контекстного окна](#context-window) или [системы памяти](#memory-system).
 
-This mechanism also explains how you're billed. Every request runs the model over the full context, so cost scales with [input tokens](#input-tokens) and [output tokens](#output-tokens), and an agent making dozens of [tool](#tool) calls pays for inference on each round trip. This is why context size is a cost question as well as a quality one.
+Этот механизм объясняет и то, как вы платите. Каждый запрос прогоняет модель по полному контексту, поэтому стоимость масштабируется с [входными токенами](#input-tokens) и [выходными токенами](#output-tokens), и агент, делающий десятки вызовов [инструментов](#tool), платит за инференс в каждом цикле обмена. Поэтому размер контекста — это вопрос стоимости в той же мере, что и качества.
 
-_Usage:_
+_Пример:_
 
-"Why does the bill scale with usage instead of being a flat license?"
+«Почему счёт растёт пропорционально использованию, а не фиксированная лицензия?»
 
-"You're paying for inference — every model provider request runs the model on the provider's hardware. Training already happened, but inference costs accrue per request, and a single [turn](#turn) can expand into many requests when tools are called."
+«Вы платите за инференс — каждый запрос к провайдеру моделей прогоняет модель на железе провайдера. Обучение уже произошло, но стоимость инференса накапливается по каждому запросу, и один [ход](#turn) может развернуться в множество запросов, когда вызываются инструменты.»
 
 ### Effort
 
-Effort is a dial for how much reasoning a [model](#model) does before it answers. Set per [model provider request](#model-provider-request), it controls the length of the thinking the model works through before it starts writing the response you see. That thinking is generated at [inference](#inference) time like everything else; the [harness](#harness) often hides it, but it's real work the model is doing.
+Усилие — это настройка глубины размышлений [модели](#model) перед ответом. Задаётся для каждого [запроса к провайдеру моделей](#model-provider-request) и определяет, насколько длинные размышления модель проводит, прежде чем начать писать видимый вам ответ. Эти размышления генерируются во время [инференса](#inference), как и всё остальное; [обвязка](#harness) часто их скрывает, но это реальная работа, которую модель выполняет.
 
-Higher effort costs more and runs slower. The reasoning is emitted as [tokens](#token), billed as [output tokens](#output-tokens) even when you never see them, and produced one token at a time — so turning effort up lengthens the wait before the answer arrives and adds to the bill. The trade is more deliberation against speed and cost.
+Большее усилие стоит дороже и работает медленнее. Размышления выдаются в виде [токенов](#token), тарифицируются как [выходные токены](#output-tokens), даже если вы их никогда не видите, и производятся по одному за раз — поэтому повышение усилия удлиняет ожидание до появления ответа и увеличивает счёт. Это компромисс между обдумыванием, с одной стороны, и скоростью и стоимостью — с другой.
 
-Most harnesses expose effort as a small ladder:
+Большинство обвязок предоставляет усилие как небольшую лестницу настроек:
 
-| Level  | What it's for                                                          |
-| ------ | ---------------------------------------------------------------------- |
-| Low    | Mechanical edits, lookups, well-specified changes with one clear path. |
-| Medium | Everyday coding — the usual default.                                   |
-| High   | Tricky bugs, design decisions, multi-step plans.                       |
-| Max    | The hardest problems, where a wrong answer is expensive to unwind.     |
+| Уровень | Для чего                                                                             |
+| ------- | ------------------------------------------------------------------------------------ |
+| Low     | Механические правки, поиск данных, чётко описанные изменения с одним понятным путём. |
+| Medium  | Повседневная разработка — обычное значение по умолчанию.                             |
+| High    | Хитрые баги, проектные решения, многошаговые планы.                                  |
+| Max     | Самые сложные задачи, где ошибочный ответ дорого обходится.                          |
 
-The symptom of getting it wrong cuts both ways. Set effort too low on a hard problem and you get a confident, shallow answer that skipped the reasoning the problem needed — it reads fine and is wrong in a way that costs you later. Set it to max for a one-line rename and you sit through a long think that produces nothing the lowest setting wouldn't have.
+Последствия неправильной настройки ощущаются в обе стороны. Поставите слишком низкое усилие на сложной задаче — получите уверенный, поверхностный ответ, пропустивший нужные задаче размышления: он читается гладко и при этом ошибочен так, что вы поплатитесь позже. Поставите максимум для переименования в одну строку — просидите через долгое размышление, которое не даст ничего такого, чего не дал бы низший уровень.
 
-Match effort to the task, not the [session](#session). Turn it up for the part that's genuinely hard to reason about, and back down for the rote work around it.
+Подбирайте усилие под задачу, а не под [сессию](#session). Поднимайте его там, где часть задачи действительно трудна для рассуждения, и опускайте для механической работы вокруг.
 
-_Usage:_
+_Пример:_
 
-"It keeps botching this concurrency fix — I've re-explained it three times."
+«Он постоянно портит этот фикс конкурентности — я три раза объяснял его заново.»
 
-"Bump the effort up. That's a reasoning-heavy bug, and on the default setting it's not thinking long enough before it commits to an approach."
+«Подними усилие. Это баг, требующий тяжёлых рассуждений, и на настройках по умолчанию модель недостаточно долго думает, прежде чем зафиксировать подход.»
 
 ### Token
 
-The atomic unit a [model](#model) reads and writes. Roughly word-sized but not exactly — common words are one token, rare or long ones split into several. [Context window](#context-window) size, cost, and latency are all counted in tokens.
+Атомарная единица, которую [модель](#model) читает и пишет. Примерно размером со слово, но не точно — частые слова умещаются в один токен, редкие или длинные разбиваются на несколько. Размер [контекстного окна](#context-window), стоимость и задержка измеряются в токенах.
 
-Text becomes tokens via a tokenizer: a fixed vocabulary of tens of thousands of fragments, learned before [training](#training), that splits any input into a sequence of vocabulary entries. The model never sees characters or words — every piece of text is converted to tokens on the way in, and [next-token prediction](#next-token-prediction) produces output one token at a time on the way out.
+Текст превращается в токены через токенизатор: фиксированный словарь из десятков тысяч фрагментов, выученный до [обучения](#training), который разбивает любой вход на последовательность элементов словаря. Модель никогда не видит ни символов, ни слов — любой фрагмент текста преобразуется в токены на входе, а [предсказание следующего токена](#next-token-prediction) строит выход по одному токену за раз.
 
-As a rule of thumb, a token is about three-quarters of an English word, so a thousand tokens is roughly 750 words. Code is less predictable: common keywords and idioms tokenize compactly, while generated identifiers, hashes, base64 blobs, and minified output split into many tokens per "word". The pattern: text that appeared often in the tokenizer's source material gets short, efficient encodings; text that didn't gets chopped into many small pieces. A hash like `a3f9c2e1` never appeared anywhere, so it splits into many tokens, while `function` is one. This is why a small-looking file full of unusual strings can occupy a surprising share of the context window.
+Эмпирическое правило: токен составляет примерно три четверти английского слова, так что тысяча токенов — это примерно 750 слов. С кодом всё менее предсказуемо: частые ключевые слова и идиомы токенизуются компактно, тогда как сгенерированные идентификаторы, хеши, base64-блобы и минифицированный вывод разбиваются на множество токенов на «слово». Закономерность такая: текст, который часто встречался в исходном материале токенизатора, получает короткие, эффективные кодировки; текст, который не встречался, рубится на множество мелких кусочков. Хеш вроде `a3f9c2e1` нигде не встречался, поэтому разбивается на множество токенов, тогда как `function` — это один токен. Именно поэтому небольшой с виду файл, полный необычных строк, может занять неожиданно большую долю контекстного окна.
 
-Tokens are the unit everything else is measured in. Cost is per token — providers bill [input tokens](#input-tokens) and [output tokens](#output-tokens) separately. Speed is tokens per second, since output is generated one token at a time. And the context window is a fixed number of tokens, so the token count of your files decides how much fits.
+Токен — единица, в которой измеряется всё остальное. Стоимость считается за токен: провайдеры отдельно тарифицируют [входные токены](#input-tokens) и [выходные токены](#output-tokens). Скорость измеряется в токенах в секунду, поскольку выход генерируется по одному токену за раз. А контекстное окно — это фиксированное число токенов, поэтому именно количество токенов в ваших файлах определяет, сколько в нём поместится.
 
-_Avoid:_ "word" — token boundaries don't match word boundaries, and tokens-per-second / tokens-per-dollar are the units that actually matter.
+_Избегать:_ «слово» — границы токенов не совпадают с границами слов, а tokens-per-second и tokens-per-dollar — это единицы, которые на самом деле имеют значение.
 
-_Usage:_
+_Пример:_
 
-"How big is this prompt going to be?"
+«Каким будет размер этого промпта?»
 
-"Run it through the tokenizer — the schema's compact but the JSON keys are weird, so they'll split into more tokens than you think."
+«Прогони его через токенизатор — схема компактная, но ключи JSON необычные, поэтому они разобьются на больше токенов, чем ты думаешь.»
 
 ### Next-token prediction
 
-What the [model](#model) actually does. Given a [context](#context), it samples one next [token](#token), appends it, and runs again. Every output — a sentence, a [tool call](#tool-call), a thousand-line file — is built one token at a time. The model has no other mode of operation.
+То, что [модель](#model) делает на самом деле. Имея [контекст](#context), она выбирает один следующий [токен](#token), добавляет его и повторяет. Любой вывод — предложение, [вызов инструмента](#tool-call), файл на тысячу строк — строится по одному токену за раз. У модели нет другого режима работы.
 
-Each step works the same way: the tokens in the [context window](#context-window) are run through the [parameters](#parameters), which produce a probability for every token in the vocabulary — this one is very likely next, that one less so. One token is sampled from those probabilities, appended, and the loop runs again with the slightly longer context. That sampling step is why the same prompt produces different output on different runs: [non-determinism](#non-determinism) is built into the mechanism, not a bug layered on top.
+Каждый шаг устроен одинаково: токены в [контекстном окне](#context-window) прогоняются через [параметры](#parameters), что даёт вероятность для каждого токена из словаря — этот следующий очень вероятен, тот менее. Из этих вероятностей выбирается один токен, он добавляется, и цикл запускается снова с чуть более длинным контекстом. Именно этот шаг выборки объясняет, почему один и тот же промпт даёт разные выводы на разных прогонах: [недетерминизм](#non-determinism) встроен в сам механизм, а не надстроен поверх него как баг.
 
-Holding onto this mechanism explains behaviour that otherwise looks strange. The model never checks whether a token is _true_ before emitting it — only whether it's _likely_ — which is the root of [hallucination](#hallucination). It commits to each token as it goes, so a confident-sounding opening sentence can steer the rest of the answer wrong. And because [output tokens](#output-tokens) are produced strictly one at a time, generation speed puts a floor on how fast any [agent](#agent) can work.
+Удержание этого механизма в голове объясняет поведение, которое иначе выглядит странным. Модель никогда не проверяет, является ли токен _истинным_, прежде чем его выдать, — только _вероятным_, — и в этом корень [галлюцинации](#hallucination). Она фиксируется на каждом токене по мере выдачи, поэтому уверенно звучащее первое предложение может увести остаток ответа в неверную сторону. А поскольку [выходные токены](#output-tokens) строго производятся по одному за раз, скорость генерации задаёт нижнюю границу того, насколько быстрым может быть любой [агент](#agent).
 
-_Usage:_
+_Пример:_
 
-"How does the agent 'decide' to call a tool?"
+«Как агент "решает" вызвать инструмент?»
 
-"It doesn't — it's next-token prediction all the way down. The tool call is just a structured string the [harness](#harness) parses out of the output stream."
+«Никак — всё внизу это предсказание следующего токена. Вызов инструмента это просто структурированная строка, которую [обвязка](#harness) разбирает из выходного потока.»
 
 ### Non-determinism
 
-The same input can produce different output. Run a [model](#model) twice with identical [context](#context) and you may get two different answers — sometimes a word, sometimes a completely different approach. Nothing in your code has to change for this to happen.
+Один и тот же вход может дать разный вывод. Запустите [модель](#model) дважды с идентичным [контекстом](#context) — и можете получить два разных ответа: иногда отличается одно слово, иногда подход целиком. Чтобы это случилось, в вашем коде ничего не должно меняться.
 
-It's a property of how models generate text, and how [model providers](#model-provider) serve [requests](#model-provider-request). During [inference](#inference), the model produces a probability distribution over possible next [tokens](#token) and one is sampled from it — usually with some randomness on purpose, since always picking the most likely token produces repetitive, lower-quality text. One differently-sampled token early in a response changes every token after it, which is how a single different word becomes a completely different approach. Provider-side serving adds more variation on top: requests are batched together on shared hardware, and tiny floating-point differences between batches can tip a close call between two tokens. There's no setting you can flip to make it all go away.
+Это свойство того, как модели генерируют текст и как [провайдеры моделей](#model-provider) обслуживают [запросы](#model-provider-request). Во время [инференса](#inference) модель строит распределение вероятностей по возможным следующим [токенам](#token), и из него выбирается один — обычно с некоторой случайностью намеренно, потому что всегда брать самый вероятный токен даёт повторяющийся, менее качественный текст. Один токен, выбранный иначе в начале ответа, меняет все последующие токены — так единственное другое слово становится совсем другим подходом. Обслуживание на стороне провайдера добавляет вариации сверху: запросы пакетируются вместе на общем железе, и крошечные различия в плавающей точке между пакетами могут склонить чашу весов между двумя токенами. Нет никакой настройки, которую можно переключить, чтобы это всё убрать.
 
-Expect a spread of results from an [agent](#agent) on the same task. Most responses fall within a reasonable bell curve of quality — that's why the non-determinism is tolerable at all — but the tails are real: some days the model will feel sharp; some days it'll feel like it's lost the plot. Same task, different rolls of the dice. This has two practical consequences. Retrying is a legitimate strategy: a failed attempt is one draw from the distribution, and a fresh attempt at the same task may simply land better. And verification matters more than it would with deterministic tools — you can't test an agent's behaviour once and rely on it repeating, so [automated checks](#automated-check) have to catch the bad draws.
+Ожидайте разброса результатов от [агента](#agent) на одной и той же задаче. Большинство ответов ложится в разумное колоколообразное распределение качества — именно поэтому недетерминизм вообще терпим — но хвосты реальны: в какие-то дни модель кажется острой, в какие-то — будто потеряла нить. Та же задача, другой бросок костей. У этого два практических следствия. Повторная попытка — законная стратегия: провалившаяся попытка это одна выборка из распределения, а свежая попытка той же задачи может просто выпасть удачнее. И проверка важна больше, чем с детерминированными инструментами: нельзя протестировать поведение агента однажды и полагаться, что оно повторится, поэтому [автоматические проверки](#automated-check) должны отлавливать неудачные выборки.
 
-Be careful not to over-narrativize this. Humans are pattern-matching machines, and a string of bad runs can feel like proof that "the model got worse this week." Usually it's just the distribution.
+Будьте осторожны с тем, чтобы не превращать это в нарратив. Люди — машины по распознаванию паттернов, и серия плохих прогонов может ощущаться как доказательство, что «на этой неделе модель стала хуже». Обычно это просто распределение.
 
-_Usage:_
+_Пример:_
 
-"Claude has been awful today. Did they ship a worse version?"
+«Claude сегодня ужасен. Они выкатили версию хуже?»
 
-"Probably not — model output is non-deterministic. You're going to have good days and bad days on the same task. Try again tomorrow before you go looking for a cause."
+«Вряд ли — вывод модели недетерминирован. На одной и той же задаче будут хорошие дни и плохие дни. Попробуй снова завтра, прежде чем искать причину.»
 
 ### Model provider
 
-Whatever serves a [model](#model) for [inference](#inference). Usually a remote service (Anthropic, OpenAI, Google), but can also be local — Ollama, LM Studio, llama.cpp running on your own machine. The [harness](#harness) doesn't run the model itself; it asks a provider to.
+Что бы ни обслуживало [модель](#model) для [инференса](#inference). Обычно это удалённый сервис (Anthropic, OpenAI, Google), но может быть и локальным — Ollama, LM Studio, llama.cpp на вашей собственной машине. Сама [обвязка](#harness) модель не запускает; она просит об этом провайдера.
 
-The provider owns the machinery: the [parameters](#parameters) live on its hardware, and every [model provider request](#model-provider-request) is the harness sending [tokens](#token) over the network and getting predictions back. That makes the provider the source of a whole category of problems that get misattributed to the model or the harness — rate limits, degraded capacity, and outages all live here. When the [agent](#agent) stalls mid-[session](#session) or errors on every [turn](#turn), the provider's status page is worth checking before anything else.
+Провайдер владеет всей инфраструктурой: [параметры](#parameters) живут на его железе, и каждый [запрос к провайдеру моделей](#model-provider-request) — это обвязка, которая отправляет [токены](#token) по сети и получает обратно предсказания. Из-за этого провайдер оказывается источником целой категории проблем, которые ошибочно приписывают модели или обвязке: лимиты частоты запросов, снижение ёмкости и отключения живут именно здесь. Когда [агент](#agent) замирает посреди [сессии](#session) или ошибается на каждом [ходу](#turn), статусная страница провайдера — то, что стоит проверить раньше остального.
 
-The provider also sets the commercial terms: per-token pricing for [input](#input-tokens) and [output tokens](#output-tokens), [prefix cache](#prefix-cache) discounts, and which models are available at all. Note that the provider and the model's maker can be different companies — Bedrock, Vertex, and OpenRouter serve other people's models.
+Провайдер также задаёт коммерческие условия: цена за токен для [входных токенов](#input-tokens) и [выходных токенов](#output-tokens), скидки за [префиксный кэш](#prefix-cache) и то, какие модели вообще доступны. Заметьте, что провайдер и создатель модели могут быть разными компаниями — Bedrock, Vertex и OpenRouter обслуживают чужие модели.
 
-Local providers trade capability for control: the models that fit on your own hardware are far smaller than the frontier ones, but nothing leaves the machine and there's no bill per token.
+Локальные провайдеры уступают в возможностях ради контроля: модели, которые влезают на ваше собственное железо, сильно меньше передовых, но ничего не покидает машину и нет счёта за токен.
 
-_Usage:_
+_Пример:_
 
-"Can we run this offline for the air-gapped client?"
+«Можем запустить это офлайн для изолированного клиента?»
 
-"Swap the model provider to a local one — Ollama or llama.cpp on their box. The harness doesn't care, it just hits a different endpoint."
+«Переключи провайдера моделей на локальный — Ollama или llama.cpp на их машине. Обвязке всё равно, она просто бьёт по другому эндпоинту.»
 
 ### Harness
 
-Everything around the [model](#model) that turns it into an [agent](#agent): [tools](#tool), [system prompt](#system-prompt), [context-window management](#context-window), permissions, hooks. **Claude.ai** and **Claude Code** run on the same model but behave differently because their harnesses differ.
+Всё, что окружает [модель](#model) и превращает её в [агента](#agent): [инструменты](#tool), [системный промпт](#system-prompt), [управление контекстным окном](#context-window), разрешения, хуки. **Claude.ai** и **Claude Code** работают на одной и той же модели, но ведут себя по-разному, потому что у них разные обвязки.
 
-The model itself only does one thing: take text in, produce text out. It can't read a file, run a command, or remember the last [turn](#turn). The harness supplies all of that. It assembles the [context](#context) for each [model provider request](#model-provider-request), executes the [tool calls](#tool-call) the model asks for, feeds the [tool results](#tool-result) back in, stores the [session](#session) history, asks you for permission before risky actions, and decides when to [compact](#compaction). The agent loop — model proposes, harness executes, repeat — is run by the harness.
+Сама модель делает только одно: принимает текст на вход и выдаёт текст на выход. Она не может прочитать файл, выполнить команду или запомнить предыдущий [ход](#turn). Обвязка обеспечивает всё это. Она собирает [контекст](#context) для каждого [запроса к провайдеру моделей](#model-provider-request), выполняет [вызовы инструментов](#tool-call), которые запрашивает модель, передаёт обратно [результаты инструментов](#tool-result), хранит историю [сессии](#session), запрашивает у вас разрешение перед рискованными действиями и решает, когда делать [компакцию](#compaction). Цикл агента — модель предлагает, обвязка выполняет, повтор — выполняется обвязкой.
 
-This matters for diagnosis. When behaviour differs between two products, or between yesterday and today, the model is often not the variable — the harness is. A different system prompt, a different set of tools, a changed permission default, or a new context-management strategy all change behaviour without any change to the model. It also means the harness is where most of your configuration lives: [AGENTS.md](#agentsmd) files, permission settings, and hooks are all instructions to the harness, not the model.
+Это важно для диагностики. Когда поведение различается между двумя продуктами или между вчерашним и сегодняшним запуском, модель часто не является переменным фактором — им является обвязка. Другой системный промпт, другой набор инструментов, изменённое разрешение по умолчанию или новая стратегия управления контекстом — всё это меняет поведение без каких-либо изменений в модели. Это также означает, что именно в обвязке живёт большая часть вашей конфигурации: файлы [AGENTS.md](#agentsmd), настройки разрешений и хуки — всё это инструкции для обвязки, а не для модели.
 
-Examples: Claude Code, Cursor, Codex CLI — and Claude.ai, which is a chat harness rather than a coding one.
+Примеры: Claude Code, Cursor, Codex CLI — а также Claude.ai, который является чат-обвязкой, а не обвязкой для программирования.
 
-_Usage:_
+_Пример:_
 
-"Same model, why is Claude Code editing files and Claude.ai just answering questions?"
+«Одна и та же модель — почему Claude Code редактирует файлы, а Claude.ai просто отвечает на вопросы?»
 
-"Different harnesses — Claude Code has [filesystem](#filesystem) tools, a different system prompt, and a permission layer. The model isn't the variable here."
+«Разные обвязки — у Claude Code есть инструменты [файловой системы](#filesystem), другой системный промпт и слой разрешений. В данном случае переменным фактором не является модель.»
 
 ### Model provider request
 
-One round-trip from the [harness](#harness) to the [model provider](#model-provider). The harness sends the current [context](#context); the provider returns one response (a [tool call](#tool-call) or a final answer). A single user message can spawn many model provider requests if the [agent](#agent) calls [tools](#tool) — each [tool result](#tool-result) triggers another request.
+Один цикл обмена от [обвязки](#harness) к [провайдеру моделей](#model-provider). Обвязка отправляет текущий [контекст](#context); провайдер возвращает один ответ ([вызов инструмента](#tool-call) или финальный ответ). Одно сообщение пользователя может породить много запросов к провайдеру моделей, если [агент](#agent) вызывает [инструменты](#tool) — каждый [результат инструмента](#tool-result) запускает новый запрос.
 
-Each request carries everything: the [system prompt](#system-prompt), the full conversation so far, every tool result. The [model](#model) is [stateless](#stateless), so the provider keeps nothing between requests — request forty re-sends what request thirty-nine sent, plus one more tool result. The [prefix cache](#prefix-cache) exists to make this repetition affordable.
+Каждый запрос несёт в себе всё: [системный промпт](#system-prompt), всю беседу до текущего момента, каждый результат инструмента. [Модель](#model) [без сохранения состояния](#stateless), поэтому провайдер ничего не хранит между запросами — запрос сорок повторно отправляет то, что отправил запрос тридцать девять, плюс ещё один результат инструмента. [Префиксный кэш](#prefix-cache) существует, чтобы сделать такое повторение недорогим.
 
-The request is also the unit of billing. [Input tokens](#input-tokens), [output tokens](#output-tokens), and cache discounts are all counted per request, which is why an innocuous-looking question can cost a surprising amount: the cost isn't proportional to your message, it's proportional to the number of requests times the size of the context each one carries.
+Запрос — это также единица биллинга. [Входные токены](#input-tokens), [выходные токены](#output-tokens) и скидки за кэш — всё это считается по запросам, поэтому невинно выглядящий вопрос может стоить удивительно много: стоимость пропорциональна не вашему сообщению, а количеству запросов, умноженному на размер контекста, который несёт каждый из них.
 
-It's worth keeping the request distinct from the [turn](#turn). A turn is one exchange with you, and a single turn — "fix the failing test" — plays out as a chain of requests:
+Стоит различать запрос и [ход](#turn). Ход — это один обмен с вами, и один ход — «почини падающий тест» — разворачивается как цепочка запросов:
 
-| Request | Model returns                     | Harness then                          |
-| ------- | --------------------------------- | ------------------------------------- |
-| 1       | Tool call: run the tests          | Runs them, appends the failure output |
-| 2       | Tool call: read the test file     | Appends the file contents             |
-| 3       | Tool call: read the source file   | Appends the file contents             |
-| 4       | Tool call: edit the source file   | Applies the edit, appends the result  |
-| 5       | Tool call: run the tests again    | Runs them, appends the pass output    |
-| 6       | Final answer: "fixed, tests pass" | Shows it to you                       |
+| Запрос | Модель возвращает                                | Затем обвязка                                         |
+| ------ | ------------------------------------------------ | ----------------------------------------------------- |
+| 1      | Вызов инструмента: запустить тесты               | Запускает их, добавляет вывод с ошибками              |
+| 2      | Вызов инструмента: прочитать тестовый файл       | Добавляет содержимое файла                            |
+| 3      | Вызов инструмента: прочитать файл исходного кода | Добавляет содержимое файла                            |
+| 4      | Вызов инструмента: изменить файл исходного кода  | Применяет правку, добавляет результат                 |
+| 5      | Вызов инструмента: запустить тесты снова         | Запускает их, добавляет вывод об успешном прохождении |
+| 6      | Финальный ответ: «исправлено, тесты проходят»    | Показывает его вам                                    |
 
-Six requests for one turn — each one re-sending the whole context. When you wonder where the [tokens](#token) went, count the requests, not the turns.
+Шесть запросов на один ход — каждый заново отправляет весь контекст. Когда задаётесь вопросом, куда ушли [токены](#token), считайте запросы, а не ходы.
 
-_Usage:_
+_Пример:_
 
-"One question burned forty thousand tokens?"
+«Один вопрос сожёг сорок тысяч токенов?»
 
-"Look at the tool calls — twelve grep, eight read, four edits. Each tool result spawns another model provider request, and the whole [session](#session) prefix re-sends every time."
+«Посмотрите на вызовы инструментов — двенадцать grep, восемь read, четыре правки. Каждый результат инструмента порождает новый запрос к провайдеру моделей, и весь префикс [сессии](#session) отправляется заново каждый раз.»
 
 ### Input tokens
 
-[Tokens](#token) the [harness](#harness) sends on each [model provider request](#model-provider-request) — the [system prompt](#system-prompt), the conversation history, [tool results](#tool-result), everything the [model](#model) reads before it writes. Billed at a lower rate than [output tokens](#output-tokens), because they are less expensive to process than output tokens.
+[Токены](#token), которые [обвязка](#harness) отправляет в каждом [запросе к провайдеру моделей](#model-provider-request) — [системный промпт](#system-prompt), историю беседы, [результаты инструментов](#tool-result), всё, что [модель](#model) читает, прежде чем начать писать. Тарифицируются по более низкому тарифу, чем [выходные токены](#output-tokens), потому что их обработка обходится дешевле, чем обработка выходных токенов.
 
-When doing [AI](#ai) coding, input tokens make up most of your bill. The model is [stateless](#stateless), so each [turn](#turn) re-sends the entire [session](#session) as input: your first message, every response, every tool result since. The input for turn fifty contains the previous forty-nine turns. A single model provider request might produce a few hundred output tokens but re-send a hundred thousand input tokens of accumulated history.
+При кодировании с помощью [ИИ](#ai) входные токены составляют большую часть вашего счёта. Модель [без сохранения состояния](#stateless), поэтому каждый [ход](#turn) заново отправляет всю [сессию](#session) как входные данные: ваше первое сообщение, каждый ответ, каждый результат инструмента с тех пор. Входные данные для пятидесятого хода содержат предыдущие сорок девять ходов. Один запрос к провайдеру моделей может сгенерировать несколько сотен выходных токенов, но заново отправить сто тысяч входных токенов накопленной истории.
 
-The [prefix cache](#prefix-cache) reduces the cost: history that exactly matches a previous request is billed as cheap [cache tokens](#cache-tokens) rather than full-price input. When input costs still hurt, the fix is to shrink what gets re-sent — [clearing](#clearing) or [compacting](#compaction) between tasks.
+[Префиксный кэш](#prefix-cache) снижает стоимость: история, которая точно совпадает с предыдущим запросом, тарифицируется как дешёвые [кэшированные токены](#cache-tokens), а не как входные токены по полному тарифу. Когда стоимость входных токенов всё ещё ощущается, исправление — уменьшить то, что отправляется повторно: [очистка](#clearing) или [компакция](#compaction) между задачами.
 
-_Usage:_
+_Пример:_
 
-"Bill's high but the [agent](#agent)'s barely writing anything."
+«Счёт большой, а [агент](#agent) почти ничего не пишет.»
 
-"It's the input tokens — every turn re-sends the whole session. Without the prefix cache you re-pay for the history each request."
+«Это входные токены — каждый ход заново отправляет всю сессию. Без префиксного кэша вы заново платите за историю в каждом запросе.»
 
 ### Output tokens
 
-[Tokens](#token) the [model](#model) generates back. Billed at a higher rate than [input tokens](#input-tokens) — commonly around five times the rate — since they cost more compute to produce.
+[Токены](#token), которые [модель](#model) генерирует в ответ. Тарифицируются по более высокому тарифу, чем [входные токены](#input-tokens) — обычно примерно в пять раз дороже — поскольку их производство требует больше вычислений.
 
-Everything the model writes counts: the prose you read, the code it emits, [tool calls](#tool-call), and any extended thinking the model does before answering. That last one surprises people — reasoning tokens are billed as output even when the [harness](#harness) often doesn't show them to you, and turning up [effort](#effort) spends more of them.
+Считается всё, что пишет модель: проза, которую вы читаете, код, который она выдаёт, [вызовы инструментов](#tool-call) и любое расширенное размышление, которое модель выполняет перед ответом. Последнее удивляет людей — токены рассуждений тарифицируются как выходные, даже когда [обвязка](#harness) часто не показывает их вам, а повышение [усилия](#effort) расходует больше таких токенов.
 
-Output tokens also set the pace of a [session](#session). The model reads input quickly but generates output one token at a time, so when a [turn](#turn) feels slow, it's almost always the output being written, not the input being read. A long wait usually means a long answer is coming.
+Выходные токены также задают темп [сессии](#session). Модель читает входные данные быстро, но генерирует выходные по одному токену за раз, поэтому когда [ход](#turn) ощущается медленным, почти всегда это означает, что пишется вывод, а не считывается ввод. Долгое ожидание обычно означает, что готовится длинный ответ.
 
-_Usage:_
+_Пример:_
 
-"The refactor session is burning through credit even though the inputs are small."
+«Сессия рефакторинга сжигает кредит, хотя входные данные небольшие.»
 
-"Agent's rewriting whole files instead of patching. Output tokens cost roughly five times the input rate — get it emitting edits and the bill drops."
+«Агент переписывает файлы целиком вместо правок. Выходные токены стоят примерно в пять раз дороже входного тарифа — добейтесь, чтобы он выдавал правки, и счёт снизится.»
 
 ### Prefix cache
 
-The [provider](#model-provider)-side store that lets consecutive [model provider requests](#model-provider-request) skip re-processing a shared prefix. When the start of a request matches the start of a recent one — same [system prompt](#system-prompt), same history up to some point — the provider reuses its prior work and bills those [tokens](#token) as [cache tokens](#cache-tokens) at a much lower rate.
+Хранилище на стороне [провайдера моделей](#model-provider), которое позволяет последовательным [запросам к провайдеру моделей](#model-provider-request) пропускать повторную обработку общего префикса. Когда начало запроса совпадает с началом недавнего запроса — тот же [системный промпт](#system-prompt), та же история до определённого момента — провайдер повторно использует свою предыдущую работу и тарифицирует эти [токены](#token) как [кэшированные токены](#cache-tokens) по гораздо более низкому тарифу.
 
-The cache pays off because sessions grow append-only. Every request re-sends the whole history as [input tokens](#input-tokens) (see that entry for why), and in a normal [session](#session) the history only changes at the end — each request is the previous one plus a few new messages. The provider processes the long shared beginning once, stores the result, and picks up from where the prefix ends. Without the cache, a 50-[turn](#turn) session would pay to re-process turn one fifty times.
+Кэш окупается, потому что сессии растут только добавлением (append-only). Каждый запрос заново отправляет всю историю как [входные токены](#input-tokens) (см. эту запись, чтобы понять, почему), и в обычной [сессии](#session) история меняется только в конце — каждый запрос является предыдущим плюс несколькими новыми сообщениями. Провайдер обрабатывает длинное общее начало один раз, сохраняет результат и продолжает с того места, где заканчивается префикс. Без кэша сессия из 50 [ходов](#turn) оплачивала бы повторную обработку первого хода пятьдесят раз.
 
-Caches also expire. How long an entry stays warm varies per model provider — typically minutes, not hours. Leave a session idle past the window and the next request rebuilds the prefix at full price once before caching resumes. This is mostly a [harness](#harness) builder's concern; as a user, the visible effect is that requests after a long pause cost more than the ones before it.
+Кэши также устаревают. Как долго запись остаётся тёплой, зависит от провайдера моделей — обычно это минуты, а не часы. Если оставить сессию бездействующей дольше этого окна, следующий запрос один раз перестроит префикс по полной цене, прежде чем кэширование возобновится. Это в основном забота разработчика [обвязки](#harness); как пользователь, вы видите эффект в том, что запросы после долгой паузы стоят дороже, чем те, что были до неё.
 
-_Usage:_
+_Пример:_
 
-"Why did the bill spike halfway through the session?"
+«Почему счёт резко подскочил на середине сессии?»
 
-"Harness started injecting the current time into the system prompt every turn. Prefix cache breaks at the first changed token, so every request after that billed at full rate."
+«Обвязка начала вставлять текущее время в системный промпт каждый ход. Префиксный кэш ломается на первом изменённом токене, поэтому каждый запрос после этого тарифицировался по полному тарифу.»
 
 ### Cache tokens
 
-[Input tokens](#input-tokens) the [provider](#model-provider) has cached from a previous [model provider request](#model-provider-request) so it doesn't have to re-process them. When consecutive requests share a prefix, the provider reuses the work via its [prefix cache](#prefix-cache) and bills the cached portion at a much lower rate. The lever that makes long [sessions](#session) affordable — without it, every [turn](#turn) re-pays for the whole history.
+[Входные токены](#input-tokens), которые [провайдер моделей](#model-provider) кэшировал из предыдущего [запроса к провайдеру моделей](#model-provider-request), чтобы не обрабатывать их повторно. Когда последовательные запросы имеют общий префикс, провайдер повторно использует работу через свой [префиксный кэш](#prefix-cache) и тарифицирует кэшированную часть по гораздо более низкому тарифу. Это рычаг, который делает длинные [сессии](#session) недорогими — без него каждый [ход](#turn) заново оплачивает всю историю.
 
-The reason this matters is how sessions are billed. The [model](#model) is [stateless](#stateless), so every request resends the entire conversation — [system prompt](#system-prompt), every message, every [tool result](#tool-result) — as input tokens. By turn fifty, each request carries fifty turns of history, and you'd pay full rate on all of it, every time. The cache changes the maths: tokens the provider has already processed in an identical prefix are billed as cache tokens, often at a tenth of the input rate or less. On a long session, most of what you send is cache tokens, and the bill stays sane.
+Причина, по которой это важно, — то, как тарифицируются сессии. [Модель](#model) [без сохранения состояния](#stateless), поэтому каждый запрос заново отправляет всю беседу — [системный промпт](#system-prompt), каждое сообщение, каждый [результат инструмента](#tool-result) — как входные токены. К пятидесятому ходу каждый запрос несёт пятьдесят ходов истории, и вы платили бы полный тариф за всё это каждый раз. Кэш меняет арифметику: токены, которые провайдер уже обработал в идентичном префиксе, тарифицируются как кэшированные токены, часто по десятой доле входного тарифа или меньше. В длинной сессии большая часть отправленного — это кэшированные токены, и счёт остаётся в пределах разумного.
 
-An example shows when tokens are cached and when they're not. Each letter stands for a block of conversation content; each request sends the conversation so far:
+Пример показывает, когда токены кэшируются, а когда нет. Каждая буква обозначает блок содержимого беседы; каждый запрос отправляет беседу до текущего момента:
 
-| Request sends | Cached  | Billed at full rate | Why                                               |
-| ------------- | ------- | ------------------- | ------------------------------------------------- |
-| `AB`          | nothing | `AB`                | First request — nothing to match against          |
-| `ABC`         | `AB`    | `C`                 | `AB` is an exact prefix of the previous request   |
-| `ABCD`        | `ABC`   | `D`                 | Prefix still intact                               |
-| `AXCD`        | `A`     | `XCD`               | An edit changed `B` to `X`; the match fails there |
+| Запрос отправляет | Кэшировано | По полному тарифу | Почему                                                   |
+| ----------------- | ---------- | ----------------- | -------------------------------------------------------- |
+| `AB`              | ничего     | `AB`              | Первый запрос — не с чем сопоставить                     |
+| `ABC`             | `AB`       | `C`               | `AB` — точный префикс предыдущего запроса                |
+| `ABCD`            | `ABC`      | `D`               | Префикс всё ещё цел                                      |
+| `AXCD`            | `A`        | `XCD`             | Правка изменила `B` на `X`; совпадение здесь прерывается |
 
-The cache is fragile in a specific way: it matches exact prefixes. If anything changes earlier in the conversation — the [harness](#harness) reorders content, a timestamp updates, a file's representation shifts — the cache misses from that point onward and everything after it is billed at full input rate. Caches also expire after a few minutes of inactivity, so a session resumed after a long pause re-pays its history once. When a session's cost jumps without an obvious cause, compare cache tokens to input tokens in the usage report — a broken cache shows up there first.
+Кэш хрупок определённым образом: он сопоставляет точные префиксы. Если что-то меняется раньше в беседе — [обвязка](#harness) переупорядочивает содержимое, обновляется отметка времени, меняется представление файла — кэш промахивается с этой точки и далее, и всё после него тарифицируется по полному входному тарифу. Кэши также устаревают после нескольких минут бездействия, поэтому сессия, возобновлённая после долгой паузы, один раз заново оплачивает свою историю. Когда стоимость сессии резко вырастает без видимой причины, сравните кэшированные токены с входными токенами в отчёте об использовании — сломанный кэш проявляется там в первую очередь.
 
-_Usage:_
+_Пример:_
 
-"Cost on long sessions is brutal — eight bucks for a refactor."
+«Стоимость на длинных сессиях кусается — восемь баксов за рефакторинг.»
 
-"Check the cache tokens. If the harness is reordering the system prompt or files between turns, the prefix breaks and you re-pay full input rate every request."
+«Проверьте кэшированные токены. Если обвязка переупорядочивает системный промпт или файлы между ходами, префикс ломается, и вы заново платите полный входной тариф каждый запрос.»
 
 ## Section 2 — Sessions, Context Windows & Turns
 
 ### Stateless
 
-Carries no information forward. The [model](#model) is stateless across [model provider requests](#model-provider-request) — each request resends the full [context window](#context-window), because the model has no way to see anything else. An [agent](#agent) is stateless across [sessions](#session) by default: a new session starts empty, with no trace of prior ones. Counterpart to [stateful](#stateful).
+Не переносит информацию вперёд. [Модель](#model) не сохраняет состояние между [запросами к провайдеру моделей](#model-provider-request) — каждый запрос повторно отправляет полное [контекстное окно](#context-window), потому что у модели нет иного способа что-либо увидеть. [Агент](#agent) по умолчанию не сохраняет состояние между [сессиями](#session): новая сессия начинается пустой, без следов предыдущих. Антоним — [с сохранением состояния](#stateful).
 
-The model itself is permanently stateless: its [parameters](#parameters) are frozen after [training](#training), and nothing you do at [inference](#inference) changes them. The model doesn't learn from your corrections, doesn't remember being told the same thing yesterday, and isn't getting to know you — however much the conversation feels otherwise. The feeling of continuity within a session is manufactured by the [harness](#harness), which keeps the transcript and re-sends it with every request. The model isn't remembering the conversation; it's re-reading it.
+Сама модель неизменно не имеет состояния: её [параметры](#parameters) заморожены после [обучения](#training), и ничто из того, что вы делаете на [инференсе](#inference), их не меняет. Модель не учится на ваших поправках, не помнит, что ей говорили то же самое вчера, и не узнаёт вас лучше, каким бы ни было впечатление от разговора. Чувство непрерывности внутри сессии создаётся [обвязкой](#harness), которая хранит транскрипт и повторно отправляет его с каждым запросом. Модель не запоминает разговор — она его перечитывает.
 
-The practical consequence: if you want something remembered across sessions, you have to write it down somewhere the agent will read it back. That's what [AGENTS.md](#agentsmd) files, [memory systems](#memory-system), and [handoff artifacts](#handoff-artifact) are — files that get loaded into the [context](#context) of future sessions, standing in for the memory the model doesn't have. When the agent keeps making a mistake you've corrected before, the question isn't why it didn't learn — it can't — but where that correction should be written down so every future session reads it.
+Практическое следствие: если вы хотите, чтобы что-то сохранялось между сессиями, это нужно записать туда, откуда агент это перечитает. Именно для этого нужны [AGENTS.md](#agentsmd)-файлы, [системы памяти](#memory-system) и [артефакты передачи](#handoff-artifact) — файлы, которые загружаются в [контекст](#context) будущих сессий, заменяя собой память, которой у модели нет. Когда агент раз за разом повторяет ошибку, которую вы уже исправляли, вопрос не в том, почему он не научился — он не может — а в том, куда записать это исправление, чтобы каждая будущая сессия его прочитала.
 
-_Usage:_
+_Пример:_
 
-"Why does it forget the convention every time I [clear](#clearing)?"
+«Почему она забывает соглашение после каждой [очистки](#clearing)?»
 
-"The model's stateless — the new session starts empty. If you want it carried, write it to AGENTS.md or a memory file the harness loads at session start."
+«Модель не сохраняет состояние — новая сессия начинается пустой. Если хотите, чтобы это переносилось, запишите в AGENTS.md или в файл памяти, который обвязка загружает при старте сессии.»
 
 ### Context
 
-The relevant information the [agent](#agent) has access to right now. The abstract noun — not the raw input the model sees (that's the [context window](#context-window)), not the running history (that's the [session](#session)), but _what the agent knows that's pertinent to the task_. "Loading something into context" means making it part of this set; "context engineering" is the discipline of curating it.
+Относящаяся к задаче информация, к которой у [агента](#agent) есть доступ прямо сейчас. Абстрактное существительное — не сырой ввод, который видит модель (это [контекстное окно](#context-window)), не текущая история (это [сессия](#session)), а _то, что агент знает по сути задачи_. «Загрузить что-то в контекст» означает сделать это частью этого множества; «контекстная инженерия» — это дисциплина по его курированию.
 
-The three terms separate cleanly:
+Эти три термина разделяются чётко:
 
-| Term           | What it names                                                       |
-| -------------- | ------------------------------------------------------------------- |
-| Context        | The task-relevant information the agent currently has               |
-| Context window | The literal [token](#token) sequence the model sees per request |
-| Session        | The running conversation the [harness](#harness) stores         |
+| Термин           | Что обозначает                                                                      |
+| ---------------- | ----------------------------------------------------------------------------------- |
+| Контекст         | Информация, относящаяся к задаче, которая есть у агента сейчас                      |
+| Контекстное окно | Буквальная последовательность [токенов](#token), которую модель видит за запрос |
+| Сессия           | Текущий разговор, который хранит [обвязка](#harness)                            |
 
-The separation matters because context is a measure of quality, not quantity. A context window can be nearly full and the context still poor — thousands of tokens of stale tool output, none of it about the task at hand. It can also be nearly empty and the context excellent: the one type definition the task turns on.
+Это разделение важно, потому что контекст — это мера качества, а не количества. Контекстное окно может быть почти заполнено, а контекст при этом слабым: тысячи токенов устаревшего вывода инструментов, и ничего из этого не относится к текущей задаче. Окно может быть почти пустым, а контекст отличным — например, то самое определение типа, от которого зависит задача.
 
-Most day-to-day failures trace back to context. When the agent invents an API, contradicts a decision, or guesses at a schema, the first question is what was in context when it did — usually the relevant fact was never loaded, or was buried under [attention degradation](#attention-degradation). The fix is curation: load what the task needs, keep out what it doesn't.
+Большинство повседневных сбоев сводятся к контексту. Когда агент выдумывает API, противоречит принятому решению или угадывает схему, первый вопрос — что было в контексте в этот момент; обычно нужный факт вообще не был загружен или оказался погребён под [деградацией внимания](#attention-degradation). Исправление — курирование: загружать то, что нужно задаче, и не пускать остальное.
 
-_Usage:_
+_Пример:_
 
-"It keeps inventing fields that aren't in the type."
+«Она выдумывает поля, которых нет в типе.»
 
-"The type file isn't in context — it's reading the call sites and guessing. Read the definition in first."
+«Файл типа не в контексте — она читает места вызовов и угадывает. Сначала загрузите определение.»
 
 ### Context window
 
-Everything the [model](#model) sees on each [model provider request](#model-provider-request). Finite, model-specific, and the _only_ surface through which the model perceives anything.
+Всё, что [модель](#model) видит в каждом [запросе к провайдеру моделей](#model-provider-request). Конечное, зависит от модели и является _единственной_ поверхностью, через которую модель что-либо воспринимает.
 
-It's a single sequence of [tokens](#token): the [system prompt](#system-prompt), the conversation so far, every [tool result](#tool-result) the [harness](#harness) has fed back in. If something is in that sequence, the model can use it; if it isn't, the model doesn't know it exists — not your codebase, not the file you edited yesterday, not the instruction you gave three sessions ago. Anything outside the window has to be brought in, usually via a [tool call](#tool-call), before it can affect anything.
+Это единая последовательность [токенов](#token): [системный промпт](#system-prompt), разговор на данный момент, каждый [результат инструмента](#tool-result), который [обвязка](#harness) передала обратно. Если что-то есть в этой последовательности, модель может это использовать; если нет — модель не знает о существовании этого: ни о вашей кодовой базе, ни о файле, который вы правили вчера, ни об инструкции, данной три сессии назад. Всё, что вне окна, нужно сначала внести внутрь, обычно через [вызов инструмента](#tool-call), прежде чем это сможет на что-то повлиять.
 
-Finite means it fills up. Every turn appends more — your messages, the model's responses, tool results — and a long [session](#session) will eventually hit the limit, forcing [compaction](#compaction) or [clearing](#clearing). It also means everything in the window competes: each token you load is one less available for the rest, and content you didn't need still occupies the model's [attention](#attention-budget). The practical stance is to treat the window as a budget — load what the task needs, leave the rest out.
+Конечность означает, что окно заполняется. Каждый ход добавляет ещё — ваши сообщения, ответы модели, результаты инструментов — и длинная [сессия](#session) в итоге упирается в лимит, вынуждая [компакцию](#compaction) или [очистку](#clearing). Это также значит, что всё содержимое окна конкурирует: каждый загруженный токен — это минус один из доступных для остального, а контент, который вам был не нужен, всё равно занимает [бюджет внимания](#attention-budget) модели. Практический подход — относиться к окну как к бюджету: загружать то, что нужно задаче, остальное оставлять снаружи.
 
-_Avoid:_ "memory" — the context window is working state and doesn't persist across sessions. [Memory](#memory-system) is a separate concept layered on top.
+_Избегать:_ «память» — контекстное окно является рабочим состоянием и не сохраняется между сессиями. [Память](#memory-system) — отдельное понятие, надстроенное поверх.
 
-_Usage:_
+_Пример:_
 
-"Can I just paste the whole monorepo into the prompt?"
+«Можно просто вставить весь монорепозиторий в промпт?»
 
-"The context window's 200k tokens — that's maybe a fifth of the repo. Pick the files the task touches, leave the rest behind a tool call."
+«Контекстное окно — 200 тысяч токенов, это примерно пятая часть репозитория. Выберите файлы, которых касается задача, остальное оставьте за вызовом инструмента.»
 
 ### Stateful
 
-Carries information forward. A [session](#session) is stateful across [turns](#turn) — [context](#context) accumulates as the session runs, which is why long sessions drift into the [dumb zone](#smart-zone). An [agent](#agent) can be made stateful across **sessions** by adding a [memory system](#memory-system) that persists information into the [environment](#environment) and reloads it at the start of future sessions. The [model](#model) is never stateful; any apparent continuity is the [harness](#harness) re-feeding context. Counterpart to [stateless](#stateless).
+Переносит информацию вперёд. [Сессия](#session) сохраняет состояние между [ходами](#turn) — [контекст](#context) накапливается по мере работы сессии, поэтому длинные сессии сползают в [«глупую зону»](#smart-zone). [Агента](#agent) можно сделать сохраняющим состояние между **сессиями**, добавив [систему памяти](#memory-system), которая сохраняет информацию в [окружение](#environment) и перезагружает её в начале будущих сессий. [Модель](#model) никогда не сохраняет состояние; любая видимая непрерывность — это [обвязка](#harness), повторно подающая контекст. Антоним — [без сохранения состояния](#stateless).
 
-Where state lives at each layer:
+Где хранится состояние на каждом слое:
 
-| Layer       | Stateful?       | How                                                                                                                    |
-| ----------- | --------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Model       | Never           | [Parameters](#parameters) are frozen; it sees only what's in each request                                          |
-| Session     | Across turns    | The harness appends every message and [tool result](#tool-result) to the context                                 |
-| Harness     | Across sessions | Memory files, [AGENTS.md](#agentsmd), [handoff artifacts](#handoff-artifact) — written down, reloaded later |
-| Environment | Always          | Files persist whether or not any session is running                                                                    |
+| Слой      | С сохранением состояния? | Как                                                                                                                            |
+| --------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| Модель    | Никогда                  | [Параметры](#parameters) заморожены; модель видит только то, что есть в каждом запросе                                     |
+| Сессия    | Между ходами             | Обвязка дописывает каждое сообщение и [результат инструмента](#tool-result) в контекст                                   |
+| Обвязка   | Между сессиями           | Файлы памяти, [AGENTS.md](#agentsmd), [артефакты передачи](#handoff-artifact) — записываются, перезагружаются позже |
+| Окружение | Всегда                   | Файлы существуют независимо от того, запущена ли какая-либо сессия                                                             |
 
-Each layer's statefulness is built by re-reading something stored a layer below: the session feels continuous because the harness re-sends the message history to the stateless model, and the agent remembers across sessions because the harness re-loads files from the environment. No state is ever stored in the model itself.
+Сохранение состояния на каждом слое строится на перечитывании того, что хранится слоем ниже: сессия ощущается непрерывной, потому что обвязка повторно отправляет историю сообщений модели без состояния, а агент помнит между сессиями, потому что обвязка перезагружает файлы из окружения. В самой модели состояние никогда не хранится.
 
-State isn't always wanted. Everything carried forward influences what comes next, so a wrong assumption made early in a session is carried forward too. [Clearing](#clearing) is the deliberate act of throwing session state away and starting from what's written down.
+Состояние нужно не всегда. Всё, что переносится вперёд, влияет на то, что будет дальше, поэтому и неверное допущение, сделанное в начале сессии, тоже переносится. [Очистка](#clearing) — это намеренный сброс состояния сессии и возврат к тому, что записано.
 
-_Usage:_
+_Пример:_
 
-"It remembered my preferences from yesterday — does that mean the model learned them?"
+«Она запомнила мои предпочтения со вчерашнего дня — значит ли это, что модель их выучила?»
 
-"No, the agent's stateful because the harness wrote them to a memory file and reloaded them at session start. The model itself saw nothing of yesterday."
+«Нет, агент сохраняет состояние, потому что обвязка записала их в файл памяти и перезагрузила при старте сессии. Сама модель ничего не видела со вчерашнего дня.»
 
 ### Agent
 
-A [model](#model) [harnessed](#harness) with [tools](#tool), a [system prompt](#system-prompt), and a [context window](#context-window), that takes [turns](#turn) with a user. _Claude Code is an agent. Cursor is an agent. Claude.ai is an agent._ An agent is what you actually talk to — it's the model in motion, configured for a purpose.
+[Модель](#model) в [обвязке](#harness) с [инструментами](#tool), [системным промптом](#system-prompt) и [контекстным окном](#context-window), которая обменивается [ходами](#turn) с пользователем. _Claude Code — это агент. Cursor — это агент. Claude.ai — это агент._ Агент — это то, с чем вы на самом деле общаетесь; это модель в действии, настроенная под определённую задачу.
 
-Unlike most terms in this dictionary, "agent" doesn't name a mechanical part. The model is a file of [parameters](#parameters); the harness is software you can point at. The agent is neither — it's the unit you're speaking to. People anthropomorphize [AI](#ai) constantly, and the agent is the anthropomorphized unit: the thing you delegate to, the thing that reads your message and answers, the "it" in "it broke the build again". When you say the agent did something, you mean the model-plus-harness did it, but you're addressing the combination as a single actor.
+В отличие от большинства терминов в этом словаре, «агент» не обозначает механическую часть. Модель — это файл с [параметрами](#parameters); обвязка — это программа, на которую можно указать. Агент — ни то ни другое; это единица, с которой вы разговариваете. Люди постоянно антропоморфизируют [ИИ](#ai), и агент — это антропоморфизированная единица: то, чему вы делегируете, то, что читает ваше сообщение и отвечает, это «оно» во фразе «оно снова сломало сборку». Когда вы говорите, что агент что-то сделал, вы имеете в виду, что это сделали модель-плюс-обвязка, но вы обращаетесь к этому сочетанию как к единому действующему лицу.
 
-The idea is older than this wave of AI. Software agents — programs you delegate a goal to, which act on your behalf — have been a concept for as long as AI has.
+Эта идея старше нынешней волны ИИ. Программные агенты — программы, которым вы делегируете цель и которые действуют от вашего имени, — существуют как концепция столько же, сколько и сам ИИ.
 
-_Avoid:_ "the AI", "the bot" (too vague — they hide whether you mean the parameters or the harnessed thing).
+_Избегать:_ «ИИ», «бот» (слишком расплывчато — скрывает, имеете ли вы в виду параметры или модель в обвязке).
 
-_Usage:_
+_Пример:_
 
-"Which agent are you using for the migration?"
+«Какой агент ты используешь для миграции?»
 
-"Claude Code locally, Cursor for the UI work — same model underneath, different harnesses."
+«Claude Code локально, Cursor для работы с UI — под капотом одна и та же модель, разные обвязки.»
 
 ### System prompt
 
-The instructions the [harness](#harness) prepends to every [model provider request](#model-provider-request) — the [agent](#agent)'s standing brief: who it is, how to behave, which [tools](#tool) it can call, what conventions to follow. Usually stable across a [session](#session).
+Инструкции, которые [обвязка](#harness) ставит в начало каждого [запроса к провайдеру моделей](#model-provider-request) — постоянное задание [агента](#agent): кто он, как себя вести, какие [инструменты](#tool) может вызывать, какие соглашения соблюдать. Обычно неизменны в течение [сессии](#session).
 
-The system prompt is written by the harness vendor, not by you, and in coding harnesses it's big — often tens of thousands of [tokens](#token) of behavioural rules, tool descriptions, and edge-case handling, all paid as [input tokens](#input-tokens) on every [turn](#turn). Your own standing instructions ride along with it: files like [AGENTS.md](#agentsmd) are loaded next to the system prompt at the start of the session, so the [model](#model) reads the vendor's brief and yours together before it ever sees your message.
+Системный промпт пишется разработчиком обвязки, а не вами, и в обвязках для кодирования он большой — часто десятки тысяч [токенов](#token) правил поведения, описаний инструментов и обработки граничных случаев, и всё это оплачивается как [входные токены](#input-tokens) на каждом [ходу](#turn). Ваши собственные постоянные инструкции идут вместе с ним: файлы вроде [AGENTS.md](#agentsmd) загружаются рядом с системным промптом в начале сессии, поэтому [модель](#model) читает задание разработчика и ваше одновременно, прежде чем увидит ваше сообщение.
 
-Because it's identical on every request, it forms the start of the [prefix cache](#prefix-cache) — which is part of why harnesses keep it fixed for a whole session rather than editing it as they go.
+Поскольку он одинаков в каждом запросе, он формирует начало [префиксного кэша](#prefix-cache) — и отчасти поэтому обвязки держат его фиксированным всю сессию, а не редактируют на ходу.
 
-Models are trained to prioritise the system prompt over user messages. So when an agent insists on a convention you never asked for, or formats output in a way you can't shake, it's usually obeying its system prompt — and your message is losing the argument. Some harnesses are customisable: they give you full access to the system prompt, so you can read what the agent is actually being told and change it.
+Модели обучены приоритизировать системный промпт над сообщениями пользователя. Поэтому когда агент навязывает соглашение, о котором вы не просили, или форматирует вывод так, что от этого не избавиться, обычно он подчиняется своему системному промпту — и ваше сообщение проигрывает спор. Некоторые обвязки настраиваемые: они дают полный доступ к системному промпту, так что можно прочитать, что агенту на самом деле говорят, и поменять это.
 
-_Usage:_
+_Пример:_
 
-"Two harnesses, same model, totally different behavior on the same prompt."
+«Две обвязки, одна модель, совершенно разное поведение на один и тот же промпт.»
 
-"Different system prompts. One's tuned for terse code edits, the other for explaining — that's where the divergence lives, before your message even arrives."
+«Разные системные промпты. Один настроен на лаконичные правки кода, другой — на объяснения; в этом и кроется расхождение, ещё до того, как ваше сообщение поступит.»
 
 ### Session
 
-One bounded run of interaction with an [agent](#agent). Starts empty, accumulates messages, [tool results](#tool-result), and files read, and ends when [cleared](#clearing), closed, or [compacted](#compaction) into a fresh session. The session is what _fills_ the [context window](#context-window): if the context window is the box, the session is the stuff slowly filling it up. Work too large for a single context window must be split across sessions.
+Один ограниченный цикл взаимодействия с [агентом](#agent). Начинается пустым, накапливает сообщения, [результаты инструментов](#tool-result) и прочитанные файлы, а завершается при [очистке](#clearing), закрытии или [компакции](#compaction) в новую сессию. Сессия — это то, что _заполняет_ [контекстное окно](#context-window): если контекстное окно — это ящик, то сессия — то, что медленно его заполняет. Работа, не умещающаяся в одно контекстное окно, должна быть разбита на несколько сессий.
 
-The session's message history is the agent's working memory. The [model](#model) is [stateless](#stateless), so everything it appears to remember — what you asked for, what the tests said, what it decided three turns ago — is in the message history, re-sent with every [model provider request](#model-provider-request). Whatever isn't in the session doesn't exist for the agent.
+История сообщений сессии — это рабочая память агента. [Модель](#model) [без сохранения состояния](#stateless), поэтому всё, что она, кажется, помнит — о чём вы просили, что сказали тесты, что она решила три хода назад — находится в истории сообщений и пересылается с каждым [запросом к провайдеру моделей](#model-provider-request). Чего нет в сессии — того не существует для агента.
 
-That memory ends with the session. A new session starts from nothing: the agent that knew your codebase well at the end of yesterday's session knows none of it this morning. What survives is the [filesystem](#filesystem) — files written during one session can be read by the next, which is what [handoffs](#handoff), [memory systems](#memory-system), and [AGENTS.md](#agentsmd) rely on.
+Эта память заканчивается вместе с сессией. Новая сессия начинается с нуля: агент, который хорошо знал вашу кодовую базу в конце вчерашней сессии, сегодня утром не знает о ней ничего. Что сохраняется между сессиями — это [файловая система](#filesystem): файлы, записанные в одной сессии, может прочитать следующая, и именно на это опираются [передачи](#handoff), [системы памяти](#memory-system) и [AGENTS.md](#agentsmd).
 
-You choose where a session ends. Everything in a session influences every later [turn](#turn), so unrelated tasks done in one session leave residue that colours the next answer. One task per session keeps the context relevant; finishing a task is a natural point to clear.
+Вы сами выбираете, где сессия заканчивается. Всё, что есть в сессии, влияет на каждый последующий [ход](#turn), поэтому неродственные задачи, выполненные в одной сессии, оставляют осадок, который окрашивает следующий ответ. Одна задача на сессию сохраняет контекст релевантным; завершение задачи — естественная точка для очистки.
 
-_Usage:_
+_Пример:_
 
-"How long can one session run before it falls apart?"
+«Как долго одна сессия может длиться, прежде чем развалится?»
 
-"Depends on the work — a focused refactor stays sharp longer than open-ended research. Once the session bloats, hand off or compact, don't push through."
+«Зависит от работы — сфокусированный рефакторинг остаётся чётким дольше, чем открытые исследования. Как только сессия разрастается — передавайте или компактируйте, не тяните её дальше.»
 
 ### Turn
 
-One user message plus everything the [agent](#agent) does in response, up until it yields back to the user. Contains one or more [model provider requests](#model-provider-request) — many, if the agent calls [tools](#tool). A clarifying question closes the turn; your reply opens the next one. The hierarchy is [session](#session) **> Turn > Model provider request**.
+Одно сообщение пользователя плюс всё, что [агент](#agent) делает в ответ, пока не возвращает управление пользователю. Содержит один или несколько [запросов к провайдеру моделей](#model-provider-request) — много, если агент вызывает [инструменты](#tool). Уточняющий вопрос закрывает ход; ваш ответ открывает следующий. Иерархия: [сессия](#session) **> ход > запрос к провайдеру моделей**.
 
-What makes the turn worth naming is that its length is the agent's decision, not yours. You hand over one message; the agent decides how many tool calls to chain before yielding. A turn can be a one-sentence answer or twenty minutes of reading, editing, and running tests. That's the same property from two angles: long turns are what make [AFK](#afk) work possible, and long turns are also where things go wrong unsupervised — by the time the agent yields, it may have drifted a long way from what you meant.
+Что делает ход заслуживающим отдельного названия — так это то, что его длину определяет агент, а не вы. Вы передаёте одно сообщение; агент решает, сколько вызовов инструментов выполнить подряд, прежде чем уступить управление. Ход может быть ответом в одно предложение или двадцатью минутами чтения, правок и запуска тестов. Это то же свойство с двух сторон: длинные ходы делают возможной работу в режиме [AFK](#afk), и они же — то место, где всё идёт не так без присмотра: к моменту, когда агент возвращает управление, он мог сильно отклониться от того, что вы имели в виду.
 
-The turn is also the natural unit for steering. Everything inside a turn happens without you; the gaps between turns are where you redirect. Most [harnesses](#harness) soften this: you can interrupt mid-turn to stop the agent and redirect it, or type a message while it works, which gets read once the turn completes. If you find yourself repeatedly unhappy with where turns end up, the fix is usually to ask for smaller ones — a plan first, one step at a time — trading autonomy for more frequent gaps to steer in.
+Ход — это также естественная единица для управления. Всё внутри хода происходит без вас; в промежутках между ходами вы перенаправляете агента. Большинство [обвязок](#harness) смягчают это: можно прервать ход, чтобы остановить агента и перенаправить его, или набрать сообщение во время его работы, которое будет прочитано после завершения хода. Если вы постоянно недовольны тем, где заканчиваются ходы, исправление обычно — просить более короткие ходы: сначала план, затем по одному шагу за раз — обменивая автономию на более частые промежутки для управления.
 
-_Usage:_
+_Пример:_
 
-"One turn took two minutes?"
+«Один ход занял две минуты?»
 
-"It made fourteen [tool calls](#tool-call) inside that turn — each one is a separate model provider request. Latency stacks up before the agent finally yields back to you."
+«Он сделал четырнадцать [вызовов инструментов](#tool-call) внутри этого хода — каждый отдельный запрос к провайдеру моделей. Задержки накапливаются, прежде чем агент наконец вернёт управление вам.»
 
 ## Section 3 — Tools & Environment
 
 ### Environment
 
-The world the [agent](#agent) acts on — anything outside the [harness](#harness) that the agent perceives through [tool results](#tool-result) and changes through [tool calls](#tool-call). The harness _runs_ the agent; the environment is what the agent _works in_. A file like [`AGENTS.md`](#agentsmd) lives in the environment; the harness is what loads it into the [context window](#context-window). A [filesystem](#filesystem) is the most common kind of environment, but not the only one (a database, a remote API, a browser session can all be environments).
+Мир, на который воздействует [агент](#agent), — всё, что находится вне [обвязки](#harness), что агент воспринимает через [результаты инструментов](#tool-result) и меняет через [вызовы инструментов](#tool-call). Обвязка _запускает_ агента; окружение — это то, _в чём_ агент работает. Файл наподобие [`AGENTS.md`](#agentsmd) живёт в окружении; обвязка — это то, что загружает его в [контекстное окно](#context-window). [Файловая система](#filesystem) — самый распространённый вид окружения, но не единственный (база данных, удалённый API, сессия браузера тоже могут быть окружением).
 
-The agent only sees the environment when it looks. Everything it knows about the environment arrived through a tool result, so its picture is a collection of snapshots, each accurate at the moment it was taken. If a file changes after the agent read it — you edit it by hand, a build step regenerates it — the agent keeps reasoning from the stale copy until something prompts a re-read. An agent confidently describing a file that no longer looks like that is usually this: the environment moved, the snapshot didn't.
+Агент видит окружение только тогда, когда смотрит на него. Всё, что он знает об окружении, пришло через результат инструмента, поэтому его картина — это набор снимков, каждый из которых точен в момент съёмки. Если файл изменился после того, как агент его прочитал — вы отредактировали его вручную, шаг сборки перегенерировал его, — агент продолжает рассуждать, опираясь на устаревшую копию, пока что-то не заставит его перечитать файл. Если агент уверенно описывает файл, который уже так не выглядит, обычно дело именно в этом: окружение сдвинулось, а снимок — нет.
 
-The environment is also the layer that persists — the only one that is always [stateful](#stateful). A [session](#session)'s context is gone when the session ends, but files written to the environment remain for the next session to read — which is what [memory systems](#memory-system), [handoff artifacts](#handoff-artifact), and `AGENTS.md` rely on. Anything an agent should still know tomorrow has to end up in the environment.
+Окружение — это также слой, который сохраняется, причём единственный, всегда [с сохранением состояния](#stateful). Контекст [сессии](#session) исчезает, когда сессия завершается, но файлы, записанные в окружение, остаются доступными для чтения следующей сессии — на этом и строятся [системы памяти](#memory-system), [артефакты передачи](#handoff-artifact) и `AGENTS.md`. Всё, что агент должен знать завтра, должно в итоге оказаться в окружении.
 
-You decide how big the environment is. A [sandbox](#sandbox) shrinks it, limiting what the agent can reach; adding a [tool](#tool) extends it, bringing a database or an API into reach. What's inside the boundary is what the agent can perceive and change; everything outside it doesn't exist for the agent. How well the environment is set up to support the agent's work is the codebase's [AX](#ax).
+Вы сами определяете размер окружения. [Песочница](#sandbox) сужает его, ограничивая то, до чего агент может дотянуться; добавление [инструмента](#tool) расширяет его, делая доступной базу данных или API. То, что внутри границы, — то агент может воспринимать и менять; всё, что снаружи, для агента не существует. То, насколько хорошо окружение настроено под работу агента, — это [AX](#ax) («опыт агента») кодовой базы.
 
-_Avoid:_ using "environment" for the runtime or the harness itself — the harness is the wrapper, the environment is the workspace.
+_Избегать:_ использовать слово «окружение» для среды исполнения или самой обвязки — обвязка это оболочка, а окружение это рабочее пространство.
 
-_Usage:_
+_Пример:_
 
-"The agent can't see the staging DB schema."
+«Агент не видит схему в staging-базе.»
 
-"Wire it into the environment — give it a `psql` tool scoped to read-only on staging. The harness is fine, it just has nothing to act on."
+«Подключите это к окружению — дайте ему инструмент `psql` с доступом только на чтение к staging. Обвязка в порядке, ей просто не на что воздействовать.»
 
 ### Filesystem
 
-A tree of files and directories the [agent](#agent) reads from, writes to, and executes within — the default kind of [environment](#environment) for a coding agent. [AGENTS.md](#agentsmd), [skills](#skill), source code, build scripts, and [tool](#tool) configs all live in a filesystem. When a [harness](#harness) "starts in your project," it's pointing the agent at a filesystem.
+Дерево файлов и каталогов, из которого [агент](#agent) читает, в которое пишет и внутри которого исполняет команды — стандартный вид [окружения](#environment) для агента, работающего с кодом. [AGENTS.md](#agentsmd), [навыки](#skill) (скилл), исходный код, скрипты сборки и конфиги [инструментов](#tool) — всё это живёт в файловой системе. Когда [обвязка](#harness) «запускается в вашем проекте», она указывает агенту на файловую систему.
 
-The agent touches it only through [tool calls](#tool-call) — reading a file, writing one, running a shell command. Nothing on disk is in the [context window](#context-window) until a tool call loads it, which is what lets the agent work in a repository far larger than the window: the filesystem holds everything, the context holds only what the current task has read. Some harnesses do load the current directory's filenames into the context window by default — not the contents, just the tree — which act as [context pointers](#context-pointer): the agent sees what exists and reads the files it needs.
+Агент работает с ней только через [вызовы инструментов](#tool-call) — чтение файла, запись файла, запуск команды в оболочке. Ничего с диска не попадает в [контекстное окно](#context-window), пока вызов инструмента его не загрузит, — именно это позволяет агенту работать в репозитории, который намного больше окна: файловая система хранит всё, контекст — только то, что прочитано для текущей задачи. Некоторые обвязки по умолчанию загружают в контекстное окно имена файлов текущего каталога — не содержимое, только дерево — и они работают как [указатели контекста](#context-pointer): агент видит, что существует, и читает нужные ему файлы.
 
-And it's shared with you. The files the agent edits are the same ones you open in your editor and diff in git — the filesystem is the common workspace where you review what the agent did.
+И она общая с вами. Файлы, которые редактирует агент, — это те же файлы, которые вы открываете в редакторе и просматриваете в diff в git; файловая система — общее рабочее пространство, где вы проверяете, что сделал агент.
 
-_Usage:_
+_Пример:_
 
-"Why isn't it picking up my AGENTS.md?"
+«Почему он не подхватывает мой `AGENTS.md`?»
 
-"It's running against a different filesystem — the [sandbox](#sandbox) mounted the parent dir, not the project root. Repoint the harness."
+«Он работает с другой файловой системой — [песочница](#sandbox) примонтировала родительский каталог, а не корень проекта. Перенастройте обвязку.»
 
 ### Tool
 
-A function the [harness](#harness) exposes for the [agent](#agent) to call — Read, Write, Bash, Search. Tools are how an agent perceives and acts on the [environment](#environment): it can't see the environment except through [tool results](#tool-result), and can't change it except through [tool calls](#tool-call). Each tool call costs an extra [model provider request](#model-provider-request), since the result has to go back to the model before it can decide what to do next.
+Функция, которую [обвязка](#harness) выставляет для вызова [агентом](#agent) — Read, Write, Bash, Search. Инструменты — это способ, которым агент воспринимает [окружение](#environment) и воздействует на него: он не может видеть окружение иначе, как через [результаты инструментов](#tool-result), и не может менять его иначе, как через [вызовы инструментов](#tool-call). Каждый вызов инструмента стоит дополнительного [запроса к провайдеру моделей](#model-provider-request), потому что результат должен вернуться к модели, прежде чем она сможет решить, что делать дальше.
 
-Tools most coding agents ship with:
+Инструменты, с которыми поставляется большинство кодинговых агентов:
 
-| Tool   | What it does                                                 |
-| ------ | ------------------------------------------------------------ |
-| Read   | Returns a file's contents as a tool result                   |
-| Write  | Creates or edits a file in the [filesystem](#filesystem) |
-| Bash   | Runs a shell command and returns its output                  |
-| Search | Finds files or text matching a pattern across the codebase   |
+| Tool   | Что делает                                                         |
+| ------ | ------------------------------------------------------------------ |
+| Read   | Возвращает содержимое файла как результат инструмента              |
+| Write  | Создаёт или редактирует файл в [файловой системе](#filesystem) |
+| Bash   | Запускает команду оболочки и возвращает её вывод                   |
+| Search | Находит файлы или текст по шаблону по всей кодовой базе            |
 
-A tool is defined by three things: a name, a description of what it does, and a schema for its parameters. The harness sends these definitions to the [model](#model) with every request, and the model chooses a tool the same way it produces everything else — by writing [tokens](#token), in this case a structured call with arguments. The model never executes anything itself; the harness reads the call, runs the function, and sends back the result.
+Инструмент определяется тремя вещами: именем, описанием того, что он делает, и схемой его параметров. Обвязка отправляет эти определения [модели](#model) с каждым запросом, и модель выбирает инструмент так же, как она производит всё остальное, — записывая [токены](#token), в данном случае структурированный вызов с аргументами. Сама модель ничего не исполняет; обвязка читает вызов, запускает функцию и отправляет обратно результат.
 
-The tool list sets what the agent can do. A capable model with a narrow tool set is a narrow agent: it will route everything through whatever it has, which is why agents lean so heavily on Bash — a shell is one tool that reaches most of the system. To give an agent a capability cleanly, add a tool for it; [MCP](#mcp) is the standard for plugging in tools from outside the harness.
+Список инструментов задаёт то, что может делать агент. Способная модель с узким набором инструментов — это узкий агент: всё будет идти через то, что у него есть, поэтому агенты так сильно опираются на Bash — оболочка это один инструмент, который достаёт до большей части системы. Чтобы чисто дать агенту новую возможность, добавьте под неё инструмент; [MCP](#mcp) («Model Context Protocol — протокол контекста модели») — стандарт для подключения инструментов извне обвязки.
 
-Tool definitions occupy [context](#context) on every request, so a large tool set has a standing cost before any tool is called — and many similarly-described tools make the model worse at picking the right one.
+Определения инструментов занимают [контекст](#context) при каждом запросе, поэтому большой набор инструментов имеет постоянную стоимость ещё до того, как какой-либо инструмент был вызван, — а множество одинаково описанных инструментов ухудшает способность модели выбрать правильный.
 
-_Usage:_
+_Пример:_
 
-"Can the agent query staging directly?"
+«Может ли агент напрямую обращаться к staging?»
 
-"Add a `psql` tool to the harness, scoped read-only on staging. Without a tool for it, the agent's blind to anything outside the filesystem."
+«Добавьте в обвязку инструмент `psql` с доступом только на чтение к staging. Без инструмента для этого агент ничего не видит за пределами файловой системы.»
 
 ### Tool call
 
-The [model](#model)'s output naming a [tool](#tool) and its arguments — just structured text. It doesn't do anything on its own; the [harness](#harness) has to read it and execute. Produced by the model in one [model provider request](#model-provider-request).
+Вывод [модели](#model), называющий [инструмент](#tool) и его аргументы, — просто структурированный текст. Сам по себе он ничего не делает; [обвязка](#harness) должна его прочитать и исполнить. Производится моделью в одном [запросе к провайдеру моделей](#model-provider-request).
 
-The lifecycle of a tool call:
+Жизненный цикл вызова инструмента:
 
-| Step | Who     | What happens                                                                            |
-| ---- | ------- | --------------------------------------------------------------------------------------- |
-| 1    | Model   | Learns which tools exist from descriptions in the [system prompt](#system-prompt) |
-| 2    | Model   | Emits a call — tool name plus arguments, usually JSON — and stops                       |
-| 3    | Harness | Parses the call and checks it against the [permission mode](#permission-mode)     |
-| 4    | Harness | Executes it if allowed                                                                  |
-| 5    | Harness | Sends the outcome back as a [tool result](#tool-result) in the next request       |
+| Шаг | Кто     | Что происходит                                                                          |
+| --- | ------- | --------------------------------------------------------------------------------------- |
+| 1   | Модель  | Узнаёт, какие инструменты есть, из описаний в [системном промпте](#system-prompt) |
+| 2   | Модель  | Испускает вызов — имя инструмента плюс аргументы, обычно JSON — и останавливается       |
+| 3   | Обвязка | Разбирает вызов и проверяет его по [режиму разрешений](#permission-mode)          |
+| 4   | Обвязка | Исполняет его, если разрешено                                                           |
+| 5   | Обвязка | Возвращает итог как [результат инструмента](#tool-result) в следующем запросе     |
 
-One [turn](#turn) of [agent](#agent) work is usually many of these round trips chained together.
+Один [ход](#turn) работы [агента](#agent) — обычно множество таких циклов обмена, соединённых вместе.
 
-Because the call is generated by [next-token prediction](#next-token-prediction) like everything else, it can be wrong the way any model output can be wrong: a path that doesn't exist, a flag the command doesn't have, arguments that are plausible rather than correct. The harness executes what was written, not what was meant — a mistyped path doesn't error gracefully, it edits the wrong file.
+Поскольку вызов генерируется [предсказанием следующего токена](#next-token-prediction), как и всё остальное, он может быть ошибочен так же, как может быть ошибочен любой вывод модели: путь, которого не существует, флаг, которого у команды нет, аргументы, которые правдоподобны, но не корректны. Обвязка исполняет то, что написано, а не то, что имелось в виду, — путь с опечаткой не падает изящно, а редактирует не тот файл.
 
-_Usage:_
+_Пример:_
 
-"It said it ran the tests but the file timestamps haven't changed."
+«Он сказал, что запустил тесты, но временные метки файлов не изменились.»
 
-"Look at the transcript — did it actually emit a tool call, or just describe running them? The model produces the call, but if the harness didn't execute it, nothing happened."
+«Посмотрите транскрипт — он действительно испустил вызов инструмента или только описал, что запускает их? Модель создаёт вызов, но если обвязка его не исполнила, ничего не произошло.»
 
 ### Tool result
 
-What the [harness](#harness) sends back after executing a [tool call](#tool-call) — the file contents, the command output, the error. The [agent](#agent)'s only view of the [environment](#environment). Travels back to the [model](#model) in the _next_ [model provider request](#model-provider-request), where the model decides what to do with it. Tool call and tool result are two ends of the same exchange, both inside one [turn](#turn).
+То, что [обвязка](#harness) отправляет обратно после исполнения [вызова инструмента](#tool-call), — содержимое файла, вывод команды, ошибка. Единственное, как [агент](#agent) видит [окружение](#environment). Возвращается к [модели](#model) в _следующем_ [запросе к провайдеру моделей](#model-provider-request), где модель решает, что с этим делать. Вызов инструмента и результат инструмента — два конца одного обмена, оба внутри одного [хода](#turn).
 
-The lifecycle of a tool result:
+Жизненный цикл результата инструмента:
 
-| Step | Who     | What happens                                                               |
-| ---- | ------- | -------------------------------------------------------------------------- |
-| 1    | Harness | Executes the tool call — runs the command, reads the file                  |
-| 2    | Harness | Captures the outcome: output, contents, or error                           |
-| 3    | Harness | Appends it to the [context](#context) as a message                     |
-| 4    | Harness | Sends the whole context to the provider in the next model provider request |
-| 5    | Model   | Reads the result and decides: another tool call, or a final answer         |
+| Шаг | Кто     | Что происходит                                                               |
+| --- | ------- | ---------------------------------------------------------------------------- |
+| 1   | Обвязка | Исполняет вызов инструмента — запускает команду, читает файл                 |
+| 2   | Обвязка | Захватывает итог: вывод, содержимое или ошибку                               |
+| 3   | Обвязка | Добавляет его в [контекст](#context) как сообщение                       |
+| 4   | Обвязка | Отправляет весь контекст провайдеру в следующем запросе к провайдеру моделей |
+| 5   | Модель  | Читает результат и решает: ещё один вызов инструмента или итоговый ответ     |
 
-The result stays in the context for the rest of the [session](#session). Tool results are usually the bulk of a coding session's context: every file read, every test run, every search lands in full and keeps occupying [tokens](#token) long after it stopped being useful. A few large results — a verbose test log, a generated file read whole — can push a session toward the edge of the [context window](#context-window) faster than the conversation itself does.
+Результат остаётся в контексте до конца [сессии](#session). Результаты инструментов обычно составляют основную часть контекста кодинговой сессии: каждое чтение файла, каждый запуск теста, каждый поиск попадают туда целиком и продолжают занимать [токены](#token) спустя долгое время после того, как перестали быть полезными. Несколько крупных результатов — многословный лог теста, сгенерированный файл, прочитанный целиком, — могут подтолкнуть сессию к краю [контекстного окна](#context-window) быстрее, чем сама беседа.
 
-Because the result is all the model sees, the model has no way to check the environment behind it. If the output was truncated, the command silently failed, or the harness returned an error instead of the contents, the model reasons from what it was given. When the agent's picture of your system seems wrong, the tool results are where to look: somewhere in the transcript is a result that says something different from what you know to be true.
+Поскольку результат — это всё, что видит модель, у неё нет способа проверить окружение за ним. Если вывод был обрезан, команда тихо упала или обвязка вернула ошибку вместо содержимого, модель рассуждает, опираясь на то, что ей дали. Когда картина вашей системы у агента кажется неверной, смотреть надо на результаты инструментов: где-то в транскрипте есть результат, который говорит нечто иное, чем то, что вы знаете как правду.
 
-_Usage:_
+_Пример:_
 
-"It's reasoning about the file like it's empty."
+«Он рассуждает о файле так, будто тот пустой.»
 
-"The tool result came back as a permission denial, not the contents. The model only saw the error string — it has no other way to see the file."
+«Результат инструмента вернулся как отказ в разрешении, а не как содержимое. Модель увидела только строку ошибки — у неё нет другого способа увидеть файл.»
 
 ### MCP
 
-**Model Context Protocol.** A protocol for plugging external tool servers into a [harness](#harness) — how an [agent](#agent) gets [tools](#tool) beyond what the harness ships with. The agent never "calls MCP"; it calls a tool, and the harness happens to have gotten that tool from an MCP server. Also exposes resources (read-only data) and prompts (reusable templates), but tool provision is the primary use.
+**Model Context Protocol — протокол контекста модели.** Протокол для подключения внешних серверов инструментов к [обвязке](#harness) — то, как [агент](#agent) получает [инструменты](#tool) помимо тех, что идут в комплекте обвязки. Агент никогда «не вызывает MCP»; он вызывает инструмент, а обвязка просто получила этот инструмент с сервера MCP. Также протокол открывает ресурсы (данные только для чтения) и промпты (переиспользуемые шаблоны), но основное применение — предоставление инструментов.
 
-The protocol solves an integration problem. Without a standard, every harness would need its own Linear integration, its own Slack integration, its own database integration — written and maintained separately for each. With MCP, the integration is written once as a server, and any MCP-compatible harness can use it. The harness connects to the server, the server advertises what tools it offers, and those tools become available to the agent alongside the built-in ones.
+Протокол решает задачу интеграции. Без стандарта каждой обвязке понадобилась бы собственная интеграция с Linear, своя с Slack, своя с базой данных — написанная и поддерживаемая отдельно для каждой. С MCP интеграцию пишут один раз как сервер, и любая совместимая с MCP обвязка может её использовать. Обвязка подключается к серверу, сервер сообщает, какие инструменты он предлагает, и эти инструменты становятся доступны агенту наравне со встроенными.
 
-The cost is paid in [context](#context). Every tool a server advertises arrives as a definition — name, description, parameter schema — and the [model](#model) can only call tools it knows about. The naive approach loads every definition into the [context window](#context-window) up front: install a few generous servers and a [session](#session) starts with thousands of [tokens](#token) of tool schemas before you've typed anything, spending [attention budget](#attention-budget) on tools the task will never use.
+Плата идёт [контекстом](#context). Каждый инструмент, который заявляет сервер, приходит как определение — имя, описание, схема параметров — а [модель](#model) может вызывать только те инструменты, о которых знает. Наивный подход грузит все определения в [контекстное окно](#context-window) сразу: поставьте пару щедрых серверов, и [сессия](#session) начинается с тысяч [токенов](#token) схем инструментов ещё до того, как вы что-то ввели, расходуя [бюджет внимания](#attention-budget) на инструменты, которые задача никогда не использует.
 
-Many harnesses now mitigate this with tool search: instead of the full definitions, the context holds a [context pointer](#context-pointer) to the available tools — the agent searches for a tool by name or purpose and loads its definition only when it needs it. If your harness doesn't do this, the up-front cost still applies, and it's worth enabling only the servers a project actually needs.
+Многие обвязки теперь смягчают это поиском инструментов: вместо полных определений в контексте лежит [указатель контекста](#context-pointer) на доступные инструменты — агент ищет инструмент по имени или назначению и подгружает определение только тогда, когда он нужен. Если ваша обвязка так не умеет, цена платится авансом, и стоит включать только те серверы, которые проекту действительно нужны.
 
-_Usage:_
+_Пример:_
 
-"The agent needs to read tickets from Linear."
+«Агенту нужно читать тикеты из Linear.»
 
-"Configure the harness to use the Linear MCP server — it exposes the Linear API as tools the agent can call. Saves you writing custom tool wrappers."
+«Настройте обвязку на сервер Linear MCP — он открывает API Linear как инструменты, которые агент может вызывать. Не придётся писать собственные обёртки инструментов.»
 
 ### Permission request
 
-What the [harness](#harness) shows the user before executing a [tool call](#tool-call) that isn't pre-approved. The [model](#model) produces a tool call; instead of running it immediately, the harness pauses and asks. Approve and it runs; deny and the harness reports the denial back to the model as a [tool result](#tool-result). The mechanism by which a harness puts a human in the [loop](#human-in-the-loop) for risky or sensitive actions.
+То, что [обвязка](#harness) показывает пользователю перед выполнением [вызова инструмента](#tool-call), не одобренного заранее. [Модель](#model) формирует вызов инструмента; вместо того чтобы сразу его выполнить, обвязка приостанавливает выполнение и спрашивает. Одобрите — вызов выполняется; отклоните — обвязка сообщает об отказе обратно в модель как [результат инструмента](#tool-result). Это механизм, которым обвязка помещает [человека в цикл](#human-in-the-loop) для рискованных или чувствительных действий.
 
-The lifecycle of a permission request:
+Жизненный цикл запроса разрешения:
 
-| Step | Who     | What happens                                                                            |
-| ---- | ------- | --------------------------------------------------------------------------------------- |
-| 1    | Model   | Produces a tool call                                                                    |
-| 2    | Harness | Checks it against the [permission mode](#permission-mode) and any saved approvals |
-| 3    | Harness | Pre-approved: executes immediately. Otherwise: pauses and shows the request             |
-| 4    | User    | Approves once, approves for the rest of the [session](#session), or denies          |
-| 5    | Harness | Executes the call, or sends the denial back as a tool result                            |
+| Шаг | Кто          | Что происходит                                                                        |
+| --- | ------------ | ------------------------------------------------------------------------------------- |
+| 1   | Модель       | Формирует вызов инструмента                                                           |
+| 2   | Обвязка      | Проверяет его по [режиму разрешений](#permission-mode) и сохранённым одобрениям |
+| 3   | Обвязка      | Предодобренный: выполняет сразу. Иначе: ставит на паузу и показывает запрос           |
+| 4   | Пользователь | Одобряет однократно, одобряет до конца [сессии](#session) или отклоняет           |
+| 5   | Обвязка      | Выполняет вызов или возвращает отказ как результат инструмента                        |
 
-Denying a request steers the agent. The model reads the denial like any other tool result and reacts to it — it tries a different approach, or asks what you'd prefer. Most harnesses let you attach a message to the denial, which turns the request into a steering point: "not like that, use the migration script instead" lands exactly when the model is deciding what to do next.
+Отклонение запроса — это способ направлять агента. Модель читает отказ как любой другой результат инструмента и реагирует на него — пробует другой подход или спрашивает, чего бы вы хотели. Большинство обвязок позволяет добавить к отказу сообщение, и тогда запрос превращается в точку управления: «не так, используй вместо этого миграционный скрипт» приходит ровно в тот момент, когда модель решает, что делать дальше.
 
-The cost is that every request is a synchronous wait on you. The [agent](#agent) sits blocked until you answer, which is fine while you're watching and a problem when you're not — an agent that triggers requests constantly can't be left to work [AFK](#afk). The permission mode is the dial: which calls run freely, which ask first, ideally with a [sandbox](#sandbox) making it safe to widen the free set.
+Цена в том, что каждый запрос — синхронное ожидание вас. [Агент](#agent) стоит заблокированным, пока вы не ответите, что нормально, когда вы следите за процессом, и становится проблемой, когда нет, — агент, который постоянно запрашивает разрешения, нельзя оставлять работать в режиме [AFK](#afk). Режим разрешений и есть тот регулятор: какие вызовы идут свободно, какие спрашивают сначала, в идеале с [песочницей](#sandbox), расширяющей безопасный набор.
 
-_Usage:_
+_Пример:_
 
-"It's been blocked on a permission request for ten minutes — I was in a meeting."
+«Он уже десять минут ждёт разрешения — я был на созвоне.»
 
-"That's the cost of human-in-the-loop. Pre-approve the safe [tools](#tool) so the request only fires on the actually-risky calls."
+«Это плата за человека в цикле. Предодобрьте безопасные [инструменты](#tool), чтобы запрос срабатывал только на действительно рискованных вызовах.»
 
 ### Permission mode
 
-The permission-gating slice of an [agent mode](#agent-mode) — which [tool calls](#tool-call) trigger a [permission request](#permission-request) and which run automatically. The original purpose of mode systems before [harnesses](#harness) started bundling behavioral instructions on top.
+Слой [режима агента](#agent-mode), отвечающий за разрешения: какие [вызовы инструментов](#tool-call) запускают [запрос разрешения](#permission-request), а какие выполняются автоматически. Исходное назначение систем режимов до того, как [обвязки](#harness) начали добавлять поверх них поведенческие инструкции.
 
-Harnesses ship a ladder of these modes:
+Обвязки поставляют лестницу таких режимов:
 
-| Mode               | Reads | Writes & shell         | Typical use                                     |
-| ------------------ | ----- | ---------------------- | ----------------------------------------------- |
-| Read-only / plan   | Auto  | Blocked                | Research, planning, reviewing                   |
-| Default            | Auto  | Ask                    | Day-to-day supervised work                      |
-| Auto-edit          | Auto  | Edits auto, shell asks | Trusted repos, mechanical changes               |
-| "Yolo" / full-auto | Auto  | Auto                   | [Sandboxes](#sandbox), [AFK](#afk) runs |
+| Режим                | Чтение | Запись и оболочка                 | Типичное применение                                |
+| -------------------- | ------ | --------------------------------- | -------------------------------------------------- |
+| Только чтение / план | Авто   | Заблокировано                     | Исследование, планирование, ревью                  |
+| По умолчанию         | Авто   | Запрос                            | Повседневная работа под присмотром                 |
+| Авто-правки          | Авто   | Правки авто, оболочка запрашивает | Доверенные репозитории, механические правки        |
+| «Yolo» / полный авто | Авто   | Авто                              | [Песочницы](#sandbox), [AFK](#afk)-запуски |
 
-Choosing a rung is a trade between safety and interruption, and both failure modes are felt. Too tight, and you become the bottleneck: the [agent](#agent) stops every few seconds for harmless reads, you click approve on autopilot, and the approvals stop meaning anything — rubber-stamping is the worst of both worlds, all the interruption with none of the protection. Too loose, and the agent edits files and runs commands you'd have wanted to see first.
+Выбор ступени — компромисс между безопасностью и прерываниями, и оба неудачных режима ощущаются. Слишком тесно — и вы становитесь узким местом: [агент](#agent) останавливается каждые несколько секунд на безобидных чтениях, вы нажимаете одобрение на автопилоте, и одобрения перестают что-либо значить — штампование одобрений — это худшее из двух миров, все прерывания и никакой защиты. Слишком свободно — и агент редактирует файлы и запускает команды, которые вы бы хотели сначала увидеть.
 
-The loose end is most defensible inside a sandbox, where the blast radius of a bad [tool](#tool) call is contained. Outside one, most people settle on auto-approving reads and keeping a [human in the loop](#human-in-the-loop) for anything irreversible.
+Самый свободный режим наиболее оправдан внутри песочницы, где ограничен масштаб последствий плохого вызова [инструмента](#tool). Вне её большинство останавливается на автоодобрении чтения и удержании [человека в цикле](#human-in-the-loop) для всего необратимого.
 
-_Usage:_
+_Пример:_
 
-"It paused on every grep — totally killed the AFK run."
+«Он делал паузу на каждом grep — совсем убил AFK-запуск.»
 
-"Loosen the permission mode for read-only tools, keep prompting on writes and shell. Most permission requests on a research [session](#session) are noise."
+«Ослабьте режим разрешений для инструментов только для чтения, оставьте запросы на запись и команды оболочки. Большинство запросов разрешения на исследовательской [сессии](#session) — шум.»
 
 ### Agent mode
 
-A preset that shapes how the [agent](#agent) operates at runtime — bundles a [permission mode](#permission-mode) with behavioral instructions injected into the [system prompt](#system-prompt). Examples: a default that prompts on risky calls, a **plan mode** that blocks edits and steers the agent toward research, an **accept-edits** mode that auto-approves edits, a **bypass permissions** mode (colloquially **YOLO mode**) that auto-approves everything. Can flip [mid-session](#session).
+Пресет, который формирует то, как [агент](#agent) работает во время выполнения, — объединяет [режим разрешений](#permission-mode) с поведенческими инструкциями, внедряемыми в [системный промпт](#system-prompt). Примеры: режим по умолчанию, запрашивающий рискованные вызовы; **plan mode**, блокирующий правки и направляющий агента к исследованию; режим **accept-edits**, автоодобряющий правки; режим **bypass permissions** (разговорно **YOLO mode**), автоодобряющий всё. Может переключаться посреди [сессии](#session).
 
-The bundling is what distinguishes a mode from a bare permission setting. A permission mode is only a gate: it decides which [tool calls](#tool-call) go through. A gate alone produces an agent that wants to edit but can't — it proposes the write, gets blocked, and tries another way. The injected instructions remove the want: plan mode doesn't just block edits, it tells the agent it's in a planning phase, so it reads, asks, and proposes instead of straining against the gate. Gate and steer point the same direction.
+Именно объединение отличает режим от голой настройки разрешений. Режим разрешений — это только ворота: он решает, какие [вызовы инструментов](#tool-call) проходят. Одни ворота дают агента, который хочет редактировать, но не может, — он предлагает запись, получает блок и ищет другой путь. Внедрённые инструкции убирают само желание: plan mode не просто блокирует правки, он сообщает агенту, что тот находится в фазе планирования, поэтому агент читает, спрашивает и предлагает варианты, а не упирается в ворота. Ворота и направление указывают в одну сторону.
 
-In practice, you change mode as your trust changes over the course of a task. The same task can pass through several modes: plan mode while the approach is still being shaped, the prompting default for the first delicate edits, accept-edits once the agent has shown it understands the change, bypass for an [AFK](#afk) run inside a [sandbox](#sandbox). Changing mode costs you nothing: the conversation continues exactly where it was, with new permissions and new instructions. If you find yourself approving every prompt without reading it, the mode is set tighter than your actual trust; if you keep rejecting edits, it's set looser.
+На практике режим меняют по мере того, как меняется доверие в ходе задачи. Одна задача может пройти через несколько режимов: plan mode, пока подход ещё формируется; режим с запросами по умолчанию для первых деликатных правок; accept-edits, когда агент показал, что понимает изменение; bypass permissions для [AFK](#afk)-запуска внутри [песочницы](#sandbox). Смена режима ничего не стоит: разговор продолжается ровно с того же места, с новыми разрешениями и новыми инструкциями. Если вы ловите себя на том, что одобряете каждый запрос, не читая его, режим установлен теснее, чем ваше фактическое доверие; если вы постоянно отклоняете правки — он свободнее.
 
-_Vendor terms:_ Claude Code calls these "permission modes," Codex calls them "approval modes" — both predate behavioral bundling.
+_Названия у разработчиков:_ Claude Code называет их «permission modes», Codex — «approval modes»; оба названия появились до поведенческого объединения.
 
-_Usage:_
+_Пример:_
 
-"It keeps editing files when I just want a plan."
+«Оно правит файлы, когда мне нужен только план.»
 
-"Switch to plan mode — it'll block writes and stay in research."
+«Переключись на plan mode — он заблокирует записи и останется в исследовании.»
 
-"What about for the AFK run later?"
+«А для AFK-запуска позже?»
 
-"Bypass mode, but only inside the sandbox."
+«Bypass mode, но только внутри песочницы.»
 
 ### Sandbox
 
-An isolated [environment](#environment) the [agent](#agent) runs inside — a container, VM, ephemeral [filesystem](#filesystem), or restricted-permission shell. Limits the blast radius of agent actions: even if the agent runs destructive commands or fetches something malicious, the damage is contained. The safety substrate that makes [AFK](#afk) practical.
+Изолированное [окружение](#environment), в котором работает [агент](#agent), — контейнер, ВМ, временная [файловая система](#filesystem) или оболочка с ограниченными правами. Ограничивает масштаб последствий действий агента: даже если агент запускает деструктивные команды или скачивает что-то вредоносное, ущерб остаётся внутри. Защитный субстрат, который делает работу в режиме [AFK](#afk) практичной.
 
-The sandbox and the [permission mode](#permission-mode) solve the same problem from opposite ends. Permissions ask before an action runs; a sandbox limits what the action can reach if it does run. Permissions need you running [in the loop](#human-in-the-loop) — every prompt is an interruption — and a session that asks constantly is barely autonomous. A sandbox spends infrastructure instead of attention: the stronger the isolation, the fewer questions need asking.
+Песочница и [режим разрешений](#permission-mode) решают одну и ту же задачу с противоположных концов. Разрешения спрашивают до запуска действия; песочница ограничивает то, до чего действие может добраться, если оно всё же запустилось. Разрешения требуют, чтобы вы оставались [в цикле](#human-in-the-loop), — каждый запрос это прерывание, — и сессия, которая спрашивает постоянно, едва ли автономна. Песочница тратит инфраструктуру вместо внимания: чем сильнее изоляция, тем меньше вопросов нужно задавать.
 
-Isolation comes in grades:
+Изоляция различается по уровням:
 
-| Grade            | What it is                                                 | What it contains                           |
-| ---------------- | ---------------------------------------------------------- | ------------------------------------------ |
-| Restricted shell | OS-level confinement around each command                   | Writes outside the project, network access |
-| Container        | Fresh filesystem, no credentials mounted, discarded after  | Anything the agent does to its own machine |
-| VM / cloud       | A separate machine entirely, often provided by the harness | Everything, including kernel-level escapes |
+| Уровень               | Что это                                                                       | Что ограничивает                             |
+| --------------------- | ----------------------------------------------------------------------------- | -------------------------------------------- |
+| Ограниченная оболочка | Ограничение на уровне ОС вокруг каждой команды                                | Записи вне проекта, доступ к сети            |
+| Контейнер             | Свежая файловая система, без примонтированных учётных данных, удаляется после | Всё, что агент делает с самой машиной        |
+| ВМ / облако           | Совершенно отдельная машина, часто предоставляемая обвязкой                   | Вообще всё, включая эскалации на уровне ядра |
 
-What no sandbox contains: actions that leave it legitimately. An agent with your git credentials can push; one with network access can call production APIs. Decide what crosses the boundary before deciding how thick to make it.
+Чего песочница никогда не ограничивает — так это действия, которые покидают её на законных основаниях. Агент с вашими git-учётными данными может пушить; агент с доступом к сети может вызывать production API. Решите, что пересекает границу, прежде чем решать, какой толщины её делать.
 
-_Usage:_
+_Пример:_
 
-"I want to let it run [bypass-permissions](#agent-mode) overnight but I'm not ready for that."
+«Хочу оставить его в [bypass-permissions](#agent-mode) на ночь, но я к этому не готов.»
 
-"Put it in a sandbox — fresh container, no credentials mounted, no network out. Worst case it nukes its own filesystem and you discard the container."
+«Посади его в песочницу — свежий контейнер, без примонтированных учётных данных, без сети наружу. В худшем случае оно снесёт собственную файловую систему, и вы просто выбросите контейнер.»
 
 ## Section 4 — Failure Modes
 
 ### Sycophancy
 
-Confidently agreeable [model](#model) output. Caused by [training](#training): the model was shaped to favor answers humans liked, and humans tend to like agreement more than they like being told they're wrong. So the model learned that agreeing is rewarded — even when the agreement is incorrect.
+Уверенно-согласный вывод [модели](#model). Причина — [обучение](#training): модель формировали так, чтобы она предпочитала ответы, нравящиеся людям, а людям чаще нравится согласие, чем сообщение об их неправоте. Модель усвоила, что согласие вознаграждается — даже когда оно ошибочно.
 
-_Surfaces as:_
+_Проявляется как:_
 
-- _Caving under pushback_ — reverses a correct answer when you say "are you sure?".
-- _Praising bad input_ — agrees your broken plan is brilliant before analysing it.
-- _Biased framing_ — review skews positive when you signal you wrote it; negative when you signal someone else did. Same artifact, different verdict.
-- _Mimicry_ — repeats your mistakes back to you as confirmation.
+- _Податливость под нажимом_ — меняет правильный ответ на противоположный, стоит спросить «ты уверен?».
+- _Похвала плохого ввода_ — соглашается, что ваш слабый план гениален, до того как разберёт его.
+- _Смещённая оценка_ — при ревью перевешивает позитив, если вы намекаете, что код ваш, и негатив, если намекаете, что чужой. Один артефакт, разные вердикты.
+- _Подражание_ — повторяет ваши же ошибки обратно как подтверждение.
 
-_Diagnostic test:_ would the model have said this without your steer? If the only thing that changed was your tone or framing, it's sycophancy, not a real shift in analysis.
+_Диагностический тест:_ сказала бы модель это без вашего подталкивания? Если изменился только тон или подача — это поддакивание, а не настоящий сдвиг в анализе.
 
-_Fix:_ hide your preferences. Phrase prompts neutrally — "review this code" not "is this code good?".
+_Исправление:_ скройте свои предпочтения. Формулируйте промпты нейтрально — «проверь этот код», а не «этот код хороший?».
 
-_Avoid:_ using "sycophancy" for any wrong answer that happens to please you. Without the diagnostic test, the term has no more value than "wrong."
+_Избегать:_ использовать «поддакивание» для любого неверного ответа, который случайно вам приятен. Без диагностического теста термин не имеет большей ценности, чем «неправильно».
 
-_Usage:_
+_Пример:_
 
-"It said my refactor plan looked great, then I asked 'are you sure?' and it walked the whole thing back."
+«Сказала, мой план рефакторинга отличный, я спросил „ты уверена?" — и она откатила всё назад.»
 
-"Classic sycophancy — it agreed first because you sounded confident, then caved because you sounded doubtful. The plan's quality didn't change, your tone did. [Clear](#clearing) and re-ask without signalling either way."
+«Классическое поддакивание — сначала согласилась, потому что вы звучали уверенно, потом сдала назад, потому что вы засомневались. Качество плана не изменилось, изменился ваш тон. Сделайте [очистку](#clearing) и спросите заново, ничего не сигнализируя.»
 
 ### Hallucination
 
-Confidently-wrong [model](#model) output. Two flavors with different causes and fixes:
+Уверенно-ошибочный вывод [модели](#model). Два вида с разными причинами и способами исправления:
 
-| Flavor         | What goes wrong                                                                                                        | Cause                                                                                                                | Fix                                                                |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| _Factuality_   | Invented or wrong facts about the world — a function that doesn't exist, a wrong API signature, a fake citation        | [Parametric knowledge](#parametric-knowledge) gaps, often past the [knowledge cutoff](#knowledge-cutoff) | Load the right [contextual knowledge](#contextual-knowledge) |
-| _Faithfulness_ | Output drifts from the contextual knowledge that's loaded, the user's instructions, or the model's own prior reasoning | [Attention degradation](#attention-degradation); worsens in the [dumb zone](#smart-zone)                 | [Clear](#clearing) or [compact](#compaction)               |
+| Вид               | Что идёт не так                                                                                                                    | Причина                                                                                                               | Исправление                                                                |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| _Фактологичность_ | Выдуманные или неверные факты о мире — несуществующая функция, неверная сигнатура API, фейковая цитата                             | Пробелы в [параметрических знаниях](#parametric-knowledge), часто за [отсечкой знаний](#knowledge-cutoff) | Загрузить правильные [контекстуальные знания](#contextual-knowledge) |
+| _Верность_        | Вывод отрывается от загруженных контекстуальных знаний, инструкций пользователя или собственной предшествующей аргументации модели | [Деградация внимания](#attention-degradation); усиливается в [«глупой зоне»](#smart-zone)                 | [Очистка](#clearing) или [компакция](#compaction)                  |
 
-[Next-token prediction](#next-token-prediction) produces fluent output whether or not the underlying fact is real — the model has no internal signal that it doesn't know something, so an invented method arrives in the same assured register as a correct one. Hallucinated code is plausible by construction: it's what the API _would_ look like if it existed, which is exactly what makes it slip past a skim-level review and fail only when run.
+[Предсказание следующего токена](#next-token-prediction) даёт гладкий вывод независимо от того, реален ли лежащий в его основе факт — у модели нет внутреннего сигнала о том, чего она не знает, поэтому выдуманный метод приходит в той же уверенной манере, что и правильный. Галлюцинированный код правдоподобен по построению: это то, как _выглядело бы_ API, если бы существовало, и именно поэтому он проскальзывает мимо беглого ревью и падает только при запуске.
 
-You need to know which flavor you're looking at, because the fix for one makes the other worse. Factuality means missing knowledge: the fix is adding context — the docs, the type definitions, the file. Faithfulness means the knowledge is present but losing the competition for attention: the fix is removing context. Misdiagnose faithfulness as factuality and you paste in more docs, which grows the context and makes the drift worse. When the agent gets something wrong, check whether the correct information was already in context before deciding which problem you have.
+Нужно понимать, с каким видом вы столкнулись, потому что исправление одного ухудшает другое. Фактологичность означает нехватку знаний: исправление — добавить контекст (документацию, определения типов, файл). Верность означает, что знания присутствуют, но проигрывают конкуренцию за внимание: исправление — убрать контекст. Примите верность за фактологичность, и вы вставите ещё документации, контекст разрастётся и отрыв усилится. Когда агент ошибается, прежде чем определять проблему, проверьте, была ли правильная информация уже в контексте.
 
-_Avoid:_ "hallucination" as a bare synonym for "wrong" — without naming the flavor, the term has no diagnostic value.
+_Избегать:_ «галлюцинация» как голый синоним слова «неправильно» — без указания вида термин не имеет диагностической ценности.
 
-_Usage:_
+_Пример:_
 
-"It hallucinated a `parseAsync` method on the schema."
+«Он нагаллюцинировал метод `parseAsync` у схемы.»
 
-"Factuality or faithfulness?"
+«Фактологичность или верность?»
 
-"The method exists in the docs I pasted — it just stopped reading them after [turn](#turn) forty."
+«Метод есть в документации, которую я вставил, — он просто перестал её читать после сорокового [хода](#turn).»
 
-"Faithfulness then. Compact and reload, don't bother adding more docs."
+«Тогда верность. Сделать компакцию и перезагрузить, доки больше не добавлять.»
 
 ### Parametric knowledge
 
-What the [model](#model) "knows" from [training](#training), stored in its [parameters](#parameters). Frozen at training time — the model can't see its own parameters or update them. Detail is lost in the squeeze: billions of facts cram into a fixed number of parameters, and the rare ones blur. Source of fluency on common topics, and of fabrication on uncommon ones. Counterpart to [contextual knowledge](#contextual-knowledge).
+То, что [модель](#model) «знает» из [обучения](#training), хранится в её [параметрах](#parameters). Замораживается при обучении — модель не видит свои параметры и не может их обновить. Детали теряются при сжатии: миллиарды фактов набиваются в фиксированное число параметров, и редкие размываются. Источник беглости в частых темах и выдумок — в редких. Составляет пару [контекстуальным знаниям](#contextual-knowledge).
 
-Parametric knowledge is not stored as facts. Training never gives the model a database to look things up in; it adjusts parameters until the model predicts text well, and a model that predicts text about a topic well behaves as if it knows the topic. How reliable the knowledge is tracks how often something appeared in the training data: a topic with millions of examples is reproduced accurately, for a topic with only a handful, the model guesses based on what similar topics look like. Reproducing and guessing are the same process to the model, so it can't tell which one it's doing. A fabricated answer arrives with the same fluency as a correct one. [Hallucination](#hallucination) is the model guessing wrong.
+Параметрические знания хранятся не как факты. Обучение никогда не даёт модели базу данных, в которой можно что-то искать; оно подгоняет параметры, пока модель не начнёт хорошо предсказывать текст, а модель, которая хорошо предсказывает текст о теме, ведёт себя так, будто знает её. Надёжность знаний зависит от того, как часто нечто встречалось в обучающих данных: тему с миллионами примеров модель воспроизводит точно, а тему с горсткой примеров — угадывает по образцу похожих тем. Воспроизведение и угадывание для модели — один и тот же процесс, поэтому она не отличает одно от другого. Выдуманный ответ приходит с той же беглостью, что и правильный. [Галлюцинация](#hallucination) — это когда модель угадала неверно.
 
-Parametric knowledge also ages. The parameters stop changing at the [knowledge cutoff](#knowledge-cutoff), so a library released or renamed after that date doesn't exist in them, and an API that changed is remembered in its old form.
+Параметрические знания также стареют. Параметры перестают меняться на [отсечке знаний](#knowledge-cutoff), поэтому библиотека, выпущенная или переименованная после этой даты, в них не существует, а изменившийся API вспоминается в старом виде.
 
-For both gaps — too rare and too recent — the remedy is the same: the knowledge can't be added to the parameters, so it has to be supplied as contextual knowledge instead.
+Что слишком редкое, что слишком новое — лекарство одно: знания нельзя добавить в параметры, поэтому их приходится поставлять как контекстуальные.
 
-_Usage:_
+_Пример:_
 
-"It writes flawless React but invents methods on our internal SDK."
+«Пишет безупречный React, но выдумывает методы в нашем внутреннем SDK.»
 
-"React is dense in the parametric knowledge — millions of training examples. Your SDK isn't, so the model fills in plausible-looking shapes. Load the SDK docs into [context](#context)."
+«React плотно представлен в параметрических знаниях — миллионы примеров в обучении. Ваш SDK — нет, поэтому модель подставляет правдоподобные формы. Загрузите документацию SDK в [контекст](#context).»
 
 ### Knowledge cutoff
 
-The date past which a [model](#model) has no [parametric knowledge](#parametric-knowledge). Libraries, APIs, and events from after the cutoff are fabrication traps unless their docs are loaded as [contextual knowledge](#contextual-knowledge). Each model release ships with its own cutoff.
+Дата, после которой у [модели](#model) нет [параметрических знаний](#parametric-knowledge). Библиотеки, API и события после отсечки — ловушки для выдумок, если только их документация не загружена как [контекстуальные знания](#contextual-knowledge). У каждого релиза модели своя отсечка.
 
-The cutoff exists because of how models are made: [training](#training) bakes a snapshot of text into the model's [parameters](#parameters), and after that the parameters are frozen. The model doesn't know its knowledge has an edge — asked about something past the cutoff, it doesn't refuse, it extrapolates from the nearest thing it does know. That's what makes the trap quiet: code written against an old version of a library looks plausible, often compiles, and fails on the parts that changed.
+Отсечка существует из-за того, как делают модели: [обучение](#training) запекает снимок текста в [параметры](#parameters) модели, и после этого параметры заморожены. Модель не знает, что у её знаний есть край — спросите о чём-то за отсечкой, и она не откажется, а экстраполирует от ближайшего, что знает. Именно поэтому ловушка тихая: код, написанный под старую версию библиотеки, выглядит правдоподобно, часто компилируется и падает только на изменившихся частях.
 
-The fix is always the same: get current information into [context](#context). Load the changelog, point at the installed version's type definitions, or have the agent read the docs from the web. Anything in context outranks nothing-in-parameters.
+Исправление всегда одно: поместить актуальную информацию в [контекст](#context). Загрузите changelog, укажите на определения типов установленной версии или пусть агент прочитает документацию из сети. Что-либо в контексте перевешивает пустоту в параметрах.
 
-_Usage:_
+_Пример:_
 
-"It keeps writing the v3 SDK syntax — we're on v5."
+«Он всё пишет синтаксис SDK v3 — а мы на v5.»
 
-"v5 shipped after the knowledge cutoff. Load the v5 changelog as contextual knowledge, otherwise it'll keep fabricating from the older parametric version."
+«v5 вышел после отсечки знаний. Загрузите changelog v5 как контекстуальные знания, иначе он продолжит выдумывать на основе старой параметрической версии.»
 
 ### Contextual knowledge
 
-Facts the [agent](#agent) can read directly from the [context](#context) right now — the user's task, files the agent has read in, [tool results](#tool-result), [AGENTS.md](#agentsmd) content loaded at [session](#session) start. Counterpart to [parametric knowledge](#parametric-knowledge): parametric is _recalled_ from the parameters; contextual is _read_ from the [window](#context-window). [Hallucinations](#hallucination) are much less common when the agent works from contextual knowledge — the answer is right in front of it, not dredged up from a blurred memory.
+Факты, которые [агент](#agent) может прямо прочитать из [контекста](#context) прямо сейчас — задача пользователя, файлы, которые агент прочитал, [результаты инструментов](#tool-result), содержимое [AGENTS.md](#agentsmd), загруженное в начале [сессии](#session). Составляет пару [параметрическим знаниям](#parametric-knowledge): параметрические _вспоминаются_ из параметров, контекстуальные _читаются_ из [окна](#context-window). [Галлюцинации](#hallucination) возникают гораздо реже, когда агент исходит из контекстуальных знаний — ответ прямо перед ним, а не извлекается из размытой памяти.
 
-Of the two kinds of knowledge, only contextual knowledge is in your control. The parameters are frozen, so the only way to give the [model](#model) knowledge it lacks — an internal SDK, a library released after the [knowledge cutoff](#knowledge-cutoff), a decision made yesterday — is to put it in the context. A lot of practical [AI](#ai) coding work reduces to this: getting the right facts in front of the model at the moment it needs them.
+Из двух видов знаний только контекстуальные под вашим контролем. Параметры заморожены, поэтому единственный способ дать [модели](#model) знания, которых у неё нет — внутренний SDK, библиотеку, вышедшую после [отсечки знаний](#knowledge-cutoff), решение, принятое вчера, — поместить их в контекст. Значительная часть практической работы по [ИИ](#ai)-кодированию сводится именно к этому: подать модели нужные факты в тот момент, когда они ей нужны.
 
-When contextual and parametric knowledge conflict, the contextual usually wins. Paste the current API docs and the model follows them rather than its stale memory of the old API — though the old version can still bleed through, especially deep into a long session. If the agent keeps reverting to an outdated pattern despite the docs being loaded, that's parametric knowledge leaking past the contextual; restating the correction or moving it closer to the work helps.
+Когда контекстуальные и параметрические знания конфликтуют, контекстуальные обычно побеждают. Вставьте актуальную документацию API — и модель следует ей, а не своему устаревшему воспоминанию о старом API, хотя старая версия всё ещё может просачиваться, особенно в глубине долгой сессии. Если агент раз за разом возвращается к устаревшему шаблону, хотя документация загружена, это параметрические знания протекают мимо контекстуальных; помогает переформулировать исправление или поставить его ближе к работе.
 
-Unlike parametric knowledge, contextual knowledge costs something to use. Everything loaded into the window spends [tokens](#token) and competes for the model's [attention budget](#attention-budget), so loading more is not automatically better — the aim is the relevant facts in the window, not all the facts.
+В отличие от параметрических, контекстуальные знания имеют свою цену. Всё, что загружено в окно, тратит [токены](#token) и соревнуется за [бюджет внимания](#attention-budget) модели, поэтому загружать больше — не значит автоматически лучше: цель — релевантные факты в окне, а не все факты.
 
-_Reach for this term_ only when contrasting with parametric knowledge; otherwise just say **context**.
+_Используйте этот термин_ только при противопоставлении параметрическим знаниям; в остальных случаях говорите просто **контекст**.
 
-_Avoid:_ "working memory" — contextual knowledge is what's in the window _now_; a [memory system](#memory-system) is what gets cross-session content into it. Different scales, don't conflate.
+_Избегать:_ «рабочая память» — контекстуальные знания это то, что в окне _сейчас_; [система памяти](#memory-system) — то, что доставляет в него межсессионный контент. Разные масштабы, не смешивайте.
 
-_Usage:_
+_Пример:_
 
-"Why does it nail the API when I paste the docs and fabricate it when I don't?"
+«Почему он попадает в API, когда я вставляю документацию, и выдумывает, когда нет?»
 
-"With the docs in, it's contextual knowledge — reading off the page. Without, it's parametric and the rare endpoints blur."
+«С документацией внутри это контекстуальные знания — считывание со страницы. Без неё — параметрические, и редкие эндпоинты размываются.»
 
 ### Attention relationship
 
-When predicting each [token](#token), the [model](#model) factors in every other token in the [context](#context) — some heavily, others barely at all. The pairing between two tokens is an **attention relationship**, and meaningful pairs ("her" with "Sarah", or a `getUser()` call with its `function getUser` definition) influence each other more than unrelated ones. A context of N tokens has on the order of N² relationships.
+При предсказании каждого [токена](#token) [модель](#model) учитывает все остальные токены в [контексте](#context) — одни сильно, другие почти никак. Связь между двумя токенами — это **отношение внимания**, и значимые пары («её» с «Сарой» или вызов `getUser()` с определением `function getUser`) влияют друг на друга сильнее, чем не связанные. В контексте из N токенов порядка N² таких связей.
 
-The pairings are where the model's apparent understanding lives. When it resolves a pronoun, it's because the attention relationship between "her" and "Sarah" is strong. When it calls a function with the right arguments, the relationship between the call site and the definition it read earlier is doing the work. None of this is looked up — it's computed fresh on every [model provider request](#model-provider-request), for every pair.
+В этих связях живёт видимое понимание модели. Когда она разрешает местоимение, это происходит потому, что отношение внимания между «её» и «Сарой» сильное. Когда она вызывает функцию с правильными аргументами, работает связь между местом вызова и определением, прочитанным ранее. Ничто из этого не ищется в памяти — оно вычисляется заново при каждом [запросе к провайдеру моделей](#model-provider-request), для каждой пары.
 
-The N² figure is worth sitting with, because it grows faster than intuition suggests:
+Цифра N² заслуживает того, чтобы её осознать, потому что она растёт быстрее, чем подсказывает интуиция:
 
-| Context size   | Pairings (~N²) |
-| -------------- | -------------- |
-| 1,000 tokens   | ~1 million     |
-| 10,000 tokens  | ~100 million   |
-| 100,000 tokens | ~10 billion    |
+| Размер контекста | Связи (~N²)    |
+| ---------------- | -------------- |
+| 1 000 токенов    | ~1 миллион     |
+| 10 000 токенов   | ~100 миллионов |
+| 100 000 токенов  | ~10 миллиардов |
 
-Each pairing is also computed more than once. Models have multiple attention heads — exact counts for frontier models are unpublished, but fifty to a hundred is a reasonable guess — and each head computes its own version of every relationship. So every pairing in the table above is duplicated across every head. That's a lot of pairings.
+Каждая связь также вычисляется больше одного раза. У моделей несколько голов внимания — точные количества для передовых моделей не публикуются, но пятьдесят–сто — разумная оценка — и каждая голова вычисляет свою версию каждого отношения. Значит, каждая связь в таблице выше дублируется по каждой голове. Это очень много связей.
 
-Only a small number of these relationships matter for any given task. The pairing between your instruction and the code it governs is one of a handful that count; almost everything else in the pool is noise. And the two grow at different rates: the relationships that matter stay roughly constant, while the total pool grows quadratically with context size. At 1,000 tokens, the pairing you care about is one in a million; at 100,000 tokens, it's one in ten billion. This is the arithmetic underneath the [attention budget](#attention-budget), and [attention degradation](#attention-degradation) is what it feels like when the relationships that matter get too thin a share.
+Лишь малая часть этих отношений важна для конкретной задачи. Связь между вашей инструкцией и кодом, которым она управляет, — одна из немногих, что имеют значение; почти всё остальное в пуле — шум. И эти две величины растут с разной скоростью: важные отношения остаются примерно постоянными, тогда как общий пул растёт квадратично с размером контекста. При 1 000 токенов связь, которая вам нужна, — одна на миллион; при 100 000 токенов — одна на десять миллиардов. Это арифметика, лежащая в основе [бюджета внимания](#attention-budget), а [деградация внимания](#attention-degradation) — то, как это ощущается, когда важным отношениям достаётся слишком малая доля.
 
-_Usage:_
+_Пример:_
 
-"It keeps confusing the two `user` symbols across the diff — sounds like we're in the [dumb zone](#smart-zone)."
+«Он постоянно путает два символа `user` по всему диффу — похоже, мы в [глупой зоне](#smart-zone).»
 
-"Yeah, the attention relationship between each call site and its declaration is fighting the other one — same token shape, different bindings. Rename one and the pairings sharpen."
+«Да, отношение внимания между каждым вызовом и его объявлением борется с другим — форма токенов одинаковая, привязки разные. Переименуй одно, и связи станут чётче.»
 
 ### Attention budget
 
-Each [token](#token) has a finite amount of influence to distribute across the rest of the [context](#context). Heavy influence on [one relationship](#attention-relationship) leaves less for others. The budget is per-token and doesn't grow when the context does, which is why long [sessions](#session) dilute.
+У каждого [токена](#token) есть конечный запас влияния, который он распределяет по остальному [контексту](#context). Сильное влияние на [одно отношение](#attention-relationship) оставляет меньше для остальных. Бюджет задаётся на один токен и не увеличивается, когда растёт контекст, — именно поэтому длинные [сессии](#session) его разбавляют.
 
-Think of it as signal and noise. Your instruction is a signal at fixed volume; every other token in the [context window](#context-window) is competing sound. The instruction never gets quieter — it's still there, character for character — but as the context grows, the room gets louder around it, and the signal-to-noise ratio drops. An instruction that was the loudest thing at 10k tokens of context is background hum at 150k. This is the mechanism behind [attention degradation](#attention-degradation): the model doesn't forget; the signal gets lost in the noise.
+Представьте это как сигнал и шум. Ваша инструкция — сигнал фиксированной громкости; каждый другой токен в [контекстном окне](#context-window) — конкурирующий звук. Инструкция никогда не становится тише — она всё ещё там, символ за символом, — но по мере роста контекста комната вокруг неё становится громче, и отношение сигнал/шум падает. Инструкция, которая была самым громким звуком при 10 тыс. токенов контекста, при 150 тыс. превращается в фоновый гул. Это механизм, стоящий за [деградацией внимания](#attention-degradation): модель не забывает — сигнал теряется в шуме.
 
-The symptom reads as disobedience — the agent agreed to a constraint early on and then drifts from it, and re-pasting the constraint helps only briefly. The cause isn't the instruction; it's everything else in the window competing with it.
+Симптом читается как непослушание: агент согласился с ограничением в начале, а потом отходит от него, и повторная вставка ограничения помогает лишь ненадолго. Причина не в инструкции; причина во всём остальном в окне, что с ней конкурирует.
 
-What you can control is what goes into the context. Content that doesn't serve the task isn't neutral — it's noise over everything that does. Keep the window small, [clear](#clearing) when the accumulated context stops paying for itself, and restate the constraints that matter instead of trusting their early mention to hold.
+Контролировать вы можете то, что попадает в контекст. Содержимое, не работающее на задачу, не нейтрально — это шум поверх всего того, что работает. Держите окно небольшим, [очищайте](#clearing) его, когда накопленный контекст перестаёт окупать себя, и повторяйте важные ограничения вместо того, чтобы полагаться на то, что их раннее упоминание удержится.
 
-_Usage:_
+_Пример:_
 
-"Why does it keep ignoring the schema I pasted at the top?"
+«Почему он постоянно игнорирует схему, которую я вставил в самом начале?»
 
-"We're well into the [dumb zone](#smart-zone) — every token's attention budget is fixed, but the context kept growing. The signal on the schema is now competing with thousands of newer tokens."
+«Мы уже глубоко в [глупой зоне](#smart-zone) — бюджет внимания у каждого токена фиксирован, а контекст всё рос. Теперь сигнал на схеме конкурирует с тысячами более новых токенов.»
 
 ### Attention degradation
 
-As a [session](#session) grows, each [token](#token)'s [attention budget](#attention-budget) is spread across more competitors. The signal on any one [meaningful relationship](#attention-relationship) shrinks; noise from irrelevant [context](#context) crowds in. Same [model](#model), same [parameters](#parameters) — just more mouths to feed from the same plate. Cause of the smart zone / dumb [zone effect](#smart-zone).
+По мере роста [сессии](#session) [бюджет внимания](#attention-budget) каждого [токена](#token) распределяется по большему числу конкурентов. Сигнал на любом отдельном [значимом отношении](#attention-relationship) слабеет; наплывает шум от нерелевантного [контекста](#context). Та же [модель](#model), те же [параметры](#parameters) — просто больше ртов при той же тарелке. Причина эффекта умной зоны / [глупой зоны](#smart-zone).
 
-It presents as the model getting worse mid-session: constraints it followed for an hour start slipping, it re-asks things it was told, it writes code that ignores a file it read earlier. Nothing about the model changed — the only variable is how much context it's now attending over.
+Это проявляется так, будто модель ухудшается прямо посреди сессии: ограничения, которым она следовала в течение часа, начинают нарушаться, она переспрашивает то, что ей уже говорили, пишет код, игнорирующий файл, который она читала ранее. Ничего в модели не изменилось — единственная переменная — это объём контекста, над которым она теперь работает.
 
-It's gradual, which is what makes it hard to catch from inside the session. There's no error and no threshold; each [turn](#turn) is only slightly worse than the last, and by the time the slips are obvious you've been in the dumb zone for a while.
+Это происходит постепенно, и потому его сложно заметить изнутри сессии. Нет ошибки и нет порога; каждый [ход](#turn) лишь немного хуже предыдущего, а к моменту, когда огрехи становятся очевидными, вы уже давно в глупой зоне.
 
-You recover by removing context, not adding more. Re-pasting the ignored instruction adds another competitor to the same crowded window and helps only briefly. What works: [clear](#clearing) and reload only what the task needs, or [compact](#compaction), or [hand off](#handoff) to a fresh session. Treat declining instruction-following as a signal about context length, not about the model.
+Восстанавливаются удалением контекста, а не добавлением. Повторная вставка проигнорированной инструкции добавляет ещё одного конкурента в то же переполненное окно и помогает лишь ненадолго. Что работает: [очистить](#clearing) и загрузить заново только то, что нужно задаче, [компактировать](#compaction) или [передать](#handoff) в свежую сессию. Считайте падающее следование инструкции сигналом о длине контекста, а не о модели.
 
-_Usage:_
+_Пример:_
 
-"It's deep in the dumb zone — inventing generics that aren't in the type file."
+«Он глубоко в глупой зоне — придумывает дженерики, которых нет в файле типов.»
 
-"Attention degradation. The type definitions are still in context, but the signal on them is buried under everything we've added since. Clear and reload."
+«Деградация внимания. Определения типов всё ещё в контексте, но сигнал на них погребён под всем, что мы добавили с тех пор. Очистить и перезагрузить.»
 
 ### Smart zone
 
-Early in a [session](#session) the [agent](#agent) is in a "smart zone" — sharp, focused, recall is good. As the session grows it drifts into a "dumb zone": sloppier, forgetful, more mistakes — and more faithfulness [hallucinations](#hallucination). Same [model](#model), same [harness](#harness) — just more [context](#context). The felt effect of [attention degradation](#attention-degradation). On frontier models, the dumb zone commonly begins around 125K-150K [tokens](#token) — though this is debated. [Clear](#clearing) or [compact](#compaction) when the session bloats; don't push through.
+В начале [сессии](#session) [агент](#agent) находится в «умной зоне» — острый, сосредоточенный, хорошо помнит. По мере роста сессии он сползает в «глупую зону»: становится небрежнее, забывчивее, делает больше ошибок — и больше [галлюцинаций](#hallucination) верности. Та же [модель](#model), та же [обвязка](#harness) — просто больше [контекста](#context). Ощущаемый эффект [деградации внимания](#attention-degradation). На передовых моделях «глупая зона» обычно наступает примерно на 125–150 тыс. [токенов](#token) — хотя это оспаривается. [Очищайте](#clearing) или [компактируйте](#compaction), когда сессия разрастается; не проталкивайте дальше.
 
-The decline is gradual, which makes it easy to miss. There's no error message and no visible boundary; the agent just starts performing slightly worse, then noticeably worse. Common signs: it forgets an instruction you gave twenty turns ago, repeats a mistake it had already corrected, or confidently asserts something the context contradicts. Because the slide is smooth, the usual response is to push through and re-explain — which adds more context and makes the problem worse.
+Упадок постепенный, и потому его легко пропустить. Нет сообщения об ошибке и нет видимой границы; агент просто начинает работать чуть хуже, потом заметно хуже. Частые признаки: он забывает инструкцию, которую вы дали двадцать ходов назад, повторяет ошибку, которую уже исправил, или уверенно утверждает нечто, противоречащее контексту. Поскольку сползание плавное, обычная реакция — продвигаться дальше и переобъяснять, что добавляет контекста и усугубляет проблему.
 
-The zones don't track the [context window](#context-window) limit. A session can be deep in the dumb zone with most of the window still free: the limit is where the harness refuses to continue, but quality falls off long before that. Plan around the smart zone, not the window — the practical budget for a task is the tokens the agent works well within, not the tokens it can technically hold.
+Зоны не привязаны к лимиту [контекстного окна](#context-window). Сессия может быть глубоко в «глупой зоне», когда большая часть окна ещё свободна: лимит — это точка, где обвязка отказывается продолжать, но качество падает задолго до неё. Планируйте от «умной зоны», а не от окна — практический бюджет задачи это токены, в которых агент работает хорошо, а не токены, которые он технически может вместить.
 
-The smart zone is a budget, and unrelated work spends it. Every task done in a session uses up tokens, so starting a second task in the same session means starting it closer to the dumb zone. Doing one task per session gives each task the sharpest part of the session. When a single task is bigger than one smart zone, split it: [hand off](#handoff) or compact at a natural boundary, and let a fresh session do the next piece.
+«Умная зона» — это бюджет, и несвязанная работа его тратит. Каждая задача, выполненная в сессии, расходует токены, поэтому начало второй задачи в той же сессии означает начало ближе к «глупой зоне». Одна задача на сессию даёт каждой задаче самую острую часть сессии. Когда одна задача больше одной «умной зоны», дробите её: [передавайте](#handoff) или компактируйте на естественной границе и позвольте свежей сессии сделать следующую часть.
 
-_Usage:_
+_Пример:_
 
-"It nailed the first three components and just butchered the fourth."
+«Первые три компонента он сделал отлично, а четвёртый просто изуродовал.»
 
-"You're out of the smart zone — same model, just deep into the dumb zone now. Compact and reload the plan, the next component will land."
+«Ты вышел из умной зоны — та же модель, просто теперь глубоко в глупой зоне. Компактируй и перезагрузи план, и следующий компонент получится.»
 
 ## Section 5 — Handoffs
 
 ### Clearing
 
-Ending the current [session](#session) and starting a fresh one. The next message begins with an empty session and an empty [context window](#context-window). Usually user-driven.
+Завершение текущей [сессии](#session) и начало новой. Следующее сообщение попадает в пустую сессию с пустым [контекстным окном](#context-window). Обычно инициируется пользователем.
 
-Clearing is the cure for a polluted context. A session accumulates everything: failed attempts, wrong turns, stale [tool results](#tool-result), abandoned plans. The [model](#model) re-reads all of it on every [turn](#turn), and bad history drags on new work. Deep into a long session the [agent](#agent) gets vaguer and less obedient — instructions you gave clearly get ignored, quality slips, and prodding it to do better doesn't help, because the noise it's wading through is still in its [context](#context). Clearing removes the noise.
+Очистка — средство от загрязнённого контекста. В сессии накапливается всё: неудачные попытки, ошибочные ходы, устаревшие [результаты инструментов](#tool-result), брошенные планы. [Модель](#model) перечитывает всё это при каждом [ходе](#turn), и плохая история тормозит новую работу. В глубине долгой сессии [агент](#agent) становится расплывчатым и менее послушным — чёткие инструкции игнорируются, качество падает, и подталкивание работать лучше не помогает, потому что шум, сквозь который он продирается, всё ещё в его [контексте](#context). Очистка убирает шум.
 
-Clearing doesn't erase the conversation. Most [harnesses](#harness) keep session history on your computer, so the transcript is still there to read or resume. What's gone is the agent's working state: the model is [stateless](#stateless), so the new session knows nothing the old one knew. If the session holds decisions or progress the next one will need, have the agent write a [handoff artifact](#handoff-artifact) first, then start the new session by pointing at it.
+Очистка не стирает разговор. Большинство [обвязок](#harness) хранят историю сессии на вашем компьютере, поэтому стенограмма остаётся доступной для чтения или возобновления. Исчезает рабочее состояние агента: модель [без сохранения состояния](#stateless), поэтому новая сессия не знает ничего из того, что знала старая. Если в сессии есть решения или прогресс, которые понадобятся следующей, пусть агент сначала напишет [артефакт передачи](#handoff-artifact), а затем начните новую сессию, указав на него.
 
-Compare [compaction](#compaction), which summarises the session into the new context instead of starting empty. Clearing is the blunter tool: nothing carries over, including the junk.
+Сравните с [компакцией](#compaction), которая суммирует сессию в новый контекст вместо того, чтобы начинать с пустого. Очистка — более грубый инструмент: ничего не переносится, включая мусор.
 
-_Usage:_
+_Пример:_
 
-"It's stuck looping on the failing test."
+«Он застрял в цикле на падающем тесте».
 
-"Just clear it — start a fresh session with the plan doc and the test file. No point fighting the existing context."
+«Просто очисти — начни свежую сессию с документом-планом и файлом теста. Нет смысла бороться с существующим контекстом».
 
 ### Handoff
 
-Transferring [agent](#agent) [context](#context) from one [session](#session) to another. The carry mechanism varies — a written [handoff artifact](#handoff-artifact), an in-memory summary ([compaction](#compaction)), and others. Distinct from [clearing](#clearing) (no transfer at all). Reasons vary: switching roles (planner → implementer), kicking off an [AFK](#afk) run, fanning out to parallel sessions, or freeing up [context window](#context-window) room.
+Передача — перемещение [контекста](#context) [агента](#agent) из одной [сессии](#session) в другую (передача контекста между сессиями). Механизм переноса различается — написанный [артефакт передачи](#handoff-artifact), резюме в памяти ([компакция](#compaction)) и другие. Отличается от [очистки](#clearing) (перенос отсутствует). Причины различаются: смена ролей (планировщик → исполнитель), запуск [AFK](#afk)-задачи, разветвление на параллельные сессии или освобождение места в [контекстном окне](#context-window).
 
-The receiving session starts with zero context — the [model](#model) is [stateless](#stateless), and nothing from the old session is visible to the new one. Whatever the next session needs has to be carried explicitly; everything else is gone. "No return path" is the constraint that shapes the carry: the new session can't ask the old one what it meant, so the carried material has to stand on its own.
+Принимающая сессия стартует с нулевым контекстом — [модель](#model) [без сохранения состояния](#stateless), и ничего из старой сессии не видно новой. Всё, что нужно следующей сессии, должно переноситься явно; остальное исчезает. «Нет обратного пути» — ограничение, формирующее перенос: новая сессия не может спросить старую, что та имела в виду, поэтому переносимый материал должен быть самодостаточным.
 
-| Mechanism        | Form                                        | Properties                                                                               |
-| ---------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| Handoff artifact | File in the [environment](#environment) | You can read and correct it before anything depends on it; reusable across many sessions |
-| Compaction       | Summary in the context window               | Automatic and cheap; harder to inspect; feeds one successor                              |
+| Механизм          | Форма                                | Свойства                                                                                                      |
+| ----------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| Артефакт передачи | Файл в [окружении](#environment) | Можно прочитать и исправить до того, как что-то начнёт от него зависеть; переиспользуется во множестве сессий |
+| Компакция         | Резюме в контекстном окне            | Автоматически и дёшево; труднее проверить; достаётся только одному преемнику                                  |
 
-The visible failure of a bad handoff is relitigation: the new session re-opens decisions the old one had settled, because the carry recorded what was decided but not why. Judge a handoff by what a session with zero context could do with it.
+Видимый провал плохой передачи — пересмотр принятых решений: новая сессия вновь открывает вопросы, которые старая уже решила, потому что перенос зафиксировал, что решено, но не почему. Оценивайте передачу по тому, что сможет сделать с ней сессия с нулевым контекстом.
 
-_Usage:_
+_Пример:_
 
-"Planning session is getting heavy — should I just keep going?"
+«Сессия планирования тяжелеет — просто продолжать?»
 
-"Do a handoff. Write the decisions to a doc, clear, start the implementation in a fresh session reading from it."
+«Сделай передачу. Запиши решения в документ, очисти, начни реализацию в свежей сессии, которая будет читать из него».
 
 ### Primary source
 
-A source of truth in its original form — the code, the conversation transcript, the raw log, the actual API response. Not an account of the thing; the thing. Counterpart to [secondary source](#secondary-source).
+Источник истины в исходной форме — код, стенограмма разговора, сырой лог, фактический ответ API. Не описание вещи, а сама вещь. Парный термин — [вторичный источник](#secondary-source).
 
-If you want to know what your codebase does, the code is the primary source. The docs, the architecture diagram, and the README are all descriptions of it — accurate when written, on their own schedule ever since. When an [agent](#agent) confidently asserts something wrong about your project, the question to ask is which source it was working from: an agent that read a doc inherits the doc's staleness; an agent that read the code is reading the current truth.
+Если вы хотите знать, что делает ваша кодовая база, первоисточник — это код. Документация, диаграмма архитектуры и README — всё это описания кода: точные в момент написания, а дальше живущие по своему расписанию. Когда [агент](#agent) уверенно утверждает что-то неверное о вашем проекте, нужно спросить, из какого источника он исходил: агент, читавший документ, наследует устарелость документа; агент, читавший код, читает текущую правду.
 
-The cost is what keeps primary sources from being the default. Loading one into the [context window](#context-window) is expensive — the full file, the full transcript, every [token](#token) billed as [input](#input-tokens) and competing for [attention budget](#attention-budget). What you get for the cost is completeness: nothing has been pre-filtered by someone else's judgement about what mattered. A summary written last month can't contain the detail that turned out to matter today; the primary source still does.
+Именно стоимость мешает первоисточникам быть вариантом по умолчанию. Загрузка одного в [контекстное окно](#context-window) дорога — весь файл, вся стенограмма, каждый [токен](#token), тарифицируемый как [входные токены](#input-tokens) и конкурирующий за [бюджет внимания](#attention-budget). Что вы получаете за эту цену — полноту: ничего не было отфильтровано чужим суждением о том, что важно. Резюме, написанное в прошлом месяце, не может содержать деталь, оказавшуюся важной сегодня; первоисточник — по-прежнему может.
 
-Reach for the primary source when precision matters — the exact signature, the actual error, the line that throws. Much of managing [context](#context) is deciding when to pay for the primary source and when a secondary source is good enough.
+Обращайтесь к первоисточнику, когда важна точность — точная сигнатура, фактическая ошибка, строка, выбрасывающая исключение. Управление контекстом во многом состоит в решении, когда платить за первоисточник, а когда достаточно вторичного источника.
 
-_Usage:_
+_Пример:_
 
-"The agent says the retry logic backs off exponentially, but I'm watching it hammer the endpoint."
+«Агент говорит, что логика повторов делает экспоненциальную задержку, но я вижу, как он долбит эндпоинт».
 
-"It read that out of the design doc. Point it at the actual retry module — work from the primary source when the behaviour matters."
+«Он вычитал это в дизайн-документе. Укажите ему на реальный модуль повторов — работайте от первоисточника, когда поведение важно».
 
 ### Secondary source
 
-An account of a [primary source](#primary-source), one step removed — documentation describing code, a summary describing a transcript, a report describing search results. Cheaper to load into the [context window](#context-window) than the source it describes, and lossy by construction: whoever wrote it decided what mattered, and whatever they dropped is invisible to a reader who only has the summary.
+Описание [первоисточника](#primary-source), удалённое на один шаг — документация, описывающая код; резюме, описывающее стенограмму; отчёт, описывающий результаты поиска. Дешевле грузить в [контекстное окно](#context-window), чем описываемый им источник, и с потерями по построению: тот, кто его написал, решил, что важно, а всё отброшенное им невидимо читателю, у которого есть только резюме.
 
-A lot of [context](#context) engineering is the manufacture of secondary sources. [Compaction](#compaction) turns the [session](#session) history into a summary that seeds the next session. A [subagent](#subagent) burns its own context on a noisy search and returns a short report. A [handoff artifact](#handoff-artifact) condenses a session's decisions into a document the next session reads. [Memory systems](#memory-system) distil what a session learned into notes. Each makes the same trade: fidelity for headroom.
+Значительная часть инженерии [контекста](#context) — производство вторичных источников. [Компакция](#compaction) превращает историю [сессии](#session) в резюме, которое засевает следующую сессию. [Субагент](#subagent) сжигает свой контекст на шумном поиске и возвращает короткий отчёт. [Артефакт передачи](#handoff-artifact) сжимает решения сессии в документ, который читает следующая сессия. [Системы памяти](#memory-system) дистиллируют то, чему сессия научилась, в заметки. Каждый идёт на один и тот же компромисс: точность в обмен на свободное место.
 
-Secondary sources fail in two ways. They're lossy — the compaction summary that lost the schema decision, the report that didn't mention the edge case. And they drift — the primary source changes and the account doesn't follow, so docs describe last quarter's architecture with this quarter's confidence. When an [agent](#agent) acts on a secondary source that has failed either way, it works confidently from wrong information; the fix is sending it back to the primary source.
+Вторичные источники отказывают двумя способами. Первый — потеря деталей: сводка компакции, упустившая решение о схеме; отчёт, не упомянувший граничный случай. Второй — дрейф: первоисточник меняется, а описание за ним не следует, и документы описывают архитектуру прошлого квартала, но с уверенностью текущего. Когда [агент](#agent) опирается на вторичный источник, отказавший любым из этих способов, он уверенно работает с неверной информацией; исправление — отправить его обратно к первоисточнику.
 
-Neither failure makes secondary sources a mistake. The context window is finite, and primary sources are expensive; without summaries, reports, and handoff documents, nothing large fits. The skill is knowing which details can survive the loss — and verifying against the primary source when one can't. A well-made secondary source carries a [context pointer](#context-pointer) back to its original — the summary that names the transcript it came from, the doc that names the file it describes — so when the account isn't enough, the reader can follow the pointer rather than work from the loss.
+Ни один из этих отказов не делает вторичные источники ошибкой. Контекстное окно конечно, а первоисточники дороги; без резюме, отчётов и документов передачи ничто крупное не помещается. Навык в том, чтобы знать, какие детали переживут потерю, — и сверяться с первоисточником, когда деталь не может. Качественно сделанный вторичный источник несёт в себе [указатель контекста](#context-pointer) обратно к оригиналу — резюме, называющее стенограмму, из которой оно возникло; документ, называющий файл, который он описывает, — так что, когда описания недостаточно, читатель может пойти по указателю, а не работать с потерей.
 
-_Usage:_
+_Пример:_
 
-"The handoff doc says auth is done, but the new session keeps finding broken token refresh."
+«Документ передачи говорит, что аутентификация готова, но новая сессия постоянно находит сломанное обновление токенов».
 
-"The doc's a secondary source — the last session wrote down what it believed, not what's true. Have the new session run the auth tests and trust the primary source."
+«Этот документ — вторичный источник: прошлая сессия записала то, во что верила, а не то, что истинно. Пусть новая сессия запустит тесты аутентификации и доверится первоисточнику».
 
 ### Handoff artifact
 
-A document used as the carry mechanism for a [handoff](#handoff) — written to the [environment](#environment) by one [session](#session) to be read by another. [Specs](#spec), [tickets](#ticket), and plan docs are all handoff artifacts.
+Документ, служащий механизмом переноса при [передаче](#handoff) контекста между сессиями — он записывается в [окружение](#environment) одной [сессией](#session), чтобы другая его прочитала. [Спецификации](#spec), [тикеты](#ticket) и план-документы — всё это артефакты передачи.
 
-The reason to write one: the [model](#model) is [stateless](#stateless), so nothing in a session survives [clearing](#clearing) it. Decisions, constraints, half-finished plans — all gone with the [context](#context) that held them. The environment persists. Writing the important state into a file moves it somewhere the next session can read it back from.
+Причина писать такой документ: [модель](#model) [без сохранения состояния](#stateless), поэтому после [очистки](#clearing) в сессии ничего не выживает. Решения, ограничения, недоделанные планы — всё исчезает вместе с [контекстом](#context), который их удерживал. Окружение сохраняется. Записав важное состояние в файл, вы переносите его туда, откуда следующая сессия сможет его прочитать.
 
-The artifact is a [secondary source](#secondary-source) — an account of the session's work, not the work itself. That's what makes it small enough to brief a fresh session, and also why it can mislead one: it records what the writing session believed, and anything it left out or got wrong is invisible to the reader. Where a claim matters, the next session should verify it against the [primary source](#primary-source) — the code, the tests — rather than inherit it.
+Артефакт — это [вторичный источник](#secondary-source): рассказ о работе сессии, а не сама работа. Именно поэтому он достаточно мал, чтобы ввести в курс дела свежую сессию, и по той же причине способен её ввести в заблуждение: он фиксирует то, во что верила пишущая сессия, а всё, что она упустила или поняла неверно, читателю не видно. Там, где утверждение существенно, следующая сессия должна сверить его с [первоисточником](#primary-source) — кодом, тестами — а не перенимать на веру.
 
-A good artifact is written to be read into a session that has zero context. Concrete file paths rather than "the file we discussed". What was decided and why, so the next session doesn't relitigate it. What's done and what's left. It helps to tell the writing session where the artifact is headed: "write a handoff doc for a fresh session that knows nothing about this work".
+Хороший артефакт пишется так, чтобы его прочитала сессия без всякого контекста. Конкретные пути к файлам, а не «файл, который мы обсуждали». Что решено и почему — чтобы следующая сессия не начала пересматривать это заново. Что сделано и что осталось. Полезно сказать пишущей сессии, куда направлен артефакт: «напиши документ передачи для свежей сессии, которая ничего не знает об этой работе».
 
-The alternative carry mechanism is [compaction](#compaction), which summarises in-memory. The artifact has two advantages: it lives on disk where you can read and correct it before anything depends on it, and it can be reused — the same spec can brief five parallel sessions.
+Альтернативный механизм переноса — [компакция](#compaction), которая суммирует происходящее в памяти. У артефакта два преимущества: он лежит на диске, где его можно прочитать и поправить до того, как что-то начнёт от него зависеть, и его можно переиспользовать — одна и та же спецификация может ввести в курс дела пять параллельных сессий.
 
-_Usage:_
+_Пример:_
 
-"How do I split this between the planning [agent](#agent) and the implementing one?"
+— Как мне поделить эту работу между [агентом](#agent)-планировщиком и реализующим агентом?
 
-"Have the planner write a handoff artifact — file paths, decisions, constraints. The implementer's session opens with a pointer to the artifact and works from it as its brief."
+— Пусть планировщик напишет артефакт передачи — пути к файлам, решения, ограничения. Сессия исполнителя стартует с указателя на артефакт и работает, опираясь на него как на бриф.
 
 ### Spec
 
-A [handoff artifact](#handoff-artifact) describing a multi-[session](#session) piece of work — what's being built, not how each session does its share. Mutates as work progresses. Made of [tickets](#ticket).
+[Артефакт передачи](#handoff-artifact), описывающий работу на несколько [сессий](#session) — что строится, а не как каждая сессия делает свою часть. Меняется по мере продвижения работы. Состоит из [тикетов](#ticket).
 
-The spec exists because sessions are disposable and big work isn't. Anything that takes more than one [context window](#context-window) of effort needs a home outside the [context](#context) — somewhere in the agent's [environment](#environment) that survives [clearing](#clearing), whether that's a file in the repo, a GitHub issue, or an issue tracker the agent can reach. The spec is that home: the goal, the constraints, the decisions made so far, and the list of tickets with their status. Any fresh session can read it and know where the work stands without inheriting the previous session's accumulated noise.
+Спецификация существует, потому что сессии одноразовые, а большая работа — нет. Всё, что требует больше одного [контекстного окна](#context-window) усилий, нуждается в доме вне [контекста](#context) — где-то в [окружении](#environment) агента, что переживёт [очистку](#clearing), будь то файл в репозитории, задача в GitHub или таск-трекер, доступный агенту. Спецификация — этот дом: цель, ограничения, принятые к настоящему моменту решения и список тикетов с их статусом. Любая свежая сессия может её прочитать и узнать, на каком этапе работа, не наследуя накопленный шум предыдущей сессии.
 
-Specs come in recognisable styles, mostly inherited from how teams already write things down. A _product requirements document_ (PRD) leans toward the user-facing what and why — features, behaviour, acceptance criteria. A _design doc_ or _RFC_ leans technical — the chosen approach, the alternatives rejected, the trade-offs. At the small end, a plain `plan.md` with a checklist of tickets does the same job for a multi-session feature. The style matters less than the role: for the [agent](#agent), each of these is the same thing — the durable statement of intent it reads at the start of every session.
+Спецификации бывают в узнаваемых стилях, по большей части унаследованных от того, как команды уже ведут записи. Документ требований к продукту (PRD) склоняется к пользовательскому «что и почему» — функции, поведение, критерии приёмки. Дизайн-документ или RFC склоняются к технической стороне — выбранный подход, отвергнутые альтернативы, компромиссы. На маленьком конце обычный `plan.md` с чеклистом тикетов делает ту же работу для фичи на несколько сессий. Стиль важнее меньше, чем роль: для [агента](#agent) каждый из них — одно и то же, а именно устойчивое заявление о намерениях, которое он читает в начале каждой сессии.
 
-_Usage:_
+_Пример:_
 
-"Should this all be one session?"
+— Должно ли это быть одной сессией?
 
-"No, write it up as a spec — break it into tickets, run each one in its own session. Trying to do the whole thing in a single context will hit the [dumb zone](#smart-zone) before you're halfway."
+— Нет, оформи это как спецификацию — разбей на тикеты, запускай каждый в своей сессии. Попытка сделать всё в одном контексте упрётся в [«глупую зону»](#smart-zone) до того, как ты дойдёшь до половины.
 
 ### Ticket
 
-A [handoff artifact](#handoff-artifact) scoping one [session](#session) of work. Stands alone, or hangs off a [spec](#spec) as one of its children. Tickets can block or be blocked by sibling tickets, so the order of work falls out of their dependency graph rather than a linear plan.
+[Артефакт передачи](#handoff-artifact), очерчивающий одну [сессию](#session) работы. Стоит сам по себе либо висит на [спецификации](#spec) как один из её потомков. Тикеты могут блокировать или быть заблокированы родственными тикетами, поэтому порядок работы вытекает из их графа зависимостей, а не из линейного плана.
 
-The defining constraint is the size: one session. A ticket should be completable before the session drifts out of the [smart zone](#smart-zone) — and that constraint is testable. If sessions on your tickets routinely degrade before the work is done, the tickets are too big; split them. If each session spends most of its [context](#context) on setup before doing five minutes of work, they're too small; merge them.
+Определяющее ограничение — размер: одна сессия. Тикет должен быть завершаем до того, как сессия выскользнет из [«умной зоны»](#smart-zone), и это ограничение можно проверить на практике. Если сессии над вашими тикетами регулярно деградируют прежде, чем работа бывает закончена, значит, тикеты слишком велики — дробите их. Если же каждая сессия тратит большую часть [контекста](#context) на подготовку, прежде чем сделать пять минут собственно работы, они слишком малы — объединяйте их.
 
-A good ticket is written for a reader with no other context. The goal, the acceptance criteria, and [context pointers](#context-pointer) to the relevant files and decisions — enough that the session can start working without re-deriving what the last one knew.
+Хороший тикет пишется для читателя без какого-либо другого контекста. Цель, критерии приёмки и [указатели контекста](#context-pointer) на релевантные файлы и решения — этого достаточно, чтобы сессия начала работу, не выводя заново то, что знала предыдущая.
 
-The dependency graph is also what unlocks parallelism. Independent tickets — the leaves of the graph — can each run in their own session at the same time. This is an effective way of running multiple agents at once.
+Граф зависимостей — это и то, что разблокирует параллелизм. Независимые тикеты — листья графа — могут каждый выполняться в собственной сессии одновременно. Это эффективный способ запустить сразу несколько агентов параллельно.
 
-_Usage:_
+_Пример:_
 
-"Where do I start on the migration spec?"
+— С чего мне начать в спецификации миграции?
 
-"Look at the ticket graph — the schema change blocks the backfill, the backfill blocks the API switch. Pick a leaf and run a session on it."
+— Посмотри на граф тикетов — изменение схемы блокирует бэкфилл, бэкфилл блокирует переключение API. Выбери лист и запусти по нему сессию.
 
 ### Compaction
 
-A [handoff](#handoff) done in-memory: the previous [session](#session)'s history is summarised, and the summary seeds a fresh session. Lossy by design: the transcript is a [primary source](#primary-source), the summary a [secondary source](#secondary-source) — detail traded for headroom. Triggered manually by the user, or automatically via [autocompact](#autocompact).
+[Передача](#handoff) в памяти — компакция, сжатие истории сессии: история предыдущей [сессии](#session) суммируется, и эта выжимка запускает свежую сессию. По задумке с потерями: транскрипт — [первоисточник](#primary-source), выжимка — [вторичный источник](#secondary-source); детали обмениваются на запас места. Запускается вручную пользователем либо автоматически через [автокомпакцию](#autocompact).
 
-The mechanism: the [context window](#context-window) is finite, and a long session fills it — every [tool result](#tool-result), every file read, every wrong turn stays in history. When it gets heavy, the [harness](#harness) asks the [model](#model) to summarise the session, throws the original history away, and seeds a fresh session with the summary. Whatever didn't make it into the summary is gone from the context. Some harnesses soften this by keeping the old transcript on disk and leaving a [context pointer](#context-pointer) to it in the summary — the secondary source links back to its primary source, so a detail the summary lost can be recovered by re-reading the original.
+Механизм такой: [контекстное окно](#context-window) конечно, и длинная сессия его заполняет — каждый [результат инструмента](#tool-result), каждый прочитанный файл, каждый неверный поворот остаётся в истории. Когда контекст тяжелеет, [обвязка](#harness) просит [модель](#model) суммировать сессию, выбрасывает исходную историю и запускает свежую сессию с этой выжимкой. Всё, что не попало в выжимку, из контекста исчезает. Некоторые обвязки смягчают это, сохраняя старый транскрипт на диске и оставляя в выжимке [указатель контекста](#context-pointer) на него — вторичный источник ссылается обратно на свой первоисточник, так что деталь, потерянную в выжимке, можно восстановить, перечитав оригинал.
 
-The summary is written by the model, so it can be prompted. "Preserve the schema decisions" makes the generated artifact more deliberate. Timing matters too — compact at a phase boundary, after the plan is settled, not mid-task.
+Выжимку пишет модель, поэтому на неё можно влиять промптом. «Сохрани решения по схеме» делает сгенерированный артефакт более продуманным. Важен и момент — делайте компакцию на границе фазы, когда план уже устоялся, а не в середине задачи.
 
-Contrast with [clearing](#clearing), which drops everything and starts cold: compaction tries to carry the essentials across; clearing bets they're already written down somewhere better.
+Сравните с [очисткой](#clearing), которая сбрасывает всё и стартует холодной: компакция пытается перенести существенное; очистка ставит на то, что оно уже где-то записано лучше.
 
-_Usage:_
+_Пример:_
 
-"[Context](#context)'s getting heavy and I still have the test pass to do."
+— [Контекст](#context) тяжелеет, а мне ещё нужно прогнать тесты.
 
-"Compact before you start — write what must survive into the summary prompt so the new session keeps the schema decisions and drops the exploration."
+— Сделай компакцию перед началом — запиши в промпт выжимки то, что должно выжить, чтобы новая сессия сохранила решения по схеме и выкинула разведку.
 
 ### Autocompact
 
-[Compaction](#compaction) triggered automatically by the [harness](#harness) when the [context window](#context-window) approaches full.
+[Компакция](#compaction), запускаемая автоматически [обвязкой](#harness), когда [контекстное окно](#context-window) приближается к заполнению.
 
-The harness watches how full the context window is. When it crosses a threshold — often around 80% — it pauses, asks the [model](#model) to summarise the [session](#session) so far, and seeds a fresh session with the summary. Work then continues as if nothing happened.
+Обвязка следит за тем, насколько заполнено контекстное окно. Когда заполнение пересекает порог — обычно около 80% — она делает паузу, просит [модель](#model) суммировать [сессию](#session) на текущий момент и запускает свежую сессию с этой выжимкой. Работа продолжается, как будто ничего не произошло.
 
-Except something did happen. Compaction is lossy, and autocompact is lossy at a moment you didn't choose. A manual compact happens at a phase boundary, when you can tell the model what to preserve. Autocompact fires mid-task, whenever the threshold is hit — possibly halfway through a refactor, with the summary deciding for itself which of your decisions were worth keeping. The classic symptom: the [agent](#agent) carries on confidently but has quietly forgotten a constraint you established an hour ago, and you only notice when its work starts contradicting it.
+Только кое-что произошло. Компакция идёт с потерями, а автокомпакция срабатывает с потерями в момент, который вы не выбирали. Ручная компакция делается на границе фазы, когда вы можете сказать модели, что сохранить. Автокомпакция стреляет в середине задачи, как только порог достигнут — возможно, на полпути рефакторинга, и выжимка сама решает, какие из ваших решений стоило сохранить. Классический симптом: [агент](#agent) уверенно продолжает работу, но тихо забыл ограничение, которое вы установили час назад, и вы замечаете это лишь тогда, когда его работа начинает ему противоречить.
 
-The defence is to not let it fire. Watch the context indicator and compact manually at a natural boundary, or write decisions into a plan doc or [handoff artifact](#handoff-artifact) on disk, where no summary can lose them. Most harnesses also let you customise the buffer — moving the threshold earlier or later, or turning autocompact off entirely — so you can tune how much headroom you keep before it fires.
+Защита — не дать ей сработать. Следите за индикатором контекста и делайте компакцию вручную на естественной границе либо записывайте решения в план-документ или [артефакт передачи](#handoff-artifact) на диске, где их не потеряет никакая выжимка. Большинство обвязок также позволяет настроить буфер — сдвинуть порог раньше или позже или вовсе отключить автокомпакцию, чтобы вы могли сами выбирать, сколько запаса оставляете до того, как она сработает.
 
-_Usage:_
+_Пример:_
 
-"It doesn't seem to remember what we decided about the schema earlier."
+— Кажется, он не помнит, что мы решили по схеме раньше.
 
-"Autocompact fired between [turns](#turn) — the early decisions got summarised and we must have lost something. Reload the plan doc, or compact manually next time so you control what gets kept."
+— Автокомпакция сработала между [ходами](#turn) — ранние решения попали в выжимку, и мы, должно быть, что-то потеряли. Перечитай план-документ либо в следующий раз сделай компакцию вручную, чтобы контролировать, что сохраняется.
 
 ## Section 6 — Memory and Steering
 
 ### Memory system
 
-A system that attempts to make an [agent](#agent) [stateful](#stateful) across [sessions](#session). Persists information into the [environment](#environment) during a session and reloads it into the [context window](#context-window) at the start of future ones, so the agent carries continuity beyond the user [clearing](#clearing) the session.
+Система, которая пытается сделать [агента](#agent) [с сохранением состояния](#stateful) между [сессиями](#session). Сохраняет информацию в [окружение](#environment) во время сессии и перезагружает её в [контекстное окно](#context-window) в начале следующих, так что агент сохраняет преемственность и после того, как пользователь выполняет [очистку](#clearing) сессии.
 
-A memory system has two halves. The write path: during a session, the agent records what it learned — a preference you stated, a fact about the project — as files in the environment. The read path: at session start, the [harness](#harness) loads those files, or an index of them, back into the context window. Many harnesses ship their own memory system — Claude Code's `/memory` is one — but you can also build one yourself: a directory of notes plus an instruction in [AGENTS.md](#agentsmd) to consult it.
+У системы памяти две половины. Путь записи: во время сессии агент записывает то, чему научился, — высказанное вами предпочтение, факт о проекте — как файлы в окружение. Путь чтения: в начале сессии [обвязка](#harness) загружает эти файлы, или их индекс, обратно в контекстное окно. Многие обвязки поставляются со своей системой памяти — `/memory` в Claude Code — это пример, — но её можно собрать и самому: каталог заметок плюс инструкция в [AGENTS.md](#agentsmd) обращаться к нему.
 
-The same trade-offs as any always-loaded content apply. Memories accumulate, so most systems load a one-line index and leave the bodies behind [context pointers](#context-pointer) rather than inlining everything. And memories are [secondary sources](#secondary-source), so they drift: a fact recorded in March is loaded with equal confidence in June, after the project has moved on. A memory system needs pruning, the same way AGENTS.md does.
+Действуют те же компромиссы, что и для любого всегда загружаемого содержимого. Воспоминания накапливаются, поэтому большинство систем загружают однострочный индекс и оставляют тела за [указателями контекста](#context-pointer), а не вставляют всё целиком. Кроме того, воспоминания — это [вторичные источники](#secondary-source), поэтому они дрейфуют: факт, записанный в марте, загружается с той же уверенностью в июне, когда проект уже ушёл вперёд. Системе памяти нужна обрезка — так же, как и AGENTS.md.
 
-_Usage:_
+_Пример:_
 
-"I keep having to re-tell it I'm on Postgres, not MySQL."
+«Я постоянно заново объясняю ему, что у меня Postgres, а не MySQL».
 
-"Wire up a memory system — write what it learns to the [filesystem](#filesystem) on the first [turn](#turn), reload it at session start. The [model](#model) itself is [stateless](#stateless); the memory layer fakes continuity."
+«Подключи систему памяти — пусть пишет то, чему научилась, в [файловую систему](#filesystem) на первом [ходу](#turn) и перезагружает при старте сессии. Сама [модель](#model) [без сохранения состояния](#stateless); слой памяти имитирует преемственность».
 
 ### AGENTS.md
 
-A file in the [environment](#environment) that the [harness](#harness) loads into the [context window](#context-window) at [session](#session) start — the project's standing brief to the [agent](#agent). Cross-harness convention; some harnesses also have their own variant (Claude Code's is CLAUDE.md).
+Файл в [окружении](#environment), который [обвязка](#harness) загружает в [контекстное окно](#context-window) в начале [сессии](#session) — постоянная инструкция проекта для [агента](#agent). Соглашение между обвязками; у некоторых обвязок есть также собственный вариант (в Claude Code это CLAUDE.md).
 
-Because it loads automatically, it's one way to avoid repeating yourself across sessions. The [model](#model) is [stateless](#stateless) — a correction you give in one session is gone in the next, and you end up telling every fresh session that the project uses pnpm, that tests run with a particular flag, that a directory is generated and shouldn't be touched. When you've corrected the agent for the same thing twice, that correction is a candidate line for AGENTS.md.
+Поскольку файл загружается автоматически, это один из способов не повторяться из сессии в сессию. [Модель](#model) [без сохранения состояния](#stateless) — поправка, которую вы даёте в одной сессии, исчезает в следующей, и приходится заново объяснять каждой новой сессии, что проект использует pnpm, что тесты запускаются с определённым флагом, что каталог сгенерирован и его нельзя трогать. Если вы поправили агента на одно и то же дважды — эта поправка кандидат на строку в AGENTS.md.
 
-Suitable content is whatever the agent can't derive from the code: build and test commands, conventions the codebase doesn't make obvious, hard constraints ("never edit the generated client"). Short and declarative — it's a brief, not documentation.
+Подходящее содержимое — всё, что агент не может вывести из кода: команды сборки и тестов, соглашения, которые кодовая база не делает очевидными, жёсткие ограничения («никогда не редактируй сгенерированный клиент»). Коротко и декларативно — это инструкция, а не документация.
 
-The trade-off is that everything in it is always loaded. Instructions accumulate, most of them irrelevant to any given task, and a long AGENTS.md both costs tokens and dilutes itself — the more instructions in context, the less reliably the model follows any one of them.
+Компромисс в том, что всё, что в нём есть, загружается всегда. Инструкции накапливаются, большинство из них не относится к конкретной задаче, и длинный AGENTS.md одновременно тратит токены и размывает сам себя — чем больше инструкций в контексте, тем менее надёжно модель следует любой из них.
 
-_Avoid:_ using AGENTS.md for content that should be [progressively disclosed](#progressive-disclosure) — anything in it pays a [token](#token) cost every [turn](#turn), in every session, whether or not that session needs it. A style guide can go behind a [skill](#skill) or a [context pointer](#context-pointer) instead; keep AGENTS.md for the lines that apply everywhere.
+_Избегать:_ использовать AGENTS.md для содержимого, которое подлежит [прогрессивному раскрытию](#progressive-disclosure), — всё, что в него попадает, платит стоимость [токена](#token) каждый [ход](#turn), в каждой сессии, нужна она ему или нет. Руководство по стилю лучше убрать за [навык](#skill) или [указатель контекста](#context-pointer); AGENTS.md оставьте для строк, которые действуют везде.
 
-_Usage:_
+_Пример:_
 
-"Why is every session starting with 4k tokens already burned?"
+«Почему каждая сессия начинается с уже потраченными 4k токенов?»
 
-"Check AGENTS.md — someone pasted the entire style guide in there instead of putting it behind a skill."
+«Проверь AGENTS.md — кто-то вклеил туда полное руководство по стилю вместо того, чтобы убрать его за навык».
 
 ### Progressive disclosure
 
-Loading only the [context](#context) an [agent](#agent) needs right now, with [context pointers](#context-pointer) to the rest. Borrowed from UI design, where it means showing users only the controls relevant to their current task and hiding the rest behind a click.
+Загрузка только того [контекста](#context), который [агенту](#agent) нужен прямо сейчас, с [указателями контекста](#context-pointer) на остальное. Заимствовано из дизайна UI, где это означает показывать пользователям только те элементы управления, которые относятся к их текущей задаче, а остальное прятать за кликом.
 
-The technique exists because context is a cost twice over. Every [token](#token) loaded up front is billed as [input tokens](#input-tokens) on every [turn](#turn), and every token spends [attention budget](#attention-budget) whether the agent needs it or not. An [AGENTS.md](#agentsmd) stuffed with the full style guide, deployment runbook, and database conventions makes the agent worse at all of them — the instructions that matter for the current task are diluted by the ones that don't. The tell is an agent that ignores rules you know are in its context: they're in there, but buried.
+Эта техника существует, потому что контекст оплачивается дважды. Каждый [токен](#token), загруженный заранее, тарифицируется как [входные токены](#input-tokens) на каждом [ходу](#turn), и каждый токен расходует [бюджет внимания](#attention-budget), нужен он агенту или нет. [AGENTS.md](#agentsmd), забитый полным руководством по стилю, процедурой развёртывания и соглашениями по базе данных, делает агента хуже по всем пунктам — инструкции, важные для текущей задачи, размываются теми, которые не важны. Признак — агент, который игнорирует правила, о которых вы знаете, что они в его контексте: они там есть, но погребены.
 
-Progressive disclosure inverts this. Keep the always-loaded layer small — a sentence per topic and a pointer to where the detail lives. The agent reads the style guide when it's writing a component, the deployment runbook when it's deploying, and neither when it's fixing a test. [Skills](#skill) are the pattern built into the [harness](#harness): a short description loaded every [session](#session), the full instructions only when triggered.
+Прогрессивное раскрытие обращает это. Держите всегда загружаемый слой маленьким — по предложению на тему и указателю на то, где живут детали. Агент читает руководство по стилю, когда пишет компонент, процедуру развёртывания — когда разворачивает, и ни то, ни другое — когда чинит тест. [Навыки](#skill) — это шаблон, встроенный в [обвязку](#harness): короткое описание загружается каждую [сессию](#session), полные инструкции — только при срабатывании.
 
-_Usage:_
+_Пример:_
 
-"Should I dump the entire style guide into AGENTS.md?"
+«Мне стоит вывалить полное руководство по стилю в AGENTS.md?»
 
-"No — progressive disclosure. Reference the style guide as a skill the agent loads when it actually needs to write a component. AGENTS.md pays the token cost every turn."
+«Нет — прогрессивное раскрытие. Ссылайтесь на руководство по стилю как на навык, который агент загружает, когда ему действительно нужно написать компонент. AGENTS.md платит стоимость токенов каждый ход».
 
 ### Context pointer
 
-A mention in one document that points to another, so the [agent](#agent) can pull it into the [context window](#context-window) only when the task calls for it. The unit [progressive disclosure](#progressive-disclosure) is built from.
+Упоминание в одном документе, которое указывает на другой, чтобы [агент](#agent) мог подтянуть его в [контекстное окно](#context-window), только когда задача этого требует. Единица, из которой строится [прогрессивное раскрытие](#progressive-disclosure).
 
-The reason to use a pointer (instead of inlining the content) is cost. A pointer is one line in the context window. The document behind it might be thousands of [tokens](#token), but those tokens cost nothing until the agent actually follows the pointer. Inline a 2,000-token runbook in [AGENTS.md](#agentsmd) and every [session](#session) pays for it; replace it with "deploy process: see `internal/deploy.md`" and only the sessions that deploy ever load it. The agent follows the pointer with a [tool call](#tool-call) when the task matches.
+Причина использовать указатель (а не вставлять содержимое целиком) — стоимость. Указатель — это одна строка в контекстном окне. Документ за ним может занимать тысячи [токенов](#token), но эти токены ничего не стоят, пока агент действительно не перейдёт по указателю. Вставьте процедуру развёртывания на 2 000 токенов прямо в [AGENTS.md](#agentsmd) — и каждая [сессия](#session) за неё платит; замените её на «процесс развёртывания: см. `internal/deploy.md`» — и загружают её только те сессии, которые разворачивают. Агент переходит по указателю [вызовом инструмента](#tool-call), когда задача совпадает.
 
-A pointer needs two parts to work: a stable path, and enough description for the agent to know when following it is worth it. A bare path is a pointer the agent has no reason to follow; "see `internal/deploy.md`" with no hint of what's inside gets skipped by a session that needed it. Write the line so it matches how tasks present: "release, deploy, or rollback — read `internal/deploy.md` first".
+Чтобы указатель работал, нужны две части: стабильный путь и достаточно описания, чтобы агент знал, когда за ним стоит следовать. Голый путь — это указатель, по которому у агента нет причины переходить; «см. `internal/deploy.md`» без намёка на то, что внутри, пропускается сессией, которой он был нужен. Пишите строку так, чтобы она совпадала с тем, как представляются задачи: «релиз, развёртывание или откат — сначала прочитай `internal/deploy.md`».
 
-Pointers are everywhere once you look: lines in AGENTS.md, [skill](#skill) descriptions (the harness loads the description; the skill body waits behind it), filenames in a directory listing, links between docs.
+Указатели повсюду, как только начнёте искать: строки в AGENTS.md, описания [навыков](#skill) (обвязка загружает описание; тело навыка ждёт за ним), имена файлов в листинге каталога, ссылки между документами.
 
-A pointer can also tie a [secondary source](#secondary-source) back to the [primary source](#primary-source) it was derived from — the compaction summary that names the original transcript, the doc that names the source file it describes. This makes the secondary source's lossiness recoverable: when the summary turns out not to be enough, the agent follows the pointer and reads the original, instead of working from whatever the summary kept.
+Указатель может также связать [вторичный источник](#secondary-source) с [первоисточником](#primary-source), из которого он получен, — резюме после компакции, которое называет исходный транскрипт, документ, который называет исходный файл, что он описывает. Это делает потери вторичного источника восстанавливаемыми: когда резюме оказывается недостаточным, агент переходит по указателю и читает оригинал, а не работает с тем, что осталось в резюме.
 
-_Avoid:_ "reference" — too dry; doesn't convey that following it pulls more context in. "Portal" — too florid.
+_Избегать:_ «ссылка» — слишком сухо; не передаёт, что за переходом подтягивается ещё контекст. «Портал» — слишком цветисто.
 
-_Usage:_
+_Пример:_
 
-"AGENTS.md is getting huge."
+«AGENTS.md разрастается».
 
-"Most of it should be context pointers, not content. Keep the always-on rules inline; turn the deploy runbook and the style guide into skills and leave a context pointer behind."
+«Большая часть должна быть указателями контекста, а не содержимым. Держите всегда включённые правила встроенными; превратите процедуру развёртывания и руководство по стилю в навыки и оставьте указатель контекста».
 
 ### Skill
 
-A teachable capability bundled as a unit — instructions and resources for doing one task well, kept in the [environment](#environment) until a [context pointer](#context-pointer) pulls it into the [context window](#context-window) for the task at hand. The unit of [progressive disclosure](#progressive-disclosure) in a [harness](#harness).
+Обучаемая возможность, упакованная как единое целое — инструкции и ресурсы для выполнения одной задачи хорошо, лежащие в [окружении](#environment), пока [указатель контекста](#context-pointer) не подтянет их в [контекстное окно](#context-window) для текущей задачи. Единица [прогрессивного раскрытия](#progressive-disclosure) в [обвязке](#harness).
 
-Skills are an open standard, defined at [agentskills.io](https://agentskills.io) — originally developed by Anthropic and since adopted by most major harnesses, so a skill written once works across them. The format is a folder containing:
+Навыки (скиллы) — это открытый стандарт, определённый на [agentskills.io](https://agentskills.io), — изначально разработанный Anthropic и с тех пор принятый большинством крупных обвязок, поэтому навык, написанный однажды, работает во всех них. Формат — это каталог, содержащий:
 
-- A `SKILL.md` file — metadata (a name and description, at minimum) plus the instructions themselves
-- Optionally, scripts the [agent](#agent) can run
-- Optionally, templates and reference material the instructions point to
+- Файл `SKILL.md` — метаданные (как минимум имя и описание) плюс сами инструкции
+- При необходимости — скрипты, которые может запускать [агент](#agent)
+- При необходимости — шаблоны и справочные материалы, на которые указывают инструкции
 
-Only the name and description sit in [context](#context) by default. When the agent's task matches, it loads the rest. Until then, the skill takes up almost no room — a sentence or two of [tokens](#token), however large its full instructions are.
+По умолчанию в [контексте](#context) лежат только имя и описание. Когда задача агента совпадает, он загружает остальное. До этого навык почти не занимает места — предложение-два [токенов](#token), какими бы большими ни были его полные инструкции.
 
-This distinguishes skills from [AGENTS.md](#agentsmd), which is loaded into every [session](#session) regardless of the task. A skill is read when a particular kind of work comes up — releasing, scaffolding a new service, writing a migration — and ignored the rest of the time.
+Это отличает навыки от [AGENTS.md](#agentsmd), который загружается в каждую [сессию](#session) независимо от задачи. Навык читается, когда возникает определённый вид работы — релиз, скаффолдинг нового сервиса, написание миграции — и игнорируется в остальное время.
 
-_Avoid:_ "[tool](#tool)" — a tool is what the agent _calls_; a skill is instructions it _reads_.
+_Избегать:_ «[инструмент](#tool)» — это то, что агент _вызывает_; навык — это инструкции, которые он _читает_.
 
-_Usage:_
+_Пример:_
 
-"Where should I put the deploy runbook?"
+«Куда мне положить процедуру развёртывания?»
 
-"As a skill — the agent loads it only when the task involves deploys. In AGENTS.md it'd burn tokens on every [turn](#turn) for something we use weekly."
+«Как навык — агент загрузит её только тогда, когда задача связана с развёртываниями. В AGENTS.md она жгла бы токены каждый [ход](#turn) ради того, что мы используем раз в неделю».
 
 ### Subagent
 
-An [agent](#agent) spawned by another agent via a [tool call](#tool-call). Runs in its own [session](#session) with its own [context window](#context-window), and reports a single [tool result](#tool-result) back. Distinct from a [handoff](#handoff) — the parent specifically expects a return; a handoff has no return path. **Cannot spawn further subagents** — the tree is one level deep. Subagents exist to isolate [context](#context), not to compose hierarchies.
+[Агент](#agent), порождённый другим агентом через [вызов инструмента](#tool-call). Работает в собственной [сессии](#session) с собственным [контекстным окном](#context-window) и возвращает один [результат инструмента](#tool-result). Отличается от [передачи](#handoff) — родитель именно ожидает возврата; у передачи нет обратного пути. **Не может порождать дальнейшие субагенты** — дерево имеет один уровень. Субагенты существуют, чтобы изолировать [контекст](#context), а не чтобы строить иерархии.
 
-The point is to keep noisy work out of the parent's context. A broad search or a long file-reading expedition produces pages of tool results, most of which matter only long enough to find the answer. Run inside the parent and all of it stays in the parent's context for the rest of the session. Run inside a subagent and the noise fills a disposable window instead — only the final report lands in the parent's context. The report is a [secondary source](#secondary-source): the parent gets the subagent's account of what it found, not the raw results, so anything the report leaves out is invisible to the parent.
+Смысл в том, чтобы шумная работа не попадала в контекст родителя. Широкий поиск или долгая экспедиция по чтению файлов порождает страницы результатов инструмента, большинство из которых важны лишь настолько, чтобы найти ответ. Запустите внутри родителя — и всё это остаётся в контексте родителя до конца сессии. Запустите внутри субагента — и шум заполняет одноразовое окно; в контекст родителя попадает только финальный отчёт. Отчёт — это [вторичный источник](#secondary-source): родитель получает рассказ субагента о том, что тот нашёл, а не сырые результаты, поэтому всё, что отчёт опускает, для родителя невидимо. Значит, субагент подходит для задач, где важен сам ответ, а не сырой путь к нему, и подводит там, где родителю нужны сами промежуточные данные.
 
-Subagents also run concurrently — a parent can fan several out at once over independent pieces of work.
+Субагенты также работают параллельно — родитель может запустить сразу несколько над независимыми кусками работы.
 
-_Usage:_
+_Пример:_
 
-"The grep results are blowing out my context."
+«Результаты grep раздувают мой контекст».
 
-"Spawn a subagent to do the search — it'll burn its own context window on the noise and report back the two file paths you actually need."
+«Породи субагента для поиска — он сожжёт собственное контекстное окно на шум и вернёт два пути к файлам, которые тебе действительно нужны».
 
 ## Section 7 — Patterns of Work
 
 ### Human-in-the-loop
 
-A working pattern where one or more humans pair with the [agent](#agent) during a [session](#session) — reviewing, redirecting, or collaborating in real time. The human is present and engaged, not just gating individual actions.
+Паттерн работы, при котором один или несколько человек работают в паре с [агентом](#agent) в ходе [сессии](#session) — проводят ревью, перенаправляют или сотрудничают в реальном времени. Человек присутствует и вовлечён, а не служит просто точкой одобрения для отдельных действий.
 
-The contrast is with [AFK](#afk) work, where the agent runs unattended and you judge the result afterwards. Human-in-the-loop means catching problems while they're still cheap: you see the agent reach for the wrong file, misread the requirement, or start down a dead end, and you redirect it in one sentence — rather than discovering twenty minutes of confident work built on that mistake. Agents don't reliably know when they're off track; left alone, they tend to push forward rather than stop and ask.
+Противоположность — работа в режиме [AFK](#afk), когда агент работает без присмотра, а результат вы оцениваете уже после. Человек в цикле позволяет ловить проблемы, пока они ещё дёшевы: вы видите, как агент тянется не к тому файлу, неверно трактует требование или начинает уходить в тупик, и перенаправляете его одним предложением — вместо того чтобы спустя двадцать минут обнаружить уверенную работу, построенную на этой ошибке. Агенты не всегда понимают, что свернули не туда; оставленные без присмотра, они склонны двигаться дальше, а не останавливаться и спрашивать.
 
-Which pattern fits depends on the work. Well-specified, low-risk, easy-to-verify tasks suit AFK. Tasks that are ambiguous, irreversible, or where you'd struggle to review the finished result — a schema migration, a tricky design decision, anything touching production — suit staying in the loop. The judgement call is essentially: how expensive is a wrong turn, and how late would you catch it?
+Какой паттерн подходит, зависит от работы. Хорошо специфицированные, низкорисковые и легко проверяемые задачи подходят для AFK. Задачи неоднозначные, необратимые или такие, что готовый результат сложно ревьюить — миграция схемы, сложное проектное решение, всё, что затрагивает продакшен, — разумнее делать, оставаясь в цикле. Решение здесь сводится к простому: насколько дорога ошибка и как поздно вы бы её обнаружили?
 
-Some work is in-the-loop by nature, because your reactions are the input. [Grilling](#grilling) only works with you there to answer the questions; [prototyping](#prototyping) only works with you there to react to the artifact.
+Некоторая работа по своей природе требует присутствия в цикле, потому что ваши реакции и есть входные данные. [Допрос](#grilling) работает, только когда вы отвечаете на вопросы; [прототипирование](#prototyping) работает, только когда вы реагируете на артефакт.
 
-Staying in the loop costs your attention, which is the scarce resource. Part of getting better with agents is moving more work safely out of the loop — with plans, [automated checks](#automated-check), and [human review](#human-review) at the end instead of supervision throughout.
+Присутствие в цикле расходует ваше внимание, а это дефицитный ресурс. Часть взросления в работе с агентами — безопасно перемещать больше работы из цикла наружу: через планы, [автоматические проверки](#automated-check) и [рецензирование человеком](#human-review) в конце вместо постоянного надзора.
 
-_Usage:_
+_Пример:_
 
-"Run this AFK overnight?"
+«Запустить это AFK на ночь?»
 
-"No, schema migration — keep it human-in-the-loop. I want to see each step and steer if it picks the wrong column to backfill from."
+«Нет, миграция схемы — оставь человека в цикле. Хочу видеть каждый шаг и подправлять, если он выберет не ту колонку для бэкфилла».
 
 ### AFK
 
-Away from keyboard. A working pattern where the user kicks off a [session](#session) and leaves the [agent](#agent) to run unattended. The throughput multiplier of [AI](#ai) coding — many AFK sessions can run in parallel while you sleep, eat, or work on something else. Usually requires a permissive [permission mode](#permission-mode) plus [sandboxing](#sandbox) to be safe.
+Away from keyboard (без участия человека). Паттерн работы, при котором пользователь запускает [сессию](#session) и оставляет [агента](#agent) работать без присмотра. Множитель пропускной способности [ИИ](#ai)-кодинга — много AFK-сессий могут идти параллельно, пока вы спите, едите или занимаетесь другим. Обычно для безопасности нужен мягкий [режим разрешений](#permission-mode) плюс [песочница](#sandbox).
 
-When you're not there, the agent handles ambiguity differently. While you're watching, an ambiguous decision surfaces as a question and you answer it; once you've walked away, the agent picks a default and keeps going, and every later decision builds on that guess. The characteristic failure is coming back to hours of finished, confident work built on a wrong call made in the first ten minutes. The work isn't sloppy — it's coherent, just coherent about the wrong thing.
+Когда вас нет рядом, агент иначе справляется с неоднозначностью. Пока вы следите, неоднозначное решение всплывает как вопрос, и вы на него отвечаете; как только вы отошли — агент выбирает значение по умолчанию и продолжает, и каждое следующее решение строится на этом предположении. Характерный провал: вы возвращаетесь к часам законченной уверенной работы, построенной на ошибочном решении из первых десяти минут. Работа не небрежна — она внутренне связна, просто строится на неверной предпосылке.
 
-Since you can't give input during the run, give it before and after instead. Before: resolve the ambiguity up front — a [grilling](#grilling) session, a written [spec](#spec) — so there are fewer gaps for the agent to fill alone. During: [automated checks](#automated-check) and [automated review](#automated-review) stand in for the attention you're not giving, failing fast on what can be caught mechanically. After: the run ends in something reviewable — a PR, not changes already merged. AFK doesn't remove [human review](#human-review); it defers all of it to the end, which is why what arrives at the end has to be worth reviewing. This is also why [AX](#ax) matters most in AFK runs — with no one watching, the environment is the only support the agent gets.
+Раз вы не можете давать входные данные во время выполнения, давайте их до и после. До: устраните неоднозначность заранее — сессия [допроса](#grilling), письменная [спецификация](#spec) — чтобы у агента осталось меньше пробелов, которые он заполняет в одиночку. Во время: [автоматические проверки](#automated-check) и [автоматическое рецензирование](#automated-review) замещают внимание, которого здесь нет, и быстро сообщают об ошибке там, где её можно поймать механически. После: запуск заканчивается чем-то пригодным для ревью — PR'ом, а не уже смёрженными изменениями. AFK не убирает [рецензирование человеком](#human-review); оно откладывает всё до конца, и поэтому то, что приходит в конце, должно быть достойно ревью. Именно поэтому [AX](#ax) важнее всего при AFK-запусках — когда никто не следит, окружение — единственная опора агента.
 
-_Avoid:_ "background agent" — centers the machine ("running in the background") rather than the human pattern ("user has walked away"). AFK names the fact that matters: the user isn't watching.
+_Избегать:_ «фоновый агент» — смещает фокус на машину («работает в фоне»), а не на человеческий паттерн («пользователь отошёл»). AFK называет то, что здесь важно: пользователь не следит.
 
-_Usage:_
+_Пример:_
 
-"I'm running this AFK — three sandboxed agents on the refactor, reviewing the PRs in the morning."
+«Запускаю это AFK — три агента в песочнице на рефакторинг, утром буду ревьюить PR'ы».
 
-"[Bypass permissions](#agent-mode)?"
+«[Обход разрешений](#agent-mode)?»
 
-"Yeah, read-only [filesystem](#filesystem), no network."
+«Да, [файловая система](#filesystem) только для чтения, без сети».
 
 ### Automated check
 
-A deterministic verification that runs in the [environment](#environment) — tests, type checks, lints, build, pre-commit hooks. Pass/fail, no judgement. The signal an [agent](#agent) can self-correct from without involving anyone else. A flaky test is a broken check, not a non-check; automated checks are deterministic _by design_.
+Детерминированная проверка, которая выполняется в [окружении](#environment) — тесты, проверка типов, линтеры, сборка, pre-commit хуки. Прошёл/не прошёл, без оценки. Сигнал, по которому [агент](#agent) может самостоятельно исправиться, никого больше не привлекая. Флакающий тест — это сломанная проверка, а не отсутствие проверки; автоматические проверки детерминированны _по замыслу_.
 
-Self-correction works as a loop. The agent makes a change, runs the check as a [tool call](#tool-call), and the failure output lands in its [context window](#context-window) — a type error with a file and line, a failing assertion with expected and actual values. That's enough for the agent to fix the problem and run the check again, around and around until it passes, with no human in the loop. Determinism is what makes the loop trustworthy: the same code always produces the same verdict, so a pass means something. A flaky check poisons this — the agent "fixes" code that was fine, or retries past a real failure.
+Самокоррекция работает как цикл. Агент вносит изменение, запускает проверку как [вызов инструмента](#tool-call), и вывод об ошибке попадает в его [контекстное окно](#context-window) — ошибка типов с файлом и строкой, провалившийся ассерт с ожидаемыми и фактическими значениями. Этого достаточно, чтобы агент исправил проблему и запустил проверку снова, и так по кругу, пока она не пройдёт, без человека в цикле. Детерминированность — то, что делает цикл заслуживающим доверия: один и тот же код всегда даёт один и тот же вердикт, поэтому «прошло» что-то да значит. Флакающая проверка этот цикл отравляет — агент «чинит» код, который был в порядке, или ретраями обходит реальный провал.
 
-This is why good checks are a large part of a codebase's [AX](#ax). An agent in a repo with strict types, a fast test suite, and a linter catches most of its own mistakes before you see them; an agent in a repo with none of those ships whatever it produces. The difference matters most in [AFK](#afk) runs, where checks are the only verification happening during the run. But a check only catches what it asserts — green checks mean the asserted properties hold, not that the code is right. The judgement-shaped gaps are what [automated review](#automated-review) and [human review](#human-review) are for.
+Поэтому хорошие проверки — большая часть [AX](#ax) кодовой базы. Агент в репозитории со строгой типизацией, быстрым набором тестов и линтером ловит большую часть собственных ошибок до того, как их увидите вы; агент в репозитории без всего этого отправляет наружу то, что у него получилось. Разница важнее всего при [AFK](#afk)-запусках, где проверки — единственная верификация во время выполнения. Но проверка ловит только то, что она утверждает — зелёные проверки означают, что проверенные свойства выполняются, а не что код верен. Пробелы, требующие оценки, — это то, для чего нужны [автоматическое рецензирование](#automated-review) и [рецензирование человеком](#human-review).
 
-_Avoid:_ "feedback loop" / "backpressure" — both lump checks together with review. _Avoid:_ "test" — tests are automated checks, but not all automated checks are tests.
+_Избегать:_ «feedback loop» / «backpressure» — оба смешивают проверки с рецензированием. _Избегать:_ «тест» — тесты являются автоматическими проверками, но не все автоматические проверки являются тестами.
 
-_Usage:_
+_Пример:_
 
-"The agent keeps shipping broken code in the AFK runs."
+«Агент постоянно отгружает сломанный код в AFK-запусках».
 
-"What automated checks are wired into the [sandbox](#sandbox)?"
+«Какие автоматические проверки подключены в [песочнице](#sandbox)?»
 
-"Just the unit tests."
+«Только юнит-тесты».
 
-"Add typecheck and lint — it'll self-correct from those before the PR ever lands."
+«Добавь проверку типов и линтер — он будет по ним самокорректироваться ещё до того, как PR вообще появится».
 
 ### Automated review
 
-An [agent](#agent) reviewing another agent's work, often with a different [model](#model) or [system prompt](#system-prompt). Non-deterministic: it forms a judgement. Runs anywhere — pre-merge on a PR, post-hoc on commit history, mid-session as a [subagent](#subagent). An LLM-as-judge in CI is automated review, not an [automated check](#automated-check); what the assertion _does_ decides the category, not where it runs.
+[Агент](#agent) рецензирует работу другого агента, часто с другой [моделью](#model) или [системным промптом](#system-prompt). Недетерминированно: формирует оценку. Запускается где угодно — перед мёрджем на PR, постфактум по истории коммитов, в середине сессии как [субагент](#subagent). LLM-as-judge в CI — это автоматическое рецензирование, а не [автоматическая проверка](#automated-check); категорию определяет то, что именно делает проверка, а не где она запускается.
 
-The separation from the working agent is what makes it work. Asking the agent that wrote the code to review its own work gets you very little — the [session](#session) that produced the bug also contains the reasoning that produced it, and the agent reads its own conclusions back as confirmation. A reviewer with a fresh [context window](#context-window) has none of that attachment: it sees the diff the way a stranger would, which is what review depends on. A different model or a review-specific system prompt sharpens this further — different blind spots, and a system prompt scoped to what you actually care about (security, API contracts, performance) rather than a vague "look for problems".
+Именно отделение от рабочего агента делает это работающим. Просьба к агенту, написавшему код, ревьюить собственную работу даёт немного — [сессия](#session), в которой появился баг, содержит и рассуждения, которые его породили, и агент считывает собственные выводы обратно как подтверждение. У ревьюера со свежим [контекстным окном](#context-window) такой привязки нет: он видит дифф глазами постороннего, а на этом и строится рецензирование. Другая модель или системный промпт, заточенный под ревью, ещё больше это усиливает — другие слепые зоны, и системный промпт, сфокусированный на том, что вам действительно важно (безопасность, API-контракты, производительность), а не расплывчатое «ищи проблемы».
 
-It slots between the other review layers. Automated checks are deterministic and catch what can be asserted mechanically; [human review](#human-review) is expensive and scales worst. Automated review sits in the middle: it catches judgement-shaped problems — a misleading function name, a missed edge case — at machine cost. Because it's non-deterministic, it can miss things and flag non-issues; treat it as a filter that raises the floor before a human looks, not a gate that replaces one.
+Автоматическое рецензирование занимает место между остальными слоями рецензирования. Автоматические проверки детерминированы и ловят то, что можно утвердить механически; [рецензирование человеком](#human-review) дорогое и масштабируется хуже всего. Автоматическое рецензирование находится посередине: оно ловит проблемы, требующие оценки, — вводящее в заблуждение имя функции, пропущенный краевой случай — по цене машины. Поскольку оно недетерминированно, оно может что-то пропустить или отметить несуществующее; относитесь к нему как к фильтру, который поднимает нижнюю планку до того, как подключается человек, а не как к шлюзу, его заменяющему.
 
-_Avoid:_ "AI review" / "agent review" — too vague to distinguish from the working agent itself.
+_Избегать:_ «AI review» / «agent review» — слишком расплывчато, чтобы отличить от самого рабочего агента.
 
-_Usage:_
+_Пример:_
 
-"We're getting too many bad PRs from the [AFK](#afk) runs."
+«Из [AFK](#afk)-запусков идёт слишком много плохих PR'ов».
 
-"Add an automated review step before merge — different model, separate system prompt, scoped to security and contract changes."
+«Добавь шаг автоматического рецензирования перед мёрджем — другая модель, отдельный системный промпт, скоуп на безопасность и изменения контрактов».
 
 ### Human review
 
-The user reading the code the [agent](#agent) produced and forming a judgement on it. Reading the diff or the changed files counts; reading the agent's _description_ of what it did does not — narration is not the artifact. The description is a [secondary source](#secondary-source), written by the party being reviewed; the diff is the [primary source](#primary-source), and review means reading it.
+Пользователь читает код, который создал [агент](#agent), и формирует по нему собственную оценку. Читать дифф или изменённые файлы — это рецензирование; читать _описание_ агентом того, что он сделал, — нет, потому что нарратив не является артефактом. Описание — это [вторичный источник](#secondary-source), написанный как раз той стороной, которую ревьюят; дифф — это [первоисточник](#primary-source), и рецензирование по определению означает чтение именно его.
 
-Agents raise the volume of code produced, so review becomes the bottleneck. One useful idea is layering different review strategies. [Automated checks](#automated-check) catch the mechanical failures, [automated review](#automated-review) catches the describable ones, and human review is reserved for what only you can judge — whether the change is the right change, whether the approach fits the codebase, whether this should exist at all.
+Агенты увеличивают объём создаваемого кода, поэтому рецензирование быстро становится узким местом всего процесса. Одна полезная идея — наслаивать разные стратегии ревью, каждая из которых ловит свой класс проблем. [Автоматические проверки](#automated-check) ловят механические ошибки, [автоматическое рецензирование](#automated-review) — описываемые словами, а рецензирование человеком резервируют для того, что можете оценить только вы: является ли это изменение тем самым изменением, которое нужно, подходит ли выбранный подход к кодовой базе, и должно ли это вообще существовать.
 
-Review is also cheaper earlier. Reading a plan before work starts, or a small diff mid-flight, takes minutes; excavating a finished branch after an [AFK](#afk) run takes longer. Where you place the review checkpoint is a [human-in-the-loop](#human-in-the-loop) decision, not an afterthought.
+Рецензирование также тем дешевле, чем раньше оно сделано. Чтение плана до начала работы или небольшого диффа в процессе занимает минуты; раскопки уже законченной ветки после [AFK](#afk)-запуска занимают существенно дольше. То, где именно вы ставите точку контроля рецензирования, — это в логике [человека в цикле](#human-in-the-loop) решение, а не запоздалая мысль.
 
-_Avoid:_ "code review" alone — ambiguous between human and automated.
+_Избегать:_ одного только «code review» — неоднозначно, человек или автоматика.
 
-_Usage:_
+_Пример:_
 
-"I human-reviewed the AFK output."
+«Я провёл ручное ревью вывода AFK».
 
-"You read the diff or just the summary?"
+«Ты читал дифф или только саммари?»
 
-"Diff. The summary said it deleted dead code — turned out the function was called from a generated file."
+«Дифф. В саммари было написано, что удалён мёртвый код, — оказалось, функцию вызывали из сгенерированного файла».
 
 ### Vibe coding
 
-A working pattern where the user accepts the [agent](#agent)'s code without [human review](#human-review). The diff is treated as opaque — what matters is whether the program behaves, not what's inside. [Automated review](#automated-review) and [automated checks](#automated-check) may still run; vibe coding is silent on both.
+Паттерн работы, при котором пользователь принимает код [агента](#agent) без [рецензирования человеком](#human-review). Дифф считается непрозрачным — важно, ведёт ли программа себя правильно, а не что у неё внутри. [Автоматическое рецензирование](#automated-review) и [автоматические проверки](#automated-check) при этом всё ещё могут выполняться; вайб-кодинг ничего о них не говорит.
 
-The term comes from Andrej Karpathy, who [coined it in early 2025](https://x.com/karpathy/status/1886192184808149383): you "fully give in to the vibes" and "forget that the code even exists" — describe what you want, accept what comes back, and judge it by running it.
+Термин ввёл Andrej Karpathy, [придумавший его в начале 2025 года](https://x.com/karpathy/status/1886192184808149383): вы «fully give in to the vibes» и «forget that the code even exists» — описываете желаемое, принимаете то, что вернулось, и оцениваете это, запуская программу.
 
-Vibe coding trades inspection for speed. Reading diffs is usually the slowest step in agent-driven work, so dropping it removes the main bottleneck. For code whose failures are cheap — [prototypes](#prototyping), one-off scripts, internal tools — that's a reasonable trade. The risk scales with the code's lifespan and stakes.
+Вайб-кодинг меняет инспекцию на скорость. Чтение диффов — обычно самый медленный шаг в работе, управляемой агентом, поэтому отказ от него убирает главное узкое место. Для кода, ошибки в котором дёшевы — [прототипы](#prototyping), одноразовые скрипты, внутренние инструменты, — это разумный обмен. Риск растёт вместе со сроком жизни кода и ставками.
 
-The cost arrives later. Vibe-coded changes accumulate into a codebase nobody has read, and behaviour was the only thing checked — so anything behaviour doesn't surface, like a secret written to logs, a missing edge case, or quietly wrong data handling, ships unseen. The first time someone debugs the system is the first time anyone reads the code. With human review gone, whatever automated verification still runs — tests, types, automated review — is the only gate the code passes through.
+Цена приходит позже. Изменения, сделанные вайб-кодингом, накапливаются в кодовую базу, которую никто не читал, а поведение было единственным, что проверялось, — поэтому всё, что не всплывает в поведении, — секрет в логах, пропущенный краевой случай, тихо неверная обработка данных — уходит в продакшен незамеченным. Первый раз, когда кто-то отлаживает систему, становится первым разом, когда кто-либо вообще читает код. Без рецензирования человеком любое автоматическое подтверждение, которое всё ещё выполняется, — тесты, типы, автоматическое рецензирование — оказывается единственным шлюзом, через который код проходит.
 
-_Avoid:_ "vibe coding" as a synonym for "low-quality AI coding" — the term names the review stance, not the resulting code.
+_Избегать:_ использовать «вайб-кодинг» как синоним «низкокачественного ИИ-кодинга» — термин называет позицию в ревью, а не полученный код.
 
-_Usage:_
+_Пример:_
 
-"Did you read what it changed in the auth flow?"
+«Ты читал, что оно поменяло в флоу авторизации?»
 
-"Vibe coded it — login still works, that's all I checked."
+«Вайб-кодил — логин всё ещё работает, это всё, что я проверил».
 
-"Read the diff before you push, vibing on auth is how secrets leak into logs."
+«Читай дифф перед пушем, вайбить на авторизации — так секреты утекают в логи».
 
 ### Design concept
 
-The shared understanding of what's being built, held in common between user and [agent](#agent) but separate from any asset. Brooks' term (_The Design of Design_): the conversation, [handoff artifacts](#handoff-artifact), and the code are all assets that try to capture or reach the design concept, but none of them _are_ it. Quality of the design concept is felt through the quality of the conversation that built it.
+Концепция дизайна — это общее понимание того, что строится, разделяемое между пользователем и [агентом](#agent), но отдельное от любого артефакта. Термин Брукса (_The Design of Design_): разговор, [артефакты передачи](#handoff-artifact) и код — всё это артефакты, которые пытаются зафиксировать концепцию дизайна или приблизиться к ней, но ни один из них ею _не является_. Качество концепции дизайна ощущается через качество разговора, который её выстроил.
 
-The term names the gap behind a familiar frustration: the agent writes exactly what you asked for and it's still wrong. The usual cause is that you hadn't fully figured out what you wanted. The design concept wasn't finished in your own head — your prompt captured the parts you'd worked out, and was silent on the parts you hadn't. The agent filled those silences with its own assumptions, because there was nothing to align with. Nothing malfunctioned. There was no shared design concept, because there wasn't yet a whole one to share.
+Этот термин называет причину привычного разочарования: агент пишет ровно то, что вы просили, и всё равно получается не то. Обычно причина в том, что вы сами до конца не поняли, чего хотите. Концепция дизайна ещё не сложилась у вас в голове — ваш промпт зафиксировал то, что вы уже проработали, и промолчал об остальном. Агент заполнил эти пробелы собственными предположениями, потому что сверяться было не с чем. Ничего не сломалось. Общей концепции дизайна просто не было, потому что её ещё не существовало в целом виде, чтобы её можно было разделить.
 
-You can tell a design concept is shared the same way you can with a colleague: the other party starts answering questions you haven't asked yet the way you would. Until then, the work is conversation — [grilling](#grilling) is the deliberate version — and writing a [spec](#spec) too early just captures the misalignment in a more durable asset. The design concept also moves as you learn; assets lag it, which is why a spec faithful to last week's understanding can still mislead this week's session.
+О том, что концепция дизайна стала общей, можно судить так же, как с коллегой: вторая сторона начинает отвечать на вопросы, которые вы ещё не задавали, именно так, как ответили бы вы. До этого момента работа сводится к разговору — [допрос](#grilling) это его целенаправленный вариант — а слишком раннее написание [спецификации](#spec) лишь фиксирует рассогласование в более долговечном артефакте. Концепция дизайна также меняется по мере того, как вы учитесь; артефакты от неё отстают, и поэтому спецификация, верная пониманию прошлой недели, всё ещё может вводить в заблуждение на сессии этой недели.
 
-_Usage:_
+_Пример:_
 
-"It's writing exactly what I asked for and it's still wrong."
+«Он пишет ровно то, что я просил, и всё равно не то.»
 
-"You don't share a design concept yet — it's filling gaps with assumptions. Keep talking until cancellation, refunds, and partial fulfilment all line up between you before you let it write a spec."
+«У вас ещё нет общей концепции дизайна — агент заполняет пробелы предположениями. Продолжайте разговор, пока отмена, возвраты и частичное исполнение не сойдутся между вами, и только потом позволяйте ему писать спецификацию.»
 
 ### Grilling
 
-A technique for developing a [design concept](#design-concept) with an [agent](#agent): the agent interviews the user Socratically, one decision at a time, proposing a recommended answer for each. Slows the rush to a finished plan — no [handoff artifact](#handoff-artifact) is written until the concept stabilises.
+Допрос (сократический опрос, допустимо «гриллинг») — техника развития [концепции дизайна](#design-concept) совместно с [агентом](#agent): агент ведёт сократическое интервью с пользователем, по одному решению за раз, предлагая рекомендованный ответ на каждый вопрос. Эта техника тормозит спешку к готовому плану — ни один [артефакт передачи](#handoff-artifact) не пишется, пока концепция не стабилизируется.
 
-The technique exists because agents fill gaps silently. Asked to write a [spec](#spec) from a two-line prompt, the agent doesn't stop at the decisions you haven't made — it picks defaults and writes them in. The result looks complete, and the guesses are indistinguishable from the choices, so you discover them late: at review, or when the built feature handles an edge case in a way you never chose. Grilling inverts this — instead of guessing, the agent has to ask.
+Эта техника существует, потому что агенты заполняют пробелы молча. Попросите агента написать [спецификацию](#spec) по двухстрочному промпту — и он не остановится перед решениями, которые вы не приняли: он выберет значения по умолчанию и впишет их. Результат выглядит законченным, а догадки неотличимы от осознанных выборов, поэтому вы замечаете их поздно: на рецензировании или когда готовая функция обрабатывает граничный случай так, как вы никогда не выбирали. Допрос переворачивает это — вместо угадывания агент обязан спрашивать.
 
-It's a [human-in-the-loop](#human-in-the-loop) technique: your answers are the input. When a question can't be answered in conversation — you'd have to see the thing — switch to [prototyping](#prototyping).
+Это техника с [человеком в цикле](#human-in-the-loop): входными данными служат ваши ответы. Когда вопрос не решается в разговоре — нужно увидеть вещь своими глазами — переходите к [прототипированию](#prototyping).
 
-_Usage:_
+_Пример:_
 
-"It went straight to writing the spec and got the cancellation logic wrong."
+«Он сразу кинулся писать спецификацию и ошибся в логике отмены.»
 
-"Grill it first — make it ask you about partial cancels, refunds, and timing before it commits anything to the doc. Cheaper to resolve in conversation than in code."
+«Сначала проведите допрос — заставьте его спрашивать вас о частичных отменах, возвратах и тайминге, прежде чем что-то попадёт в документ. В разговоре это разрешается дешевле, чем в коде.»
 
 ### Prototyping
 
-Having the [agent](#agent) build a quick, rough version of something, for when conversation is too low-fidelity and you need a real artifact to talk about.
+Прототипирование — когда [агент](#agent) строит быструю черновую версию чего-либо; применяется, когда разговору не хватает точности и нужен реальный артефакт для обсуждения.
 
-[Grilling](#grilling) resolves design decisions in conversation. Conversation is cheap, but it's low-fidelity: some questions can't be answered in words — how an interaction feels, whether an API shape is ergonomic in real calling code, whether the layout works at real data sizes. The interview hits a question and your honest answer is "I don't know, I'd have to see it." Past that point the discussion circles. Instead, have the agent build the thing, look at it, and come back to the conversation with an answer.
+[Допрос](#grilling) решает проектные решения в разговоре. Разговор дёшев, но работает в низком разрешении: некоторые вопросы нельзя решить словами — каково взаимодействие на ощупь, эргономична ли форма API в реальном вызывающем коде, работает ли вёрстка при реальных объёмах данных. Допрос натыкается на вопрос, и ваш честный ответ: «Не знаю, нужно посмотреть». За этой точкой обсуждение ходит по кругу. Вместо этого пусть агент построит вещь, вы на неё посмотрите и вернётесь к разговору с ответом.
 
-Agents lower the cost of building, which is what makes this practical. A rough version that used to take a day to mock up now takes minutes, so it's worth doing routinely. It's a [human-in-the-loop](#human-in-the-loop) technique: the prototype is there for you to react to.
+Агенты снижают стоимость построения, что и делает этот подход практичным. Черновая версия, на набросок которой раньше уходил день, теперь занимает минуты, поэтому её имеет смысл делать регулярно. Это техника с [человеком в цикле](#human-in-the-loop): прототип существует для того, чтобы вам было на что отреагировать.
 
-You usually don't stop at one look. Iterate with the prototype — react, ask for a change, react again — so each round resolves another decision against the real artifact, at a higher fidelity than conversation allows.
+Обычно на одном взгляде не останавливаются. Итерируйте вместе с прототипом — реакция, просьба об изменении, снова реакция — так каждый раунд решает ещё одно проектное решение против реального артефакта, с более высоким разрешением, чем позволяет разговор.
 
-A prototype doesn't have to be all-scrappy. You can build the pieces you're actually evaluating to production quality, so when the decision lands, the component or API you reacted to can transfer into the real codebase. This makes prototyping essential material for the [spec](#spec) to reference.
+Прототип не обязан быть целиком черновым. Можно строить те части, которые вы реально оцениваете, на продакшен-качестве, и тогда, когда решение принято, компонент или API, на который вы реагировали, можно перенести в настоящий код. Это делает прототипирование существенным материалом, на который ссылается [спецификация](#spec).
 
-_Usage:_
+_Пример:_
 
-"We've spent half an hour arguing about whether the wizard should be one page or three steps."
+«Мы уже полчаса спорим, должен ли мастер быть одной страницей или тремя шагами.»
 
-"Words won't settle it — have the agent prototype both. We'll click through them and know in five minutes."
+«Словами это не решить — пусть агент прототипирует оба варианта. Мы по ним кликнем и за пять минут поймём.»
 
 ### DX
 
-Developer experience — how easy a codebase and its toolchain make it for humans to do good work. Good DX is fast feedback, clear error messages, documentation that answers the question you actually have, and setup that works on the first try. The term long predates AI coding; it's in this dictionary mainly as the contrast for [AX](#ax).
+DX (опыт разработчика) — насколько кодовая база и её инструментарий облегчают людям хорошую работу. Хороший DX — это быстрая обратная связь, понятные сообщения об ошибках, документация, отвечающая на вопрос, который у вас реально возникает, и настройка, работающая с первого раза. Термин появился задолго до ИИ-кодирования; в этот словарь он включён в основном как контраст для [AX](#ax).
 
-DX is the interaction between the human and the codebase — nothing more. The main difference between the two audiences is that humans are [stateful](#stateful) and agents are [stateless](#stateless). A human learns the codebase once and carries that knowledge into every day after, which is why poor DX is survivable: they route around slow CI by batching their pushes, around missing docs by asking in Slack once, around confusing structure by remembering where things live. The workarounds accumulate, and a team ends up productive in a codebase that fights them.
+DX — это взаимодействие между человеком и кодовой базой, и ничто более. Главное различие между двумя аудиториями в том, что люди — [с сохранением состояния](#stateful), а агенты — [без сохранения состояния](#stateless). Человек изучает кодовую базу один раз и несёт это знание во все последующие дни, поэтому плохой DX переносим: обходят медленный CI, группируя пуши, обходят отсутствие доков, один раз спросив в Slack, обходят запутанную структуру, запоминая, где что лежит. Обходные пути накапливаются, и команда в итоге продуктивна в кодовой базе, которая с ними борется.
 
-[Agents](#agent) face the same codebase with none of that accumulation. Stateless across [sessions](#session), an agent re-learns the codebase from scratch every time — it benefits from the fast test suite and the clear error messages, but anything it figured out yesterday is gone unless it was written into the [environment](#environment), which the agent only perceives through [tool results](#tool-result). That's the gap AX names: the parts of DX that survive when the developer is an agent, plus concerns humans don't have, like keeping the [context window](#context-window) free.
+[Агенты](#agent) сталкиваются с той же кодовой базой без всякого накопления. Без сохранения состояния между [сессиями](#session) агент каждый раз заново изучает кодовую базу с нуля — он выигрывает от быстрого набора тестов и понятных сообщений об ошибках, но всё, что он выяснил вчера, исчезает, если только это не записано в [окружение](#environment), которое агент воспринимает только через [результаты инструментов](#tool-result). Это и есть тот разрыв, который называет AX: части DX, которые выживают, когда разработчик — агент, плюс заботы, которых у людей нет, например поддержание [контекстного окна](#context-window) свободным.
 
-The overlap means DX investment often improves AX for free — strict types, fast tests, and predictable structure help both. The divergence means it doesn't always: a beautiful onboarding doc helps a human for a week and an agent not at all unless it's reachable from [AGENTS.md](#agentsmd).
+Пересечение означает, что инвестиции в DX часто бесплатно улучшают AX — строгие типы, быстрые тесты и предсказуемая структура помогают обоим. Расхождение означает, что не всегда: красивый документ по онбордингу помогает человеку неделю, а агенту — вовсе нет, если только он не доступен из [AGENTS.md](#agentsmd).
 
-_Usage:_
+_Пример:_
 
-"Our DX is fine — new hires are productive in a week."
+«У нас нормальный DX — новые сотрудники выходят на продуктивность за неделю.»
 
-"Productive because someone sits with them for that week. The agent doesn't get that week; check the AX separately."
+«Продуктивны, потому что кто-то эту неделю сидит с ними рядом. Агент этой недели не получает; проверьте AX отдельно.»
 
 ### AX
 
-Agent experience — how well the [environment](#environment) is set up for an [agent](#agent) to do good work in a codebase. The agent-facing counterpart to [DX](#dx). When the same agent performs well in one repo and badly in another — same [model](#model), same [harness](#harness) — the difference is usually AX. The instinct is to blame the model or rewrite the prompt; the fix is more often in the repo.
+AX (опыт агента) — насколько [окружение](#environment) подготовлено для того, чтобы [агент](#agent) хорошо работал в кодовой базе. Это обращённый к агенту аналог [DX](#dx). Когда один и тот же агент хорошо работает в одном репозитории и плохо в другом — та же [модель](#model), та же [обвязка](#harness) — разница обычно в AX. Первая мысль — винить модель или переписать промпт; исправление чаще находится в репозитории.
 
-Good AX has three main dimensions:
+Хороший AX имеет три основных измерения:
 
-| Dimension        | What good AX looks like                                                                                                                                                                                                                              |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Automated checks | Fast, deterministic [automated checks](#automated-check) — types, tests, lints — that the agent can self-correct from without a human                                                                                                          |
-| Architecture     | A codebase the agent can navigate without reading everything: predictable structure, a lot of behaviour behind small interfaces, names that say what things do                                                                                       |
-| Free context     | [AGENTS.md](#agentsmd), [skills](#skill), and [tools](#tool) kept lean, so most of the [context window](#context-window) is available for the task and the agent stays in the [smart zone](#smart-zone) instead of drowning |
+| Измерение               | Как выглядит хороший AX                                                                                                                                                                                                                                  |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Автоматические проверки | Быстрые, детерминированные [автоматические проверки](#automated-check) — типы, тесты, линтеры — по которым агент может исправляться самостоятельно, без человека                                                                                   |
+| Архитектура             | Кодовая база, в которой агент ориентируется, не читая всё подряд: предсказуемая структура, многое из поведения скрыто за небольшими интерфейсами, имена, говорящие о том, что делают вещи                                                                |
+| Свободный контекст      | [AGENTS.md](#agentsmd), [навыки](#skill) и [инструменты](#tool), удержанные компактными, так что большая часть [контекстного окна](#context-window) доступна задаче, и агент остаётся в [«умной зоне»](#smart-zone), а не тонет |
 
-AX and DX overlap — good checks and clean architecture help both audiences — but they diverge. Humans tolerate tribal knowledge, slow CI, and "ask Sarah about the billing module"; agents can't. Agents don't benefit from IDE tooltips or pretty dashboards; they need failures as text in a [tool result](#tool-result). A codebase can have good DX and poor AX.
+AX и DX пересекаются — хорошие проверки и чистая архитектура помогают обеим аудиториям, — но они расходятся. Люди мирятся с неформальным знанием, медленным CI и «спроси Сару про биллинг-модуль»; агенты — нет. Агенты не получают пользы от подсказок в IDE или красивых дашбордов; им нужно, чтобы информация о сбоях приходила текстом в [результате инструмента](#tool-result). Кодовая база может иметь хороший DX и плохой AX.
 
-_Avoid:_ treating AX as a synonym for DX — the audiences need different investments.
+_Избегать:_ обращения с AX как с синонимом DX — аудиториям нужны разные инвестиции.
 
-_Usage:_
+_Пример:_
 
-"The agent writes great code in the API repo and garbage in the frontend."
+«Агент пишет отличный код в API-репозитории и мусор — во фронтенде.»
 
-"The API repo has strict types and a fast test suite; the frontend has neither and forty always-loaded skills. That's an AX gap, not a model problem."
+«В API-репозитории строгие типы и быстрый набор тестов; во фронтенде нет ни того, ни другого и сорок всегда загруженных навыков. Это разрыв в AX, а не проблема модели.»
 

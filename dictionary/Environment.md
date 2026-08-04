@@ -1,19 +1,19 @@
 ---
-description: The world the agent acts on — anything outside the harness that the agent perceives via tool results and changes via tool calls.
+description: "Мир, с которым работает агент — всё вне обвязки, что агент воспринимает через результаты инструментов и меняет через их вызовы."
 ---
 
-The world the [agent](./Agent.md) acts on — anything outside the [harness](./Harness.md) that the agent perceives through [tool results](./Tool%20result.md) and changes through [tool calls](./Tool%20call.md). The harness _runs_ the agent; the environment is what the agent _works in_. A file like [`AGENTS.md`](./AGENTS.md.md) lives in the environment; the harness is what loads it into the [context window](./Context%20window.md). A [filesystem](./Filesystem.md) is the most common kind of environment, but not the only one (a database, a remote API, a browser session can all be environments).
+Мир, на который воздействует [агент](./Agent.md), — всё, что находится вне [обвязки](./Harness.md), что агент воспринимает через [результаты инструментов](./Tool%20result.md) и меняет через [вызовы инструментов](./Tool%20call.md). Обвязка _запускает_ агента; окружение — это то, _в чём_ агент работает. Файл наподобие [`AGENTS.md`](./AGENTS.md.md) живёт в окружении; обвязка — это то, что загружает его в [контекстное окно](./Context%20window.md). [Файловая система](./Filesystem.md) — самый распространённый вид окружения, но не единственный (база данных, удалённый API, сессия браузера тоже могут быть окружением).
 
-The agent only sees the environment when it looks. Everything it knows about the environment arrived through a tool result, so its picture is a collection of snapshots, each accurate at the moment it was taken. If a file changes after the agent read it — you edit it by hand, a build step regenerates it — the agent keeps reasoning from the stale copy until something prompts a re-read. An agent confidently describing a file that no longer looks like that is usually this: the environment moved, the snapshot didn't.
+Агент видит окружение только тогда, когда смотрит на него. Всё, что он знает об окружении, пришло через результат инструмента, поэтому его картина — это набор снимков, каждый из которых точен в момент съёмки. Если файл изменился после того, как агент его прочитал — вы отредактировали его вручную, шаг сборки перегенерировал его, — агент продолжает рассуждать, опираясь на устаревшую копию, пока что-то не заставит его перечитать файл. Если агент уверенно описывает файл, который уже так не выглядит, обычно дело именно в этом: окружение сдвинулось, а снимок — нет.
 
-The environment is also the layer that persists — the only one that is always [stateful](./Stateful.md). A [session](./Session.md)'s context is gone when the session ends, but files written to the environment remain for the next session to read — which is what [memory systems](./Memory%20system.md), [handoff artifacts](./Handoff%20artifact.md), and `AGENTS.md` rely on. Anything an agent should still know tomorrow has to end up in the environment.
+Окружение — это также слой, который сохраняется, причём единственный, всегда [с сохранением состояния](./Stateful.md). Контекст [сессии](./Session.md) исчезает, когда сессия завершается, но файлы, записанные в окружение, остаются доступными для чтения следующей сессии — на этом и строятся [системы памяти](./Memory%20system.md), [артефакты передачи](./Handoff%20artifact.md) и `AGENTS.md`. Всё, что агент должен знать завтра, должно в итоге оказаться в окружении.
 
-You decide how big the environment is. A [sandbox](./Sandbox.md) shrinks it, limiting what the agent can reach; adding a [tool](./Tool.md) extends it, bringing a database or an API into reach. What's inside the boundary is what the agent can perceive and change; everything outside it doesn't exist for the agent. How well the environment is set up to support the agent's work is the codebase's [AX](./AX.md).
+Вы сами определяете размер окружения. [Песочница](./Sandbox.md) сужает его, ограничивая то, до чего агент может дотянуться; добавление [инструмента](./Tool.md) расширяет его, делая доступной базу данных или API. То, что внутри границы, — то агент может воспринимать и менять; всё, что снаружи, для агента не существует. То, насколько хорошо окружение настроено под работу агента, — это [AX](./AX.md) («опыт агента») кодовой базы.
 
-_Avoid:_ using "environment" for the runtime or the harness itself — the harness is the wrapper, the environment is the workspace.
+_Избегать:_ использовать слово «окружение» для среды исполнения или самой обвязки — обвязка это оболочка, а окружение это рабочее пространство.
 
-_Usage:_
+_Пример:_
 
-"The agent can't see the staging DB schema."
+«Агент не видит схему в staging-базе.»
 
-"Wire it into the environment — give it a `psql` tool scoped to read-only on staging. The harness is fine, it just has nothing to act on."
+«Подключите это к окружению — дайте ему инструмент `psql` с доступом только на чтение к staging. Обвязка в порядке, ей просто не на что воздействовать.»

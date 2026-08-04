@@ -1,25 +1,25 @@
 ---
-description: What the harness sends back after executing a tool call — file contents, output, or error. The agent's only view of the environment.
+description: "Что обвязка возвращает после вызова инструмента — содержимое файла, вывод или ошибку. Единственный способ агента увидеть окружение."
 ---
 
-What the [harness](./Harness.md) sends back after executing a [tool call](./Tool%20call.md) — the file contents, the command output, the error. The [agent](./Agent.md)'s only view of the [environment](./Environment.md). Travels back to the [model](./Model.md) in the _next_ [model provider request](./Model%20provider%20request.md), where the model decides what to do with it. Tool call and tool result are two ends of the same exchange, both inside one [turn](./Turn.md).
+То, что [обвязка](./Harness.md) отправляет обратно после исполнения [вызова инструмента](./Tool%20call.md), — содержимое файла, вывод команды, ошибка. Единственное, как [агент](./Agent.md) видит [окружение](./Environment.md). Возвращается к [модели](./Model.md) в _следующем_ [запросе к провайдеру моделей](./Model%20provider%20request.md), где модель решает, что с этим делать. Вызов инструмента и результат инструмента — два конца одного обмена, оба внутри одного [хода](./Turn.md).
 
-The lifecycle of a tool result:
+Жизненный цикл результата инструмента:
 
-| Step | Who     | What happens                                                               |
-| ---- | ------- | -------------------------------------------------------------------------- |
-| 1    | Harness | Executes the tool call — runs the command, reads the file                  |
-| 2    | Harness | Captures the outcome: output, contents, or error                           |
-| 3    | Harness | Appends it to the [context](./Context.md) as a message                     |
-| 4    | Harness | Sends the whole context to the provider in the next model provider request |
-| 5    | Model   | Reads the result and decides: another tool call, or a final answer         |
+| Шаг | Кто     | Что происходит                                                               |
+| --- | ------- | ---------------------------------------------------------------------------- |
+| 1   | Обвязка | Исполняет вызов инструмента — запускает команду, читает файл                 |
+| 2   | Обвязка | Захватывает итог: вывод, содержимое или ошибку                               |
+| 3   | Обвязка | Добавляет его в [контекст](./Context.md) как сообщение                       |
+| 4   | Обвязка | Отправляет весь контекст провайдеру в следующем запросе к провайдеру моделей |
+| 5   | Модель  | Читает результат и решает: ещё один вызов инструмента или итоговый ответ     |
 
-The result stays in the context for the rest of the [session](./Session.md). Tool results are usually the bulk of a coding session's context: every file read, every test run, every search lands in full and keeps occupying [tokens](./Token.md) long after it stopped being useful. A few large results — a verbose test log, a generated file read whole — can push a session toward the edge of the [context window](./Context%20window.md) faster than the conversation itself does.
+Результат остаётся в контексте до конца [сессии](./Session.md). Результаты инструментов обычно составляют основную часть контекста кодинговой сессии: каждое чтение файла, каждый запуск теста, каждый поиск попадают туда целиком и продолжают занимать [токены](./Token.md) спустя долгое время после того, как перестали быть полезными. Несколько крупных результатов — многословный лог теста, сгенерированный файл, прочитанный целиком, — могут подтолкнуть сессию к краю [контекстного окна](./Context%20window.md) быстрее, чем сама беседа.
 
-Because the result is all the model sees, the model has no way to check the environment behind it. If the output was truncated, the command silently failed, or the harness returned an error instead of the contents, the model reasons from what it was given. When the agent's picture of your system seems wrong, the tool results are where to look: somewhere in the transcript is a result that says something different from what you know to be true.
+Поскольку результат — это всё, что видит модель, у неё нет способа проверить окружение за ним. Если вывод был обрезан, команда тихо упала или обвязка вернула ошибку вместо содержимого, модель рассуждает, опираясь на то, что ей дали. Когда картина вашей системы у агента кажется неверной, смотреть надо на результаты инструментов: где-то в транскрипте есть результат, который говорит нечто иное, чем то, что вы знаете как правду.
 
-_Usage:_
+_Пример:_
 
-"It's reasoning about the file like it's empty."
+«Он рассуждает о файле так, будто тот пустой.»
 
-"The tool result came back as a permission denial, not the contents. The model only saw the error string — it has no other way to see the file."
+«Результат инструмента вернулся как отказ в разрешении, а не как содержимое. Модель увидела только строку ошибки — у неё нет другого способа увидеть файл.»

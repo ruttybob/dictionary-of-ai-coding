@@ -1,15 +1,15 @@
 ---
-description: Loading only the context an agent needs right now, with context pointers to the rest. Borrowed from UI design.
+description: Загрузка только того контекста, который нужен агенту прямо сейчас, с указателями контекста на остальное. Заимствовано из дизайна UI.
 ---
 
-Loading only the [context](./Context.md) an [agent](./Agent.md) needs right now, with [context pointers](./Context%20pointer.md) to the rest. Borrowed from UI design, where it means showing users only the controls relevant to their current task and hiding the rest behind a click.
+Загрузка только того [контекста](./Context.md), который [агенту](./Agent.md) нужен прямо сейчас, с [указателями контекста](./Context%20pointer.md) на остальное. Заимствовано из дизайна UI, где это означает показывать пользователям только те элементы управления, которые относятся к их текущей задаче, а остальное прятать за кликом.
 
-The technique exists because context is a cost twice over. Every [token](./Token.md) loaded up front is billed as [input tokens](./Input%20tokens.md) on every [turn](./Turn.md), and every token spends [attention budget](./Attention%20budget.md) whether the agent needs it or not. An [AGENTS.md](./AGENTS.md.md) stuffed with the full style guide, deployment runbook, and database conventions makes the agent worse at all of them — the instructions that matter for the current task are diluted by the ones that don't. The tell is an agent that ignores rules you know are in its context: they're in there, but buried.
+Эта техника существует, потому что контекст оплачивается дважды. Каждый [токен](./Token.md), загруженный заранее, тарифицируется как [входные токены](./Input%20tokens.md) на каждом [ходу](./Turn.md), и каждый токен расходует [бюджет внимания](./Attention%20budget.md), нужен он агенту или нет. [AGENTS.md](./AGENTS.md.md), забитый полным руководством по стилю, процедурой развёртывания и соглашениями по базе данных, делает агента хуже по всем пунктам — инструкции, важные для текущей задачи, размываются теми, которые не важны. Признак — агент, который игнорирует правила, о которых вы знаете, что они в его контексте: они там есть, но погребены.
 
-Progressive disclosure inverts this. Keep the always-loaded layer small — a sentence per topic and a pointer to where the detail lives. The agent reads the style guide when it's writing a component, the deployment runbook when it's deploying, and neither when it's fixing a test. [Skills](./Skill.md) are the pattern built into the [harness](./Harness.md): a short description loaded every [session](./Session.md), the full instructions only when triggered.
+Прогрессивное раскрытие обращает это. Держите всегда загружаемый слой маленьким — по предложению на тему и указателю на то, где живут детали. Агент читает руководство по стилю, когда пишет компонент, процедуру развёртывания — когда разворачивает, и ни то, ни другое — когда чинит тест. [Навыки](./Skill.md) — это шаблон, встроенный в [обвязку](./Harness.md): короткое описание загружается каждую [сессию](./Session.md), полные инструкции — только при срабатывании.
 
-_Usage:_
+_Пример:_
 
-"Should I dump the entire style guide into AGENTS.md?"
+«Мне стоит вывалить полное руководство по стилю в AGENTS.md?»
 
-"No — progressive disclosure. Reference the style guide as a skill the agent loads when it actually needs to write a component. AGENTS.md pays the token cost every turn."
+«Нет — прогрессивное раскрытие. Ссылайтесь на руководство по стилю как на навык, который агент загружает, когда ему действительно нужно написать компонент. AGENTS.md платит стоимость токенов каждый ход».

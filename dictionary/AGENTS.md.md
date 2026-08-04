@@ -1,19 +1,19 @@
 ---
-description: A file in the environment that the harness loads into the context window at session start — the project's standing brief to the agent.
+description: Файл в окружении, который обвязка загружает в контекстное окно при старте сессии — постоянная инструкция проекта для агента.
 ---
 
-A file in the [environment](./Environment.md) that the [harness](./Harness.md) loads into the [context window](./Context%20window.md) at [session](./Session.md) start — the project's standing brief to the [agent](./Agent.md). Cross-harness convention; some harnesses also have their own variant (Claude Code's is CLAUDE.md).
+Файл в [окружении](./Environment.md), который [обвязка](./Harness.md) загружает в [контекстное окно](./Context%20window.md) в начале [сессии](./Session.md) — постоянная инструкция проекта для [агента](./Agent.md). Соглашение между обвязками; у некоторых обвязок есть также собственный вариант (в Claude Code это CLAUDE.md).
 
-Because it loads automatically, it's one way to avoid repeating yourself across sessions. The [model](./Model.md) is [stateless](./Stateless.md) — a correction you give in one session is gone in the next, and you end up telling every fresh session that the project uses pnpm, that tests run with a particular flag, that a directory is generated and shouldn't be touched. When you've corrected the agent for the same thing twice, that correction is a candidate line for AGENTS.md.
+Поскольку файл загружается автоматически, это один из способов не повторяться из сессии в сессию. [Модель](./Model.md) [без сохранения состояния](./Stateless.md) — поправка, которую вы даёте в одной сессии, исчезает в следующей, и приходится заново объяснять каждой новой сессии, что проект использует pnpm, что тесты запускаются с определённым флагом, что каталог сгенерирован и его нельзя трогать. Если вы поправили агента на одно и то же дважды — эта поправка кандидат на строку в AGENTS.md.
 
-Suitable content is whatever the agent can't derive from the code: build and test commands, conventions the codebase doesn't make obvious, hard constraints ("never edit the generated client"). Short and declarative — it's a brief, not documentation.
+Подходящее содержимое — всё, что агент не может вывести из кода: команды сборки и тестов, соглашения, которые кодовая база не делает очевидными, жёсткие ограничения («никогда не редактируй сгенерированный клиент»). Коротко и декларативно — это инструкция, а не документация.
 
-The trade-off is that everything in it is always loaded. Instructions accumulate, most of them irrelevant to any given task, and a long AGENTS.md both costs tokens and dilutes itself — the more instructions in context, the less reliably the model follows any one of them.
+Компромисс в том, что всё, что в нём есть, загружается всегда. Инструкции накапливаются, большинство из них не относится к конкретной задаче, и длинный AGENTS.md одновременно тратит токены и размывает сам себя — чем больше инструкций в контексте, тем менее надёжно модель следует любой из них.
 
-_Avoid:_ using AGENTS.md for content that should be [progressively disclosed](./Progressive%20disclosure.md) — anything in it pays a [token](./Token.md) cost every [turn](./Turn.md), in every session, whether or not that session needs it. A style guide can go behind a [skill](./Skill.md) or a [context pointer](./Context%20pointer.md) instead; keep AGENTS.md for the lines that apply everywhere.
+_Избегать:_ использовать AGENTS.md для содержимого, которое подлежит [прогрессивному раскрытию](./Progressive%20disclosure.md), — всё, что в него попадает, платит стоимость [токена](./Token.md) каждый [ход](./Turn.md), в каждой сессии, нужна она ему или нет. Руководство по стилю лучше убрать за [навык](./Skill.md) или [указатель контекста](./Context%20pointer.md); AGENTS.md оставьте для строк, которые действуют везде.
 
-_Usage:_
+_Пример:_
 
-"Why is every session starting with 4k tokens already burned?"
+«Почему каждая сессия начинается с уже потраченными 4k токенов?»
 
-"Check AGENTS.md — someone pasted the entire style guide in there instead of putting it behind a skill."
+«Проверь AGENTS.md — кто-то вклеил туда полное руководство по стилю вместо того, чтобы убрать его за навык».

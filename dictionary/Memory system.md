@@ -1,15 +1,15 @@
 ---
-description: A system that attempts to make an agent stateful across sessions by persisting to the environment and reloading at session start.
+description: Система, пытающаяся сделать агента с сохранением состояния: пишет данные в окружение во время сессии и перезагружает при старте следующих.
 ---
 
-A system that attempts to make an [agent](./Agent.md) [stateful](./Stateful.md) across [sessions](./Session.md). Persists information into the [environment](./Environment.md) during a session and reloads it into the [context window](./Context%20window.md) at the start of future ones, so the agent carries continuity beyond the user [clearing](./Clearing.md) the session.
+Система, которая пытается сделать [агента](./Agent.md) [с сохранением состояния](./Stateful.md) между [сессиями](./Session.md). Сохраняет информацию в [окружение](./Environment.md) во время сессии и перезагружает её в [контекстное окно](./Context%20window.md) в начале следующих, так что агент сохраняет преемственность и после того, как пользователь выполняет [очистку](./Clearing.md) сессии.
 
-A memory system has two halves. The write path: during a session, the agent records what it learned — a preference you stated, a fact about the project — as files in the environment. The read path: at session start, the [harness](./Harness.md) loads those files, or an index of them, back into the context window. Many harnesses ship their own memory system — Claude Code's `/memory` is one — but you can also build one yourself: a directory of notes plus an instruction in [AGENTS.md](./AGENTS.md.md) to consult it.
+У системы памяти две половины. Путь записи: во время сессии агент записывает то, чему научился, — высказанное вами предпочтение, факт о проекте — как файлы в окружение. Путь чтения: в начале сессии [обвязка](./Harness.md) загружает эти файлы, или их индекс, обратно в контекстное окно. Многие обвязки поставляются со своей системой памяти — `/memory` в Claude Code — это пример, — но её можно собрать и самому: каталог заметок плюс инструкция в [AGENTS.md](./AGENTS.md.md) обращаться к нему.
 
-The same trade-offs as any always-loaded content apply. Memories accumulate, so most systems load a one-line index and leave the bodies behind [context pointers](./Context%20pointer.md) rather than inlining everything. And memories are [secondary sources](./Secondary%20source.md), so they drift: a fact recorded in March is loaded with equal confidence in June, after the project has moved on. A memory system needs pruning, the same way AGENTS.md does.
+Действуют те же компромиссы, что и для любого всегда загружаемого содержимого. Воспоминания накапливаются, поэтому большинство систем загружают однострочный индекс и оставляют тела за [указателями контекста](./Context%20pointer.md), а не вставляют всё целиком. Кроме того, воспоминания — это [вторичные источники](./Secondary%20source.md), поэтому они дрейфуют: факт, записанный в марте, загружается с той же уверенностью в июне, когда проект уже ушёл вперёд. Системе памяти нужна обрезка — так же, как и AGENTS.md.
 
-_Usage:_
+_Пример:_
 
-"I keep having to re-tell it I'm on Postgres, not MySQL."
+«Я постоянно заново объясняю ему, что у меня Postgres, а не MySQL».
 
-"Wire up a memory system — write what it learns to the [filesystem](./Filesystem.md) on the first [turn](./Turn.md), reload it at session start. The [model](./Model.md) itself is [stateless](./Stateless.md); the memory layer fakes continuity."
+«Подключи систему памяти — пусть пишет то, чему научилась, в [файловую систему](./Filesystem.md) на первом [ходу](./Turn.md) и перезагружает при старте сессии. Сама [модель](./Model.md) [без сохранения состояния](./Stateless.md); слой памяти имитирует преемственность».

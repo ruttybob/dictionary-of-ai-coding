@@ -1,21 +1,21 @@
 ---
-description: A mention in one document that points to another, so the agent can pull it into context only when the task calls for it.
+description: Упоминание в одном документе, указывающее на другой, чтобы агент мог подтянуть его в контекст только когда задача этого требует.
 ---
 
-A mention in one document that points to another, so the [agent](./Agent.md) can pull it into the [context window](./Context%20window.md) only when the task calls for it. The unit [progressive disclosure](./Progressive%20disclosure.md) is built from.
+Упоминание в одном документе, которое указывает на другой, чтобы [агент](./Agent.md) мог подтянуть его в [контекстное окно](./Context%20window.md), только когда задача этого требует. Единица, из которой строится [прогрессивное раскрытие](./Progressive%20disclosure.md).
 
-The reason to use a pointer (instead of inlining the content) is cost. A pointer is one line in the context window. The document behind it might be thousands of [tokens](./Token.md), but those tokens cost nothing until the agent actually follows the pointer. Inline a 2,000-token runbook in [AGENTS.md](./AGENTS.md.md) and every [session](./Session.md) pays for it; replace it with "deploy process: see `internal/deploy.md`" and only the sessions that deploy ever load it. The agent follows the pointer with a [tool call](./Tool%20call.md) when the task matches.
+Причина использовать указатель (а не вставлять содержимое целиком) — стоимость. Указатель — это одна строка в контекстном окне. Документ за ним может занимать тысячи [токенов](./Token.md), но эти токены ничего не стоят, пока агент действительно не перейдёт по указателю. Вставьте процедуру развёртывания на 2 000 токенов прямо в [AGENTS.md](./AGENTS.md.md) — и каждая [сессия](./Session.md) за неё платит; замените её на «процесс развёртывания: см. `internal/deploy.md`» — и загружают её только те сессии, которые разворачивают. Агент переходит по указателю [вызовом инструмента](./Tool%20call.md), когда задача совпадает.
 
-A pointer needs two parts to work: a stable path, and enough description for the agent to know when following it is worth it. A bare path is a pointer the agent has no reason to follow; "see `internal/deploy.md`" with no hint of what's inside gets skipped by a session that needed it. Write the line so it matches how tasks present: "release, deploy, or rollback — read `internal/deploy.md` first".
+Чтобы указатель работал, нужны две части: стабильный путь и достаточно описания, чтобы агент знал, когда за ним стоит следовать. Голый путь — это указатель, по которому у агента нет причины переходить; «см. `internal/deploy.md`» без намёка на то, что внутри, пропускается сессией, которой он был нужен. Пишите строку так, чтобы она совпадала с тем, как представляются задачи: «релиз, развёртывание или откат — сначала прочитай `internal/deploy.md`».
 
-Pointers are everywhere once you look: lines in AGENTS.md, [skill](./Skill.md) descriptions (the harness loads the description; the skill body waits behind it), filenames in a directory listing, links between docs.
+Указатели повсюду, как только начнёте искать: строки в AGENTS.md, описания [навыков](./Skill.md) (обвязка загружает описание; тело навыка ждёт за ним), имена файлов в листинге каталога, ссылки между документами.
 
-A pointer can also tie a [secondary source](./Secondary%20source.md) back to the [primary source](./Primary%20source.md) it was derived from — the compaction summary that names the original transcript, the doc that names the source file it describes. This makes the secondary source's lossiness recoverable: when the summary turns out not to be enough, the agent follows the pointer and reads the original, instead of working from whatever the summary kept.
+Указатель может также связать [вторичный источник](./Secondary%20source.md) с [первоисточником](./Primary%20source.md), из которого он получен, — резюме после компакции, которое называет исходный транскрипт, документ, который называет исходный файл, что он описывает. Это делает потери вторичного источника восстанавливаемыми: когда резюме оказывается недостаточным, агент переходит по указателю и читает оригинал, а не работает с тем, что осталось в резюме.
 
-_Avoid:_ "reference" — too dry; doesn't convey that following it pulls more context in. "Portal" — too florid.
+_Избегать:_ «ссылка» — слишком сухо; не передаёт, что за переходом подтягивается ещё контекст. «Портал» — слишком цветисто.
 
-_Usage:_
+_Пример:_
 
-"AGENTS.md is getting huge."
+«AGENTS.md разрастается».
 
-"Most of it should be context pointers, not content. Keep the always-on rules inline; turn the deploy runbook and the style guide into skills and leave a context pointer behind."
+«Большая часть должна быть указателями контекста, а не содержимым. Держите всегда включённые правила встроенными; превратите процедуру развёртывания и руководство по стилю в навыки и оставьте указатель контекста».

@@ -1,23 +1,23 @@
 ---
-description: The relevant information the agent has access to right now — what the agent knows that's pertinent to the task.
+description: Относящаяся к задаче информация, доступная агенту прямо сейчас — то, что ему по ней известно.
 ---
 
-The relevant information the [agent](./Agent.md) has access to right now. The abstract noun — not the raw input the model sees (that's the [context window](./Context%20window.md)), not the running history (that's the [session](./Session.md)), but _what the agent knows that's pertinent to the task_. "Loading something into context" means making it part of this set; "context engineering" is the discipline of curating it.
+Относящаяся к задаче информация, к которой у [агента](./Agent.md) есть доступ прямо сейчас. Абстрактное существительное — не сырой ввод, который видит модель (это [контекстное окно](./Context%20window.md)), не текущая история (это [сессия](./Session.md)), а _то, что агент знает по сути задачи_. «Загрузить что-то в контекст» означает сделать это частью этого множества; «контекстная инженерия» — это дисциплина по его курированию.
 
-The three terms separate cleanly:
+Эти три термина разделяются чётко:
 
-| Term           | What it names                                                       |
-| -------------- | ------------------------------------------------------------------- |
-| Context        | The task-relevant information the agent currently has               |
-| Context window | The literal [token](./Token.md) sequence the model sees per request |
-| Session        | The running conversation the [harness](./Harness.md) stores         |
+| Термин           | Что обозначает                                                                      |
+| ---------------- | ----------------------------------------------------------------------------------- |
+| Контекст         | Информация, относящаяся к задаче, которая есть у агента сейчас                      |
+| Контекстное окно | Буквальная последовательность [токенов](./Token.md), которую модель видит за запрос |
+| Сессия           | Текущий разговор, который хранит [обвязка](./Harness.md)                            |
 
-The separation matters because context is a measure of quality, not quantity. A context window can be nearly full and the context still poor — thousands of tokens of stale tool output, none of it about the task at hand. It can also be nearly empty and the context excellent: the one type definition the task turns on.
+Это разделение важно, потому что контекст — это мера качества, а не количества. Контекстное окно может быть почти заполнено, а контекст при этом слабым: тысячи токенов устаревшего вывода инструментов, и ничего из этого не относится к текущей задаче. Окно может быть почти пустым, а контекст отличным — например, то самое определение типа, от которого зависит задача.
 
-Most day-to-day failures trace back to context. When the agent invents an API, contradicts a decision, or guesses at a schema, the first question is what was in context when it did — usually the relevant fact was never loaded, or was buried under [attention degradation](./Attention%20degradation.md). The fix is curation: load what the task needs, keep out what it doesn't.
+Большинство повседневных сбоев сводятся к контексту. Когда агент выдумывает API, противоречит принятому решению или угадывает схему, первый вопрос — что было в контексте в этот момент; обычно нужный факт вообще не был загружен или оказался погребён под [деградацией внимания](./Attention%20degradation.md). Исправление — курирование: загружать то, что нужно задаче, и не пускать остальное.
 
-_Usage:_
+_Пример:_
 
-"It keeps inventing fields that aren't in the type."
+«Она выдумывает поля, которых нет в типе.»
 
-"The type file isn't in context — it's reading the call sites and guessing. Read the definition in first."
+«Файл типа не в контексте — она читает места вызовов и угадывает. Сначала загрузите определение.»

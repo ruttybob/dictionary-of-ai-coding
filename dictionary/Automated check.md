@@ -1,21 +1,21 @@
 ---
-description: A deterministic verification that runs in the environment — tests, type checks, lints, build, pre-commit hooks. Pass/fail, no judgement.
+description: "Детерминированная проверка в окружении — тесты, проверка типов, линтеры, сборка, pre-commit хуки. Прошёл/не прошёл, без оценки."
 ---
 
-A deterministic verification that runs in the [environment](./Environment.md) — tests, type checks, lints, build, pre-commit hooks. Pass/fail, no judgement. The signal an [agent](./Agent.md) can self-correct from without involving anyone else. A flaky test is a broken check, not a non-check; automated checks are deterministic _by design_.
+Детерминированная проверка, которая выполняется в [окружении](./Environment.md) — тесты, проверка типов, линтеры, сборка, pre-commit хуки. Прошёл/не прошёл, без оценки. Сигнал, по которому [агент](./Agent.md) может самостоятельно исправиться, никого больше не привлекая. Флакающий тест — это сломанная проверка, а не отсутствие проверки; автоматические проверки детерминированны _по замыслу_.
 
-Self-correction works as a loop. The agent makes a change, runs the check as a [tool call](./Tool%20call.md), and the failure output lands in its [context window](./Context%20window.md) — a type error with a file and line, a failing assertion with expected and actual values. That's enough for the agent to fix the problem and run the check again, around and around until it passes, with no human in the loop. Determinism is what makes the loop trustworthy: the same code always produces the same verdict, so a pass means something. A flaky check poisons this — the agent "fixes" code that was fine, or retries past a real failure.
+Самокоррекция работает как цикл. Агент вносит изменение, запускает проверку как [вызов инструмента](./Tool%20call.md), и вывод об ошибке попадает в его [контекстное окно](./Context%20window.md) — ошибка типов с файлом и строкой, провалившийся ассерт с ожидаемыми и фактическими значениями. Этого достаточно, чтобы агент исправил проблему и запустил проверку снова, и так по кругу, пока она не пройдёт, без человека в цикле. Детерминированность — то, что делает цикл заслуживающим доверия: один и тот же код всегда даёт один и тот же вердикт, поэтому «прошло» что-то да значит. Флакающая проверка этот цикл отравляет — агент «чинит» код, который был в порядке, или ретраями обходит реальный провал.
 
-This is why good checks are a large part of a codebase's [AX](./AX.md). An agent in a repo with strict types, a fast test suite, and a linter catches most of its own mistakes before you see them; an agent in a repo with none of those ships whatever it produces. The difference matters most in [AFK](./AFK.md) runs, where checks are the only verification happening during the run. But a check only catches what it asserts — green checks mean the asserted properties hold, not that the code is right. The judgement-shaped gaps are what [automated review](./Automated%20review.md) and [human review](./Human%20review.md) are for.
+Поэтому хорошие проверки — большая часть [AX](./AX.md) кодовой базы. Агент в репозитории со строгой типизацией, быстрым набором тестов и линтером ловит большую часть собственных ошибок до того, как их увидите вы; агент в репозитории без всего этого отправляет наружу то, что у него получилось. Разница важнее всего при [AFK](./AFK.md)-запусках, где проверки — единственная верификация во время выполнения. Но проверка ловит только то, что она утверждает — зелёные проверки означают, что проверенные свойства выполняются, а не что код верен. Пробелы, требующие оценки, — это то, для чего нужны [автоматическое рецензирование](./Automated%20review.md) и [рецензирование человеком](./Human%20review.md).
 
-_Avoid:_ "feedback loop" / "backpressure" — both lump checks together with review. _Avoid:_ "test" — tests are automated checks, but not all automated checks are tests.
+_Избегать:_ «feedback loop» / «backpressure» — оба смешивают проверки с рецензированием. _Избегать:_ «тест» — тесты являются автоматическими проверками, но не все автоматические проверки являются тестами.
 
-_Usage:_
+_Пример:_
 
-"The agent keeps shipping broken code in the AFK runs."
+«Агент постоянно отгружает сломанный код в AFK-запусках».
 
-"What automated checks are wired into the [sandbox](./Sandbox.md)?"
+«Какие автоматические проверки подключены в [песочнице](./Sandbox.md)?»
 
-"Just the unit tests."
+«Только юнит-тесты».
 
-"Add typecheck and lint — it'll self-correct from those before the PR ever lands."
+«Добавь проверку типов и линтер — он будет по ним самокорректироваться ещё до того, как PR вообще появится».

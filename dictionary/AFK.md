@@ -1,22 +1,22 @@
 ---
-description: A working pattern where the user kicks off a session and leaves the agent to run unattended (away from keyboard).
+description: "Паттерн работы: пользователь запускает сессию и оставляет агента работать без присмотра (away from keyboard)."
 aliases:
   - away from keyboard
   - AFK (away from keyboard)
 ---
 
-Away from keyboard. A working pattern where the user kicks off a [session](./Session.md) and leaves the [agent](./Agent.md) to run unattended. The throughput multiplier of [AI](./AI.md) coding — many AFK sessions can run in parallel while you sleep, eat, or work on something else. Usually requires a permissive [permission mode](./Permission%20mode.md) plus [sandboxing](./Sandbox.md) to be safe.
+Away from keyboard (без участия человека). Паттерн работы, при котором пользователь запускает [сессию](./Session.md) и оставляет [агента](./Agent.md) работать без присмотра. Множитель пропускной способности [ИИ](./AI.md)-кодинга — много AFK-сессий могут идти параллельно, пока вы спите, едите или занимаетесь другим. Обычно для безопасности нужен мягкий [режим разрешений](./Permission%20mode.md) плюс [песочница](./Sandbox.md).
 
-When you're not there, the agent handles ambiguity differently. While you're watching, an ambiguous decision surfaces as a question and you answer it; once you've walked away, the agent picks a default and keeps going, and every later decision builds on that guess. The characteristic failure is coming back to hours of finished, confident work built on a wrong call made in the first ten minutes. The work isn't sloppy — it's coherent, just coherent about the wrong thing.
+Когда вас нет рядом, агент иначе справляется с неоднозначностью. Пока вы следите, неоднозначное решение всплывает как вопрос, и вы на него отвечаете; как только вы отошли — агент выбирает значение по умолчанию и продолжает, и каждое следующее решение строится на этом предположении. Характерный провал: вы возвращаетесь к часам законченной уверенной работы, построенной на ошибочном решении из первых десяти минут. Работа не небрежна — она внутренне связна, просто строится на неверной предпосылке.
 
-Since you can't give input during the run, give it before and after instead. Before: resolve the ambiguity up front — a [grilling](./Grilling.md) session, a written [spec](./Spec.md) — so there are fewer gaps for the agent to fill alone. During: [automated checks](./Automated%20check.md) and [automated review](./Automated%20review.md) stand in for the attention you're not giving, failing fast on what can be caught mechanically. After: the run ends in something reviewable — a PR, not changes already merged. AFK doesn't remove [human review](./Human%20review.md); it defers all of it to the end, which is why what arrives at the end has to be worth reviewing. This is also why [AX](./AX.md) matters most in AFK runs — with no one watching, the environment is the only support the agent gets.
+Раз вы не можете давать входные данные во время выполнения, давайте их до и после. До: устраните неоднозначность заранее — сессия [допроса](./Grilling.md), письменная [спецификация](./Spec.md) — чтобы у агента осталось меньше пробелов, которые он заполняет в одиночку. Во время: [автоматические проверки](./Automated%20check.md) и [автоматическое рецензирование](./Automated%20review.md) замещают внимание, которого здесь нет, и быстро сообщают об ошибке там, где её можно поймать механически. После: запуск заканчивается чем-то пригодным для ревью — PR'ом, а не уже смёрженными изменениями. AFK не убирает [рецензирование человеком](./Human%20review.md); оно откладывает всё до конца, и поэтому то, что приходит в конце, должно быть достойно ревью. Именно поэтому [AX](./AX.md) важнее всего при AFK-запусках — когда никто не следит, окружение — единственная опора агента.
 
-_Avoid:_ "background agent" — centers the machine ("running in the background") rather than the human pattern ("user has walked away"). AFK names the fact that matters: the user isn't watching.
+_Избегать:_ «фоновый агент» — смещает фокус на машину («работает в фоне»), а не на человеческий паттерн («пользователь отошёл»). AFK называет то, что здесь важно: пользователь не следит.
 
-_Usage:_
+_Пример:_
 
-"I'm running this AFK — three sandboxed agents on the refactor, reviewing the PRs in the morning."
+«Запускаю это AFK — три агента в песочнице на рефакторинг, утром буду ревьюить PR'ы».
 
-"[Bypass permissions](./Agent%20mode.md)?"
+«[Обход разрешений](./Agent%20mode.md)?»
 
-"Yeah, read-only [filesystem](./Filesystem.md), no network."
+«Да, [файловая система](./Filesystem.md) только для чтения, без сети».

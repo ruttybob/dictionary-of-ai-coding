@@ -1,17 +1,17 @@
 ---
-description: "An agent reviewing another agent's work, often with a different model or system prompt. Non-deterministic: it forms a judgement."
+description: "Агент рецензирует работу другого агента, часто с другой моделью или системным промптом. Недетерминированно: формирует оценку."
 ---
 
-An [agent](./Agent.md) reviewing another agent's work, often with a different [model](./Model.md) or [system prompt](./System%20prompt.md). Non-deterministic: it forms a judgement. Runs anywhere — pre-merge on a PR, post-hoc on commit history, mid-session as a [subagent](./Subagent.md). An LLM-as-judge in CI is automated review, not an [automated check](./Automated%20check.md); what the assertion _does_ decides the category, not where it runs.
+[Агент](./Agent.md) рецензирует работу другого агента, часто с другой [моделью](./Model.md) или [системным промптом](./System%20prompt.md). Недетерминированно: формирует оценку. Запускается где угодно — перед мёрджем на PR, постфактум по истории коммитов, в середине сессии как [субагент](./Subagent.md). LLM-as-judge в CI — это автоматическое рецензирование, а не [автоматическая проверка](./Automated%20check.md); категорию определяет то, что именно делает проверка, а не где она запускается.
 
-The separation from the working agent is what makes it work. Asking the agent that wrote the code to review its own work gets you very little — the [session](./Session.md) that produced the bug also contains the reasoning that produced it, and the agent reads its own conclusions back as confirmation. A reviewer with a fresh [context window](./Context%20window.md) has none of that attachment: it sees the diff the way a stranger would, which is what review depends on. A different model or a review-specific system prompt sharpens this further — different blind spots, and a system prompt scoped to what you actually care about (security, API contracts, performance) rather than a vague "look for problems".
+Именно отделение от рабочего агента делает это работающим. Просьба к агенту, написавшему код, ревьюить собственную работу даёт немного — [сессия](./Session.md), в которой появился баг, содержит и рассуждения, которые его породили, и агент считывает собственные выводы обратно как подтверждение. У ревьюера со свежим [контекстным окном](./Context%20window.md) такой привязки нет: он видит дифф глазами постороннего, а на этом и строится рецензирование. Другая модель или системный промпт, заточенный под ревью, ещё больше это усиливает — другие слепые зоны, и системный промпт, сфокусированный на том, что вам действительно важно (безопасность, API-контракты, производительность), а не расплывчатое «ищи проблемы».
 
-It slots between the other review layers. Automated checks are deterministic and catch what can be asserted mechanically; [human review](./Human%20review.md) is expensive and scales worst. Automated review sits in the middle: it catches judgement-shaped problems — a misleading function name, a missed edge case — at machine cost. Because it's non-deterministic, it can miss things and flag non-issues; treat it as a filter that raises the floor before a human looks, not a gate that replaces one.
+Автоматическое рецензирование занимает место между остальными слоями рецензирования. Автоматические проверки детерминированы и ловят то, что можно утвердить механически; [рецензирование человеком](./Human%20review.md) дорогое и масштабируется хуже всего. Автоматическое рецензирование находится посередине: оно ловит проблемы, требующие оценки, — вводящее в заблуждение имя функции, пропущенный краевой случай — по цене машины. Поскольку оно недетерминированно, оно может что-то пропустить или отметить несуществующее; относитесь к нему как к фильтру, который поднимает нижнюю планку до того, как подключается человек, а не как к шлюзу, его заменяющему.
 
-_Avoid:_ "AI review" / "agent review" — too vague to distinguish from the working agent itself.
+_Избегать:_ «AI review» / «agent review» — слишком расплывчато, чтобы отличить от самого рабочего агента.
 
-_Usage:_
+_Пример:_
 
-"We're getting too many bad PRs from the [AFK](./AFK.md) runs."
+«Из [AFK](./AFK.md)-запусков идёт слишком много плохих PR'ов».
 
-"Add an automated review step before merge — different model, separate system prompt, scoped to security and contract changes."
+«Добавь шаг автоматического рецензирования перед мёрджем — другая модель, отдельный системный промпт, скоуп на безопасность и изменения контрактов».

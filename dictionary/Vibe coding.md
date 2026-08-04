@@ -1,21 +1,21 @@
 ---
-description: A working pattern where the user accepts the agent's code without human review. The diff is treated as opaque.
+description: "Паттерн работы: пользователь принимает код агента без рецензирования человеком. Дифф считается непрозрачным."
 ---
 
-A working pattern where the user accepts the [agent](./Agent.md)'s code without [human review](./Human%20review.md). The diff is treated as opaque — what matters is whether the program behaves, not what's inside. [Automated review](./Automated%20review.md) and [automated checks](./Automated%20check.md) may still run; vibe coding is silent on both.
+Паттерн работы, при котором пользователь принимает код [агента](./Agent.md) без [рецензирования человеком](./Human%20review.md). Дифф считается непрозрачным — важно, ведёт ли программа себя правильно, а не что у неё внутри. [Автоматическое рецензирование](./Automated%20review.md) и [автоматические проверки](./Automated%20check.md) при этом всё ещё могут выполняться; вайб-кодинг ничего о них не говорит.
 
-The term comes from Andrej Karpathy, who [coined it in early 2025](https://x.com/karpathy/status/1886192184808149383): you "fully give in to the vibes" and "forget that the code even exists" — describe what you want, accept what comes back, and judge it by running it.
+Термин ввёл Andrej Karpathy, [придумавший его в начале 2025 года](https://x.com/karpathy/status/1886192184808149383): вы «fully give in to the vibes» и «forget that the code even exists» — описываете желаемое, принимаете то, что вернулось, и оцениваете это, запуская программу.
 
-Vibe coding trades inspection for speed. Reading diffs is usually the slowest step in agent-driven work, so dropping it removes the main bottleneck. For code whose failures are cheap — [prototypes](./Prototyping.md), one-off scripts, internal tools — that's a reasonable trade. The risk scales with the code's lifespan and stakes.
+Вайб-кодинг меняет инспекцию на скорость. Чтение диффов — обычно самый медленный шаг в работе, управляемой агентом, поэтому отказ от него убирает главное узкое место. Для кода, ошибки в котором дёшевы — [прототипы](./Prototyping.md), одноразовые скрипты, внутренние инструменты, — это разумный обмен. Риск растёт вместе со сроком жизни кода и ставками.
 
-The cost arrives later. Vibe-coded changes accumulate into a codebase nobody has read, and behaviour was the only thing checked — so anything behaviour doesn't surface, like a secret written to logs, a missing edge case, or quietly wrong data handling, ships unseen. The first time someone debugs the system is the first time anyone reads the code. With human review gone, whatever automated verification still runs — tests, types, automated review — is the only gate the code passes through.
+Цена приходит позже. Изменения, сделанные вайб-кодингом, накапливаются в кодовую базу, которую никто не читал, а поведение было единственным, что проверялось, — поэтому всё, что не всплывает в поведении, — секрет в логах, пропущенный краевой случай, тихо неверная обработка данных — уходит в продакшен незамеченным. Первый раз, когда кто-то отлаживает систему, становится первым разом, когда кто-либо вообще читает код. Без рецензирования человеком любое автоматическое подтверждение, которое всё ещё выполняется, — тесты, типы, автоматическое рецензирование — оказывается единственным шлюзом, через который код проходит.
 
-_Avoid:_ "vibe coding" as a synonym for "low-quality AI coding" — the term names the review stance, not the resulting code.
+_Избегать:_ использовать «вайб-кодинг» как синоним «низкокачественного ИИ-кодинга» — термин называет позицию в ревью, а не полученный код.
 
-_Usage:_
+_Пример:_
 
-"Did you read what it changed in the auth flow?"
+«Ты читал, что оно поменяло в флоу авторизации?»
 
-"Vibe coded it — login still works, that's all I checked."
+«Вайб-кодил — логин всё ещё работает, это всё, что я проверил».
 
-"Read the diff before you push, vibing on auth is how secrets leak into logs."
+«Читай дифф перед пушем, вайбить на авторизации — так секреты утекают в логи».

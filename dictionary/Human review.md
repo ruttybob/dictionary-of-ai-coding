@@ -1,19 +1,19 @@
 ---
-description: The user reading the code the agent produced and forming a judgement on it. Reading the diff counts; reading the summary doesn't.
+description: "Пользователь читает код, созданный агентом, и формирует по нему оценку. Чтение диффа считается; чтение саммари — нет."
 ---
 
-The user reading the code the [agent](./Agent.md) produced and forming a judgement on it. Reading the diff or the changed files counts; reading the agent's _description_ of what it did does not — narration is not the artifact. The description is a [secondary source](./Secondary%20source.md), written by the party being reviewed; the diff is the [primary source](./Primary%20source.md), and review means reading it.
+Пользователь читает код, который создал [агент](./Agent.md), и формирует по нему собственную оценку. Читать дифф или изменённые файлы — это рецензирование; читать _описание_ агентом того, что он сделал, — нет, потому что нарратив не является артефактом. Описание — это [вторичный источник](./Secondary%20source.md), написанный как раз той стороной, которую ревьюят; дифф — это [первоисточник](./Primary%20source.md), и рецензирование по определению означает чтение именно его.
 
-Agents raise the volume of code produced, so review becomes the bottleneck. One useful idea is layering different review strategies. [Automated checks](./Automated%20check.md) catch the mechanical failures, [automated review](./Automated%20review.md) catches the describable ones, and human review is reserved for what only you can judge — whether the change is the right change, whether the approach fits the codebase, whether this should exist at all.
+Агенты увеличивают объём создаваемого кода, поэтому рецензирование быстро становится узким местом всего процесса. Одна полезная идея — наслаивать разные стратегии ревью, каждая из которых ловит свой класс проблем. [Автоматические проверки](./Automated%20check.md) ловят механические ошибки, [автоматическое рецензирование](./Automated%20review.md) — описываемые словами, а рецензирование человеком резервируют для того, что можете оценить только вы: является ли это изменение тем самым изменением, которое нужно, подходит ли выбранный подход к кодовой базе, и должно ли это вообще существовать.
 
-Review is also cheaper earlier. Reading a plan before work starts, or a small diff mid-flight, takes minutes; excavating a finished branch after an [AFK](./AFK.md) run takes longer. Where you place the review checkpoint is a [human-in-the-loop](./Human-in-the-loop.md) decision, not an afterthought.
+Рецензирование также тем дешевле, чем раньше оно сделано. Чтение плана до начала работы или небольшого диффа в процессе занимает минуты; раскопки уже законченной ветки после [AFK](./AFK.md)-запуска занимают существенно дольше. То, где именно вы ставите точку контроля рецензирования, — это в логике [человека в цикле](./Human-in-the-loop.md) решение, а не запоздалая мысль.
 
-_Avoid:_ "code review" alone — ambiguous between human and automated.
+_Избегать:_ одного только «code review» — неоднозначно, человек или автоматика.
 
-_Usage:_
+_Пример:_
 
-"I human-reviewed the AFK output."
+«Я провёл ручное ревью вывода AFK».
 
-"You read the diff or just the summary?"
+«Ты читал дифф или только саммари?»
 
-"Diff. The summary said it deleted dead code — turned out the function was called from a generated file."
+«Дифф. В саммари было написано, что удалён мёртвый код, — оказалось, функцию вызывали из сгенерированного файла».

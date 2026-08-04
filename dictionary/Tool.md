@@ -1,26 +1,26 @@
 ---
-description: A function the harness exposes for the agent to call — Read, Write, Bash, Search. How an agent perceives and acts on the environment.
+description: "Функция, выставленная обвязкой для вызова агентом — Read, Write, Bash, Search. Способ, которым агент воспринимает и меняет окружение."
 ---
 
-A function the [harness](./Harness.md) exposes for the [agent](./Agent.md) to call — Read, Write, Bash, Search. Tools are how an agent perceives and acts on the [environment](./Environment.md): it can't see the environment except through [tool results](./Tool%20result.md), and can't change it except through [tool calls](./Tool%20call.md). Each tool call costs an extra [model provider request](./Model%20provider%20request.md), since the result has to go back to the model before it can decide what to do next.
+Функция, которую [обвязка](./Harness.md) выставляет для вызова [агентом](./Agent.md) — Read, Write, Bash, Search. Инструменты — это способ, которым агент воспринимает [окружение](./Environment.md) и воздействует на него: он не может видеть окружение иначе, как через [результаты инструментов](./Tool%20result.md), и не может менять его иначе, как через [вызовы инструментов](./Tool%20call.md). Каждый вызов инструмента стоит дополнительного [запроса к провайдеру моделей](./Model%20provider%20request.md), потому что результат должен вернуться к модели, прежде чем она сможет решить, что делать дальше.
 
-Tools most coding agents ship with:
+Инструменты, с которыми поставляется большинство кодинговых агентов:
 
-| Tool   | What it does                                                 |
-| ------ | ------------------------------------------------------------ |
-| Read   | Returns a file's contents as a tool result                   |
-| Write  | Creates or edits a file in the [filesystem](./Filesystem.md) |
-| Bash   | Runs a shell command and returns its output                  |
-| Search | Finds files or text matching a pattern across the codebase   |
+| Tool   | Что делает                                                         |
+| ------ | ------------------------------------------------------------------ |
+| Read   | Возвращает содержимое файла как результат инструмента              |
+| Write  | Создаёт или редактирует файл в [файловой системе](./Filesystem.md) |
+| Bash   | Запускает команду оболочки и возвращает её вывод                   |
+| Search | Находит файлы или текст по шаблону по всей кодовой базе            |
 
-A tool is defined by three things: a name, a description of what it does, and a schema for its parameters. The harness sends these definitions to the [model](./Model.md) with every request, and the model chooses a tool the same way it produces everything else — by writing [tokens](./Token.md), in this case a structured call with arguments. The model never executes anything itself; the harness reads the call, runs the function, and sends back the result.
+Инструмент определяется тремя вещами: именем, описанием того, что он делает, и схемой его параметров. Обвязка отправляет эти определения [модели](./Model.md) с каждым запросом, и модель выбирает инструмент так же, как она производит всё остальное, — записывая [токены](./Token.md), в данном случае структурированный вызов с аргументами. Сама модель ничего не исполняет; обвязка читает вызов, запускает функцию и отправляет обратно результат.
 
-The tool list sets what the agent can do. A capable model with a narrow tool set is a narrow agent: it will route everything through whatever it has, which is why agents lean so heavily on Bash — a shell is one tool that reaches most of the system. To give an agent a capability cleanly, add a tool for it; [MCP](./MCP.md) is the standard for plugging in tools from outside the harness.
+Список инструментов задаёт то, что может делать агент. Способная модель с узким набором инструментов — это узкий агент: всё будет идти через то, что у него есть, поэтому агенты так сильно опираются на Bash — оболочка это один инструмент, который достаёт до большей части системы. Чтобы чисто дать агенту новую возможность, добавьте под неё инструмент; [MCP](./MCP.md) («Model Context Protocol — протокол контекста модели») — стандарт для подключения инструментов извне обвязки.
 
-Tool definitions occupy [context](./Context.md) on every request, so a large tool set has a standing cost before any tool is called — and many similarly-described tools make the model worse at picking the right one.
+Определения инструментов занимают [контекст](./Context.md) при каждом запросе, поэтому большой набор инструментов имеет постоянную стоимость ещё до того, как какой-либо инструмент был вызван, — а множество одинаково описанных инструментов ухудшает способность модели выбрать правильный.
 
-_Usage:_
+_Пример:_
 
-"Can the agent query staging directly?"
+«Может ли агент напрямую обращаться к staging?»
 
-"Add a `psql` tool to the harness, scoped read-only on staging. Without a tool for it, the agent's blind to anything outside the filesystem."
+«Добавьте в обвязку инструмент `psql` с доступом только на чтение к staging. Без инструмента для этого агент ничего не видит за пределами файловой системы.»

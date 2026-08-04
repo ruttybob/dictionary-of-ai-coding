@@ -1,17 +1,17 @@
 ---
-description: One bounded run of interaction with an agent. Starts empty, accumulates, ends when cleared, closed, or compacted into a fresh session.
+description: Один ограниченный цикл работы с агентом. Начинается пустым, накапливается, завершается очисткой, закрытием или компакцией в новую сессию.
 ---
 
-One bounded run of interaction with an [agent](./Agent.md). Starts empty, accumulates messages, [tool results](./Tool%20result.md), and files read, and ends when [cleared](./Clearing.md), closed, or [compacted](./Compaction.md) into a fresh session. The session is what _fills_ the [context window](./Context%20window.md): if the context window is the box, the session is the stuff slowly filling it up. Work too large for a single context window must be split across sessions.
+Один ограниченный цикл взаимодействия с [агентом](./Agent.md). Начинается пустым, накапливает сообщения, [результаты инструментов](./Tool%20result.md) и прочитанные файлы, а завершается при [очистке](./Clearing.md), закрытии или [компакции](./Compaction.md) в новую сессию. Сессия — это то, что _заполняет_ [контекстное окно](./Context%20window.md): если контекстное окно — это ящик, то сессия — то, что медленно его заполняет. Работа, не умещающаяся в одно контекстное окно, должна быть разбита на несколько сессий.
 
-The session's message history is the agent's working memory. The [model](./Model.md) is [stateless](./Stateless.md), so everything it appears to remember — what you asked for, what the tests said, what it decided three turns ago — is in the message history, re-sent with every [model provider request](./Model%20provider%20request.md). Whatever isn't in the session doesn't exist for the agent.
+История сообщений сессии — это рабочая память агента. [Модель](./Model.md) [без сохранения состояния](./Stateless.md), поэтому всё, что она, кажется, помнит — о чём вы просили, что сказали тесты, что она решила три хода назад — находится в истории сообщений и пересылается с каждым [запросом к провайдеру моделей](./Model%20provider%20request.md). Чего нет в сессии — того не существует для агента.
 
-That memory ends with the session. A new session starts from nothing: the agent that knew your codebase well at the end of yesterday's session knows none of it this morning. What survives is the [filesystem](./Filesystem.md) — files written during one session can be read by the next, which is what [handoffs](./Handoff.md), [memory systems](./Memory%20system.md), and [AGENTS.md](./AGENTS.md.md) rely on.
+Эта память заканчивается вместе с сессией. Новая сессия начинается с нуля: агент, который хорошо знал вашу кодовую базу в конце вчерашней сессии, сегодня утром не знает о ней ничего. Что сохраняется между сессиями — это [файловая система](./Filesystem.md): файлы, записанные в одной сессии, может прочитать следующая, и именно на это опираются [передачи](./Handoff.md), [системы памяти](./Memory%20system.md) и [AGENTS.md](./AGENTS.md.md).
 
-You choose where a session ends. Everything in a session influences every later [turn](./Turn.md), so unrelated tasks done in one session leave residue that colours the next answer. One task per session keeps the context relevant; finishing a task is a natural point to clear.
+Вы сами выбираете, где сессия заканчивается. Всё, что есть в сессии, влияет на каждый последующий [ход](./Turn.md), поэтому неродственные задачи, выполненные в одной сессии, оставляют осадок, который окрашивает следующий ответ. Одна задача на сессию сохраняет контекст релевантным; завершение задачи — естественная точка для очистки.
 
-_Usage:_
+_Пример:_
 
-"How long can one session run before it falls apart?"
+«Как долго одна сессия может длиться, прежде чем развалится?»
 
-"Depends on the work — a focused refactor stays sharp longer than open-ended research. Once the session bloats, hand off or compact, don't push through."
+«Зависит от работы — сфокусированный рефакторинг остаётся чётким дольше, чем открытые исследования. Как только сессия разрастается — передавайте или компактируйте, не тяните её дальше.»

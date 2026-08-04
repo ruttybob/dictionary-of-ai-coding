@@ -1,17 +1,17 @@
 ---
-description: Ending the current session and starting a fresh one. The next message begins with an empty session and an empty context window.
+description: Завершение текущей сессии и начало новой. Следующее сообщение попадает в пустую сессию с пустым контекстным окном.
 ---
 
-Ending the current [session](./Session.md) and starting a fresh one. The next message begins with an empty session and an empty [context window](./Context%20window.md). Usually user-driven.
+Завершение текущей [сессии](./Session.md) и начало новой. Следующее сообщение попадает в пустую сессию с пустым [контекстным окном](./Context%20window.md). Обычно инициируется пользователем.
 
-Clearing is the cure for a polluted context. A session accumulates everything: failed attempts, wrong turns, stale [tool results](./Tool%20result.md), abandoned plans. The [model](./Model.md) re-reads all of it on every [turn](./Turn.md), and bad history drags on new work. Deep into a long session the [agent](./Agent.md) gets vaguer and less obedient — instructions you gave clearly get ignored, quality slips, and prodding it to do better doesn't help, because the noise it's wading through is still in its [context](./Context.md). Clearing removes the noise.
+Очистка — средство от загрязнённого контекста. В сессии накапливается всё: неудачные попытки, ошибочные ходы, устаревшие [результаты инструментов](./Tool%20result.md), брошенные планы. [Модель](./Model.md) перечитывает всё это при каждом [ходе](./Turn.md), и плохая история тормозит новую работу. В глубине долгой сессии [агент](./Agent.md) становится расплывчатым и менее послушным — чёткие инструкции игнорируются, качество падает, и подталкивание работать лучше не помогает, потому что шум, сквозь который он продирается, всё ещё в его [контексте](./Context.md). Очистка убирает шум.
 
-Clearing doesn't erase the conversation. Most [harnesses](./Harness.md) keep session history on your computer, so the transcript is still there to read or resume. What's gone is the agent's working state: the model is [stateless](./Stateless.md), so the new session knows nothing the old one knew. If the session holds decisions or progress the next one will need, have the agent write a [handoff artifact](./Handoff%20artifact.md) first, then start the new session by pointing at it.
+Очистка не стирает разговор. Большинство [обвязок](./Harness.md) хранят историю сессии на вашем компьютере, поэтому стенограмма остаётся доступной для чтения или возобновления. Исчезает рабочее состояние агента: модель [без сохранения состояния](./Stateless.md), поэтому новая сессия не знает ничего из того, что знала старая. Если в сессии есть решения или прогресс, которые понадобятся следующей, пусть агент сначала напишет [артефакт передачи](./Handoff%20artifact.md), а затем начните новую сессию, указав на него.
 
-Compare [compaction](./Compaction.md), which summarises the session into the new context instead of starting empty. Clearing is the blunter tool: nothing carries over, including the junk.
+Сравните с [компакцией](./Compaction.md), которая суммирует сессию в новый контекст вместо того, чтобы начинать с пустого. Очистка — более грубый инструмент: ничего не переносится, включая мусор.
 
-_Usage:_
+_Пример:_
 
-"It's stuck looping on the failing test."
+«Он застрял в цикле на падающем тесте».
 
-"Just clear it — start a fresh session with the plan doc and the test file. No point fighting the existing context."
+«Просто очисти — начни свежую сессию с документом-планом и файлом теста. Нет смысла бороться с существующим контекстом».

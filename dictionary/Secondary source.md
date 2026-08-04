@@ -1,17 +1,17 @@
 ---
-description: An account of a primary source, one step removed — summaries, docs, compaction summaries. Cheap to load, lossy by construction.
+description: Описание первоисточника, на шаг удалённое — резюме, документы, сводки компакции. Дёшево грузить, по построению с потерями.
 ---
 
-An account of a [primary source](./Primary%20source.md), one step removed — documentation describing code, a summary describing a transcript, a report describing search results. Cheaper to load into the [context window](./Context%20window.md) than the source it describes, and lossy by construction: whoever wrote it decided what mattered, and whatever they dropped is invisible to a reader who only has the summary.
+Описание [первоисточника](./Primary%20source.md), удалённое на один шаг — документация, описывающая код; резюме, описывающее стенограмму; отчёт, описывающий результаты поиска. Дешевле грузить в [контекстное окно](./Context%20window.md), чем описываемый им источник, и с потерями по построению: тот, кто его написал, решил, что важно, а всё отброшенное им невидимо читателю, у которого есть только резюме.
 
-A lot of [context](./Context.md) engineering is the manufacture of secondary sources. [Compaction](./Compaction.md) turns the [session](./Session.md) history into a summary that seeds the next session. A [subagent](./Subagent.md) burns its own context on a noisy search and returns a short report. A [handoff artifact](./Handoff%20artifact.md) condenses a session's decisions into a document the next session reads. [Memory systems](./Memory%20system.md) distil what a session learned into notes. Each makes the same trade: fidelity for headroom.
+Значительная часть инженерии [контекста](./Context.md) — производство вторичных источников. [Компакция](./Compaction.md) превращает историю [сессии](./Session.md) в резюме, которое засевает следующую сессию. [Субагент](./Subagent.md) сжигает свой контекст на шумном поиске и возвращает короткий отчёт. [Артефакт передачи](./Handoff%20artifact.md) сжимает решения сессии в документ, который читает следующая сессия. [Системы памяти](./Memory%20system.md) дистиллируют то, чему сессия научилась, в заметки. Каждый идёт на один и тот же компромисс: точность в обмен на свободное место.
 
-Secondary sources fail in two ways. They're lossy — the compaction summary that lost the schema decision, the report that didn't mention the edge case. And they drift — the primary source changes and the account doesn't follow, so docs describe last quarter's architecture with this quarter's confidence. When an [agent](./Agent.md) acts on a secondary source that has failed either way, it works confidently from wrong information; the fix is sending it back to the primary source.
+Вторичные источники отказывают двумя способами. Первый — потеря деталей: сводка компакции, упустившая решение о схеме; отчёт, не упомянувший граничный случай. Второй — дрейф: первоисточник меняется, а описание за ним не следует, и документы описывают архитектуру прошлого квартала, но с уверенностью текущего. Когда [агент](./Agent.md) опирается на вторичный источник, отказавший любым из этих способов, он уверенно работает с неверной информацией; исправление — отправить его обратно к первоисточнику.
 
-Neither failure makes secondary sources a mistake. The context window is finite, and primary sources are expensive; without summaries, reports, and handoff documents, nothing large fits. The skill is knowing which details can survive the loss — and verifying against the primary source when one can't. A well-made secondary source carries a [context pointer](./Context%20pointer.md) back to its original — the summary that names the transcript it came from, the doc that names the file it describes — so when the account isn't enough, the reader can follow the pointer rather than work from the loss.
+Ни один из этих отказов не делает вторичные источники ошибкой. Контекстное окно конечно, а первоисточники дороги; без резюме, отчётов и документов передачи ничто крупное не помещается. Навык в том, чтобы знать, какие детали переживут потерю, — и сверяться с первоисточником, когда деталь не может. Качественно сделанный вторичный источник несёт в себе [указатель контекста](./Context%20pointer.md) обратно к оригиналу — резюме, называющее стенограмму, из которой оно возникло; документ, называющий файл, который он описывает, — так что, когда описания недостаточно, читатель может пойти по указателю, а не работать с потерей.
 
-_Usage:_
+_Пример:_
 
-"The handoff doc says auth is done, but the new session keeps finding broken token refresh."
+«Документ передачи говорит, что аутентификация готова, но новая сессия постоянно находит сломанное обновление токенов».
 
-"The doc's a secondary source — the last session wrote down what it believed, not what's true. Have the new session run the auth tests and trust the primary source."
+«Этот документ — вторичный источник: прошлая сессия записала то, во что верила, а не то, что истинно. Пусть новая сессия запустит тесты аутентификации и доверится первоисточнику».

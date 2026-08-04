@@ -1,19 +1,19 @@
 ---
-description: "Developer experience: how easy a codebase and its toolchain make it for humans to do good work — docs, feedback speed, errors."
+description: "DX (опыт разработчика) — насколько кодовая база и инструментарий облегчают людям хорошую работу — документация, скорость отклика, ошибки."
 aliases:
   - Developer experience
 ---
 
-Developer experience — how easy a codebase and its toolchain make it for humans to do good work. Good DX is fast feedback, clear error messages, documentation that answers the question you actually have, and setup that works on the first try. The term long predates AI coding; it's in this dictionary mainly as the contrast for [AX](./AX.md).
+DX (опыт разработчика) — насколько кодовая база и её инструментарий облегчают людям хорошую работу. Хороший DX — это быстрая обратная связь, понятные сообщения об ошибках, документация, отвечающая на вопрос, который у вас реально возникает, и настройка, работающая с первого раза. Термин появился задолго до ИИ-кодирования; в этот словарь он включён в основном как контраст для [AX](./AX.md).
 
-DX is the interaction between the human and the codebase — nothing more. The main difference between the two audiences is that humans are [stateful](./Stateful.md) and agents are [stateless](./Stateless.md). A human learns the codebase once and carries that knowledge into every day after, which is why poor DX is survivable: they route around slow CI by batching their pushes, around missing docs by asking in Slack once, around confusing structure by remembering where things live. The workarounds accumulate, and a team ends up productive in a codebase that fights them.
+DX — это взаимодействие между человеком и кодовой базой, и ничто более. Главное различие между двумя аудиториями в том, что люди — [с сохранением состояния](./Stateful.md), а агенты — [без сохранения состояния](./Stateless.md). Человек изучает кодовую базу один раз и несёт это знание во все последующие дни, поэтому плохой DX переносим: обходят медленный CI, группируя пуши, обходят отсутствие доков, один раз спросив в Slack, обходят запутанную структуру, запоминая, где что лежит. Обходные пути накапливаются, и команда в итоге продуктивна в кодовой базе, которая с ними борется.
 
-[Agents](./Agent.md) face the same codebase with none of that accumulation. Stateless across [sessions](./Session.md), an agent re-learns the codebase from scratch every time — it benefits from the fast test suite and the clear error messages, but anything it figured out yesterday is gone unless it was written into the [environment](./Environment.md), which the agent only perceives through [tool results](./Tool%20result.md). That's the gap AX names: the parts of DX that survive when the developer is an agent, plus concerns humans don't have, like keeping the [context window](./Context%20window.md) free.
+[Агенты](./Agent.md) сталкиваются с той же кодовой базой без всякого накопления. Без сохранения состояния между [сессиями](./Session.md) агент каждый раз заново изучает кодовую базу с нуля — он выигрывает от быстрого набора тестов и понятных сообщений об ошибках, но всё, что он выяснил вчера, исчезает, если только это не записано в [окружение](./Environment.md), которое агент воспринимает только через [результаты инструментов](./Tool%20result.md). Это и есть тот разрыв, который называет AX: части DX, которые выживают, когда разработчик — агент, плюс заботы, которых у людей нет, например поддержание [контекстного окна](./Context%20window.md) свободным.
 
-The overlap means DX investment often improves AX for free — strict types, fast tests, and predictable structure help both. The divergence means it doesn't always: a beautiful onboarding doc helps a human for a week and an agent not at all unless it's reachable from [AGENTS.md](./AGENTS.md.md).
+Пересечение означает, что инвестиции в DX часто бесплатно улучшают AX — строгие типы, быстрые тесты и предсказуемая структура помогают обоим. Расхождение означает, что не всегда: красивый документ по онбордингу помогает человеку неделю, а агенту — вовсе нет, если только он не доступен из [AGENTS.md](./AGENTS.md.md).
 
-_Usage:_
+_Пример:_
 
-"Our DX is fine — new hires are productive in a week."
+«У нас нормальный DX — новые сотрудники выходят на продуктивность за неделю.»
 
-"Productive because someone sits with them for that week. The agent doesn't get that week; check the AX separately."
+«Продуктивны, потому что кто-то эту неделю сидит с ними рядом. Агент этой недели не получает; проверьте AX отдельно.»

@@ -1,19 +1,19 @@
 ---
-description: Having the agent build a quick, rough version when conversation is too low-fidelity and you need a real artifact to talk about.
+description: Прототипирование — агент строит быструю черновую версию, когда разговор слишком неточен и нужен реальный артефакт для обсуждения.
 ---
 
-Having the [agent](./Agent.md) build a quick, rough version of something, for when conversation is too low-fidelity and you need a real artifact to talk about.
+Прототипирование — когда [агент](./Agent.md) строит быструю черновую версию чего-либо; применяется, когда разговору не хватает точности и нужен реальный артефакт для обсуждения.
 
-[Grilling](./Grilling.md) resolves design decisions in conversation. Conversation is cheap, but it's low-fidelity: some questions can't be answered in words — how an interaction feels, whether an API shape is ergonomic in real calling code, whether the layout works at real data sizes. The interview hits a question and your honest answer is "I don't know, I'd have to see it." Past that point the discussion circles. Instead, have the agent build the thing, look at it, and come back to the conversation with an answer.
+[Допрос](./Grilling.md) решает проектные решения в разговоре. Разговор дёшев, но работает в низком разрешении: некоторые вопросы нельзя решить словами — каково взаимодействие на ощупь, эргономична ли форма API в реальном вызывающем коде, работает ли вёрстка при реальных объёмах данных. Допрос натыкается на вопрос, и ваш честный ответ: «Не знаю, нужно посмотреть». За этой точкой обсуждение ходит по кругу. Вместо этого пусть агент построит вещь, вы на неё посмотрите и вернётесь к разговору с ответом.
 
-Agents lower the cost of building, which is what makes this practical. A rough version that used to take a day to mock up now takes minutes, so it's worth doing routinely. It's a [human-in-the-loop](./Human-in-the-loop.md) technique: the prototype is there for you to react to.
+Агенты снижают стоимость построения, что и делает этот подход практичным. Черновая версия, на набросок которой раньше уходил день, теперь занимает минуты, поэтому её имеет смысл делать регулярно. Это техника с [человеком в цикле](./Human-in-the-loop.md): прототип существует для того, чтобы вам было на что отреагировать.
 
-You usually don't stop at one look. Iterate with the prototype — react, ask for a change, react again — so each round resolves another decision against the real artifact, at a higher fidelity than conversation allows.
+Обычно на одном взгляде не останавливаются. Итерируйте вместе с прототипом — реакция, просьба об изменении, снова реакция — так каждый раунд решает ещё одно проектное решение против реального артефакта, с более высоким разрешением, чем позволяет разговор.
 
-A prototype doesn't have to be all-scrappy. You can build the pieces you're actually evaluating to production quality, so when the decision lands, the component or API you reacted to can transfer into the real codebase. This makes prototyping essential material for the [spec](./Spec.md) to reference.
+Прототип не обязан быть целиком черновым. Можно строить те части, которые вы реально оцениваете, на продакшен-качестве, и тогда, когда решение принято, компонент или API, на который вы реагировали, можно перенести в настоящий код. Это делает прототипирование существенным материалом, на который ссылается [спецификация](./Spec.md).
 
-_Usage:_
+_Пример:_
 
-"We've spent half an hour arguing about whether the wizard should be one page or three steps."
+«Мы уже полчаса спорим, должен ли мастер быть одной страницей или тремя шагами.»
 
-"Words won't settle it — have the agent prototype both. We'll click through them and know in five minutes."
+«Словами это не решить — пусть агент прототипирует оба варианта. Мы по ним кликнем и за пять минут поймём.»

@@ -1,22 +1,22 @@
 ---
-description: A working pattern where one or more humans pair with the agent during a session — reviewing, redirecting, or collaborating in real time.
+description: "Паттерн: человек работает вместе с агентом в ходе сессии — ревьюит, перенаправляет или сотрудничает в реальном времени."
 aliases:
   - HITL
   - Human-in-the-loop (HITL)
 ---
 
-A working pattern where one or more humans pair with the [agent](./Agent.md) during a [session](./Session.md) — reviewing, redirecting, or collaborating in real time. The human is present and engaged, not just gating individual actions.
+Паттерн работы, при котором один или несколько человек работают в паре с [агентом](./Agent.md) в ходе [сессии](./Session.md) — проводят ревью, перенаправляют или сотрудничают в реальном времени. Человек присутствует и вовлечён, а не служит просто точкой одобрения для отдельных действий.
 
-The contrast is with [AFK](./AFK.md) work, where the agent runs unattended and you judge the result afterwards. Human-in-the-loop means catching problems while they're still cheap: you see the agent reach for the wrong file, misread the requirement, or start down a dead end, and you redirect it in one sentence — rather than discovering twenty minutes of confident work built on that mistake. Agents don't reliably know when they're off track; left alone, they tend to push forward rather than stop and ask.
+Противоположность — работа в режиме [AFK](./AFK.md), когда агент работает без присмотра, а результат вы оцениваете уже после. Человек в цикле позволяет ловить проблемы, пока они ещё дёшевы: вы видите, как агент тянется не к тому файлу, неверно трактует требование или начинает уходить в тупик, и перенаправляете его одним предложением — вместо того чтобы спустя двадцать минут обнаружить уверенную работу, построенную на этой ошибке. Агенты не всегда понимают, что свернули не туда; оставленные без присмотра, они склонны двигаться дальше, а не останавливаться и спрашивать.
 
-Which pattern fits depends on the work. Well-specified, low-risk, easy-to-verify tasks suit AFK. Tasks that are ambiguous, irreversible, or where you'd struggle to review the finished result — a schema migration, a tricky design decision, anything touching production — suit staying in the loop. The judgement call is essentially: how expensive is a wrong turn, and how late would you catch it?
+Какой паттерн подходит, зависит от работы. Хорошо специфицированные, низкорисковые и легко проверяемые задачи подходят для AFK. Задачи неоднозначные, необратимые или такие, что готовый результат сложно ревьюить — миграция схемы, сложное проектное решение, всё, что затрагивает продакшен, — разумнее делать, оставаясь в цикле. Решение здесь сводится к простому: насколько дорога ошибка и как поздно вы бы её обнаружили?
 
-Some work is in-the-loop by nature, because your reactions are the input. [Grilling](./Grilling.md) only works with you there to answer the questions; [prototyping](./Prototyping.md) only works with you there to react to the artifact.
+Некоторая работа по своей природе требует присутствия в цикле, потому что ваши реакции и есть входные данные. [Допрос](./Grilling.md) работает, только когда вы отвечаете на вопросы; [прототипирование](./Prototyping.md) работает, только когда вы реагируете на артефакт.
 
-Staying in the loop costs your attention, which is the scarce resource. Part of getting better with agents is moving more work safely out of the loop — with plans, [automated checks](./Automated%20check.md), and [human review](./Human%20review.md) at the end instead of supervision throughout.
+Присутствие в цикле расходует ваше внимание, а это дефицитный ресурс. Часть взросления в работе с агентами — безопасно перемещать больше работы из цикла наружу: через планы, [автоматические проверки](./Automated%20check.md) и [рецензирование человеком](./Human%20review.md) в конце вместо постоянного надзора.
 
-_Usage:_
+_Пример:_
 
-"Run this AFK overnight?"
+«Запустить это AFK на ночь?»
 
-"No, schema migration — keep it human-in-the-loop. I want to see each step and steer if it picks the wrong column to backfill from."
+«Нет, миграция схемы — оставь человека в цикле. Хочу видеть каждый шаг и подправлять, если он выберет не ту колонку для бэкфилла».

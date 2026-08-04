@@ -1,15 +1,15 @@
 ---
-description: "A technique for developing a design concept: the agent interviews the user Socratically, one decision at a time."
+description: "Допрос (сократический опрос): техника развития концепции дизайна — агент опрашивает пользователя по одному решению за раз."
 ---
 
-A technique for developing a [design concept](./Design%20concept.md) with an [agent](./Agent.md): the agent interviews the user Socratically, one decision at a time, proposing a recommended answer for each. Slows the rush to a finished plan — no [handoff artifact](./Handoff%20artifact.md) is written until the concept stabilises.
+Допрос (сократический опрос, допустимо «гриллинг») — техника развития [концепции дизайна](./Design%20concept.md) совместно с [агентом](./Agent.md): агент ведёт сократическое интервью с пользователем, по одному решению за раз, предлагая рекомендованный ответ на каждый вопрос. Эта техника тормозит спешку к готовому плану — ни один [артефакт передачи](./Handoff%20artifact.md) не пишется, пока концепция не стабилизируется.
 
-The technique exists because agents fill gaps silently. Asked to write a [spec](./Spec.md) from a two-line prompt, the agent doesn't stop at the decisions you haven't made — it picks defaults and writes them in. The result looks complete, and the guesses are indistinguishable from the choices, so you discover them late: at review, or when the built feature handles an edge case in a way you never chose. Grilling inverts this — instead of guessing, the agent has to ask.
+Эта техника существует, потому что агенты заполняют пробелы молча. Попросите агента написать [спецификацию](./Spec.md) по двухстрочному промпту — и он не остановится перед решениями, которые вы не приняли: он выберет значения по умолчанию и впишет их. Результат выглядит законченным, а догадки неотличимы от осознанных выборов, поэтому вы замечаете их поздно: на рецензировании или когда готовая функция обрабатывает граничный случай так, как вы никогда не выбирали. Допрос переворачивает это — вместо угадывания агент обязан спрашивать.
 
-It's a [human-in-the-loop](./Human-in-the-loop.md) technique: your answers are the input. When a question can't be answered in conversation — you'd have to see the thing — switch to [prototyping](./Prototyping.md).
+Это техника с [человеком в цикле](./Human-in-the-loop.md): входными данными служат ваши ответы. Когда вопрос не решается в разговоре — нужно увидеть вещь своими глазами — переходите к [прототипированию](./Prototyping.md).
 
-_Usage:_
+_Пример:_
 
-"It went straight to writing the spec and got the cancellation logic wrong."
+«Он сразу кинулся писать спецификацию и ошибся в логике отмены.»
 
-"Grill it first — make it ask you about partial cancels, refunds, and timing before it commits anything to the doc. Cheaper to resolve in conversation than in code."
+«Сначала проведите допрос — заставьте его спрашивать вас о частичных отменах, возвратах и тайминге, прежде чем что-то попадёт в документ. В разговоре это разрешается дешевле, чем в коде.»

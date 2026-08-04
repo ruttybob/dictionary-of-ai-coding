@@ -1,15 +1,15 @@
 ---
-description: The shared understanding of what's being built, held in common between user and agent but separate from any asset.
+description: Общее понимание того, что строится — разделяемое пользователем и агентом, но отдельное от любого артефакта.
 ---
 
-The shared understanding of what's being built, held in common between user and [agent](./Agent.md) but separate from any asset. Brooks' term (_The Design of Design_): the conversation, [handoff artifacts](./Handoff%20artifact.md), and the code are all assets that try to capture or reach the design concept, but none of them _are_ it. Quality of the design concept is felt through the quality of the conversation that built it.
+Концепция дизайна — это общее понимание того, что строится, разделяемое между пользователем и [агентом](./Agent.md), но отдельное от любого артефакта. Термин Брукса (_The Design of Design_): разговор, [артефакты передачи](./Handoff%20artifact.md) и код — всё это артефакты, которые пытаются зафиксировать концепцию дизайна или приблизиться к ней, но ни один из них ею _не является_. Качество концепции дизайна ощущается через качество разговора, который её выстроил.
 
-The term names the gap behind a familiar frustration: the agent writes exactly what you asked for and it's still wrong. The usual cause is that you hadn't fully figured out what you wanted. The design concept wasn't finished in your own head — your prompt captured the parts you'd worked out, and was silent on the parts you hadn't. The agent filled those silences with its own assumptions, because there was nothing to align with. Nothing malfunctioned. There was no shared design concept, because there wasn't yet a whole one to share.
+Этот термин называет причину привычного разочарования: агент пишет ровно то, что вы просили, и всё равно получается не то. Обычно причина в том, что вы сами до конца не поняли, чего хотите. Концепция дизайна ещё не сложилась у вас в голове — ваш промпт зафиксировал то, что вы уже проработали, и промолчал об остальном. Агент заполнил эти пробелы собственными предположениями, потому что сверяться было не с чем. Ничего не сломалось. Общей концепции дизайна просто не было, потому что её ещё не существовало в целом виде, чтобы её можно было разделить.
 
-You can tell a design concept is shared the same way you can with a colleague: the other party starts answering questions you haven't asked yet the way you would. Until then, the work is conversation — [grilling](./Grilling.md) is the deliberate version — and writing a [spec](./Spec.md) too early just captures the misalignment in a more durable asset. The design concept also moves as you learn; assets lag it, which is why a spec faithful to last week's understanding can still mislead this week's session.
+О том, что концепция дизайна стала общей, можно судить так же, как с коллегой: вторая сторона начинает отвечать на вопросы, которые вы ещё не задавали, именно так, как ответили бы вы. До этого момента работа сводится к разговору — [допрос](./Grilling.md) это его целенаправленный вариант — а слишком раннее написание [спецификации](./Spec.md) лишь фиксирует рассогласование в более долговечном артефакте. Концепция дизайна также меняется по мере того, как вы учитесь; артефакты от неё отстают, и поэтому спецификация, верная пониманию прошлой недели, всё ещё может вводить в заблуждение на сессии этой недели.
 
-_Usage:_
+_Пример:_
 
-"It's writing exactly what I asked for and it's still wrong."
+«Он пишет ровно то, что я просил, и всё равно не то.»
 
-"You don't share a design concept yet — it's filling gaps with assumptions. Keep talking until cancellation, refunds, and partial fulfilment all line up between you before you let it write a spec."
+«У вас ещё нет общей концепции дизайна — агент заполняет пробелы предположениями. Продолжайте разговор, пока отмена, возвраты и частичное исполнение не сойдутся между вами, и только потом позволяйте ему писать спецификацию.»

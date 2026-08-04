@@ -1,15 +1,15 @@
 ---
-description: What the model actually does. Samples one next token from the context, appends it, and runs again. Its only mode of operation.
+description: То, что модель делает. Выбирает следующий токен из контекста, добавляет и повторяет. Единственный режим работы.
 ---
 
-What the [model](./Model.md) actually does. Given a [context](./Context.md), it samples one next [token](./Token.md), appends it, and runs again. Every output — a sentence, a [tool call](./Tool%20call.md), a thousand-line file — is built one token at a time. The model has no other mode of operation.
+То, что [модель](./Model.md) делает на самом деле. Имея [контекст](./Context.md), она выбирает один следующий [токен](./Token.md), добавляет его и повторяет. Любой вывод — предложение, [вызов инструмента](./Tool%20call.md), файл на тысячу строк — строится по одному токену за раз. У модели нет другого режима работы.
 
-Each step works the same way: the tokens in the [context window](./Context%20window.md) are run through the [parameters](./Parameters.md), which produce a probability for every token in the vocabulary — this one is very likely next, that one less so. One token is sampled from those probabilities, appended, and the loop runs again with the slightly longer context. That sampling step is why the same prompt produces different output on different runs: [non-determinism](./Non-determinism.md) is built into the mechanism, not a bug layered on top.
+Каждый шаг устроен одинаково: токены в [контекстном окне](./Context%20window.md) прогоняются через [параметры](./Parameters.md), что даёт вероятность для каждого токена из словаря — этот следующий очень вероятен, тот менее. Из этих вероятностей выбирается один токен, он добавляется, и цикл запускается снова с чуть более длинным контекстом. Именно этот шаг выборки объясняет, почему один и тот же промпт даёт разные выводы на разных прогонах: [недетерминизм](./Non-determinism.md) встроен в сам механизм, а не надстроен поверх него как баг.
 
-Holding onto this mechanism explains behaviour that otherwise looks strange. The model never checks whether a token is _true_ before emitting it — only whether it's _likely_ — which is the root of [hallucination](./Hallucination.md). It commits to each token as it goes, so a confident-sounding opening sentence can steer the rest of the answer wrong. And because [output tokens](./Output%20tokens.md) are produced strictly one at a time, generation speed puts a floor on how fast any [agent](./Agent.md) can work.
+Удержание этого механизма в голове объясняет поведение, которое иначе выглядит странным. Модель никогда не проверяет, является ли токен _истинным_, прежде чем его выдать, — только _вероятным_, — и в этом корень [галлюцинации](./Hallucination.md). Она фиксируется на каждом токене по мере выдачи, поэтому уверенно звучащее первое предложение может увести остаток ответа в неверную сторону. А поскольку [выходные токены](./Output%20tokens.md) строго производятся по одному за раз, скорость генерации задаёт нижнюю границу того, насколько быстрым может быть любой [агент](./Agent.md).
 
-_Usage:_
+_Пример:_
 
-"How does the agent 'decide' to call a tool?"
+«Как агент "решает" вызвать инструмент?»
 
-"It doesn't — it's next-token prediction all the way down. The tool call is just a structured string the [harness](./Harness.md) parses out of the output stream."
+«Никак — всё внизу это предсказание следующего токена. Вызов инструмента это просто структурированная строка, которую [обвязка](./Harness.md) разбирает из выходного потока.»

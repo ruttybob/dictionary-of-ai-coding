@@ -1,17 +1,17 @@
 ---
-description: Whatever serves a model for inference. Usually remote (Anthropic, OpenAI, Google), but can also be local (Ollama, llama.cpp).
+description: Что бы ни обслуживало модель для инференса. Обычно удалённое (Anthropic, OpenAI, Google), но бывает и локальным (Ollama, llama.cpp).
 ---
 
-Whatever serves a [model](./Model.md) for [inference](./Inference.md). Usually a remote service (Anthropic, OpenAI, Google), but can also be local — Ollama, LM Studio, llama.cpp running on your own machine. The [harness](./Harness.md) doesn't run the model itself; it asks a provider to.
+Что бы ни обслуживало [модель](./Model.md) для [инференса](./Inference.md). Обычно это удалённый сервис (Anthropic, OpenAI, Google), но может быть и локальным — Ollama, LM Studio, llama.cpp на вашей собственной машине. Сама [обвязка](./Harness.md) модель не запускает; она просит об этом провайдера.
 
-The provider owns the machinery: the [parameters](./Parameters.md) live on its hardware, and every [model provider request](./Model%20provider%20request.md) is the harness sending [tokens](./Token.md) over the network and getting predictions back. That makes the provider the source of a whole category of problems that get misattributed to the model or the harness — rate limits, degraded capacity, and outages all live here. When the [agent](./Agent.md) stalls mid-[session](./Session.md) or errors on every [turn](./Turn.md), the provider's status page is worth checking before anything else.
+Провайдер владеет всей инфраструктурой: [параметры](./Parameters.md) живут на его железе, и каждый [запрос к провайдеру моделей](./Model%20provider%20request.md) — это обвязка, которая отправляет [токены](./Token.md) по сети и получает обратно предсказания. Из-за этого провайдер оказывается источником целой категории проблем, которые ошибочно приписывают модели или обвязке: лимиты частоты запросов, снижение ёмкости и отключения живут именно здесь. Когда [агент](./Agent.md) замирает посреди [сессии](./Session.md) или ошибается на каждом [ходу](./Turn.md), статусная страница провайдера — то, что стоит проверить раньше остального.
 
-The provider also sets the commercial terms: per-token pricing for [input](./Input%20tokens.md) and [output tokens](./Output%20tokens.md), [prefix cache](./Prefix%20cache.md) discounts, and which models are available at all. Note that the provider and the model's maker can be different companies — Bedrock, Vertex, and OpenRouter serve other people's models.
+Провайдер также задаёт коммерческие условия: цена за токен для [входных токенов](./Input%20tokens.md) и [выходных токенов](./Output%20tokens.md), скидки за [префиксный кэш](./Prefix%20cache.md) и то, какие модели вообще доступны. Заметьте, что провайдер и создатель модели могут быть разными компаниями — Bedrock, Vertex и OpenRouter обслуживают чужие модели.
 
-Local providers trade capability for control: the models that fit on your own hardware are far smaller than the frontier ones, but nothing leaves the machine and there's no bill per token.
+Локальные провайдеры уступают в возможностях ради контроля: модели, которые влезают на ваше собственное железо, сильно меньше передовых, но ничего не покидает машину и нет счёта за токен.
 
-_Usage:_
+_Пример:_
 
-"Can we run this offline for the air-gapped client?"
+«Можем запустить это офлайн для изолированного клиента?»
 
-"Swap the model provider to a local one — Ollama or llama.cpp on their box. The harness doesn't care, it just hits a different endpoint."
+«Переключи провайдера моделей на локальный — Ollama или llama.cpp на их машине. Обвязке всё равно, она просто бьёт по другому эндпоинту.»

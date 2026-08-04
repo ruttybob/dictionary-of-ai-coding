@@ -1,19 +1,19 @@
 ---
-description: The atomic unit a model reads and writes. Roughly word-sized but not exactly. Context window size, cost, and latency all count tokens.
+description: Атомарная единица, которую модель читает и пишет. Примерно со слово, но не точно. Контекстное окно, цена и задержка измеряются в токенах.
 ---
 
-The atomic unit a [model](./Model.md) reads and writes. Roughly word-sized but not exactly — common words are one token, rare or long ones split into several. [Context window](./Context%20window.md) size, cost, and latency are all counted in tokens.
+Атомарная единица, которую [модель](./Model.md) читает и пишет. Примерно размером со слово, но не точно — частые слова умещаются в один токен, редкие или длинные разбиваются на несколько. Размер [контекстного окна](./Context%20window.md), стоимость и задержка измеряются в токенах.
 
-Text becomes tokens via a tokenizer: a fixed vocabulary of tens of thousands of fragments, learned before [training](./Training.md), that splits any input into a sequence of vocabulary entries. The model never sees characters or words — every piece of text is converted to tokens on the way in, and [next-token prediction](./Next-token%20prediction.md) produces output one token at a time on the way out.
+Текст превращается в токены через токенизатор: фиксированный словарь из десятков тысяч фрагментов, выученный до [обучения](./Training.md), который разбивает любой вход на последовательность элементов словаря. Модель никогда не видит ни символов, ни слов — любой фрагмент текста преобразуется в токены на входе, а [предсказание следующего токена](./Next-token%20prediction.md) строит выход по одному токену за раз.
 
-As a rule of thumb, a token is about three-quarters of an English word, so a thousand tokens is roughly 750 words. Code is less predictable: common keywords and idioms tokenize compactly, while generated identifiers, hashes, base64 blobs, and minified output split into many tokens per "word". The pattern: text that appeared often in the tokenizer's source material gets short, efficient encodings; text that didn't gets chopped into many small pieces. A hash like `a3f9c2e1` never appeared anywhere, so it splits into many tokens, while `function` is one. This is why a small-looking file full of unusual strings can occupy a surprising share of the context window.
+Эмпирическое правило: токен составляет примерно три четверти английского слова, так что тысяча токенов — это примерно 750 слов. С кодом всё менее предсказуемо: частые ключевые слова и идиомы токенизуются компактно, тогда как сгенерированные идентификаторы, хеши, base64-блобы и минифицированный вывод разбиваются на множество токенов на «слово». Закономерность такая: текст, который часто встречался в исходном материале токенизатора, получает короткие, эффективные кодировки; текст, который не встречался, рубится на множество мелких кусочков. Хеш вроде `a3f9c2e1` нигде не встречался, поэтому разбивается на множество токенов, тогда как `function` — это один токен. Именно поэтому небольшой с виду файл, полный необычных строк, может занять неожиданно большую долю контекстного окна.
 
-Tokens are the unit everything else is measured in. Cost is per token — providers bill [input tokens](./Input%20tokens.md) and [output tokens](./Output%20tokens.md) separately. Speed is tokens per second, since output is generated one token at a time. And the context window is a fixed number of tokens, so the token count of your files decides how much fits.
+Токен — единица, в которой измеряется всё остальное. Стоимость считается за токен: провайдеры отдельно тарифицируют [входные токены](./Input%20tokens.md) и [выходные токены](./Output%20tokens.md). Скорость измеряется в токенах в секунду, поскольку выход генерируется по одному токену за раз. А контекстное окно — это фиксированное число токенов, поэтому именно количество токенов в ваших файлах определяет, сколько в нём поместится.
 
-_Avoid:_ "word" — token boundaries don't match word boundaries, and tokens-per-second / tokens-per-dollar are the units that actually matter.
+_Избегать:_ «слово» — границы токенов не совпадают с границами слов, а tokens-per-second и tokens-per-dollar — это единицы, которые на самом деле имеют значение.
 
-_Usage:_
+_Пример:_
 
-"How big is this prompt going to be?"
+«Каким будет размер этого промпта?»
 
-"Run it through the tokenizer — the schema's compact but the JSON keys are weird, so they'll split into more tokens than you think."
+«Прогони его через токенизатор — схема компактная, но ключи JSON необычные, поэтому они разобьются на больше токенов, чем ты думаешь.»

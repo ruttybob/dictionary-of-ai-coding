@@ -1,15 +1,15 @@
 ---
-description: The numbers inside a model — often billions — tuned during training. Everything the model knows lives in them. Also called weights.
+description: Числа внутри модели — часто миллиарды — настроенные в ходе обучения. Всё, что модель «знает», живёт в них. Также называются весами.
 ---
 
-The numbers inside a [model](./Model.md) — often billions of them — tuned during [training](./Training.md). Everything the model "knows" lives in them. Training sets them; [inference](./Inference.md) uses them unchanged. Also called _weights_.
+Числа внутри [модели](./Model.md) — часто миллиарды — настроенные в ходе [обучения](./Training.md). Всё, что модель «знает», живёт в них. Обучение их задаёт; [инференс](./Inference.md) использует их неизменными. Также называются _весами_.
 
-Mechanically, the parameters are what turn input into output. [Next-token prediction](./Next-token%20prediction.md) is a giant calculation: the [tokens](./Token.md) in the [context window](./Context%20window.md) go in, get multiplied through the parameters, and a prediction for the next token comes out. There is no database of facts inside the model, no code lookup table — just these numbers, arranged so that the calculation tends to produce useful output. Facts the model can recite from training, like a standard library API, are [parametric knowledge](./Parametric%20knowledge.md): stored in the parameters, not retrieved from anywhere.
+Механически параметры — это то, что превращает вход в выход. [Предсказание следующего токена](./Next-token%20prediction.md) — это гигантское вычисление: [токены](./Token.md) в [контекстном окне](./Context%20window.md) поступают на вход, перемножаются через параметры, и на выходе получается предсказание следующего токена. Внутри модели нет базы фактов и таблицы поиска кода — только эти числа, устроенные так, что вычисление склонно давать полезный результат. Факты, которые модель может воспроизвести из обучения, — например API стандартной библиотеки, — это [параметрические знания](./Parametric%20knowledge.md): они хранятся в параметрах, а не извлекаются откуда-то ещё.
 
-The detail worth internalising is that parameters are frozen after training. Nothing you do in a [session](./Session.md) changes them — no correction you make, no codebase you show it, no mistake it learns from. Every session runs on the same numbers. This is why the model is [stateless](./Stateless.md), why its built-in knowledge stops at the [knowledge cutoff](./Knowledge%20cutoff.md), and why anything project-specific has to arrive via [context](./Context.md) instead. The only way parameters change is more training — which produces, in effect, a different model.
+Деталь, которую стоит усвоить: параметры замораживаются после обучения. Ничто из того, что вы делаете в [сессии](./Session.md), их не меняет — ни исправление, ни показанная кодовая база, ни ошибка, из которой можно было бы учиться. Каждая сессия работает на одних и тех же числах. Именно поэтому модель [без сохранения состояния](./Stateless.md), почему её встроенные знания обрываются на [отсечке знаний](./Knowledge%20cutoff.md), и почему всё специфичное для проекта должно попадать в неё через [контекст](./Context.md). Единственный способ изменить параметры — дообучение, которое, по сути, создаёт другую модель.
 
-_Usage:_
+_Пример:_
 
-"Can we fine-tune it on our codebase?"
+«Можно ли дообучить её на нашей кодовой базе?»
 
-"That'd update the parameters — different model afterwards. For one project it's almost always cheaper to load the codebase as context than to retrain."
+«Это обновит параметры — получится другая модель. Для одного проекта почти всегда дешевле загрузить кодовую базу как контекст, чем переобучать.»

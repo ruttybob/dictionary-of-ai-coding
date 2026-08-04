@@ -1,22 +1,22 @@
 ---
-description: Running a trained model to generate output — what happens on every model provider request. Parameters stay fixed.
+description: Запуск обученной модели для генерации вывода — происходит при каждом запросе к провайдеру моделей. Параметры неизменны.
 ---
 
-Running a trained [model](./Model.md) to generate output — what happens on every [model provider request](./Model%20provider%20request.md). [Parameters](./Parameters.md) stay fixed; the model just does [next-token prediction](./Next-token%20prediction.md) over the [context](./Context.md) it's given. Cheap relative to [training](./Training.md), but billed per [token](./Token.md) and the dominant cost of using a model.
+Запуск обученной [модели](./Model.md) для генерации вывода — то, что происходит при каждом [запросе к провайдеру моделей](./Model%20provider%20request.md). [Параметры](./Parameters.md) остаются неизменными; модель просто выполняет [предсказание следующего токена](./Next-token%20prediction.md) по тому [контексту](./Context.md), который ей дали. Дёшево относительно [обучения](./Training.md), но тарифицируется за [токен](./Token.md) и составляет основную статью расходов при работе с моделью.
 
-A model's life splits into two phases:
+Жизнь модели делится на две фазы:
 
-| Phase     | When it happens                  | What it does                                                    | Parameters    |
-| --------- | -------------------------------- | --------------------------------------------------------------- | ------------- |
-| Training  | Once, before release             | Produces the parameters from a training corpus                  | Being written |
-| Inference | Every time anyone uses the model | Runs the frozen parameters over your context to generate tokens | Read-only     |
+| Этап     | Когда происходит                | Что делает                                                             | Параметры     |
+| -------- | ------------------------------- | ---------------------------------------------------------------------- | ------------- |
+| Обучение | Однократно, до релиза           | Создаёт параметры из обучающего корпуса                                | Записываются  |
+| Инференс | При каждом использовании модели | Прогоняет замороженные параметры по вашему контексту, генерируя токены | Только чтение |
 
-Nothing you do at inference time writes back to the parameters — that's the reason a correction you make today doesn't stick tomorrow. The model that makes the same mistake next [session](./Session.md), after you carefully explained the fix, hasn't ignored you; it's incapable of learning from the exchange. The model is [stateless](./Stateless.md) — continuity has to come from outside it — from the [context window](./Context%20window.md) or a [memory system](./Memory%20system.md).
+Ничто из того, что вы делаете во время инференса, не записывается обратно в параметры — именно поэтому исправление, которое вы внесли сегодня, не сохраняется назавтра. Модель, которая повторяет ту же ошибку в следующей [сессии](./Session.md), после того как вы тщательно объяснили решение, вас не проигнорировала — она не способна учиться из этого обмена. Модель [без сохранения состояния](./Stateless.md) — непрерывность должна приходить извне, из [контекстного окна](./Context%20window.md) или [системы памяти](./Memory%20system.md).
 
-This mechanism also explains how you're billed. Every request runs the model over the full context, so cost scales with [input tokens](./Input%20tokens.md) and [output tokens](./Output%20tokens.md), and an agent making dozens of [tool](./Tool.md) calls pays for inference on each round trip. This is why context size is a cost question as well as a quality one.
+Этот механизм объясняет и то, как вы платите. Каждый запрос прогоняет модель по полному контексту, поэтому стоимость масштабируется с [входными токенами](./Input%20tokens.md) и [выходными токенами](./Output%20tokens.md), и агент, делающий десятки вызовов [инструментов](./Tool.md), платит за инференс в каждом цикле обмена. Поэтому размер контекста — это вопрос стоимости в той же мере, что и качества.
 
-_Usage:_
+_Пример:_
 
-"Why does the bill scale with usage instead of being a flat license?"
+«Почему счёт растёт пропорционально использованию, а не фиксированная лицензия?»
 
-"You're paying for inference — every model provider request runs the model on the provider's hardware. Training already happened, but inference costs accrue per request, and a single [turn](./Turn.md) can expand into many requests when tools are called."
+«Вы платите за инференс — каждый запрос к провайдеру моделей прогоняет модель на железе провайдера. Обучение уже произошло, но стоимость инференса накапливается по каждому запросу, и один [ход](./Turn.md) может развернуться в множество запросов, когда вызываются инструменты.»

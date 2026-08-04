@@ -1,15 +1,15 @@
 ---
-description: The process that sets a model's parameters by exposing it to vast amounts of text and adjusting to improve next-token prediction.
+description: Процесс задания параметров модели на огромных объёмах текста — подстраивает их ради улучшения предсказания следующего токена.
 ---
 
-The process that sets a [model](./Model.md)'s [parameters](./Parameters.md), by exposing it to vast amounts of text and adjusting parameters to improve [next-token prediction](./Next-token%20prediction.md). A one-time, expensive process done by the [model provider](./Model%20provider.md). Encompasses both pre-training (the bulk run) and post-training (later refinements like instruction-following and safety); the distinction doesn't matter at this glossary's level.
+Процесс, который задаёт [параметры](./Parameters.md) [модели](./Model.md), показывая ей огромные объёмы текста и подстраивая параметры для улучшения [предсказания следующего токена](./Next-token%20prediction.md). Разовый, дорогой процесс, выполняемый [провайдером моделей](./Model%20provider.md). Охватывает и предобучение (основной прогон), и постобучение (более поздние шлифовки — следование инструкциям, безопасность); на уровне этого глоссария различие несущественно.
 
-The mechanism is repetition at scale: show the model a stretch of text, have it predict the next [token](./Token.md), nudge the parameters toward whatever the actual next token was, and repeat across trillions of tokens. Nothing is stored as facts or rules — everything the model "knows" is a side effect of getting better at prediction, compressed into the parameters as [parametric knowledge](./Parametric%20knowledge.md).
+Механизм — это повторение в масштабе: покажите модели отрывок текста, пусть она предскажет следующий [токен](./Token.md), чуть сдвиньте параметры в сторону того, каким следующий токен был на самом деле, и повторяйте на триллионах токенов. Ничего не сохраняется как факты или правила — всё, что модель «знает», — побочный эффект того, что она становилась лучше в предсказании, сжатый в параметры как [параметрические знания](./Parametric%20knowledge.md).
 
-Two consequences matter day to day. Training ends at a point in time, so the model has a [knowledge cutoff](./Knowledge%20cutoff.md) — it hasn't seen the library version you upgraded to last month. And training is not something you can do: when the model doesn't know your codebase, your conventions, or your internal APIs, the fix is never "teach the model" — it's putting that material into [context](./Context.md), the one input you control.
+Два последствия важны в повседневной работе. Обучение заканчивается в определённый момент времени, поэтому у модели есть [отсечка знаний](./Knowledge%20cutoff.md) — она не видела ту версию библиотеки, на которую вы обновились в прошлом месяце. И обучение — это не то, что можете сделать вы: когда модель не знает вашу кодовую базу, ваши конвенции или ваши внутренние API, решение — никогда не «научить модель», а положить этот материал в [контекст](./Context.md), единственный вход, который вы контролируете.
 
-_Usage:_
+_Пример:_
 
-"Can we get it to know our internal API?"
+«Можно ли сделать так, чтобы она знала наш внутренний API?»
 
-"Not via training — that's a months-long process by the model provider. Load the API docs into context instead, that's the lever you actually have."
+«Через обучение — нет, это процесс длиной в месяцы у провайдера моделей. Загрузите документацию по API в контекст — это тот рычаг, который у вас реально есть.»

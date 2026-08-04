@@ -1,27 +1,27 @@
 ---
-description: A moving label, not a technology. Points at whatever computers can newly, impressively do — right now, large language models.
+description: Подвижный ярлык, а не технология. Указывает на то новое и впечатляющее, что могут компьютеры — сейчас это большие языковые модели.
 ---
 
-A moving label, not a technology. "AI" doesn't name a fixed thing the way [model](./Model.md) or [token](./Token.md) does — it points at whatever computers can newly, impressively do. Right now it points at large language models. It has pointed at very different things before:
+Подвижный ярлык, а не технология. «ИИ» не называет фиксированного объекта так, как [модель](./Model.md) или [токен](./Token.md), — он указывает на то новое и впечатляющее, что могут компьютеры. Сейчас он указывает на большие языковые модели. Раньше он указывал на совершенно иные вещи:
 
-| Era       | What "AI" meant                                                                                       |
-| --------- | ----------------------------------------------------------------------------------------------------- |
-| 1950s     | Symbolic reasoning — theorem provers, checkers programs.                                              |
-| 1960s–70s | Rule-based symbolic programs — ELIZA, SHRDLU.                                                         |
-| 1980s     | Expert systems — thousands of hand-written if-then rules encoding human expertise.                    |
-| 1990s     | Game-tree search — Deep Blue beating Kasparov (1997). Researchers avoided the word "AI" entirely      |
-| 2000s     | Statistical machine learning — spam filters, recommenders. Still sold as "machine learning", not "AI" |
-| 2010s     | Deep learning — image recognition (AlexNet, 2012), AlphaGo (2016).                                    |
-| 2020s     | Large language models — ChatGPT (2022) made "AI" mean chatbots                                        |
+| Эпоха     | Что означал «ИИ»                                                                                                                  |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 1950-е    | Символические рассуждения — программы для доказательства теорем, шашки.                                                           |
+| 1960–70-е | Символические программы на правилах — ELIZA, SHRDLU.                                                                              |
+| 1980-е    | Экспертные системы — тысячи вручную написанных правил «если-то», кодирующих человеческий опыт.                                    |
+| 1990-е    | Поиск по дереву игры — Deep Blue обыгрывает Каспарова (1997). Исследователи вообще избегали слова «ИИ»                            |
+| 2000-е    | Статистическое машинное обучение — спам-фильтры, рекомендательные системы. Всё ещё продавалось как «машинное обучение», а не «ИИ» |
+| 2010-е    | Глубокое обучение — распознавание изображений (AlexNet, 2012), AlphaGo (2016).                                                    |
+| 2020-е    | Большие языковые модели — ChatGPT (2022) сделал так, что «ИИ» стал означать чат-боты                                              |
 
-The pointer moves by a known mechanism, sometimes called the AI effect: once a technique works reliably, it gets renamed — it's "just" search, "just" statistics — and "AI" slides forward to the next unsolved thing. The observation is old. Bertram Raphael put it this way in 1971: "AI is a collective name for problems which we do not yet know how to solve properly by computer." Larry Tesler's version, from around 1979: "Intelligence is whatever machines haven't done yet."
+Этот указатель сдвигается по известному механизму, который иногда называют «эффектом ИИ»: как только приём начинает работать надёжно, его переименовывают — это «всего лишь» поиск, «всего лишь» статистика — и «ИИ» съезжает на следующую нерешённую задачу. Наблюдение это старое. Бертрам Рафаэл сформулировал его так в 1971 году: «ИИ — собирательное название для задач, которые мы пока не умеем должным образом решать на компьютере». Версия Ларри Теслера, примерно 1979 год: «Интеллект — это то, чего машины ещё не делают».
 
-This is why conversations about AI so often talk past each other. A claim like "AI can't reason" or "AI is overhyped" carries a hidden timestamp — it may be about expert systems, about 2010s image classifiers, or about last month's LLM, and each reference supports a different conclusion. When a discussion about AI stalls, the fix is usually to swap the word for whichever precise term is actually meant: the model, the [harness](./Harness.md), the [agent](./Agent.md), the [context](./Context.md) it was given.
+Поэтому разговоры об ИИ так часто идут параллельно. Утверждение вроде «ИИ не умеет рассуждать» или «ИИ переоценён» несёт скрытую временную метку — оно может быть об экспертных системах, о классификаторах изображений 2010-х или о LLM прошлого месяца, и каждая отсылка ведёт к разному выводу. Когда дискуссия об ИИ заходит в тупик, решение обычно состоит в том, чтобы заменить слово на точный термин, который на самом деле имеется в виду: модель, [обвязку](./Harness.md), [агента](./Agent.md), [контекст](./Context.md), который ей дали.
 
-_Avoid:_ "AI" in any technical claim — name the part you mean instead. "AI coding" as a label for the practice is fine; "the AI is hallucinating" is not.
+_Избегать:_ «ИИ» в любом техническом утверждении — назовите конкретную часть, которую имеете в виду. «ИИ-кодинг» как ярлык для практики допустим; «ИИ галлюцинирует» — нет.
 
-_Usage:_
+_Пример:_
 
-"The CTO wants to know whether AI could handle the triage queue."
+«CTO хочет узнать, может ли ИИ взять на себя очередь триажа.»
 
-"Translate that before scoping it — she means an LLM in a harness with access to the ticket system. 'AI' on its own isn't a spec."
+«Сначала переведите это, прежде чем оценивать масштаб — она имеет в виду LLM в обвязке с доступом к системе тикетов. Сам по себе „ИИ“ — это не спецификация.»

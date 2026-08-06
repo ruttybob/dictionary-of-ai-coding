@@ -19,7 +19,7 @@ import {
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = dirname(HERE);
-const OUT_DIR = join(ROOT, "site");
+const OUT_DIR = join(ROOT, "site", "src");
 const OUT = join(OUT_DIR, "data.json");
 
 type Node = {
@@ -89,6 +89,8 @@ writeFileSync(
       sections: sections.map((s) => ({ heading: s.heading, terms: s.terms })),
       nodes,
       edges,
+      // Flat node-id list in internal/Curriculum.md order — drives prev/next traversal.
+      order: nodes.map((n) => n.id),
     },
     null,
     2

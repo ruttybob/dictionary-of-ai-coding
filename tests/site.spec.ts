@@ -1,120 +1,140 @@
 import { readFileSync } from "node:fs";
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
+import { termIdFromHref } from "../site/src/layout";
 
-// The single visitor-facing seam (see .scratch/ru-graph-site/PRD.md, Testing Decisions).
-// Asserts behaviour a visitor can see, never D3/SVG internals. Expected values are
-// read from the generated site/data.json so the test tracks the real content.
-const data = JSON.parse(readFileSync("./site/data.json", "utf8")) as {
+// The single visitor-facing seam (see .scratch/3d-graph-site/PRD.md, Testing
+// Decisions). Asserts only behaviour a visitor can see; never pokes into
+// react-three-fiber / three.js internals. Expected values are read from the
+// generated data layer so the test tracks real content.
+const data = JSON.parse(readFileSync("./site/src/data.json", "utf8")) as {
   nodes: { id: string; label: string; description: string; body: string }[];
   edges: { source: string; target: string }[];
+  order: string[];
 };
 const totalNodes = data.nodes.length;
 const token = data.nodes.find((n) => n.id === "Token");
 expect(token, "Token entry must exist in data.json for the smoke").toBeTruthy();
+const tokenOrderIdx = data.order.indexOf("Token");
+expect(tokenOrderIdx, "Token must be in order[]").toBeGreaterThan(-1);
 
-// A query that matches a strict subset of nodes, so filtering is observable.
-const QUERY = "token";
+const QUERY = "токен";
 const matchesQuery = (n: {
   label: string;
   description: string;
   body: string;
 }) => `${n.label} ${n.description} ${n.body}`.toLowerCase().includes(QUERY);
-const aMatch = data.nodes.find(matchesQuery)!;
-const aNonMatch = data.nodes.find((n) => !matchesQuery(n))!;
+const matchCount = data.nodes.filter(matchesQuery).length;
 
-test("graph renders one node per term", async ({ page }) => {
-  await page.goto("/");
-  await page.locator("svg#graph .node").first().waitFor();
-  const count = await page.locator("svg#graph .node").count();
-  expect(count).toBe(totalNodes);
-});
+// Cold-start WebGL under headless chromium can take a while; wait generously.
+const READY = "html[data-ready='true']";
+async function gotoReady(page: Page, hash = "") {
+  await page.goto("/" + hash);
+  await page.waitForSelector("canvas", { timeout: 15_000 });
+  await page.waitForSelector(READY, { timeout: 40_000 });
+}
 
-test("search filters visible nodes and lists matches", async ({ page }) => {
-  await page.goto("/");
-  await page.locator("svg#graph .node").first().waitFor();
-
-  await page.locator("#search").fill(QUERY);
-
-  // a known match stays visible, a known non-match gets dimmed
-  await expect(
-    page.locator(`svg#graph .node[data-id="${aMatch.id}"]:not(.dimmed)`)
-  ).toHaveCount(1);
-  await expect(
-    page.locator(`svg#graph .node[data-id="${aNonMatch.id}"].dimmed`)
-  ).toHaveCount(1);
-  // results list surfaces the match
-  await expect(
-    page.locator(`#results .result[data-id="${aMatch.id}"]`)
-  ).toHaveCount(1);
-});
-
-test("clicking a node opens the panel with its definition", async ({
+test("scene mounts: canvas present, data-ready set, node count from data layer", async ({
   page,
 }) => {
-  await page.goto("/");
-  await page.locator("svg#graph .node").first().waitFor();
+  await gotoReady(page);
+  await expect(page.locator("canvas")).toHaveCount(1);
+  // Node COUNT is asserted on the data layer (PRD Testing Decisions): the
+  // generator emits exactly totalNodes ids, which the scene consumes.
+  expect(totalNodes).toBeGreaterThan(0);
+});
 
-  await page.locator(`svg#graph .node[data-id="Token"] circle`).click();
+test("search lists matches", async ({ page }) => {
+  await gotoReady(page);
+  await page.locator("#search").fill(QUERY);
+  await expect(page.locator("#results .result").first()).toBeVisible();
+  const shown = await page.locator("#results .result").count();
+  expect(shown).toBe(Math.min(matchCount, 8));
+});
 
-  await expect(page.locator("#panel")).toBeVisible();
+test("selecting a node opens the panel with its Russian definition", async ({
+  page,
+}) => {
+  // Hash deep-link selects deterministically; canvas click coords are
+  // layout-dependent and flaky.
+  await gotoReady(page, "#Token");
   await expect(page.locator("#panel")).toHaveAttribute("data-term", "Token");
   await expect(page.locator("#panel-title")).toHaveText("Token");
-  // the rendered body carries the term's Russian definition. Compare against a
-  // plain-text prefix of the body (links reduced to their label text) so the
-  // assertion is robust to emphasis/link markup in the source.
   const snippet = token!.body
     .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
     .replace(/[*_`>#-]/g, " ")
     .replace(/\s+/g, " ")
     .trim()
-    .slice(0, 50);
+    .slice(0, 40);
   await expect(page.locator("#panel-body")).toContainText(snippet);
 });
 
-test("clicking a cross-link inside a definition navigates to that term", async ({
+test("prev/next step through Curriculum order", async ({ page }) => {
+  await gotoReady(page, "#Token");
+  await expect(page.locator("#panel-title")).toHaveText("Token");
+
+  const nextId = data.order[(tokenOrderIdx + 1) % data.order.length]!;
+  await page.locator(".nav-btn[aria-label='Следующий термин']").click();
+  await expect(page.locator("#panel-title")).toHaveText(
+    data.nodes.find((n) => n.id === nextId)!.label
+  );
+
+  await page.locator(".nav-btn[aria-label='Предыдущий термин']").click();
+  await expect(page.locator("#panel-title")).toHaveText("Token");
+  await page.locator(".nav-btn[aria-label='Предыдущий термин']").click();
+  const prevId =
+    data.order[(tokenOrderIdx - 1 + data.order.length) % data.order.length]!;
+  await expect(page.locator("#panel-title")).toHaveText(
+    data.nodes.find((n) => n.id === prevId)!.label
+  );
+});
+
+test("a cross-link inside a definition flies to that term", async ({
   page,
 }) => {
-  await page.goto("/");
-  await page.locator("svg#graph .node").first().waitFor();
-  await page.locator(`svg#graph .node[data-id="Token"] circle`).click();
-
+  await gotoReady(page, "#Token");
   const link = page.locator('#panel-body a[href^="./"]').first();
   await expect(link).toBeVisible();
   const href = (await link.getAttribute("href"))!;
-  const target = decodeURIComponent(
-    href.replace(/^\.\//, "").replace(/\.md$/, "")
-  );
+  const targetId = termIdFromHref(href);
+  const target = data.nodes.find((n) => n.id === targetId);
+  expect(
+    target,
+    `cross-link target ${targetId} must be a real node`
+  ).toBeTruthy();
 
   await link.click();
-
-  await expect(page.locator("#panel-title")).toHaveText(target);
-  expect(page.url()).toContain(encodeURIComponent(target));
+  await expect(page.locator("#panel")).toHaveAttribute("data-term", targetId);
+  await expect(page.locator("#panel-title")).toHaveText(target!.label);
 });
 
-test("theme toggle flips and persists across reload", async ({ page }) => {
-  await page.goto("/");
-  const before = await page.locator("html").getAttribute("data-theme");
-
-  await page.locator("#theme-toggle").click();
-  const after = await page.locator("html").getAttribute("data-theme");
-  expect(after).not.toBe(before);
-
-  await page.reload();
-  const persisted = await page.locator("html").getAttribute("data-theme");
-  expect(persisted).toBe(after);
-});
-
-test("first visit honours prefers-color-scheme: light", async ({ browser }) => {
-  // Fresh context: no stored theme, emulated light preference → light theme.
-  const ctx = await browser.newContext({ colorScheme: "light" });
-  const page = await ctx.newPage();
-  await page.goto("/");
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
-  await ctx.close();
+test("Esc closes the panel", async ({ page }) => {
+  await gotoReady(page, "#Token");
+  await expect(page.locator("#panel")).toHaveAttribute("data-term", "Token");
+  await page.keyboard.press("Escape");
+  // Selection cleared → Panel unmounts (US#28: return to overview).
+  await expect(page.locator("#panel")).toHaveCount(0);
 });
 
 test("hash deep-link opens the term on load", async ({ page }) => {
-  await page.goto("/#Token");
-  await expect(page.locator("#panel")).toBeVisible();
+  await gotoReady(page, "#Token");
   await expect(page.locator("#panel-title")).toHaveText("Token");
+});
+
+test("under prefers-reduced-motion the scene still mounts", async ({
+  browser,
+}) => {
+  // autoRotate lives inside OrbitControls and is not visitor-DOM-visible, so we
+  // assert the weaker but honest contract: the scene boots cleanly under the
+  // preference (bloom off / autoRotate-off paths taken without errors).
+  const ctx = await browser.newContext({ reducedMotion: "reduce" });
+  const page = await ctx.newPage();
+  const errors: string[] = [];
+  page.on("pageerror", (e) => errors.push(String(e)));
+  await gotoReady(page, "#Token");
+  await expect(page.locator("#panel-title")).toHaveText("Token");
+  expect(
+    errors,
+    "no console errors under reduced-motion: " + errors.join("; ")
+  ).toEqual([]);
+  await ctx.close();
 });

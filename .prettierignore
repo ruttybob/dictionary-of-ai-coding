@@ -1,4 +1,4 @@
 README.md
-site/data.json
+site/src/data.json
 node_modules
 package-lock.json

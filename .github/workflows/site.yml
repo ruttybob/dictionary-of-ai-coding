@@ -11,8 +11,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  freshness:
-    name: data.json freshness
+  typecheck-freshness:
+    name: typecheck + data.json freshness
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,17 +20,38 @@ jobs:
         with:
           node-version: "22"
       - run: npm install --no-audit --no-fund
-      - name: Typecheck generators
+      - name: Typecheck site (tsconfig.json)
+        run: npx tsc -p tsconfig.json --noEmit
+      - name: Typecheck generators (internal/tsconfig.json)
         run: npx tsc -p internal/tsconfig.json
       - name: Regenerate site data
         run: npm run generate:site
-      - name: Fail if site/data.json is out of sync
+      - name: Fail if site/src/data.json is out of sync
         run: |
-          if ! git diff --exit-code -- site/data.json; then
-            echo "site/data.json is out of sync with dictionary/ or internal/."
+          if ! git diff --exit-code -- site/src/data.json; then
+            echo "site/src/data.json is out of sync with dictionary/ or internal/."
             echo "Run: npm run generate:site && commit the result."
             exit 1
           fi
+
+  build:
+    name: build (Vite → dist)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - name: Regenerate site data
+        run: npm run generate:site
+      - name: Build
+        run: npm run build
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
 
   e2e:
     name: visitor smoke (Playwright)
@@ -45,12 +66,12 @@ jobs:
         run: npm run generate:site
       - name: Install Playwright browser
         run: npx playwright install --with-deps chromium
-      - name: Run smoke
+      - name: Run smoke (build + preview)
         run: npm run test:e2e
 
   deploy:
     name: Deploy to GitHub Pages
-    needs: [freshness, e2e]
+    needs: [typecheck-freshness, build, e2e]
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
@@ -68,9 +89,11 @@ jobs:
       - run: npm install --no-audit --no-fund
       - name: Regenerate site data
         run: npm run generate:site
+      - name: Build
+        run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: dist
       - id: deploy
         uses: actions/deploy-pages@v4

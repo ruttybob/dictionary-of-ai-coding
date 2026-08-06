@@ -6,6 +6,7 @@
     "generate": "tsx internal/generate-readme.ts",
     "generate:site": "tsx internal/generate-site-data.ts",
     "generate:all": "npm run generate && npm run generate:site",
+    "dev": "node tests/serve.mjs",
     "test:e2e": "playwright test",
     "prepare": "husky"
   },

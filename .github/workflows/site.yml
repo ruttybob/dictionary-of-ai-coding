@@ -1,0 +1,76 @@
+name: Graph site
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# Cancel a superseded run on the same ref.
+concurrency:
+  group: graph-site-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  freshness:
+    name: data.json freshness
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - name: Typecheck generators
+        run: npx tsc -p internal/tsconfig.json
+      - name: Regenerate site data
+        run: npm run generate:site
+      - name: Fail if site/data.json is out of sync
+        run: |
+          if ! git diff --exit-code -- site/data.json; then
+            echo "site/data.json is out of sync with dictionary/ or internal/."
+            echo "Run: npm run generate:site && commit the result."
+            exit 1
+          fi
+
+  e2e:
+    name: visitor smoke (Playwright)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - name: Regenerate site data
+        run: npm run generate:site
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+      - name: Run smoke
+        run: npm run test:e2e
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: [freshness, e2e]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - name: Regenerate site data
+        run: npm run generate:site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4

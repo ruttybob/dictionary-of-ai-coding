@@ -9,7 +9,6 @@ export default defineConfig({
     baseURL: "http://localhost:4317",
     colorScheme: "dark",
   },
-  // Test against the built artifact: build first, then serve dist/.
   webServer: {
     command: "npm run build && npm run preview",
     port: 4317,

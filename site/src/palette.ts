@@ -1,5 +1,4 @@
-// 7 section colours — muted OKLCH L≈0.62–0.74, C≈0.07–0.08, pre-converted
-// to hex. Muted so they read as text accents on near-black, not as neon.
+// Pre-converted to hex: not every CSS parser here reads oklch().
 export const SECTION_COLORS = [
   "#72b3a6", // Section 1 — The Model (dusty teal)
   "#6f85b7", // Section 2 — Sessions (muted violet)
@@ -13,6 +12,5 @@ export const SECTION_COLORS = [
 export const colorForSection = (heading: string, index: number): string =>
   SECTION_COLORS[index % SECTION_COLORS.length]!;
 
-// Curriculum headings read as "Section N — Name"; strip the prefix for display.
 export const prettySectionName = (heading: string): string =>
   heading.replace(/^Section \d+ — /, "");

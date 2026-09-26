@@ -39,7 +39,6 @@ function reducer(state: AppState, action: Action): AppState {
   }
 }
 
-// derive() is data-only; compute once at module scope.
 const derived: Derived = derive(data);
 
 type Ctx = {
@@ -63,9 +62,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
   });
 
   const value = useMemo<Ctx>(() => {
-    // Curriculum-order step with wrap-around, so prev/next stay active at
-    // the ends of the tour. A null selection counts as position -1: the
-    // first next() lands on order[0], prev() on the last entry.
     const step = (delta: number) => {
       const order = derived.order;
       const cur = state.selection;

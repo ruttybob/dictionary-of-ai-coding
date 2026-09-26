@@ -24,8 +24,6 @@ export function Article() {
 
   if (!node) return null;
 
-  // Intercept "./Term.md" cross-links: route them to term selection instead
-  // of letting the browser navigate.
   const onClickBody = (e: MouseEvent<HTMLDivElement>) => {
     const a = (e.target as HTMLElement).closest('a[href^="./"]');
     if (!a) return;

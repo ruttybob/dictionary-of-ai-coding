@@ -13,12 +13,11 @@ export type GraphData = {
   order: string[];
 };
 
-// Everything derived once from data.json — kept stable for the session.
 export type Derived = {
-  colorOf: Map<string, string>; // section heading → hex
-  sectionOf: Map<string, string>; // node id → section heading
+  colorOf: Map<string, string>;
+  sectionOf: Map<string, string>;
   nodeById: Map<string, GraphNode>;
-  neighbors: Map<string, Set<string>>; // adjacency (bidirectional)
+  neighbors: Map<string, Set<string>>;
   order: string[];
 };
 

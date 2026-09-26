@@ -1,7 +1,4 @@
 #!/usr/bin/env -S npx tsx
-// Emit site/data.json: sections + nodes (terms) + edges (cross-links),
-// parsed from the same sources as generate-readme.ts via ./curriculum.ts.
-// For the graph site. Fails loudly on drift so a broken build never ships.
 
 import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -71,11 +68,11 @@ const edgeSet = new Set<string>();
 const edges: { source: string; target: string }[] = [];
 for (const node of nodes) {
   for (const target of linksByTerm.get(node.id) ?? []) {
-    if (target === node.id) continue; // self-link
+    if (target === node.id) continue;
     if (!termNames.has(target))
       fail(`${node.id}.md links to "./${target}.md" but no such term exists`);
     const key = [node.id, target].sort().join("→");
-    if (edgeSet.has(key)) continue; // already have this undirected edge
+    if (edgeSet.has(key)) continue;
     edgeSet.add(key);
     edges.push({ source: node.id, target });
   }
@@ -89,7 +86,6 @@ writeFileSync(
       sections: sections.map((s) => ({ heading: s.heading, terms: s.terms })),
       nodes,
       edges,
-      // Flat node-id list in internal/Curriculum.md order — drives prev/next traversal.
       order: nodes.map((n) => n.id),
     },
     null,

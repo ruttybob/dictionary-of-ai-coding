@@ -35,7 +35,6 @@ body,
   outline-offset: 2px;
 }
 
-/* ── Mobile chrome: hamburger + drawer ───────────────────────────────── */
 #menu-btn {
   position: fixed;
   top: 12px;
@@ -62,7 +61,6 @@ body,
   background: rgba(2, 3, 6, 0.6);
 }
 
-/* ── Sidebar ─────────────────────────────────────────────────────────── */
 #sidebar {
   position: fixed;
   top: 0;
@@ -102,7 +100,6 @@ body,
   color: #f0f2fa;
 }
 
-/* ── Search (inside the sidebar) ─────────────────────────────────────── */
 .search-wrap {
   position: relative;
   padding: 0 14px 12px;
@@ -188,7 +185,6 @@ body,
   cursor: default;
 }
 
-/* ── Table of contents ───────────────────────────────────────────────── */
 .toc {
   flex: 1;
   overflow-y: auto;
@@ -246,7 +242,6 @@ body,
   background: rgba(255, 255, 255, 0.07);
 }
 
-/* ── Main reading area ───────────────────────────────────────────────── */
 #main {
   height: 100%;
   overflow-y: auto;
@@ -260,7 +255,6 @@ body,
   padding: 64px 18px 96px;
 }
 
-/* ── Home ────────────────────────────────────────────────────────────── */
 .home-title {
   margin: 0 0 14px;
   font-size: 28px;
@@ -327,7 +321,6 @@ body,
   white-space: nowrap;
 }
 
-/* ── Article ─────────────────────────────────────────────────────────── */
 .article-head {
   margin-bottom: 6px;
 }
@@ -453,7 +446,6 @@ body,
   color: var(--text);
 }
 
-/* ── Markdown body ───────────────────────────────────────────────────── */
 .markdown :first-child {
   margin-top: 0;
 }
@@ -510,7 +502,6 @@ body,
   margin: 0.25em 0;
 }
 
-/* Wide tables scroll inside their own box, never the page. */
 .markdown table {
   display: block;
   width: 100%;
@@ -543,7 +534,6 @@ body,
   color: var(--text-dim);
 }
 
-/* ── Desktop: fixed sidebar, centered article column ─────────────────── */
 @media (min-width: 900px) {
   #menu-btn,
   .backdrop {

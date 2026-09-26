@@ -9,10 +9,9 @@ function Shell() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const mainRef = useRef<HTMLElement>(null);
 
-  // Hash → selection (initial load + browser back/forward). Reads the current
-  // selection through a ref and never re-subscribes on selection changes:
-  // the selection→hash effect below rewrites the URL after a dispatch, and if
-  // this effect re-ran mid-rewrite the two would oscillate.
+  // Hash → selection (initial load + browser back/forward). Subscribing this
+  // effect on selection changes would let the two URL effects oscillate;
+  // read the current selection through a ref instead.
   const selectionRef = useRef(state.selection);
   selectionRef.current = state.selection;
 
@@ -31,7 +30,6 @@ function Shell() {
     return () => window.removeEventListener("hashchange", apply);
   }, [derived, dispatch]);
 
-  // Selection → hash (shareable deep-link).
   useEffect(() => {
     const desired = state.selection
       ? `#${state.selection}`
@@ -44,7 +42,6 @@ function Shell() {
     }
   }, [state.selection]);
 
-  // E2E seam: the shell is interactive.
   useEffect(() => {
     document.documentElement.dataset.ready = "true";
   }, []);

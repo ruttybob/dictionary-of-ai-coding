@@ -1,7 +1,3 @@
-// Shared parsing of internal/Curriculum.md + dictionary frontmatter.
-// Used by generate-readme.ts and generate-site-data.ts so both enforce the
-// same invariants and never drift apart.
-
 import { readFileSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";

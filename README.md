@@ -142,6 +142,8 @@ That's what this dictionary is for. **The vocabulary of AI coding, translated in
 - [Prototyping](#prototyping)
 - [DX](#dx)
 - [AX](#ax)
+- [Software factory](#software-factory)
+- [Dark factory](#dark-factory)
 
 </details>
 
@@ -1067,7 +1069,7 @@ _Пример:_
 
 Хороший тикет пишется для читателя без какого-либо другого контекста. Цель, критерии приёмки и [указатели контекста](#context-pointer) на релевантные файлы и решения — этого достаточно, чтобы сессия начала работу, не выводя заново то, что знала предыдущая.
 
-Граф зависимостей — это и то, что разблокирует параллелизм. Независимые тикеты — листья графа — могут каждый выполняться в собственной сессии одновременно. Это эффективный способ запустить сразу несколько агентов параллельно.
+Граф зависимостей — это и то, что разблокирует параллелизм. Независимые тикеты — листья графа — могут каждый выполняться в собственной сессии одновременно. Это эффективный способ запустить сразу несколько агентов параллельно. В [фабрике ПО](#software-factory) перевод тикета в готовность — сам по себе триггер, запускающий его сессию.
 
 _Пример:_
 
@@ -1223,7 +1225,7 @@ _Пример:_
 
 Некоторая работа по своей природе требует присутствия в цикле, потому что ваши реакции и есть входные данные. [Допрос](#grilling) работает, только когда вы отвечаете на вопросы; [прототипирование](#prototyping) работает, только когда вы реагируете на артефакт.
 
-Присутствие в цикле расходует ваше внимание, а это дефицитный ресурс. Часть взросления в работе с агентами — безопасно перемещать больше работы из цикла наружу: через планы, [автоматические проверки](#automated-check) и [рецензирование человеком](#human-review) в конце вместо постоянного надзора.
+Присутствие в цикле расходует ваше внимание, а это дефицитный ресурс. Часть взросления в работе с агентами — безопасно перемещать больше работы из цикла наружу: через планы, [автоматические проверки](#automated-check) и [рецензирование человеком](#human-review) в конце вместо постоянного надзора. [Фабрика ПО](#software-factory) идёт дальше: сессии там запускаются от триггеров, так что даже старт работы не требует вашего участия.
 
 _Пример:_
 
@@ -1311,7 +1313,7 @@ _Пример:_
 
 Вайб-кодинг меняет инспекцию на скорость. Чтение диффов — обычно самый медленный шаг в работе, управляемой агентом, поэтому отказ от него убирает главное узкое место. Для кода, ошибки в котором дёшевы — [прототипы](#prototyping), одноразовые скрипты, внутренние инструменты, — это разумный обмен. Риск растёт вместе со сроком жизни кода и ставками.
 
-Цена приходит позже. Изменения, сделанные вайб-кодингом, накапливаются в кодовую базу, которую никто не читал, а поведение было единственным, что проверялось, — поэтому всё, что не всплывает в поведении, — секрет в логах, пропущенный краевой случай, тихо неверная обработка данных — уходит в продакшен незамеченным. Первый раз, когда кто-то отлаживает систему, становится первым разом, когда кто-либо вообще читает код. Без рецензирования человеком любое автоматическое подтверждение, которое всё ещё выполняется, — тесты, типы, автоматическое рецензирование — оказывается единственным шлюзом, через который код проходит.
+Цена приходит позже. Изменения, сделанные вайб-кодингом, накапливаются в кодовую базу, которую никто не читал, а поведение было единственным, что проверялось, — поэтому всё, что не всплывает в поведении, — секрет в логах, пропущенный краевой случай, тихо неверная обработка данных — уходит в продакшен незамеченным. Первый раз, когда кто-то отлаживает систему, становится первым разом, когда кто-либо вообще читает код. Без рецензирования человеком любое автоматическое подтверждение, которое всё ещё выполняется, — тесты, типы, автоматическое рецензирование — оказывается единственным шлюзом, через который код проходит. Тот же подход, применённый к целой кодовой базе или её части, изменения в которой приносит [фабрика ПО](#software-factory), — это [тёмная фабрика](#dark-factory).
 
 _Избегать:_ использовать «вайб-кодинг» как синоним «низкокачественного ИИ-кодинга» — термин называет позицию в ревью, а не полученный код.
 
@@ -1406,4 +1408,47 @@ _Пример:_
 «Агент пишет отличный код в API-репозитории и мусор — во фронтенде.»
 
 «В API-репозитории строгие типы и быстрый набор тестов; во фронтенде нет ни того, ни другого и сорок всегда загруженных навыков. Это разрыв в AX, а не проблема модели.»
+
+### Software factory
+
+A system of work where [agent](#agent) [sessions](#session) are started by triggers — an issue being created, a schedule, a CI failure, another session finishing — rather than by a human, so more work runs [AFK](#afk) and human attention is spent on the [human-in-the-loop](#human-in-the-loop) decisions that remain.
+
+Without a factory, every session starts because someone started it. Even fully AFK work waits on a person to open the session, point it at the [ticket](#ticket), and set it going. Teams want to ship more than that allows. A factory takes the human out of starting sessions, and not necessarily out of anything else.
+
+Common triggers and the sessions they start:
+
+| Trigger                        | Session it starts                    | Example                                                                                                                   |
+| ------------------------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| Issue created or labelled      | Exploration, bug fix, implementation | An issue labelled `ready-for-agent` gets a session that opens a PR                                                        |
+| Schedule (cron)                | Recurring maintenance                | One lint rule fixed per night                                                                                             |
+| CI failure or monitoring alert | Diagnosis, fix attempt               | A failing build on main gets a session that finds the breaking commit and proposes a fix                                  |
+| Another session finishing      | Follow-on work                       | A PR opened by one agent triggers an [automated review](#automated-review), whose comments trigger a fix-up session |
+
+A factory doesn't have to cover the whole software process. One cron job that runs one kind of session and opens one reviewable PR is a factory. Starting that small is useful: a narrow loop produces small, similar PRs, and reviewing them shows how far the loop can be trusted before it's widened.
+
+Humans can sit anywhere in a factory — writing and labelling the issues that trigger sessions, approving a plan before implementation starts, doing [human review](#human-review) before merge. Deciding which of those decisions stay human is the main design question. A codebase, or part of one, where no human reviews the factory's output is a [dark factory](#dark-factory).
+
+_Usage:_
+
+"Who fixed all the `no-floating-promises` violations?"
+
+"The factory. Cron job picks one lint rule a night, opens a PR. I just review it in the morning."
+
+### Dark factory
+
+A codebase, or part of one, where a [software factory](#software-factory) writes the code and no human reads it. There is no [human review](#human-review). Humans can still write the issues that start the work. But nobody reads the code that comes out. The name comes from "lights-out" factories, which make things with no people on the floor.
+
+A dark factory is [vibe coding](#vibe-coding) for an area of code, not for one change. When you vibe code, you choose not to read a change that you asked for. But you know that the change exists. In a dark factory, the team makes that choice one time, for the full area. After that, no person asks for each change or sees it. Changes arrive as fast as the triggers start new work.
+
+The problem shows when something breaks. You do not know what changed, because nobody read the changes. You must debug code that nobody on the team has read. The cause can be in any of many changes, and each one passed the checks.
+
+[Automated checks](#automated-check) and [automated review](#automated-review) are the only gates. If they do not find a problem, the problem goes into the code.
+
+_Avoid:_ calling a codebase "dark" only because its factory runs with nobody watching. If [agent](#agent) [sessions](#session) run [AFK](#afk) and a human reviews their PRs, that is a software factory. It is not a dark factory.
+
+_Usage:_
+
+"Who changed the retry logic in the billing service? Nobody on the team remembers it."
+
+"The billing service is a dark factory. The agents merge all changes that pass CI. Nobody read that change."
 

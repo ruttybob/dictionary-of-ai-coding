@@ -1,4 +1,4 @@
-name: Graph site
+name: Wiki site
 
 on:
   pull_request:

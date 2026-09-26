@@ -1,6 +1,5 @@
-// 7 section colours — muted OKLCH L≈0.62–0.74, C≈0.07–0.08, pre-converted to
-// hex because three.js Color does not parse oklch() (silently falls to black).
-// "Object" saturation, not "emissive" — reads as colour on near-black.
+// 7 section colours — muted OKLCH L≈0.62–0.74, C≈0.07–0.08, pre-converted
+// to hex. Muted so they read as text accents on near-black, not as neon.
 export const SECTION_COLORS = [
   "#72b3a6", // Section 1 — The Model (dusty teal)
   "#6f85b7", // Section 2 — Sessions (muted violet)

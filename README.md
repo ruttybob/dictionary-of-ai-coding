@@ -7,7 +7,7 @@
 # AI Coding Dictionary
 
 > **Russian edition** of Matt Pocock's [AI Coding Dictionary](https://github.com/mattpocock/dictionary-of-ai-coding) — English headwords, Russian definitions.
-> Browse it as an interactive graph in [`site/`](site/index.html).
+> Read it as a local wiki: `npm install && npm run dev`, then open `http://localhost:4317`.
 
 **AI coding can feel like it's just for experts**. Unexplained jargon. Mysterious failures. Bills that don't seem to match the work.
 

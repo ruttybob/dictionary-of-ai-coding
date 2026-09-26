@@ -3,6 +3,7 @@ import { marked } from "marked";
 import { useApp } from "../store";
 import { termIdFromHref } from "../derive";
 import { prettySectionName } from "../palette";
+import { ReaderControls, ReaderDragHandle } from "./ReaderSettings";
 
 export function Article() {
   const { derived, state, prev, next, select } = useApp();
@@ -11,11 +12,37 @@ export function Article() {
   useEffect(() => {
     if (!node) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") select(null);
+      if (e.altKey || e.ctrlKey || e.metaKey) return;
+      const target = e.target as HTMLElement | null;
+      if (
+        target &&
+        (target.tagName === "INPUT" ||
+          target.tagName === "SELECT" ||
+          target.tagName === "TEXTAREA" ||
+          target.isContentEditable)
+      ) {
+        return;
+      }
+      const main = document.getElementById("main");
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        next();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        prev();
+      } else if (main && (e.key === "ArrowDown" || e.key === "ArrowUp")) {
+        e.preventDefault();
+        main.scrollBy({
+          top: e.key === "ArrowDown" ? 96 : -96,
+          behavior: "smooth",
+        });
+      } else if (e.key === "Escape") {
+        select(null);
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [node, select]);
+  }, [node, prev, next, select]);
 
   const html = useMemo(() => {
     if (!node) return "";
@@ -38,32 +65,43 @@ export function Article() {
 
   return (
     <article id="article" data-term={node.id}>
+      <ReaderDragHandle side="left" />
+      <ReaderDragHandle side="right" />
       <header className="article-head">
         <div className="article-actions">
-          <button
-            className="nav-btn"
-            onClick={prev}
-            aria-label="Предыдущий термин"
-            title="Предыдущий (Curriculum)"
-          >
-            ‹
-          </button>
-          <button
-            className="nav-btn"
-            onClick={next}
-            aria-label="Следующий термин"
-            title="Следующий (Curriculum)"
-          >
-            ›
-          </button>
-          <button
-            className="close-btn"
-            onClick={() => select(null)}
-            aria-label="Закрыть статью"
-            title="Закрыть (Esc)"
-          >
-            ✕
-          </button>
+          <ReaderControls />
+          <div className="article-actions-main">
+            <button
+              className="nav-btn"
+              onClick={prev}
+              aria-label="Предыдущий термин"
+              title="Предыдущий (Curriculum)"
+            >
+              ‹
+              <small className="nav-key" aria-hidden="true">
+                ←
+              </small>
+            </button>
+            <button
+              className="nav-btn"
+              onClick={next}
+              aria-label="Следующий термин"
+              title="Следующий (Curriculum)"
+            >
+              ›
+              <small className="nav-key" aria-hidden="true">
+                →
+              </small>
+            </button>
+            <button
+              className="close-btn"
+              onClick={() => select(null)}
+              aria-label="Закрыть статью"
+              title="Закрыть (Esc)"
+            >
+              ✕
+            </button>
+          </div>
         </div>
         <small className="article-eyebrow" style={{ color }}>
           {prettySectionName(node.section)}

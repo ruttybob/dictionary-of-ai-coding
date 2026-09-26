@@ -1,28 +1,28 @@
 ---
-description: A system of work where triggers, not humans, start agent sessions, so more work runs AFK and HITL time is saved for what needs it.
+description: Система работы, где сессии агентов запускают триггеры, а не люди: больше работы идёт AFK, время человека в цикле экономится.
 aliases:
   - factory
 ---
 
-A system of work where [agent](./Agent.md) [sessions](./Session.md) are started by triggers — an issue being created, a schedule, a CI failure, another session finishing — rather than by a human, so more work runs [AFK](./AFK.md) and human attention is spent on the [human-in-the-loop](./Human-in-the-loop.md) decisions that remain.
+Система работы, в которой [сессии](./Session.md) [агента](./Agent.md) запускаются триггерами — созданием задачи, расписанием, падением CI, завершением другой сессии, — а не человеком. Так больше работы идёт в режиме [AFK](./AFK.md), а внимание человека тратится на оставшиеся решения в режиме [человека в цикле](./Human-in-the-loop.md).
 
-Without a factory, every session starts because someone started it. Even fully AFK work waits on a person to open the session, point it at the [ticket](./Ticket.md), and set it going. Teams want to ship more than that allows. A factory takes the human out of starting sessions, and not necessarily out of anything else.
+Без фабрики каждая сессия начинается потому, что её запустил человек. Даже полностью AFK-работа ждёт, когда кто-то откроет сессию, наведёт её на [тикет](./Ticket.md) и запустит. Команды хотят поставлять больше, чем позволяет такой порядок. Фабрика убирает человека из запуска сессий — и не обязательно ещё откуда-то.
 
-Common triggers and the sessions they start:
+Распространённые триггеры и сессии, которые они запускают:
 
-| Trigger                        | Session it starts                    | Example                                                                                                                   |
-| ------------------------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
-| Issue created or labelled      | Exploration, bug fix, implementation | An issue labelled `ready-for-agent` gets a session that opens a PR                                                        |
-| Schedule (cron)                | Recurring maintenance                | One lint rule fixed per night                                                                                             |
-| CI failure or monitoring alert | Diagnosis, fix attempt               | A failing build on main gets a session that finds the breaking commit and proposes a fix                                  |
-| Another session finishing      | Follow-on work                       | A PR opened by one agent triggers an [automated review](./Automated%20review.md), whose comments trigger a fix-up session |
+| Триггер                          | Запускаемая сессия                         | Пример                                                                                                                                     |
+| -------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Создана или размечена задача     | Исследование, исправление бага, реализация | По задаче с меткой `ready-for-agent` запускается сессия, которая открывает PR                                                              |
+| Расписание (cron)                | Регулярное обслуживание                    | Каждую ночь исправляется одно правило линтера                                                                                              |
+| Падение CI или алерт мониторинга | Диагностика, попытка исправления           | Упавшая сборка в main получает сессию, которая находит сломавший коммит и предлагает исправление                                           |
+| Завершение другой сессии         | Продолжение работы                         | PR, открытый одним агентом, запускает [автоматическое рецензирование](./Automated%20review.md), чьи комментарии запускают сессию доработки |
 
-A factory doesn't have to cover the whole software process. One cron job that runs one kind of session and opens one reviewable PR is a factory. Starting that small is useful: a narrow loop produces small, similar PRs, and reviewing them shows how far the loop can be trusted before it's widened.
+Фабрике не обязательно покрывать весь процесс разработки ПО. Один cron-джоб, который запускает один вид сессий и открывает один PR, доступный для ревью, — уже фабрика. Начинать с такого масштаба полезно: узкий цикл выдаёт маленькие однотипные PR, и их ревью показывает, насколько циклу можно доверять, прежде чем расширять его.
 
-Humans can sit anywhere in a factory — writing and labelling the issues that trigger sessions, approving a plan before implementation starts, doing [human review](./Human%20review.md) before merge. Deciding which of those decisions stay human is the main design question. A codebase, or part of one, where no human reviews the factory's output is a [dark factory](./Dark%20factory.md).
+Люди могут стоять в любом месте фабрики — писать и размечать задачи, запускающие сессии, одобрять план до начала реализации, проводить [рецензирование человеком](./Human%20review.md) перед мержем. Решить, какие из этих решений остаются за человеком, — главный вопрос проектирования фабрики. Кодовая база или её часть, где результат работы фабрики не рецензирует ни один человек, — это [тёмная фабрика](./Dark%20factory.md).
 
-_Usage:_
+_Пример:_
 
-"Who fixed all the `no-floating-promises` violations?"
+«Кто исправил все нарушения `no-floating-promises»?`
 
-"The factory. Cron job picks one lint rule a night, opens a PR. I just review it in the morning."
+«Фабрика. Cron-джоб каждую ночь берёт одно правило линтера и открывает PR. Я поутру только ревьюю».

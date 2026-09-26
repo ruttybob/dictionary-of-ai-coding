@@ -1,19 +1,19 @@
 ---
-description: A codebase, or part of one, where a software factory writes the code and no human ever reviews it.
+description: "Кодовая база или её часть, где код пишет фабрика ПО, а человек никогда не читает и не рецензирует результат."
 ---
 
-A codebase, or part of one, where a [software factory](./Software%20factory.md) writes the code and no human reads it. There is no [human review](./Human%20review.md). Humans can still write the issues that start the work. But nobody reads the code that comes out. The name comes from "lights-out" factories, which make things with no people on the floor.
+Кодовая база или её часть, где код пишет [фабрика ПО](./Software%20factory.md), а человек его не читает. [Рецензирования человеком](./Human%20review.md) здесь нет. Люди по-прежнему могут писать задачи, запускающие работу. Но код, который получается на выходе, не читает никто. Название пришло от «безлюдных» производств (lights-out), которые выпускают продукцию без людей в цеху.
 
-A dark factory is [vibe coding](./Vibe%20coding.md) for an area of code, not for one change. When you vibe code, you choose not to read a change that you asked for. But you know that the change exists. In a dark factory, the team makes that choice one time, for the full area. After that, no person asks for each change or sees it. Changes arrive as fast as the triggers start new work.
+Тёмная фабрика — это [вайб-кодинг](./Vibe%20coding.md) для целой области кода, а не для одного изменения. Когда вы вайб-кодите, вы решаете не читать изменение, которое сами запросили, — но вы хотя бы знаете, что оно существует. В тёмной фабрике команда принимает это решение один раз, за всю область целиком. После этого ни один человек не запрашивает каждое отдельное изменение и не видит его. Изменения приходят с той же скоростью, с какой триггеры запускают новую работу.
 
-The problem shows when something breaks. You do not know what changed, because nobody read the changes. You must debug code that nobody on the team has read. The cause can be in any of many changes, and each one passed the checks.
+Проблема проявляется, когда что-то ломается. Вы не знаете, что изменилось, потому что изменения никто не читал. Отлаживать приходится код, который в команде не читал никто. Причина может сидеть в любом из множества изменений, и каждое из них прошло проверки.
 
-[Automated checks](./Automated%20check.md) and [automated review](./Automated%20review.md) are the only gates. If they do not find a problem, the problem goes into the code.
+[Автоматические проверки](./Automated%20check.md) и [автоматическое рецензирование](./Automated%20review.md) — единственные шлюзы. Не нашли они проблему — проблема уходит в код.
 
-_Avoid:_ calling a codebase "dark" only because its factory runs with nobody watching. If [agent](./Agent.md) [sessions](./Session.md) run [AFK](./AFK.md) and a human reviews their PRs, that is a software factory. It is not a dark factory.
+_Избегать:_ называть кодовую базу «тёмной» только потому, что её фабрика работает без присмотра. Если [сессии](./Session.md) [агента](./Agent.md) идут в режиме [AFK](./AFK.md), а их PR рецензирует человек, — это фабрика ПО, а не тёмная фабрика.
 
-_Usage:_
+_Пример:_
 
-"Who changed the retry logic in the billing service? Nobody on the team remembers it."
+«Кто менял логику ретраев в сервисе биллинга? Никто в команде этого не помнит».
 
-"The billing service is a dark factory. The agents merge all changes that pass CI. Nobody read that change."
+«Сервис биллинга — тёмная фабрика. Агенты мержат все изменения, прошедшие CI. Это изменение никто не читал».

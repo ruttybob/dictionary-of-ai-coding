@@ -1411,44 +1411,44 @@ _Пример:_
 
 ### Software factory
 
-A system of work where [agent](#agent) [sessions](#session) are started by triggers — an issue being created, a schedule, a CI failure, another session finishing — rather than by a human, so more work runs [AFK](#afk) and human attention is spent on the [human-in-the-loop](#human-in-the-loop) decisions that remain.
+Система работы, в которой [сессии](#session) [агента](#agent) запускаются триггерами — созданием задачи, расписанием, падением CI, завершением другой сессии, — а не человеком. Так больше работы идёт в режиме [AFK](#afk), а внимание человека тратится на оставшиеся решения в режиме [человека в цикле](#human-in-the-loop).
 
-Without a factory, every session starts because someone started it. Even fully AFK work waits on a person to open the session, point it at the [ticket](#ticket), and set it going. Teams want to ship more than that allows. A factory takes the human out of starting sessions, and not necessarily out of anything else.
+Без фабрики каждая сессия начинается потому, что её запустил человек. Даже полностью AFK-работа ждёт, когда кто-то откроет сессию, наведёт её на [тикет](#ticket) и запустит. Команды хотят поставлять больше, чем позволяет такой порядок. Фабрика убирает человека из запуска сессий — и не обязательно ещё откуда-то.
 
-Common triggers and the sessions they start:
+Распространённые триггеры и сессии, которые они запускают:
 
-| Trigger                        | Session it starts                    | Example                                                                                                                   |
-| ------------------------------ | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
-| Issue created or labelled      | Exploration, bug fix, implementation | An issue labelled `ready-for-agent` gets a session that opens a PR                                                        |
-| Schedule (cron)                | Recurring maintenance                | One lint rule fixed per night                                                                                             |
-| CI failure or monitoring alert | Diagnosis, fix attempt               | A failing build on main gets a session that finds the breaking commit and proposes a fix                                  |
-| Another session finishing      | Follow-on work                       | A PR opened by one agent triggers an [automated review](#automated-review), whose comments trigger a fix-up session |
+| Триггер                          | Запускаемая сессия                         | Пример                                                                                                                                     |
+| -------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Создана или размечена задача     | Исследование, исправление бага, реализация | По задаче с меткой `ready-for-agent` запускается сессия, которая открывает PR                                                              |
+| Расписание (cron)                | Регулярное обслуживание                    | Каждую ночь исправляется одно правило линтера                                                                                              |
+| Падение CI или алерт мониторинга | Диагностика, попытка исправления           | Упавшая сборка в main получает сессию, которая находит сломавший коммит и предлагает исправление                                           |
+| Завершение другой сессии         | Продолжение работы                         | PR, открытый одним агентом, запускает [автоматическое рецензирование](#automated-review), чьи комментарии запускают сессию доработки |
 
-A factory doesn't have to cover the whole software process. One cron job that runs one kind of session and opens one reviewable PR is a factory. Starting that small is useful: a narrow loop produces small, similar PRs, and reviewing them shows how far the loop can be trusted before it's widened.
+Фабрике не обязательно покрывать весь процесс разработки ПО. Один cron-джоб, который запускает один вид сессий и открывает один PR, доступный для ревью, — уже фабрика. Начинать с такого масштаба полезно: узкий цикл выдаёт маленькие однотипные PR, и их ревью показывает, насколько циклу можно доверять, прежде чем расширять его.
 
-Humans can sit anywhere in a factory — writing and labelling the issues that trigger sessions, approving a plan before implementation starts, doing [human review](#human-review) before merge. Deciding which of those decisions stay human is the main design question. A codebase, or part of one, where no human reviews the factory's output is a [dark factory](#dark-factory).
+Люди могут стоять в любом месте фабрики — писать и размечать задачи, запускающие сессии, одобрять план до начала реализации, проводить [рецензирование человеком](#human-review) перед мержем. Решить, какие из этих решений остаются за человеком, — главный вопрос проектирования фабрики. Кодовая база или её часть, где результат работы фабрики не рецензирует ни один человек, — это [тёмная фабрика](#dark-factory).
 
-_Usage:_
+_Пример:_
 
-"Who fixed all the `no-floating-promises` violations?"
+«Кто исправил все нарушения `no-floating-promises»?`
 
-"The factory. Cron job picks one lint rule a night, opens a PR. I just review it in the morning."
+«Фабрика. Cron-джоб каждую ночь берёт одно правило линтера и открывает PR. Я поутру только ревьюю».
 
 ### Dark factory
 
-A codebase, or part of one, where a [software factory](#software-factory) writes the code and no human reads it. There is no [human review](#human-review). Humans can still write the issues that start the work. But nobody reads the code that comes out. The name comes from "lights-out" factories, which make things with no people on the floor.
+Кодовая база или её часть, где код пишет [фабрика ПО](#software-factory), а человек его не читает. [Рецензирования человеком](#human-review) здесь нет. Люди по-прежнему могут писать задачи, запускающие работу. Но код, который получается на выходе, не читает никто. Название пришло от «безлюдных» производств (lights-out), которые выпускают продукцию без людей в цеху.
 
-A dark factory is [vibe coding](#vibe-coding) for an area of code, not for one change. When you vibe code, you choose not to read a change that you asked for. But you know that the change exists. In a dark factory, the team makes that choice one time, for the full area. After that, no person asks for each change or sees it. Changes arrive as fast as the triggers start new work.
+Тёмная фабрика — это [вайб-кодинг](#vibe-coding) для целой области кода, а не для одного изменения. Когда вы вайб-кодите, вы решаете не читать изменение, которое сами запросили, — но вы хотя бы знаете, что оно существует. В тёмной фабрике команда принимает это решение один раз, за всю область целиком. После этого ни один человек не запрашивает каждое отдельное изменение и не видит его. Изменения приходят с той же скоростью, с какой триггеры запускают новую работу.
 
-The problem shows when something breaks. You do not know what changed, because nobody read the changes. You must debug code that nobody on the team has read. The cause can be in any of many changes, and each one passed the checks.
+Проблема проявляется, когда что-то ломается. Вы не знаете, что изменилось, потому что изменения никто не читал. Отлаживать приходится код, который в команде не читал никто. Причина может сидеть в любом из множества изменений, и каждое из них прошло проверки.
 
-[Automated checks](#automated-check) and [automated review](#automated-review) are the only gates. If they do not find a problem, the problem goes into the code.
+[Автоматические проверки](#automated-check) и [автоматическое рецензирование](#automated-review) — единственные шлюзы. Не нашли они проблему — проблема уходит в код.
 
-_Avoid:_ calling a codebase "dark" only because its factory runs with nobody watching. If [agent](#agent) [sessions](#session) run [AFK](#afk) and a human reviews their PRs, that is a software factory. It is not a dark factory.
+_Избегать:_ называть кодовую базу «тёмной» только потому, что её фабрика работает без присмотра. Если [сессии](#session) [агента](#agent) идут в режиме [AFK](#afk), а их PR рецензирует человек, — это фабрика ПО, а не тёмная фабрика.
 
-_Usage:_
+_Пример:_
 
-"Who changed the retry logic in the billing service? Nobody on the team remembers it."
+«Кто менял логику ретраев в сервисе биллинга? Никто в команде этого не помнит».
 
-"The billing service is a dark factory. The agents merge all changes that pass CI. Nobody read that change."
+«Сервис биллинга — тёмная фабрика. Агенты мержат все изменения, прошедшие CI. Это изменение никто не читал».
 
